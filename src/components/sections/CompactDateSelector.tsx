@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { CalendarIcon } from "lucide-react";
 import { format, subDays, startOfWeek, endOfWeek, startOfMonth, endOfMonth } from "date-fns";
 import { cn } from "@/lib/utils";
 import { DateRange } from "react-day-picker";
@@ -15,6 +14,11 @@ export function CompactDateSelector() {
 
   // Generate last 7 days
   const last7Days = Array.from({ length: 7 }, (_, i) => subDays(new Date(), i)).reverse();
+
+  const getMonthAbbr = (date: Date) => {
+    const months = ["GEN", "FEB", "MAR", "APR", "MAG", "GIU", "LUG", "AGO", "SET", "OTT", "NOV", "DIC"];
+    return months[date.getMonth()];
+  };
 
   const getDateDisplay = () => {
     switch (selectedType) {
@@ -39,95 +43,109 @@ export function CompactDateSelector() {
   };
 
   return (
-    <div className="flex flex-col space-y-3">
-      <p className="text-sm font-medium text-foreground font-mono">SELETTORE DATE</p>
+    <div className="flex flex-col space-y-4">
+      <h3 className="text-lg font-semibold text-foreground font-mono">SELETTORE DATE</h3>
       
-      {/* Single Day Selector - Last 7 days */}
-      <div className="flex flex-wrap items-center gap-2">
-        <span className="text-xs text-muted-foreground font-mono mr-2">Ultimi 7 giorni:</span>
-        {last7Days.map((day, index) => (
+      <div className="flex items-center gap-6">
+        {/* Day Boxes - Last 7 days */}
+        <div className="flex items-center gap-3">
+          {last7Days.map((day, index) => {
+            const isSelected = selectedType === "day" && format(selectedDay, "yyyy-MM-dd") === format(day, "yyyy-MM-dd");
+            return (
+              <button
+                key={index}
+                onClick={() => {
+                  setSelectedType("day");
+                  setSelectedDay(day);
+                }}
+                className={cn(
+                  "flex flex-col items-center justify-center w-16 h-16 border-2 transition-all duration-200 hover:scale-105",
+                  isSelected 
+                    ? "border-analytics-blue bg-analytics-blue/10" 
+                    : "border-dashboard-border bg-dashboard-surface/30 hover:border-analytics-blue/50"
+                )}
+              >
+                <span className={cn(
+                  "text-xl font-bold font-mono",
+                  isSelected ? "text-analytics-blue" : "text-foreground"
+                )}>
+                  {format(day, "dd")}
+                </span>
+                <span className={cn(
+                  "text-xs font-mono",
+                  isSelected ? "text-analytics-blue" : "text-muted-foreground"
+                )}>
+                  {getMonthAbbr(day)}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Quick Selection Buttons */}
+        <div className="flex items-center gap-3 ml-6">
           <Button
-            key={index}
-            variant={selectedType === "day" && format(selectedDay, "yyyy-MM-dd") === format(day, "yyyy-MM-dd") ? "default" : "outline"}
+            variant={selectedType === "week" ? "default" : "outline"}
             size="sm"
-            onClick={() => {
-              setSelectedType("day");
-              setSelectedDay(day);
-            }}
+            onClick={() => setSelectedType("week")}
             className={cn(
-              "h-8 w-16 text-xs font-mono px-2 py-1",
-              selectedType === "day" && format(selectedDay, "yyyy-MM-dd") === format(day, "yyyy-MM-dd") && "bg-analytics-blue text-white border-analytics-blue"
+              "text-sm font-mono px-4 py-2",
+              selectedType === "week" && "bg-analytics-blue text-white border-analytics-blue"
             )}
           >
-            {format(day, "dd/MM")}
+            Ultima Settimana
           </Button>
-        ))}
-      </div>
+          
+          <Button
+            variant={selectedType === "month" ? "default" : "outline"}
+            size="sm"
+            onClick={() => setSelectedType("month")}
+            className={cn(
+              "text-sm font-mono px-4 py-2",
+              selectedType === "month" && "bg-analytics-blue text-white border-analytics-blue"
+            )}
+          >
+            Ultimo Mese
+          </Button>
 
-      {/* Quick Selection Buttons */}
-      <div className="flex items-center gap-2">
-        <Button
-          variant={selectedType === "week" ? "default" : "outline"}
-          size="sm"
-          onClick={() => setSelectedType("week")}
-          className={cn(
-            "text-xs font-mono px-3 py-2",
-            selectedType === "week" && "bg-analytics-blue text-white border-analytics-blue"
-          )}
-        >
-          Ultima Settimana
-        </Button>
-        
-        <Button
-          variant={selectedType === "month" ? "default" : "outline"}
-          size="sm"
-          onClick={() => setSelectedType("month")}
-          className={cn(
-            "text-xs font-mono px-3 py-2",
-            selectedType === "month" && "bg-analytics-blue text-white border-analytics-blue"
-          )}
-        >
-          Ultimo Mese
-        </Button>
-
-        {/* Custom Range Selector */}
-        <Popover open={isCustomOpen} onOpenChange={setIsCustomOpen}>
-          <PopoverTrigger asChild>
-            <Button
-              variant={selectedType === "custom" ? "default" : "outline"}
-              size="sm"
-              onClick={() => setSelectedType("custom")}
-              className={cn(
-                "text-xs font-mono px-3 py-2 gap-1",
-                selectedType === "custom" && "bg-analytics-blue text-white border-analytics-blue"
-              )}
-            >
-              <CalendarIcon className="h-3 w-3" />
-              Periodo Custom
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent className="w-auto p-0" align="start">
-            <Calendar
-              mode="range"
-              selected={dateRange}
-              onSelect={(range) => {
-                setDateRange(range);
-                if (range?.from && range?.to) {
-                  setSelectedType("custom");
-                  setIsCustomOpen(false);
-                }
-              }}
-              numberOfMonths={2}
-              initialFocus
-              className={cn("p-3 pointer-events-auto")}
-            />
-          </PopoverContent>
-        </Popover>
+          {/* Custom Range Selector */}
+          <Popover open={isCustomOpen} onOpenChange={setIsCustomOpen}>
+            <PopoverTrigger asChild>
+              <Button
+                variant={selectedType === "custom" ? "default" : "outline"}
+                size="sm"
+                onClick={() => setSelectedType("custom")}
+                className={cn(
+                  "text-sm font-mono px-4 py-2 gap-2",
+                  selectedType === "custom" && "bg-analytics-blue text-white border-analytics-blue"
+                )}
+              >
+                📅 Periodo Custom
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-auto p-0" align="start">
+              <Calendar
+                mode="range"
+                selected={dateRange}
+                onSelect={(range) => {
+                  setDateRange(range);
+                  if (range?.from && range?.to) {
+                    setSelectedType("custom");
+                    setIsCustomOpen(false);
+                  }
+                }}
+                numberOfMonths={2}
+                initialFocus
+                className={cn("p-3 pointer-events-auto")}
+              />
+            </PopoverContent>
+          </Popover>
+        </div>
       </div>
 
       {/* Current Selection Display */}
-      <div className="text-xs text-muted-foreground font-mono">
-        <span className="text-analytics-blue">Periodo selezionato:</span> {getDateDisplay()}
+      <div className="text-sm text-muted-foreground font-mono">
+        <span className="text-analytics-blue font-medium">Periodo selezionato:</span> {getDateDisplay()}
       </div>
     </div>
   );
