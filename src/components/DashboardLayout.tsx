@@ -16,7 +16,7 @@ const navigation = [
 ];
 
 export function DashboardLayout({ children, currentSection, onSectionChange }: DashboardLayoutProps) {
-  const [isDarkMode, setIsDarkMode] = useState(true); // Dark mode as default
+  const [isDarkMode, setIsDarkMode] = useState(false); // Light mode as default
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
