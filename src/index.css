@@ -129,58 +129,68 @@ All colors MUST be HSL.
     --dashboard-border: 0 0% 20%;
   }
 
-  /* Light mode - Industrial Brutalist Apple Style */
+  /* Light mode - White background with metallic accents */
   .light {
-    /* Metallic grey background - minimal white */
-    --background: 0 0% 96%;
-    --foreground: 0 0% 7%;
+    /* Clean white background */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 25%; /* Elegant metallic grey for text */
 
-    /* Metallic grey surfaces (#C0C0C0 / #A9A9A9) with low opacity */
-    --card: 0 0% 76%;
-    --card-foreground: 0 0% 7%;
+    /* White cards with metallic grey borders and subtle shadows */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 25%;
 
-    --popover: 0 0% 76%;
-    --popover-foreground: 0 0% 7%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 25%;
 
-    /* Copper orange metallic (#B87333) as primary accent */
+    /* Copper metallic orange as primary accent */
     --primary: 30 60% 47%;
     --primary-foreground: 0 0% 100%;
 
-    /* Metallic surfaces with low opacity */
-    --secondary: 0 0% 66%;
-    --secondary-foreground: 0 0% 27%;
+    /* Light metallic grey surfaces with 50% opacity equivalent */
+    --secondary: 0 0% 85%; /* Light grey for boxes */
+    --secondary-foreground: 0 0% 25%;
 
-    --muted: 0 0% 82%;
-    --muted-foreground: 0 0% 27%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 35%;
 
-    --accent: 0 0% 66%;
-    --accent-foreground: 0 0% 27%;
+    --accent: 0 0% 85%;
+    --accent-foreground: 0 0% 25%;
 
     /* Critical indicators */
-    --destructive: 0 70% 50%;
+    --destructive: 0 65% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Metallic borders - sharp and geometric */
-    --border: 0 0% 68%;
-    --input: 0 0% 74%;
+    /* Metallic borders */
+    --border: 0 0% 75%; /* Metallic grey borders */
+    --input: 0 0% 95%;
     --ring: 30 60% 47%;
 
-    /* Analytics Colors - Metallic/Industrial palette */
-    --analytics-blue: 210 45% 40%;
-    --analytics-blue-light: 210 45% 50%;
-    --analytics-green: 140 35% 35%;
-    --analytics-green-light: 140 35% 45%;
-    --analytics-orange: 30 60% 47%;
+    /* Analytics Colors - Copper orange and green accents */
+    --analytics-blue: 30 60% 47%; /* Copper orange */
+    --analytics-blue-light: 30 60% 57%;
+    --analytics-green: 140 50% 40%; /* Rich green */
+    --analytics-green-light: 140 50% 50%;
+    --analytics-orange: 30 60% 47%; /* Copper orange */
     --analytics-orange-light: 30 60% 57%;
-    --analytics-red: 0 50% 40%;
-    --analytics-red-light: 0 50% 50%;
-    --analytics-purple: 270 40% 40%;
-    --analytics-purple-light: 270 40% 50%;
+    --analytics-red: 0 60% 45%;
+    --analytics-red-light: 0 60% 55%;
+    --analytics-purple: 270 45% 45%;
+    --analytics-purple-light: 270 45% 55%;
 
-    /* Dashboard Surfaces - Metallic grey with subtle opacity */
-    --dashboard-surface: 0 0% 75%;
-    --dashboard-surface-hover: 0 0% 72%;
-    --dashboard-border: 0 0% 65%;
+    /* Dashboard Surfaces - White with metallic grey borders */
+    --dashboard-surface: 0 0% 95%; /* Light grey boxes with 50% opacity effect */
+    --dashboard-surface-hover: 0 0% 92%;
+    --dashboard-border: 0 0% 75%; /* Metallic grey borders */
+
+    /* Sidebar colors for light mode */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 25%;
+    --sidebar-primary: 0 0% 25%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 95%;
+    --sidebar-accent-foreground: 0 0% 25%;
+    --sidebar-border: 0 0% 75%;
+    --sidebar-ring: 30 60% 47%;
   }
 }
 

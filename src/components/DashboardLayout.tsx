@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Moon, Sun, BarChart3, TrendingUp, Users, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -17,6 +17,11 @@ const navigation = [
 
 export function DashboardLayout({ children, currentSection, onSectionChange }: DashboardLayoutProps) {
   const [isDarkMode, setIsDarkMode] = useState(true); // Dark mode as default
+
+  // Set dark mode on component mount
+  useEffect(() => {
+    document.documentElement.classList.add("dark");
+  }, []);
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
