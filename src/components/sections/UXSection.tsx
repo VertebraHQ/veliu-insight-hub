@@ -283,7 +283,7 @@ export function UXSection({ onBack }: UXSectionProps) {
 
         {/* Percorso Principale - Blocchi grandi */}
         <div className="mb-16">
-          <h4 className="text-lg font-mono text-foreground mb-4 text-center">Percorso Principale (25% utenti)</h4>
+          <h4 className="text-lg font-mono text-foreground mb-8 text-center">Percorso Principale (25% utenti)</h4>
           <div className="flex items-center justify-center gap-6">
             <div className="border-2 border-white p-8 w-48 h-40 flex flex-col items-center justify-center rounded-2xl">
               <Home className="h-12 w-12 text-orange-500 mb-3" />
@@ -321,7 +321,7 @@ export function UXSection({ onBack }: UXSectionProps) {
 
         {/* Percorso Informativo - Blocchi medi */}
         <div className="mb-16">
-          <h4 className="text-lg font-mono text-foreground mb-4 text-center">Percorso Informativo (18% utenti)</h4>
+          <h4 className="text-lg font-mono text-foreground mb-8 text-center">Percorso Informativo (18% utenti)</h4>
           <div className="flex items-center justify-center gap-4">
             <div className="border-2 border-white p-6 w-36 h-30 flex flex-col items-center justify-center rounded-2xl">
               <Home className="h-9 w-9 text-orange-500 mb-2" />
@@ -359,7 +359,7 @@ export function UXSection({ onBack }: UXSectionProps) {
 
         {/* Percorso Contenuti - Blocchi piccoli */}
         <div className="mb-16">
-          <h4 className="text-lg font-mono text-foreground mb-4 text-center">Percorso Contenuti (15% utenti)</h4>
+          <h4 className="text-lg font-mono text-foreground mb-8 text-center">Percorso Contenuti (15% utenti)</h4>
           <div className="flex items-center justify-center gap-4">
             <div className="border-2 border-white p-4 w-28 h-24 flex flex-col items-center justify-center rounded-2xl">
               <Home className="h-7 w-7 text-orange-500 mb-1" />
