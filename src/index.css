@@ -9,11 +9,11 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 8%;
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 95%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
@@ -33,11 +33,11 @@ All colors MUST be HSL.
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --border: 0 0% 25%;
+    --input: 0 0% 20%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.75rem;
+    --radius: 0rem;
 
     /* Analytics Dashboard Color Palette */
     --analytics-blue: 220 91% 56%;
@@ -58,17 +58,17 @@ All colors MUST be HSL.
     --chart-4: var(--analytics-red);
     --chart-5: var(--analytics-purple);
 
-    /* Dashboard Specific Colors */
-    --dashboard-surface: 0 0% 100%;
-    --dashboard-surface-hover: 220 14.3% 97%;
-    --dashboard-border: 220 13% 91%;
+    /* Dashboard Specific Colors - Brutal Design */
+    --dashboard-surface: 0 0% 15%;
+    --dashboard-surface-hover: 0 0% 18%;
+    --dashboard-border: 0 0% 25%;
     
-    /* Shadows */
-    --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
-    --shadow-card-hover: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
+    /* Shadows - Harsh Style */
+    --shadow-card: 0 2px 8px 0 hsl(0 0% 0% / 0.3);
+    --shadow-card-hover: 0 4px 12px 0 hsl(0 0% 0% / 0.4);
     
     /* Transitions */
-    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     --sidebar-background: 0 0% 98%;
 
@@ -141,6 +141,12 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-mono;
   }
+}
+
+/* Brutal Design Override */
+.dashboard-card {
+  @apply bg-dashboard-surface/60 border-dashboard-border shadow-card;
+  border-radius: 0 !important;
 }

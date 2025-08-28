@@ -41,8 +41,9 @@ export function KPICard({
 }: KPICardProps) {
   return (
     <div className={cn(
-      "group relative overflow-hidden rounded-xl border bg-card p-6 shadow-card transition-all duration-200 hover:shadow-card-hover hover:scale-[1.02]",
+      "group relative overflow-hidden border bg-dashboard-surface/60 p-6 shadow-card transition-all duration-150 hover:shadow-card-hover hover:scale-[1.02]",
       colorClasses[color],
+      "dashboard-card",
       className
     )}>
       <div className="flex items-start justify-between">

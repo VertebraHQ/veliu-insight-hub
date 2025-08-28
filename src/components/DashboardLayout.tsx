@@ -11,7 +11,6 @@ interface DashboardLayoutProps {
 
 const navigation = [
   { id: "home", label: "Dashboard", icon: BarChart3 },
-  { id: "business", label: "Business", icon: TrendingUp },
   { id: "ux", label: "UX", icon: Users },
   { id: "tech", label: "Tech", icon: Zap },
 ];
@@ -31,7 +30,7 @@ export function DashboardLayout({ children, currentSection, onSectionChange }: D
         <div className="container flex h-16 items-center justify-between px-6">
           <div className="flex items-center space-x-4">
             <BarChart3 className="h-8 w-8 text-analytics-blue" />
-            <h1 className="text-2xl font-bold text-foreground">Veliu Analytics</h1>
+            <h1 className="text-2xl font-bold text-foreground font-mono tracking-tight">VELIU ANALYTICS</h1>
           </div>
           
           <div className="flex items-center space-x-4">
