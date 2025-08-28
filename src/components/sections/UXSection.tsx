@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { KPICard } from "@/components/KPICard";
 import { DateSelector } from "@/components/DateSelector";
-import { ArrowLeft, MousePointer, Eye, Navigation, Activity, Maximize2, Monitor, Smartphone, Tablet, Bug, AlertTriangle } from "lucide-react";
+import { ArrowLeft, MousePointer, Eye, Navigation, Activity, Maximize2, Monitor, Smartphone, Tablet, Bug, AlertTriangle, Home, Package, Phone, Users, FileText, BookOpen, ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
@@ -266,82 +266,175 @@ export function UXSection({ onBack }: UXSectionProps) {
         <h3 className="text-lg font-semibold mb-6 font-mono">ANALISI PATH UTENTI</h3>
         
         {/* Path Metrics above */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-          <KPICard title="Pagine per Sessione" value="2.5" color="blue" />
-          <KPICard title="Tempo Medio Percorso" value="3m 58s" color="green" />
-          <KPICard title="Completamento Percorso" value="97%" color="orange" />
-          <KPICard title="Passaggi Medi" value="3.2" color="purple" />
-        </div>
-
-        {/* Main path (large block) */}
-        <div className="mb-6">
-          <h4 className="text-sm font-mono text-muted-foreground mb-4">Percorso Principale (25% utenti)</h4>
-          <div className="bg-dashboard-surface/30 border border-dashboard-border p-6">
-            <div className="flex items-center justify-center space-x-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-analytics-blue/20 border border-analytics-blue/30 flex items-center justify-center mb-2">
-                  <span className="text-xs font-mono text-analytics-blue">🏠</span>
-                </div>
-                <div className="text-xs font-mono font-bold text-analytics-blue">Homepage</div>
-                <div className="text-xs font-mono text-analytics-blue">100%</div>
-              </div>
-              <div className="relative group/arrow">
-                <div className="text-muted-foreground">→</div>
-                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-card border px-2 py-1 text-xs opacity-0 group-hover/arrow:opacity-100 transition-opacity">
-                  68%<br/>
-                  <span className="text-xs text-muted-foreground">163 utenti</span>
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-analytics-blue/20 border border-analytics-blue/30 flex items-center justify-center mb-2">
-                  <span className="text-xs font-mono text-analytics-blue">📦</span>
-                </div>
-                <div className="text-xs font-mono font-bold text-analytics-blue">Prodotti</div>
-                <div className="text-xs font-mono text-analytics-blue">68%</div>
-              </div>
-              <div className="relative group/arrow">
-                <div className="text-muted-foreground">→</div>
-                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-card border px-2 py-1 text-xs opacity-0 group-hover/arrow:opacity-100 transition-opacity">
-                  37%<br/>
-                  <span className="text-xs text-muted-foreground">89 utenti</span>
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-analytics-blue/20 border border-analytics-blue/30 flex items-center justify-center mb-2">
-                  <span className="text-xs font-mono text-analytics-blue">📞</span>
-                </div>
-                <div className="text-xs font-mono font-bold text-analytics-blue">Contatti</div>
-                <div className="text-xs font-mono text-analytics-blue">25%</div>
-              </div>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          <div className="text-center">
+            <div className="text-2xl font-mono text-foreground mb-1">2.4</div>
+            <div className="text-sm text-muted-foreground">Pagine per Sessione</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-mono text-foreground mb-1">2m 34s</div>
+            <div className="text-sm text-muted-foreground">Tempo Medio</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-mono text-foreground mb-1">68%</div>
+            <div className="text-sm text-muted-foreground">Completamento Percorso</div>
           </div>
         </div>
 
-        {/* Other paths - horizontal layout */}
-        <div className="space-y-4">
-          <div>
-            <h5 className="text-xs font-mono text-muted-foreground mb-3">Percorso Informativo (18% utenti)</h5>
-            <div className="flex items-center space-x-4 text-xs font-mono">
-              <span className="text-analytics-blue">🏠 Home</span>
-              <span className="text-muted-foreground">→</span>
-              <span className="text-analytics-blue">🔧 Servizi</span>
-              <span className="text-muted-foreground">→</span>
-              <span className="text-analytics-blue">👥 Chi Siamo</span>
-              <span className="text-muted-foreground">→</span>
-              <span className="text-analytics-blue">📞 Contatti</span>
+        {/* Percorso Principale - Blocchi grandi */}
+        <div className="mb-8">
+          <h4 className="text-lg font-mono text-foreground mb-4">Percorso Principale (25% utenti)</h4>
+          <div className="flex items-center justify-center gap-6">
+            <div className="bg-dashboard-surface border border-dashboard-border p-8 w-40 h-40 flex flex-col items-center justify-center">
+              <Home className="h-12 w-12 text-analytics-blue mb-3" />
+              <span className="text-base font-mono text-center mb-1">Homepage</span>
+              <span className="text-sm text-analytics-blue font-mono">100%</span>
+              <span className="text-xs text-muted-foreground">1.250 utenti</span>
+            </div>
+            <div className="relative group">
+              <ArrowRight className="h-8 w-8 text-muted-foreground" />
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                <div className="font-mono text-analytics-blue">68%</div>
+                <div className="text-xs text-muted-foreground">850 utenti</div>
+              </div>
+            </div>
+            <div className="bg-dashboard-surface border border-dashboard-border p-6 w-32 h-32 flex flex-col items-center justify-center">
+              <Package className="h-10 w-10 text-analytics-blue mb-2" />
+              <span className="text-sm font-mono text-center mb-1">Prodotti</span>
+              <span className="text-sm text-analytics-blue font-mono">68%</span>
+              <span className="text-xs text-muted-foreground">850 utenti</span>
+            </div>
+            <div className="relative group">
+              <ArrowRight className="h-8 w-8 text-muted-foreground" />
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                <div className="font-mono text-analytics-blue">37%</div>
+                <div className="text-xs text-muted-foreground">315 utenti</div>
+              </div>
+            </div>
+            <div className="bg-dashboard-surface border border-dashboard-border p-4 w-24 h-24 flex flex-col items-center justify-center">
+              <Phone className="h-8 w-8 text-analytics-blue mb-1" />
+              <span className="text-xs font-mono text-center mb-1">Contatti</span>
+              <span className="text-xs text-analytics-blue font-mono">25%</span>
+              <span className="text-xs text-muted-foreground">315 utenti</span>
             </div>
           </div>
-          
-          <div>
-            <h5 className="text-xs font-mono text-muted-foreground mb-3">Percorso Contenuti (15% utenti)</h5>
-            <div className="flex items-center space-x-4 text-xs font-mono">
-              <span className="text-analytics-blue">🏠 Home</span>
-              <span className="text-muted-foreground">→</span>
-              <span className="text-analytics-blue">📝 Blog</span>
-              <span className="text-muted-foreground">→</span>
-              <span className="text-analytics-blue">📦 Prodotti</span>
+        </div>
+
+        {/* Percorso Informativo - Blocchi medi */}
+        <div className="mb-8">
+          <h4 className="text-lg font-mono text-foreground mb-4">Percorso Informativo (18% utenti)</h4>
+          <div className="flex items-center justify-center gap-4">
+            <div className="bg-dashboard-surface border border-dashboard-border p-6 w-32 h-32 flex flex-col items-center justify-center">
+              <Home className="h-10 w-10 text-analytics-blue mb-2" />
+              <span className="text-sm font-mono text-center mb-1">Homepage</span>
+              <span className="text-sm text-analytics-blue font-mono">100%</span>
+              <span className="text-xs text-muted-foreground">900 utenti</span>
+            </div>
+            <div className="relative group">
+              <ArrowRight className="h-6 w-6 text-muted-foreground" />
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                <div className="font-mono text-analytics-blue">75%</div>
+                <div className="text-xs text-muted-foreground">675 utenti</div>
+              </div>
+            </div>
+            <div className="bg-dashboard-surface border border-dashboard-border p-4 w-24 h-24 flex flex-col items-center justify-center">
+              <Users className="h-8 w-8 text-analytics-blue mb-1" />
+              <span className="text-xs font-mono text-center mb-1">Chi Siamo</span>
+              <span className="text-xs text-analytics-blue font-mono">75%</span>
+              <span className="text-xs text-muted-foreground">675 utenti</span>
+            </div>
+            <div className="relative group">
+              <ArrowRight className="h-6 w-6 text-muted-foreground" />
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                <div className="font-mono text-analytics-blue">45%</div>
+                <div className="text-xs text-muted-foreground">405 utenti</div>
+              </div>
+            </div>
+            <div className="bg-dashboard-surface border border-dashboard-border p-4 w-24 h-24 flex flex-col items-center justify-center">
+              <FileText className="h-8 w-8 text-analytics-blue mb-1" />
+              <span className="text-xs font-mono text-center mb-1">Blog</span>
+              <span className="text-xs text-analytics-blue font-mono">45%</span>
+              <span className="text-xs text-muted-foreground">405 utenti</span>
             </div>
           </div>
+        </div>
+
+        {/* Percorso Contenuti - Blocchi piccoli */}
+        <div className="mb-8">
+          <h4 className="text-lg font-mono text-foreground mb-4">Percorso Contenuti (15% utenti)</h4>
+          <div className="flex items-center justify-center gap-4">
+            <div className="bg-dashboard-surface border border-dashboard-border p-4 w-24 h-24 flex flex-col items-center justify-center">
+              <Home className="h-8 w-8 text-analytics-blue mb-1" />
+              <span className="text-xs font-mono text-center mb-1">Homepage</span>
+              <span className="text-xs text-analytics-blue font-mono">100%</span>
+              <span className="text-xs text-muted-foreground">750 utenti</span>
+            </div>
+            <div className="relative group">
+              <ArrowRight className="h-6 w-6 text-muted-foreground" />
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                <div className="font-mono text-analytics-blue">80%</div>
+                <div className="text-xs text-muted-foreground">600 utenti</div>
+              </div>
+            </div>
+            <div className="bg-dashboard-surface border border-dashboard-border p-4 w-24 h-24 flex flex-col items-center justify-center">
+              <FileText className="h-8 w-8 text-analytics-blue mb-1" />
+              <span className="text-xs font-mono text-center mb-1">Blog</span>
+              <span className="text-xs text-analytics-blue font-mono">80%</span>
+              <span className="text-xs text-muted-foreground">600 utenti</span>
+            </div>
+            <div className="relative group">
+              <ArrowRight className="h-6 w-6 text-muted-foreground" />
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                <div className="font-mono text-analytics-blue">35%</div>
+                <div className="text-xs text-muted-foreground">210 utenti</div>
+              </div>
+            </div>
+            <div className="bg-dashboard-surface border border-dashboard-border p-4 w-24 h-24 flex flex-col items-center justify-center">
+              <BookOpen className="h-8 w-8 text-analytics-blue mb-1" />
+              <span className="text-xs font-mono text-center mb-1">Articolo</span>
+              <span className="text-xs text-analytics-blue font-mono">35%</span>
+              <span className="text-xs text-muted-foreground">210 utenti</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Menu a tendina per altri percorsi */}
+        <div className="border-t border-dashboard-border pt-6">
+          <details className="group">
+            <summary className="flex items-center justify-between cursor-pointer text-lg font-mono text-foreground hover:text-analytics-blue transition-colors">
+              <span>Vedi gli altri percorsi</span>
+              <ChevronDown className="h-5 w-5 transition-transform group-open:rotate-180" />
+            </summary>
+            <div className="mt-4 space-y-3">
+              <div className="flex items-center gap-2 text-sm bg-dashboard-surface/30 p-3 border border-dashboard-border">
+                <span className="font-mono text-foreground min-w-[20px]">4°</span>
+                <span className="bg-analytics-blue/20 text-analytics-blue px-2 py-1 text-xs">Homepage</span>
+                <ArrowRight className="h-3 w-3" />
+                <span className="bg-analytics-blue/20 text-analytics-blue px-2 py-1 text-xs">Servizi</span>
+                <ArrowRight className="h-3 w-3" />
+                <span className="bg-analytics-blue/20 text-analytics-blue px-2 py-1 text-xs">Preventivo</span>
+                <span className="ml-auto text-muted-foreground text-xs">12% utenti</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm bg-dashboard-surface/30 p-3 border border-dashboard-border">
+                <span className="font-mono text-foreground min-w-[20px]">5°</span>
+                <span className="bg-analytics-blue/20 text-analytics-blue px-2 py-1 text-xs">Homepage</span>
+                <ArrowRight className="h-3 w-3" />
+                <span className="bg-analytics-blue/20 text-analytics-blue px-2 py-1 text-xs">Portfolio</span>
+                <ArrowRight className="h-3 w-3" />
+                <span className="bg-analytics-blue/20 text-analytics-blue px-2 py-1 text-xs">Progetto</span>
+                <span className="ml-auto text-muted-foreground text-xs">8% utenti</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm bg-dashboard-surface/30 p-3 border border-dashboard-border">
+                <span className="font-mono text-foreground min-w-[20px]">6°</span>
+                <span className="bg-analytics-blue/20 text-analytics-blue px-2 py-1 text-xs">Homepage</span>
+                <ArrowRight className="h-3 w-3" />
+                <span className="bg-analytics-blue/20 text-analytics-blue px-2 py-1 text-xs">FAQ</span>
+                <ArrowRight className="h-3 w-3" />
+                <span className="bg-analytics-blue/20 text-analytics-blue px-2 py-1 text-xs">Supporto</span>
+                <span className="ml-auto text-muted-foreground text-xs">5% utenti</span>
+              </div>
+            </div>
+          </details>
         </div>
       </div>
 
