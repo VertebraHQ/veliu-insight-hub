@@ -37,7 +37,7 @@ export function HomeSection({ onSectionChange }: HomeSectionProps) {
     <div className="space-y-8">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <h2 className="text-3xl font-bold text-foreground font-mono tracking-tight">DASHBOARD</h2>
+        <h2 className="text-3xl font-bold text-foreground tracking-tight">DASHBOARD</h2>
       </div>
 
       {/* KPI Cards Grid */}
@@ -51,7 +51,7 @@ export function HomeSection({ onSectionChange }: HomeSectionProps) {
         <div className="group relative overflow-hidden border bg-dashboard-surface/60 p-6 shadow-card transition-all duration-150 hover:shadow-card-hover hover:scale-[1.02] dashboard-card border-analytics-green/20 bg-analytics-green/5 text-analytics-green">
           <div className="flex items-start justify-between">
             <div className="flex-1">
-              <p className="text-sm font-medium text-muted-foreground font-mono">DATA QUALITY</p>
+              <p className="text-sm font-medium text-muted-foreground">DATA QUALITY</p>
               <div className="mt-2">
                 <DataQualityTooltip value="96.2%" />
               </div>
@@ -63,13 +63,13 @@ export function HomeSection({ onSectionChange }: HomeSectionProps) {
         </div>
         <KPICard
           title="FUNNEL COMPLETATI"
-          value="0"
+          value="122"
           icon={TrendingUp}
           color="orange"
         />
         <KPICard
           title="CONVERSION RATE"
-          value="0%"
+          value="25.2%"
           icon={Percent}
           color="red"
         />
@@ -78,7 +78,7 @@ export function HomeSection({ onSectionChange }: HomeSectionProps) {
       {/* Main Trend Chart */}
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
-          <h3 className="text-lg font-semibold text-foreground font-mono">TREND PRINCIPALE</h3>
+          <h3 className="text-lg font-semibold text-foreground">TREND PRINCIPALE</h3>
           <TrendSelector />
         </div>
         <TrendChart />
@@ -86,7 +86,7 @@ export function HomeSection({ onSectionChange }: HomeSectionProps) {
 
       {/* Analysis Sections */}
       <div>
-        <h3 className="text-xl font-semibold text-foreground mb-6 font-mono tracking-tight">ANALISI DETTAGLIATE</h3>
+        <h3 className="text-xl font-semibold text-foreground mb-6 tracking-tight">ANALISI DETTAGLIATE</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {sectionBoxes.map((box) => {
             const Icon = box.icon;
@@ -104,8 +104,8 @@ export function HomeSection({ onSectionChange }: HomeSectionProps) {
                   <Icon className="h-12 w-12" />
                 </div>
                 <div className="space-y-2">
-                  <h4 className="text-lg font-bold font-mono">{box.title}</h4>
-                  <p className="text-sm opacity-80 font-mono">{box.description}</p>
+                  <h4 className="text-lg font-bold">{box.title}</h4>
+                  <p className="text-sm opacity-80">{box.description}</p>
                 </div>
               </Button>
             );

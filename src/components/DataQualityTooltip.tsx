@@ -10,7 +10,7 @@ export function DataQualityTooltip({ value }: DataQualityTooltipProps) {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger className="flex items-center space-x-2">
-          <span className="text-3xl font-bold text-card-foreground font-mono">{value}</span>
+          <span className="text-3xl font-bold text-card-foreground">{value}</span>
           <Info className="h-4 w-4 text-muted-foreground hover:text-analytics-blue transition-colors" />
         </TooltipTrigger>
         <TooltipContent className="max-w-xs">
