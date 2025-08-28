@@ -230,7 +230,7 @@ export function UXSection({ onBack }: UXSectionProps) {
         
         <div className={cn(
           "border border-dashboard-border bg-gradient-to-br from-analytics-blue/10 via-analytics-green/10 to-analytics-orange/10 overflow-auto",
-          isHeatmapFullscreen ? "fixed inset-4 z-50 h-[calc(100vh-2rem)]" : "h-96"
+          isHeatmapFullscreen ? "fixed inset-4 z-50 h-[calc(100vh-2rem)]" : "h-[700px]"
         )}>
           <div className="w-full h-full flex items-center justify-center">
             <img 
