@@ -2,7 +2,7 @@ import { useState } from "react";
 import { KPICard } from "@/components/KPICard";
 import { DateSelector } from "@/components/DateSelector";
 import { CompactDateSelector } from "@/components/sections/CompactDateSelector";
-import { ArrowLeft, MousePointer, Eye, Navigation, Activity, Maximize2, Monitor, Smartphone, Tablet, Bug, AlertTriangle, Home, Package, Phone, Users, FileText, BookOpen, ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowLeft, MousePointer, Eye, Navigation, Activity, Maximize2, Monitor, Smartphone, Tablet, Bug, AlertTriangle, Home, Package, Phone, Users, FileText, BookOpen, ArrowRight, ChevronDown, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
@@ -170,7 +170,13 @@ export function UXSection({ onBack }: UXSectionProps) {
 
       {/* 1. Quality Scores */}
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
-        <h3 className="text-lg font-semibold mb-6 font-mono">QUALITY SCORE</h3>
+        <div className="flex justify-between items-center mb-6">
+          <h3 className="text-lg font-semibold font-mono">QUALITY SCORE</h3>
+          <button className="flex items-center space-x-2 px-3 py-2 bg-dashboard-surface/80 border border-dashboard-border text-sm font-medium text-muted-foreground hover:bg-dashboard-surface-hover/80 hover:text-foreground transition-all duration-150 apple-button">
+            <Settings className="h-4 w-4" />
+            <span>Configura Pesi</span>
+          </button>
+        </div>
         <div className="space-y-4">
           {qualityScores.map((score, index) => (
             <div key={index} className="space-y-2">
