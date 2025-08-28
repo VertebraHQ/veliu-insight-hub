@@ -1,6 +1,6 @@
 import { KPICard } from "@/components/KPICard";
 import { DateSelector } from "@/components/DateSelector";
-import { ArrowLeft, AlertTriangle, Bug, FormInput, MousePointer2, Zap, Navigation, Clock, Gauge, Eye, Monitor, Smartphone } from "lucide-react";
+import { ArrowLeft, AlertTriangle, Bug, FormInput, MousePointer2, Zap, Navigation, Clock, Gauge, Eye, Monitor, Smartphone, Activity } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Progress } from "@/components/ui/progress";
@@ -271,6 +271,30 @@ export function TechSection({ onBack }: TechSectionProps) {
         </div>
       </div>
 
+      {/* Pattern Comportamentali */}
+      <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
+        <div className="flex items-center space-x-3 mb-6">
+          <div className="p-2 bg-analytics-blue/10">
+            <Activity className="h-5 w-5 text-analytics-blue" />
+          </div>
+          <h3 className="text-lg font-semibold font-mono">PATTERN COMPORTAMENTALI</h3>
+        </div>
+        <div className="space-y-4">
+          <div className="flex justify-between items-center">
+            <span className="font-mono text-sm">Utenti che abbandonano dopo errori</span>
+            <span className="font-bold text-analytics-green font-mono">0.0%</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="font-mono text-sm">Tempo medio prima della frustrazione</span>
+            <span className="font-bold text-analytics-blue font-mono">10s</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="font-mono text-sm">Engagement ratio nelle sessioni problematiche</span>
+            <span className="font-bold text-analytics-orange font-mono">21.3%</span>
+          </div>
+        </div>
+      </div>
+
       {/* Web Vitals */}
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
         <h3 className="text-lg font-semibold mb-6 font-mono">WEB VITALS</h3>
@@ -289,24 +313,6 @@ export function TechSection({ onBack }: TechSectionProps) {
               <p className="text-xs text-muted-foreground font-mono">{vital.benchmark}</p>
             </div>
           ))}
-        </div>
-      </div>
-
-      {/* Recommendations */}
-      <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
-        <div className="flex items-center space-x-3 mb-6">
-          <div className="p-2 bg-analytics-blue/10">
-            <Eye className="h-5 w-5 text-analytics-blue" />
-          </div>
-          <h3 className="text-lg font-semibold font-mono">RACCOMANDAZIONI</h3>
-        </div>
-        <div className="space-y-3">
-          <div className="p-4 bg-analytics-blue/5 border border-analytics-blue/20">
-            <p className="text-sm text-analytics-blue font-mono">
-              <span className="font-medium">• RISOLVERE ERRORI JAVASCRIPT CRITICI</span><br />
-              Implementare sistema di error tracking più robusto
-            </p>
-          </div>
         </div>
       </div>
     </div>

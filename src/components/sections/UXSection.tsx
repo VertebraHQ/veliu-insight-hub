@@ -162,27 +162,7 @@ export function UXSection({ onBack }: UXSectionProps) {
         <DateSelector />
       </div>
 
-      {/* Path Metrics */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {pathMetrics.map((metric, index) => (
-          <KPICard
-            key={index}
-            title={metric.title}
-            value={metric.value}
-            color={metric.color as any}
-          />
-        ))}
-      </div>
-
-      {/* User Path Analysis */}
-      <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
-        <h3 className="text-lg font-semibold mb-6 font-mono">ANALISI PATH UTENTI</h3>
-        <div className="grid grid-cols-3 gap-4 auto-rows-max">
-          {userPaths.map(renderPathBlock)}
-        </div>
-      </div>
-
-      {/* Quality Scores */}
+      {/* 1. Quality Scores */}
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
         <h3 className="text-lg font-semibold mb-6 font-mono">QUALITY SCORE</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -191,11 +171,11 @@ export function UXSection({ onBack }: UXSectionProps) {
               <div>
                 <div className="flex justify-between items-center mb-2">
                   <span className="font-medium font-mono text-sm">{score.metric}</span>
-                  <span className="font-bold text-lg font-mono">{score.score}% (0-{score.maxScore})</span>
+                  <span className="font-bold text-lg font-mono">{score.score}%</span>
                 </div>
                 <Progress value={(score.score / score.maxScore) * 100} className="h-3" />
                 <p className="text-xs text-muted-foreground mt-1 font-mono">
-                  Valore da 0 a {score.maxScore}% - Attuale: {score.score}%
+                  da 0 a {score.maxScore}%
                 </p>
               </div>
             </div>
@@ -203,62 +183,7 @@ export function UXSection({ onBack }: UXSectionProps) {
         </div>
       </div>
 
-      {/* Device/OS/Browser Distribution */}
-      <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
-        <h3 className="text-lg font-semibold mb-6 font-mono">DISTRIBUZIONE DEVICE/OS/BROWSER</h3>
-        <div className="space-y-6">
-          <div className="flex bg-dashboard-surface border border-dashboard-border">
-            {[
-              { id: "device", label: "DEVICE" },
-              { id: "os", label: "OS" },
-              { id: "browser", label: "BROWSER" }
-            ].map((tab) => (
-              <Button
-                key={tab.id}
-                variant={distributionTab === tab.id ? "default" : "ghost"}
-                size="sm"
-                onClick={() => setDistributionTab(tab.id as any)}
-                className={cn(
-                  "font-mono text-xs px-6 py-2 border-0",
-                  distributionTab === tab.id && "bg-analytics-blue text-white"
-                )}
-              >
-                {tab.label}
-              </Button>
-            ))}
-          </div>
-          
-          <div className="space-y-4">
-            {getDistributionData().map((item, index) => (
-              <div key={index} className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="text-sm font-mono">{item.name}</span>
-                  <span className="font-bold text-analytics-blue font-mono">{item.value}%</span>
-                </div>
-                <Progress value={item.value} className="h-2" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Regional Distribution */}
-      <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
-        <h3 className="text-lg font-semibold mb-6 font-mono">DISTRIBUZIONE REGIONI ITALIA</h3>
-        <div className="space-y-4">
-          {regionData.map((region, index) => (
-            <div key={index} className="space-y-2">
-              <div className="flex justify-between items-center">
-                <span className="text-sm font-mono">{region.name}</span>
-                <span className="font-bold text-analytics-blue font-mono">{region.value}%</span>
-              </div>
-              <Progress value={region.value} className="h-2" />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Click Analytics */}
+      {/* 2. Click Analytics & Heatmap */}
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
         <h3 className="text-lg font-semibold mb-6 font-mono">CLICK ANALYTICS</h3>
         <KPICard
@@ -270,7 +195,6 @@ export function UXSection({ onBack }: UXSectionProps) {
         />
       </div>
 
-      {/* Heatmap */}
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-lg font-semibold font-mono">HEATMAP INTERATTIVA</h3>
@@ -340,6 +264,169 @@ export function UXSection({ onBack }: UXSectionProps) {
             ✕ CHIUDI
           </Button>
         )}
+      </div>
+
+      {/* 3. Analisi Path Utenti - New Design */}
+      <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
+        <h3 className="text-lg font-semibold mb-6 font-mono">ANALISI PATH UTENTI</h3>
+        
+        {/* Path Metrics above */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+          <KPICard title="Pagine per Sessione" value="2.5" color="blue" />
+          <KPICard title="Tempo Medio Percorso" value="3m 58s" color="green" />
+          <KPICard title="Completamento Percorso" value="97%" color="orange" />
+          <KPICard title="Passaggi Medi" value="3.2" color="purple" />
+        </div>
+
+        {/* Main path (large block) */}
+        <div className="mb-6">
+          <h4 className="text-sm font-mono text-muted-foreground mb-4">Percorso Principale (25% utenti)</h4>
+          <div className="bg-dashboard-surface/30 border border-dashboard-border p-6">
+            <div className="flex items-center justify-center space-x-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-analytics-blue/20 border border-analytics-blue/30 flex items-center justify-center mb-2">
+                  <span className="text-xs font-mono text-analytics-blue">🏠</span>
+                </div>
+                <div className="text-xs font-mono font-bold text-analytics-blue">Homepage</div>
+                <div className="text-xs font-mono text-analytics-blue">100%</div>
+              </div>
+              <div className="relative group/arrow">
+                <div className="text-muted-foreground">→</div>
+                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-card border px-2 py-1 text-xs opacity-0 group-hover/arrow:opacity-100 transition-opacity">
+                  68%<br/>
+                  <span className="text-xs text-muted-foreground">163 utenti</span>
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-analytics-blue/20 border border-analytics-blue/30 flex items-center justify-center mb-2">
+                  <span className="text-xs font-mono text-analytics-blue">📦</span>
+                </div>
+                <div className="text-xs font-mono font-bold text-analytics-blue">Prodotti</div>
+                <div className="text-xs font-mono text-analytics-blue">68%</div>
+              </div>
+              <div className="relative group/arrow">
+                <div className="text-muted-foreground">→</div>
+                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-card border px-2 py-1 text-xs opacity-0 group-hover/arrow:opacity-100 transition-opacity">
+                  37%<br/>
+                  <span className="text-xs text-muted-foreground">89 utenti</span>
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-analytics-blue/20 border border-analytics-blue/30 flex items-center justify-center mb-2">
+                  <span className="text-xs font-mono text-analytics-blue">📞</span>
+                </div>
+                <div className="text-xs font-mono font-bold text-analytics-blue">Contatti</div>
+                <div className="text-xs font-mono text-analytics-blue">25%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Other paths - horizontal layout */}
+        <div className="space-y-4">
+          <div>
+            <h5 className="text-xs font-mono text-muted-foreground mb-3">Percorso Informativo (18% utenti)</h5>
+            <div className="flex items-center space-x-4 text-xs font-mono">
+              <span className="text-analytics-blue">🏠 Home</span>
+              <span className="text-muted-foreground">→</span>
+              <span className="text-analytics-blue">🔧 Servizi</span>
+              <span className="text-muted-foreground">→</span>
+              <span className="text-analytics-blue">👥 Chi Siamo</span>
+              <span className="text-muted-foreground">→</span>
+              <span className="text-analytics-blue">📞 Contatti</span>
+            </div>
+          </div>
+          
+          <div>
+            <h5 className="text-xs font-mono text-muted-foreground mb-3">Percorso Contenuti (15% utenti)</h5>
+            <div className="flex items-center space-x-4 text-xs font-mono">
+              <span className="text-analytics-blue">🏠 Home</span>
+              <span className="text-muted-foreground">→</span>
+              <span className="text-analytics-blue">📝 Blog</span>
+              <span className="text-muted-foreground">→</span>
+              <span className="text-analytics-blue">📦 Prodotti</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Pattern Comportamentali */}
+      <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
+        <div className="flex items-center space-x-3 mb-6">
+          <div className="p-2 bg-analytics-blue/10">
+            <Activity className="h-5 w-5 text-analytics-blue" />
+          </div>
+          <h3 className="text-lg font-semibold font-mono">PATTERN COMPORTAMENTALI</h3>
+        </div>
+        <div className="space-y-4">
+          <div className="flex justify-between items-center">
+            <span className="font-mono text-sm">Utenti che abbandonano dopo errori</span>
+            <span className="font-bold text-analytics-green font-mono">0.0%</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="font-mono text-sm">Tempo medio prima della frustrazione</span>
+            <span className="font-bold text-analytics-blue font-mono">10s</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="font-mono text-sm">Engagement ratio nelle sessioni problematiche</span>
+            <span className="font-bold text-analytics-orange font-mono">21.3%</span>
+          </div>
+        </div>
+      </div>
+
+      {/* 4. Device/OS/Browser Distribution */}
+      <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
+        <h3 className="text-lg font-semibold mb-6 font-mono">DISTRIBUZIONE DEVICE/OS/BROWSER</h3>
+        <div className="space-y-6">
+          <div className="flex bg-dashboard-surface border border-dashboard-border">
+            {[
+              { id: "device", label: "DEVICE" },
+              { id: "os", label: "OS" },
+              { id: "browser", label: "BROWSER" }
+            ].map((tab) => (
+              <Button
+                key={tab.id}
+                variant={distributionTab === tab.id ? "default" : "ghost"}
+                size="sm"
+                onClick={() => setDistributionTab(tab.id as any)}
+                className={cn(
+                  "font-mono text-xs px-6 py-2 border-0",
+                  distributionTab === tab.id && "bg-analytics-blue text-white"
+                )}
+              >
+                {tab.label}
+              </Button>
+            ))}
+          </div>
+          
+          <div className="space-y-4">
+            {getDistributionData().map((item, index) => (
+              <div key={index} className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm font-mono">{item.name}</span>
+                  <span className="font-bold text-analytics-blue font-mono">{item.value}%</span>
+                </div>
+                <Progress value={item.value} className="h-2" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Regional Distribution */}
+      <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
+        <h3 className="text-lg font-semibold mb-6 font-mono">DISTRIBUZIONE REGIONI ITALIA</h3>
+        <div className="space-y-4">
+          {regionData.map((region, index) => (
+            <div key={index} className="space-y-2">
+              <div className="flex justify-between items-center">
+                <span className="text-sm font-mono">{region.name}</span>
+                <span className="font-bold text-analytics-blue font-mono">{region.value}%</span>
+              </div>
+              <Progress value={region.value} className="h-2" />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
