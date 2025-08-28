@@ -267,17 +267,26 @@ export function UXSection({ onBack }: UXSectionProps) {
         
         {/* Path Metrics above */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <div className="text-center">
-            <div className="text-2xl font-mono text-foreground mb-1">2.4</div>
-            <div className="text-sm text-muted-foreground">Pagine per Sessione</div>
+          <div className="bg-dashboard-surface/30 border border-dashboard-border p-4">
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-mono text-sm text-muted-foreground">Pagine per Sessione</span>
+              <Navigation className="h-4 w-4 text-analytics-blue" />
+            </div>
+            <span className="font-bold text-2xl font-mono text-analytics-blue">2.4</span>
           </div>
-          <div className="text-center">
-            <div className="text-2xl font-mono text-foreground mb-1">2m 34s</div>
-            <div className="text-sm text-muted-foreground">Tempo Medio</div>
+          <div className="bg-dashboard-surface/30 border border-dashboard-border p-4">
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-mono text-sm text-muted-foreground">Tempo Medio</span>
+              <Activity className="h-4 w-4 text-analytics-green" />
+            </div>
+            <span className="font-bold text-2xl font-mono text-analytics-green">2m 34s</span>
           </div>
-          <div className="text-center">
-            <div className="text-2xl font-mono text-foreground mb-1">68%</div>
-            <div className="text-sm text-muted-foreground">Completamento Percorso</div>
+          <div className="bg-dashboard-surface/30 border border-dashboard-border p-4">
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-mono text-sm text-muted-foreground">Completamento Percorso</span>
+              <Eye className="h-4 w-4 text-analytics-orange" />
+            </div>
+            <span className="font-bold text-2xl font-mono text-analytics-orange">68%</span>
           </div>
         </div>
 
