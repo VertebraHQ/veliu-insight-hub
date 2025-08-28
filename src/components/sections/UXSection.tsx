@@ -323,37 +323,36 @@ export function UXSection({ onBack }: UXSectionProps) {
         <div className="mb-8">
           <h4 className="text-lg font-mono text-foreground mb-4">Percorso Informativo (18% utenti)</h4>
           <div className="flex items-center justify-center gap-4">
-            <div className="bg-dashboard-surface border border-dashboard-border p-6 w-32 h-32 flex flex-col items-center justify-center">
-              <Home className="h-10 w-10 text-analytics-blue mb-2" />
-              <span className="text-sm font-mono text-center mb-1">Homepage</span>
-              <span className="text-sm text-analytics-blue font-mono">100%</span>
-              <span className="text-xs text-muted-foreground">900 utenti</span>
+            <div className="bg-white border-2 border-blue-300 p-6 w-40 h-32 flex flex-col items-center justify-center rounded-2xl">
+              <Home className="h-10 w-10 text-orange-500 mb-2" />
+              <span className="text-base font-semibold text-blue-600 mb-1">Homepage</span>
+              <span className="text-sm text-blue-500 font-medium">100%</span>
             </div>
-            <div className="relative group">
-              <ArrowRight className="h-6 w-6 text-muted-foreground" />
-              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
+            <div className="relative group flex flex-col items-center">
+              <ArrowRight className="h-6 w-6 text-gray-600 mb-1" />
+              <span className="text-base font-semibold text-gray-700">75%</span>
+              <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
                 <div className="font-mono text-analytics-blue">75%</div>
                 <div className="text-xs text-muted-foreground">675 utenti</div>
               </div>
             </div>
-            <div className="bg-dashboard-surface border border-dashboard-border p-4 w-24 h-24 flex flex-col items-center justify-center">
-              <Users className="h-8 w-8 text-analytics-blue mb-1" />
-              <span className="text-xs font-mono text-center mb-1">Chi Siamo</span>
-              <span className="text-xs text-analytics-blue font-mono">75%</span>
-              <span className="text-xs text-muted-foreground">675 utenti</span>
+            <div className="bg-white border-2 border-blue-300 p-4 w-32 h-24 flex flex-col items-center justify-center rounded-2xl">
+              <Users className="h-8 w-8 text-purple-500 mb-1" />
+              <span className="text-sm font-semibold text-blue-600 mb-1">Chi Siamo</span>
+              <span className="text-xs text-blue-500 font-medium">75%</span>
             </div>
-            <div className="relative group">
-              <ArrowRight className="h-6 w-6 text-muted-foreground" />
-              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
+            <div className="relative group flex flex-col items-center">
+              <ArrowRight className="h-6 w-6 text-gray-600 mb-1" />
+              <span className="text-base font-semibold text-gray-700">45%</span>
+              <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
                 <div className="font-mono text-analytics-blue">45%</div>
                 <div className="text-xs text-muted-foreground">405 utenti</div>
               </div>
             </div>
-            <div className="bg-dashboard-surface border border-dashboard-border p-4 w-24 h-24 flex flex-col items-center justify-center">
-              <FileText className="h-8 w-8 text-analytics-blue mb-1" />
-              <span className="text-xs font-mono text-center mb-1">Blog</span>
-              <span className="text-xs text-analytics-blue font-mono">45%</span>
-              <span className="text-xs text-muted-foreground">405 utenti</span>
+            <div className="bg-white border-2 border-blue-300 p-4 w-32 h-24 flex flex-col items-center justify-center rounded-2xl">
+              <FileText className="h-8 w-8 text-green-500 mb-1" />
+              <span className="text-sm font-semibold text-blue-600 mb-1">Blog</span>
+              <span className="text-xs text-blue-500 font-medium">45%</span>
             </div>
           </div>
         </div>
@@ -362,37 +361,36 @@ export function UXSection({ onBack }: UXSectionProps) {
         <div className="mb-8">
           <h4 className="text-lg font-mono text-foreground mb-4">Percorso Contenuti (15% utenti)</h4>
           <div className="flex items-center justify-center gap-4">
-            <div className="bg-dashboard-surface border border-dashboard-border p-4 w-24 h-24 flex flex-col items-center justify-center">
-              <Home className="h-8 w-8 text-analytics-blue mb-1" />
-              <span className="text-xs font-mono text-center mb-1">Homepage</span>
-              <span className="text-xs text-analytics-blue font-mono">100%</span>
-              <span className="text-xs text-muted-foreground">750 utenti</span>
+            <div className="bg-white border-2 border-blue-300 p-4 w-32 h-24 flex flex-col items-center justify-center rounded-2xl">
+              <Home className="h-8 w-8 text-orange-500 mb-1" />
+              <span className="text-sm font-semibold text-blue-600 mb-1">Homepage</span>
+              <span className="text-xs text-blue-500 font-medium">100%</span>
             </div>
-            <div className="relative group">
-              <ArrowRight className="h-6 w-6 text-muted-foreground" />
-              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
+            <div className="relative group flex flex-col items-center">
+              <ArrowRight className="h-6 w-6 text-gray-600 mb-1" />
+              <span className="text-base font-semibold text-gray-700">80%</span>
+              <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
                 <div className="font-mono text-analytics-blue">80%</div>
                 <div className="text-xs text-muted-foreground">600 utenti</div>
               </div>
             </div>
-            <div className="bg-dashboard-surface border border-dashboard-border p-4 w-24 h-24 flex flex-col items-center justify-center">
-              <FileText className="h-8 w-8 text-analytics-blue mb-1" />
-              <span className="text-xs font-mono text-center mb-1">Blog</span>
-              <span className="text-xs text-analytics-blue font-mono">80%</span>
-              <span className="text-xs text-muted-foreground">600 utenti</span>
+            <div className="bg-white border-2 border-blue-300 p-4 w-32 h-24 flex flex-col items-center justify-center rounded-2xl">
+              <FileText className="h-8 w-8 text-green-500 mb-1" />
+              <span className="text-sm font-semibold text-blue-600 mb-1">Blog</span>
+              <span className="text-xs text-blue-500 font-medium">80%</span>
             </div>
-            <div className="relative group">
-              <ArrowRight className="h-6 w-6 text-muted-foreground" />
-              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
+            <div className="relative group flex flex-col items-center">
+              <ArrowRight className="h-6 w-6 text-gray-600 mb-1" />
+              <span className="text-base font-semibold text-gray-700">35%</span>
+              <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
                 <div className="font-mono text-analytics-blue">35%</div>
                 <div className="text-xs text-muted-foreground">210 utenti</div>
               </div>
             </div>
-            <div className="bg-dashboard-surface border border-dashboard-border p-4 w-24 h-24 flex flex-col items-center justify-center">
-              <BookOpen className="h-8 w-8 text-analytics-blue mb-1" />
-              <span className="text-xs font-mono text-center mb-1">Articolo</span>
-              <span className="text-xs text-analytics-blue font-mono">35%</span>
-              <span className="text-xs text-muted-foreground">210 utenti</span>
+            <div className="bg-white border-2 border-blue-300 p-4 w-32 h-24 flex flex-col items-center justify-center rounded-2xl">
+              <BookOpen className="h-8 w-8 text-red-500 mb-1" />
+              <span className="text-sm font-semibold text-blue-600 mb-1">Articolo</span>
+              <span className="text-xs text-blue-500 font-medium">35%</span>
             </div>
           </div>
         </div>
