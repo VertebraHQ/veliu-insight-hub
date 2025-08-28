@@ -129,58 +129,58 @@ All colors MUST be HSL.
     --dashboard-border: 0 0% 20%;
   }
 
-  /* Light mode - Apple-style industrial brutalist */
+  /* Light mode - Industrial Brutalist Apple Style */
   .light {
-    /* Minimal white background with subtle grey */
-    --background: 0 0% 97%;
-    --foreground: 0 0% 8%;
+    /* Metallic grey background - minimal white */
+    --background: 0 0% 96%;
+    --foreground: 0 0% 7%;
 
-    /* Metallic grey surfaces with low opacity */
-    --card: 0 0% 92%;
-    --card-foreground: 0 0% 8%;
+    /* Metallic grey surfaces (#C0C0C0 / #A9A9A9) with low opacity */
+    --card: 0 0% 76%;
+    --card-foreground: 0 0% 7%;
 
-    --popover: 0 0% 92%;
-    --popover-foreground: 0 0% 8%;
+    --popover: 0 0% 76%;
+    --popover-foreground: 0 0% 7%;
 
-    /* Copper orange primary - metallic and vibrant */
-    --primary: 20 90% 55%;
+    /* Copper orange metallic (#B87333) as primary accent */
+    --primary: 30 60% 47%;
     --primary-foreground: 0 0% 100%;
 
-    /* Black surfaces with low opacity */
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 95%;
+    /* Metallic surfaces with low opacity */
+    --secondary: 0 0% 66%;
+    --secondary-foreground: 0 0% 27%;
 
-    --muted: 0 0% 86%;
-    --muted-foreground: 0 0% 25%;
+    --muted: 0 0% 82%;
+    --muted-foreground: 0 0% 27%;
 
-    --accent: 0 0% 12%;
-    --accent-foreground: 0 0% 95%;
+    --accent: 0 0% 66%;
+    --accent-foreground: 0 0% 27%;
 
     /* Critical indicators */
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Sharp metallic borders */
-    --border: 0 0% 75%;
-    --input: 0 0% 90%;
-    --ring: 20 90% 55%;
+    /* Metallic borders - sharp and geometric */
+    --border: 0 0% 68%;
+    --input: 0 0% 74%;
+    --ring: 30 60% 47%;
 
-    /* KPI Colors - Enhanced copper/metallic palette */
-    --analytics-blue: 200 85% 50%;
-    --analytics-blue-light: 200 85% 60%;
-    --analytics-green: 145 70% 40%;
-    --analytics-green-light: 145 70% 50%;
-    --analytics-orange: 20 90% 55%;
-    --analytics-orange-light: 20 90% 65%;
-    --analytics-red: 0 75% 50%;
-    --analytics-red-light: 0 75% 60%;
-    --analytics-purple: 280 70% 55%;
-    --analytics-purple-light: 280 70% 65%;
+    /* Analytics Colors - Metallic/Industrial palette */
+    --analytics-blue: 210 45% 40%;
+    --analytics-blue-light: 210 45% 50%;
+    --analytics-green: 140 35% 35%;
+    --analytics-green-light: 140 35% 45%;
+    --analytics-orange: 30 60% 47%;
+    --analytics-orange-light: 30 60% 57%;
+    --analytics-red: 0 50% 40%;
+    --analytics-red-light: 0 50% 50%;
+    --analytics-purple: 270 40% 40%;
+    --analytics-purple-light: 270 40% 50%;
 
-    /* Dashboard Surfaces - Black with very low opacity for metallic feel */
-    --dashboard-surface: 0 0% 8%;
-    --dashboard-surface-hover: 0 0% 15%;
-    --dashboard-border: 0 0% 70%;
+    /* Dashboard Surfaces - Metallic grey with subtle opacity */
+    --dashboard-surface: 0 0% 75%;
+    --dashboard-surface-hover: 0 0% 72%;
+    --dashboard-border: 0 0% 65%;
   }
 }
 
@@ -210,38 +210,38 @@ All colors MUST be HSL.
   }
 }
 
-/* Apple-style Industrial Components */
+/* Industrial Brutalist Apple Components */
 .dashboard-card {
-  @apply bg-dashboard-surface/30 border-dashboard-border;
+  @apply bg-dashboard-surface/40 border-dashboard-border;
   border-radius: 0 !important;
   border-width: 1px;
   border-style: solid;
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 .dashboard-card:hover {
-  @apply bg-dashboard-surface-hover/40;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
-  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  @apply bg-dashboard-surface-hover/50;
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Brutal box styling with Apple glass effect */
+/* Brutal box styling with metallic industrial effect */
 .brutal-box {
-  @apply bg-dashboard-surface/20 border border-dashboard-border;
+  @apply bg-dashboard-surface/25 border border-dashboard-border;
   border-radius: 0;
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
 .brutal-box:hover {
-  @apply bg-dashboard-surface-hover/30;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
-  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  @apply bg-dashboard-surface-hover/35;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* Grid separators */
@@ -255,11 +255,11 @@ All colors MUST be HSL.
   border-radius: 0 !important;
 }
 
-/* Apple-style hover states */
+/* Industrial hover states - youthful and dynamic */
 .hover-minimal:hover {
-  transform: scale(1.02);
-  opacity: 0.9;
-  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: scale(1.03) translateY(-1px);
+  opacity: 0.95;
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 /* Apple-inspired Typography System */
@@ -300,20 +300,20 @@ All colors MUST be HSL.
   text-transform: uppercase;
 }
 
-/* Dynamic elements - youth energy */
+/* Dynamic elements - industrial youth energy */
 .dynamic-element {
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .dynamic-element:hover {
-  transform: translateY(-2px) scale(1.02);
+  transform: translateY(-3px) scale(1.03);
 }
 
-/* Copper accent glow for CTA elements */
+/* Copper metallic accent glow for CTA elements */
 .copper-glow {
-  box-shadow: 0 0 20px rgba(234, 88, 12, 0.3);
+  box-shadow: 0 0 16px hsla(30, 60%, 47%, 0.25);
 }
 
 .copper-glow:hover {
-  box-shadow: 0 0 30px rgba(234, 88, 12, 0.5);
+  box-shadow: 0 0 24px hsla(30, 60%, 47%, 0.4);
 }
