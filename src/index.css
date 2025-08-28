@@ -129,68 +129,68 @@ All colors MUST be HSL.
     --dashboard-border: 0 0% 20%;
   }
 
-  /* Light mode - White background with metallic accents */
+  /* Light mode - Apple-inspired white with copper accents */
   .light {
-    /* Clean white background */
+    /* Pure white background with pearl grey accents */
     --background: 0 0% 100%;
-    --foreground: 0 0% 25%; /* Elegant metallic grey for text */
+    --foreground: 0 0% 7%; /* Anthracite black for titles */
 
-    /* White cards with metallic grey borders and subtle shadows */
+    /* White cards with soft shadows instead of borders */
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 25%;
+    --card-foreground: 0 0% 7%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 25%;
+    --popover-foreground: 0 0% 7%;
 
-    /* Copper metallic orange as primary accent */
-    --primary: 30 60% 47%;
+    /* Copper orange as primary accent */
+    --primary: 20 100% 50%; /* #ff6a00 copper orange */
     --primary-foreground: 0 0% 100%;
 
-    /* Light metallic grey surfaces with 50% opacity equivalent */
-    --secondary: 0 0% 85%; /* Light grey for boxes */
-    --secondary-foreground: 0 0% 25%;
+    /* Pearl grey for subtle surfaces */
+    --secondary: 0 0% 97%; /* #f8f8f8 pearl grey */
+    --secondary-foreground: 0 0% 40%; /* Medium grey for secondary text */
 
-    --muted: 0 0% 90%;
-    --muted-foreground: 0 0% 35%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%; /* #666666 medium grey */
 
-    --accent: 0 0% 85%;
-    --accent-foreground: 0 0% 25%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 7%;
 
     /* Critical indicators */
     --destructive: 0 65% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Metallic borders */
-    --border: 0 0% 75%; /* Metallic grey borders */
-    --input: 0 0% 95%;
-    --ring: 30 60% 47%;
+    /* Minimal borders and inputs */
+    --border: 0 0% 90%; /* Very light grey for subtle borders */
+    --input: 0 0% 98%;
+    --ring: 20 100% 50%; /* Copper orange focus ring */
 
-    /* Analytics Colors - Copper orange and green accents */
-    --analytics-blue: 30 60% 47%; /* Copper orange */
-    --analytics-blue-light: 30 60% 57%;
-    --analytics-green: 140 50% 40%; /* Rich green */
-    --analytics-green-light: 140 50% 50%;
-    --analytics-orange: 30 60% 47%; /* Copper orange */
-    --analytics-orange-light: 30 60% 57%;
-    --analytics-red: 0 60% 45%;
-    --analytics-red-light: 0 60% 55%;
-    --analytics-purple: 270 45% 45%;
-    --analytics-purple-light: 270 45% 55%;
+    /* Analytics Colors - Copper orange and elegant greys */
+    --analytics-blue: 20 100% 50%; /* Copper orange */
+    --analytics-blue-light: 20 100% 60%;
+    --analytics-green: 140 50% 45%; /* Clean green */
+    --analytics-green-light: 140 50% 55%;
+    --analytics-orange: 20 100% 50%; /* Copper orange */
+    --analytics-orange-light: 20 100% 60%;
+    --analytics-red: 0 60% 50%;
+    --analytics-red-light: 0 60% 60%;
+    --analytics-purple: 270 45% 50%;
+    --analytics-purple-light: 270 45% 60%;
 
-    /* Dashboard Surfaces - Black with 30% opacity */
-    --dashboard-surface: 0 0% 0% / 0.3; /* Black boxes with 30% opacity */
-    --dashboard-surface-hover: 0 0% 0% / 0.4; /* Slightly more opaque on hover */
-    --dashboard-border: 0 0% 0% / 0.2; /* Black borders with 20% opacity */
+    /* Dashboard Surfaces - White with soft shadows */
+    --dashboard-surface: 0 0% 100%; /* Pure white boxes */
+    --dashboard-surface-hover: 0 0% 98%; /* Slight pearl tint on hover */
+    --dashboard-border: 0 0% 92%; /* Minimal border when needed */
 
     /* Sidebar colors for light mode */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 0 0% 25%;
-    --sidebar-primary: 0 0% 25%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 0 0% 95%;
-    --sidebar-accent-foreground: 0 0% 25%;
-    --sidebar-border: 0 0% 75%;
-    --sidebar-ring: 30 60% 47%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 7%;
+    --sidebar-primary: 0 0% 7%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 97%;
+    --sidebar-accent-foreground: 0 0% 7%;
+    --sidebar-border: 0 0% 92%;
+    --sidebar-ring: 20 100% 50%;
   }
 }
 
@@ -208,7 +208,7 @@ All colors MUST be HSL.
 
   /* Apple-style typography system */
   * {
-    font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', Helvetica, Arial, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', Helvetica, Arial, sans-serif;
     font-feature-settings: "kern", "liga", "clig", "calt";
   }
 
@@ -216,112 +216,100 @@ All colors MUST be HSL.
   .font-mono, code, pre {
     font-family: 'SF Mono', 'Fira Code', Monaco, Inconsolata, 'Roboto Mono', monospace;
   }
+
+  /* Typography system - Apple-inspired */
+  .text-display { @apply text-5xl font-bold tracking-tight; }
+  .text-title { @apply text-3xl font-semibold tracking-tight; }
+  .text-title-2 { @apply text-2xl font-semibold tracking-tight; }
+  .text-title-3 { @apply text-xl font-semibold tracking-tight; }
+  .text-heading { @apply text-lg font-medium tracking-tight; }
+  .text-body { @apply text-base font-normal leading-relaxed; }
+  .text-body-small { @apply text-sm font-normal leading-relaxed; }
+  .text-caption { @apply text-xs font-medium tracking-wide uppercase; }
+  .text-meta { @apply text-xs font-normal text-muted-foreground; }
+
+  /* KPI Numbers - Large, clean, bold */
+  .text-kpi { @apply text-4xl font-bold tabular-nums tracking-tight; }
+  .text-metric { @apply text-2xl font-bold tabular-nums tracking-tight; }
 }
 
-/* Industrial Brutalist Apple Components */
-.dashboard-card {
-  @apply bg-dashboard-surface/40 border-dashboard-border;
-  border-radius: 0 !important;
-  border-width: 1px;
-  border-style: solid;
-  backdrop-filter: blur(12px) saturate(150%);
-  -webkit-backdrop-filter: blur(12px) saturate(150%);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
-}
+@layer components {
+  /* Apple-inspired cards with soft shadows (light mode only) */
+  .light .dashboard-card {
+    @apply bg-white rounded-xl p-6 transition-all duration-200;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.02);
+  }
+  
+  .light .dashboard-card:hover {
+    @apply scale-[1.02];
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+  }
 
-.dashboard-card:hover {
-  @apply bg-dashboard-surface-hover/50;
-  transform: translateY(-1px) scale(1.01);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.08);
-  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
+  /* Dark mode cards maintain brutalist style */
+  .dark .dashboard-card {
+    @apply bg-dashboard-surface/60 border border-dashboard-border p-6 transition-all duration-200;
+    backdrop-filter: blur(20px);
+  }
+  
+  .dark .dashboard-card:hover {
+    @apply bg-dashboard-surface-hover/70 border-dashboard-border/80;
+    transform: translateY(-1px);
+  }
 
-/* Brutal box styling with metallic industrial effect */
-.brutal-box {
-  @apply bg-dashboard-surface/25 border border-dashboard-border;
-  border-radius: 0;
-  backdrop-filter: blur(12px) saturate(150%);
-  -webkit-backdrop-filter: blur(12px) saturate(150%);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-}
+  /* Apple-style buttons for light mode */
+  .light .apple-button {
+    @apply bg-white border border-gray-200 text-gray-900 rounded-lg px-4 py-2 transition-all duration-150;
+  }
+  
+  .light .apple-button:hover {
+    @apply border-gray-300 shadow-sm;
+  }
+  
+  .light .apple-button.active {
+    @apply bg-analytics-blue text-white border-analytics-blue;
+  }
 
-.brutal-box:hover {
-  @apply bg-dashboard-surface-hover/35;
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.08);
-  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
+  /* Minimal spacing and clean layout */
+  .apple-spacing { @apply space-y-6; }
+  .apple-grid { @apply grid gap-6; }
+  
+  /* Soft corner radius for all elements in light mode */
+  .light * { 
+    border-radius: 12px !important; 
+  }
+  
+  .light .rounded-sm { border-radius: 6px !important; }
+  .light .rounded { border-radius: 8px !important; }
+  .light .rounded-lg { border-radius: 12px !important; }
+  .light .rounded-xl { border-radius: 16px !important; }
 
-/* Grid separators */
-.grid-separator {
-  @apply border-dashboard-border;
-  border-width: 1px 0 0 0;
-}
+  /* Dark mode keeps square edges */
+  .dark * { 
+    border-radius: 0 !important; 
+  }
 
-/* Keep square edges - Apple's precision */
-* {
-  border-radius: 0 !important;
-}
+  /* Industrial hover states - youthful and dynamic */
+  .hover-minimal:hover {
+    transform: scale(1.03) translateY(-1px);
+    opacity: 0.95;
+    transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
 
-/* Industrial hover states - youthful and dynamic */
-.hover-minimal:hover {
-  transform: scale(1.03) translateY(-1px);
-  opacity: 0.95;
-  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
+  /* Dynamic elements - industrial youth energy */
+  .dynamic-element {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
 
-/* Apple-inspired Typography System */
-.text-display {
-  @apply text-4xl font-bold tracking-tight;
-  font-weight: 700;
-  letter-spacing: -0.025em;
-}
+  .dynamic-element:hover {
+    transform: translateY(-3px) scale(1.03);
+  }
 
-.text-title {
-  @apply text-2xl font-semibold tracking-tight;
-  font-weight: 600;
-  letter-spacing: -0.015em;
-}
+  /* Copper metallic accent glow for CTA elements */
+  .copper-glow {
+    box-shadow: 0 0 16px hsla(20, 100%, 50%, 0.25);
+  }
 
-.text-subtitle {
-  @apply text-lg font-medium;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-}
-
-.text-body {
-  @apply text-base font-normal;
-  font-weight: 400;
-  line-height: 1.6;
-}
-
-.text-caption {
-  @apply text-sm font-medium;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-}
-
-.text-micro {
-  @apply text-xs font-medium;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-}
-
-/* Dynamic elements - industrial youth energy */
-.dynamic-element {
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.dynamic-element:hover {
-  transform: translateY(-3px) scale(1.03);
-}
-
-/* Copper metallic accent glow for CTA elements */
-.copper-glow {
-  box-shadow: 0 0 16px hsla(30, 60%, 47%, 0.25);
-}
-
-.copper-glow:hover {
-  box-shadow: 0 0 24px hsla(30, 60%, 47%, 0.4);
+  .copper-glow:hover {
+    box-shadow: 0 0 24px hsla(20, 100%, 50%, 0.4);
+  }
 }
