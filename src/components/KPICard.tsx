@@ -15,11 +15,11 @@ interface KPICardProps {
 }
 
 const colorClasses = {
-  blue: "border-analytics-blue/20 bg-analytics-blue/5 text-analytics-blue",
-  green: "border-analytics-green/20 bg-analytics-green/5 text-analytics-green",
-  orange: "border-analytics-orange/20 bg-analytics-orange/5 text-analytics-orange",
-  red: "border-analytics-red/20 bg-analytics-red/5 text-analytics-red",
-  purple: "border-analytics-purple/20 bg-analytics-purple/5 text-analytics-purple",
+  blue: "border-analytics-blue/30",
+  green: "border-analytics-green/30", 
+  orange: "border-analytics-orange/30",
+  red: "border-analytics-red/30",
+  purple: "border-analytics-purple/30",
 };
 
 const iconColorClasses = {
@@ -41,21 +41,21 @@ export function KPICard({
 }: KPICardProps) {
   return (
     <div className={cn(
-      "group relative overflow-hidden border bg-dashboard-surface/60 p-6 shadow-card transition-all duration-150 hover:shadow-card-hover hover:scale-[1.02]",
+      "group relative border bg-dashboard-surface/70 p-8 transition-all duration-150 hover:bg-dashboard-surface-hover/70",
       colorClasses[color],
-      "dashboard-card",
+      "brutal-box",
       className
     )}>
       <div className="flex items-start justify-between">
-        <div className="flex-1">
-          <p className="text-sm font-medium text-muted-foreground">{title}</p>
-          <p className="text-3xl font-bold text-card-foreground mt-2">{value}</p>
+        <div className="flex-1 space-y-3">
+          <p className="text-sm font-semibold text-muted-foreground tracking-wide uppercase">{title}</p>
+          <p className="text-4xl font-black text-foreground font-mono tracking-tight">{value}</p>
           {subtitle && (
-            <p className="text-xs text-muted-foreground mt-1">{subtitle}</p>
+            <p className="text-sm text-muted-foreground font-medium">{subtitle}</p>
           )}
           {trend && (
             <div className={cn(
-              "flex items-center mt-2 text-xs font-medium",
+              "flex items-center text-sm font-bold tracking-wide",
               trend.isPositive ? "text-analytics-green" : "text-analytics-red"
             )}>
               <span>{trend.isPositive ? "+" : ""}{trend.value}%</span>
@@ -63,14 +63,11 @@ export function KPICard({
           )}
         </div>
         {Icon && (
-          <div className={cn("p-2 rounded-lg", iconColorClasses[color])}>
-            <Icon className="h-6 w-6" />
+          <div className={cn("p-3 border border-dashboard-border bg-dashboard-surface/40", iconColorClasses[color])}>
+            <Icon className="h-8 w-8" />
           </div>
         )}
       </div>
-      
-      {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/[0.02] pointer-events-none" />
     </div>
   );
 }

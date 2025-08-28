@@ -16,81 +16,85 @@ const navigation = [
 ];
 
 export function DashboardLayout({ children, currentSection, onSectionChange }: DashboardLayoutProps) {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true); // Dark mode as default
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
-    document.documentElement.classList.toggle("dark");
+    if (isDarkMode) {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
+    } else {
+      document.documentElement.classList.remove("light");
+      document.documentElement.classList.add("dark");
+    }
   };
 
   return (
     <div className={cn("min-h-screen bg-background transition-colors duration-200")}>
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b border-dashboard-border bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
-        <div className="container flex h-16 items-center justify-between px-6">
-          <div className="flex items-center space-x-4">
-            <BarChart3 className="h-8 w-8 text-analytics-blue" />
-            <h1 className="text-2xl font-bold text-foreground font-mono tracking-tight">VELIU ANALYTICS</h1>
+      <header className="sticky top-0 z-50 w-full border-b border-dashboard-border bg-background/95 backdrop-blur">
+        <div className="container flex h-20 items-center justify-between px-8">
+          <div className="flex items-center space-x-6">
+            <BarChart3 className="h-10 w-10 text-analytics-blue" />
+            <h1 className="text-3xl font-black text-foreground tracking-wider">VELIU ANALYTICS</h1>
           </div>
           
-          <div className="flex items-center space-x-4">
-            <nav className="hidden md:flex items-center space-x-1">
+          <div className="flex items-center space-x-6">
+            <nav className="hidden md:flex items-center space-x-2">
               {navigation.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <Button
+                  <button
                     key={item.id}
-                    variant={currentSection === item.id ? "default" : "ghost"}
-                    size="sm"
                     onClick={() => onSectionChange(item.id)}
                     className={cn(
-                      "flex items-center space-x-2",
-                      currentSection === item.id && "bg-analytics-blue text-white"
+                      "flex items-center space-x-3 px-6 py-3 border border-dashboard-border text-sm font-medium tracking-wide transition-all duration-150",
+                      currentSection === item.id 
+                        ? "bg-analytics-blue text-white border-analytics-blue" 
+                        : "bg-dashboard-surface/40 text-muted-foreground hover:bg-dashboard-surface-hover/60 hover:text-foreground"
                     )}
                   >
-                    <Icon className="h-4 w-4" />
-                    <span>{item.label}</span>
-                  </Button>
+                    <Icon className="h-5 w-5" />
+                    <span className="font-semibold">{item.label}</span>
+                  </button>
                 );
               })}
             </nav>
             
-            <Button
-              variant="ghost"
-              size="icon"
+            <button
               onClick={toggleDarkMode}
-              className="h-9 w-9"
+              className="flex items-center justify-center h-12 w-12 border border-dashboard-border bg-dashboard-surface/40 text-muted-foreground hover:bg-dashboard-surface-hover/60 hover:text-foreground transition-all duration-150"
             >
               {isDarkMode ? (
-                <Sun className="h-4 w-4" />
+                <Sun className="h-5 w-5" />
               ) : (
-                <Moon className="h-4 w-4" />
+                <Moon className="h-5 w-5" />
               )}
-            </Button>
+            </button>
           </div>
         </div>
       </header>
 
       {/* Mobile Navigation */}
-      <nav className="md:hidden border-b border-dashboard-border bg-card">
-        <div className="container px-6 py-2">
-          <div className="flex space-x-1 overflow-x-auto">
+      <nav className="md:hidden border-b border-dashboard-border bg-background">
+        <div className="container px-8 py-4">
+          <div className="flex space-x-2 overflow-x-auto">
             {navigation.map((item) => {
               const Icon = item.icon;
               return (
-                <Button
+                <button
                   key={item.id}
-                  variant={currentSection === item.id ? "default" : "ghost"}
-                  size="sm"
                   onClick={() => onSectionChange(item.id)}
                   className={cn(
-                    "flex items-center space-x-2 whitespace-nowrap",
-                    currentSection === item.id && "bg-analytics-blue text-white"
+                    "flex items-center space-x-2 px-4 py-2 border border-dashboard-border text-sm font-medium whitespace-nowrap transition-all duration-150",
+                    currentSection === item.id 
+                      ? "bg-analytics-blue text-white border-analytics-blue" 
+                      : "bg-dashboard-surface/40 text-muted-foreground hover:bg-dashboard-surface-hover/60"
                   )}
                 >
                   <Icon className="h-4 w-4" />
                   <span>{item.label}</span>
-                </Button>
+                </button>
               );
             })}
           </div>
@@ -98,7 +102,7 @@ export function DashboardLayout({ children, currentSection, onSectionChange }: D
       </nav>
 
       {/* Main Content */}
-      <main className="container px-6 py-6">
+      <main className="container px-8 py-12">
         {children}
       </main>
     </div>
