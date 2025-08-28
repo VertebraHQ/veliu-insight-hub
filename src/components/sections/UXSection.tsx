@@ -285,10 +285,10 @@ export function UXSection({ onBack }: UXSectionProps) {
         <div className="mb-8">
           <h4 className="text-lg font-mono text-foreground mb-4">Percorso Principale (25% utenti)</h4>
           <div className="flex items-center justify-center gap-6">
-            <div className="bg-white border-2 border-blue-300 p-8 w-48 h-40 flex flex-col items-center justify-center rounded-2xl">
+            <div className="border-2 border-white p-8 w-48 h-40 flex flex-col items-center justify-center rounded-2xl">
               <Home className="h-12 w-12 text-orange-500 mb-3" />
-              <span className="text-lg font-semibold text-blue-600 mb-1">Homepage</span>
-              <span className="text-base text-blue-500 font-medium">100%</span>
+              <span className="text-lg font-semibold text-blue-400 mb-1">Homepage</span>
+              <span className="text-base text-blue-400 font-medium">100%</span>
             </div>
             <div className="relative group flex flex-col items-center">
               <ArrowRight className="h-8 w-8 text-gray-600 mb-2" />
@@ -298,10 +298,10 @@ export function UXSection({ onBack }: UXSectionProps) {
                 <div className="text-xs text-muted-foreground">850 utenti</div>
               </div>
             </div>
-            <div className="bg-white border-2 border-blue-300 p-8 w-48 h-40 flex flex-col items-center justify-center rounded-2xl">
+            <div className="border-2 border-white p-8 w-48 h-40 flex flex-col items-center justify-center rounded-2xl">
               <Package className="h-12 w-12 text-amber-600 mb-3" />
-              <span className="text-lg font-semibold text-blue-600 mb-1">Prodotti</span>
-              <span className="text-base text-blue-500 font-medium">68%</span>
+              <span className="text-lg font-semibold text-blue-400 mb-1">Prodotti</span>
+              <span className="text-base text-blue-400 font-medium">68%</span>
             </div>
             <div className="relative group flex flex-col items-center">
               <ArrowRight className="h-8 w-8 text-gray-600 mb-2" />
@@ -311,10 +311,10 @@ export function UXSection({ onBack }: UXSectionProps) {
                 <div className="text-xs text-muted-foreground">315 utenti</div>
               </div>
             </div>
-            <div className="bg-white border-2 border-blue-300 p-8 w-48 h-40 flex flex-col items-center justify-center rounded-2xl">
+            <div className="border-2 border-white p-8 w-48 h-40 flex flex-col items-center justify-center rounded-2xl">
               <Phone className="h-12 w-12 text-pink-500 mb-3" />
-              <span className="text-lg font-semibold text-blue-600 mb-1">Contatti</span>
-              <span className="text-base text-blue-500 font-medium">25%</span>
+              <span className="text-lg font-semibold text-blue-400 mb-1">Contatti</span>
+              <span className="text-base text-blue-400 font-medium">25%</span>
             </div>
           </div>
         </div>
@@ -323,10 +323,10 @@ export function UXSection({ onBack }: UXSectionProps) {
         <div className="mb-8">
           <h4 className="text-lg font-mono text-foreground mb-4">Percorso Informativo (18% utenti)</h4>
           <div className="flex items-center justify-center gap-4">
-            <div className="bg-white border-2 border-blue-300 p-6 w-40 h-32 flex flex-col items-center justify-center rounded-2xl">
+            <div className="border-2 border-white p-6 w-40 h-32 flex flex-col items-center justify-center rounded-2xl">
               <Home className="h-10 w-10 text-orange-500 mb-2" />
-              <span className="text-base font-semibold text-blue-600 mb-1">Homepage</span>
-              <span className="text-sm text-blue-500 font-medium">100%</span>
+              <span className="text-base font-semibold text-blue-400 mb-1">Homepage</span>
+              <span className="text-sm text-blue-400 font-medium">100%</span>
             </div>
             <div className="relative group flex flex-col items-center">
               <ArrowRight className="h-6 w-6 text-gray-600 mb-1" />
@@ -336,10 +336,10 @@ export function UXSection({ onBack }: UXSectionProps) {
                 <div className="text-xs text-muted-foreground">675 utenti</div>
               </div>
             </div>
-            <div className="bg-white border-2 border-blue-300 p-4 w-32 h-24 flex flex-col items-center justify-center rounded-2xl">
+            <div className="border-2 border-white p-4 w-32 h-24 flex flex-col items-center justify-center rounded-2xl">
               <Users className="h-8 w-8 text-purple-500 mb-1" />
-              <span className="text-sm font-semibold text-blue-600 mb-1">Chi Siamo</span>
-              <span className="text-xs text-blue-500 font-medium">75%</span>
+              <span className="text-sm font-semibold text-blue-400 mb-1">Chi Siamo</span>
+              <span className="text-xs text-blue-400 font-medium">75%</span>
             </div>
             <div className="relative group flex flex-col items-center">
               <ArrowRight className="h-6 w-6 text-gray-600 mb-1" />
@@ -349,10 +349,10 @@ export function UXSection({ onBack }: UXSectionProps) {
                 <div className="text-xs text-muted-foreground">405 utenti</div>
               </div>
             </div>
-            <div className="bg-white border-2 border-blue-300 p-4 w-32 h-24 flex flex-col items-center justify-center rounded-2xl">
+            <div className="border-2 border-white p-4 w-32 h-24 flex flex-col items-center justify-center rounded-2xl">
               <FileText className="h-8 w-8 text-green-500 mb-1" />
-              <span className="text-sm font-semibold text-blue-600 mb-1">Blog</span>
-              <span className="text-xs text-blue-500 font-medium">45%</span>
+              <span className="text-sm font-semibold text-blue-400 mb-1">Blog</span>
+              <span className="text-xs text-blue-400 font-medium">45%</span>
             </div>
           </div>
         </div>
@@ -361,10 +361,10 @@ export function UXSection({ onBack }: UXSectionProps) {
         <div className="mb-8">
           <h4 className="text-lg font-mono text-foreground mb-4">Percorso Contenuti (15% utenti)</h4>
           <div className="flex items-center justify-center gap-4">
-            <div className="bg-white border-2 border-blue-300 p-4 w-32 h-24 flex flex-col items-center justify-center rounded-2xl">
+            <div className="border-2 border-white p-4 w-32 h-24 flex flex-col items-center justify-center rounded-2xl">
               <Home className="h-8 w-8 text-orange-500 mb-1" />
-              <span className="text-sm font-semibold text-blue-600 mb-1">Homepage</span>
-              <span className="text-xs text-blue-500 font-medium">100%</span>
+              <span className="text-sm font-semibold text-blue-400 mb-1">Homepage</span>
+              <span className="text-xs text-blue-400 font-medium">100%</span>
             </div>
             <div className="relative group flex flex-col items-center">
               <ArrowRight className="h-6 w-6 text-gray-600 mb-1" />
@@ -374,10 +374,10 @@ export function UXSection({ onBack }: UXSectionProps) {
                 <div className="text-xs text-muted-foreground">600 utenti</div>
               </div>
             </div>
-            <div className="bg-white border-2 border-blue-300 p-4 w-32 h-24 flex flex-col items-center justify-center rounded-2xl">
+            <div className="border-2 border-white p-4 w-32 h-24 flex flex-col items-center justify-center rounded-2xl">
               <FileText className="h-8 w-8 text-green-500 mb-1" />
-              <span className="text-sm font-semibold text-blue-600 mb-1">Blog</span>
-              <span className="text-xs text-blue-500 font-medium">80%</span>
+              <span className="text-sm font-semibold text-blue-400 mb-1">Blog</span>
+              <span className="text-xs text-blue-400 font-medium">80%</span>
             </div>
             <div className="relative group flex flex-col items-center">
               <ArrowRight className="h-6 w-6 text-gray-600 mb-1" />
@@ -387,10 +387,10 @@ export function UXSection({ onBack }: UXSectionProps) {
                 <div className="text-xs text-muted-foreground">210 utenti</div>
               </div>
             </div>
-            <div className="bg-white border-2 border-blue-300 p-4 w-32 h-24 flex flex-col items-center justify-center rounded-2xl">
+            <div className="border-2 border-white p-4 w-32 h-24 flex flex-col items-center justify-center rounded-2xl">
               <BookOpen className="h-8 w-8 text-red-500 mb-1" />
-              <span className="text-sm font-semibold text-blue-600 mb-1">Articolo</span>
-              <span className="text-xs text-blue-500 font-medium">35%</span>
+              <span className="text-sm font-semibold text-blue-400 mb-1">Articolo</span>
+              <span className="text-xs text-blue-400 font-medium">35%</span>
             </div>
           </div>
         </div>
