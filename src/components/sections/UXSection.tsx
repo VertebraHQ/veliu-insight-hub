@@ -285,37 +285,36 @@ export function UXSection({ onBack }: UXSectionProps) {
         <div className="mb-8">
           <h4 className="text-lg font-mono text-foreground mb-4">Percorso Principale (25% utenti)</h4>
           <div className="flex items-center justify-center gap-6">
-            <div className="bg-dashboard-surface border border-dashboard-border p-8 w-40 h-40 flex flex-col items-center justify-center">
-              <Home className="h-12 w-12 text-analytics-blue mb-3" />
-              <span className="text-base font-mono text-center mb-1">Homepage</span>
-              <span className="text-sm text-analytics-blue font-mono">100%</span>
-              <span className="text-xs text-muted-foreground">1.250 utenti</span>
+            <div className="bg-white border-2 border-blue-300 p-8 w-48 h-40 flex flex-col items-center justify-center rounded-2xl">
+              <Home className="h-12 w-12 text-orange-500 mb-3" />
+              <span className="text-lg font-semibold text-blue-600 mb-1">Homepage</span>
+              <span className="text-base text-blue-500 font-medium">100%</span>
             </div>
-            <div className="relative group">
-              <ArrowRight className="h-8 w-8 text-muted-foreground" />
-              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
+            <div className="relative group flex flex-col items-center">
+              <ArrowRight className="h-8 w-8 text-gray-600 mb-2" />
+              <span className="text-lg font-semibold text-gray-700">68%</span>
+              <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
                 <div className="font-mono text-analytics-blue">68%</div>
                 <div className="text-xs text-muted-foreground">850 utenti</div>
               </div>
             </div>
-            <div className="bg-dashboard-surface border border-dashboard-border p-6 w-32 h-32 flex flex-col items-center justify-center">
-              <Package className="h-10 w-10 text-analytics-blue mb-2" />
-              <span className="text-sm font-mono text-center mb-1">Prodotti</span>
-              <span className="text-sm text-analytics-blue font-mono">68%</span>
-              <span className="text-xs text-muted-foreground">850 utenti</span>
+            <div className="bg-white border-2 border-blue-300 p-8 w-48 h-40 flex flex-col items-center justify-center rounded-2xl">
+              <Package className="h-12 w-12 text-amber-600 mb-3" />
+              <span className="text-lg font-semibold text-blue-600 mb-1">Prodotti</span>
+              <span className="text-base text-blue-500 font-medium">68%</span>
             </div>
-            <div className="relative group">
-              <ArrowRight className="h-8 w-8 text-muted-foreground" />
-              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
+            <div className="relative group flex flex-col items-center">
+              <ArrowRight className="h-8 w-8 text-gray-600 mb-2" />
+              <span className="text-lg font-semibold text-gray-700">37%</span>
+              <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
                 <div className="font-mono text-analytics-blue">37%</div>
                 <div className="text-xs text-muted-foreground">315 utenti</div>
               </div>
             </div>
-            <div className="bg-dashboard-surface border border-dashboard-border p-4 w-24 h-24 flex flex-col items-center justify-center">
-              <Phone className="h-8 w-8 text-analytics-blue mb-1" />
-              <span className="text-xs font-mono text-center mb-1">Contatti</span>
-              <span className="text-xs text-analytics-blue font-mono">25%</span>
-              <span className="text-xs text-muted-foreground">315 utenti</span>
+            <div className="bg-white border-2 border-blue-300 p-8 w-48 h-40 flex flex-col items-center justify-center rounded-2xl">
+              <Phone className="h-12 w-12 text-pink-500 mb-3" />
+              <span className="text-lg font-semibold text-blue-600 mb-1">Contatti</span>
+              <span className="text-base text-blue-500 font-medium">25%</span>
             </div>
           </div>
         </div>
