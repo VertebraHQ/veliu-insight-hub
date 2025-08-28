@@ -273,24 +273,28 @@ export function TechSection({ onBack }: TechSectionProps) {
 
       {/* Pattern Comportamentali */}
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
-        <div className="flex items-center space-x-3 mb-6">
-          <div className="p-2 bg-analytics-blue/10">
-            <Activity className="h-5 w-5 text-analytics-blue" />
+        <h3 className="text-lg font-semibold mb-6 font-mono text-analytics-red">PATTERN COMPORTAMENTALI</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="bg-dashboard-surface/30 border border-dashboard-border p-4">
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-mono text-sm text-muted-foreground">Utenti che abbandonano dopo errori</span>
+              <Bug className="h-4 w-4 text-analytics-red" />
+            </div>
+            <span className="font-bold text-2xl font-mono text-analytics-green">0.0%</span>
           </div>
-          <h3 className="text-lg font-semibold font-mono">PATTERN COMPORTAMENTALI</h3>
-        </div>
-        <div className="space-y-4">
-          <div className="flex justify-between items-center">
-            <span className="font-mono text-sm">Utenti che abbandonano dopo errori</span>
-            <span className="font-bold text-analytics-green font-mono">0.0%</span>
+          <div className="bg-dashboard-surface/30 border border-dashboard-border p-4">
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-mono text-sm text-muted-foreground">Tempo medio prima della frustrazione</span>
+              <AlertTriangle className="h-4 w-4 text-analytics-orange" />
+            </div>
+            <span className="font-bold text-2xl font-mono text-analytics-blue">10s</span>
           </div>
-          <div className="flex justify-between items-center">
-            <span className="font-mono text-sm">Tempo medio prima della frustrazione</span>
-            <span className="font-bold text-analytics-blue font-mono">10s</span>
-          </div>
-          <div className="flex justify-between items-center">
-            <span className="font-mono text-sm">Engagement ratio nelle sessioni problematiche</span>
-            <span className="font-bold text-analytics-orange font-mono">21.3%</span>
+          <div className="bg-dashboard-surface/30 border border-dashboard-border p-4">
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-mono text-sm text-muted-foreground">Engagement ratio nelle sessioni problematiche</span>
+              <Activity className="h-4 w-4 text-analytics-green" />
+            </div>
+            <span className="font-bold text-2xl font-mono text-analytics-orange">21.3%</span>
           </div>
         </div>
       </div>
