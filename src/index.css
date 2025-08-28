@@ -236,7 +236,8 @@ All colors MUST be HSL.
 @layer components {
   /* Apple-inspired cards with soft shadows (light mode only) */
   .light .dashboard-card {
-    @apply bg-white rounded-xl p-6 transition-all duration-200;
+    @apply bg-white p-6 transition-all duration-200;
+    border-radius: 16px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.02);
   }
   
@@ -258,7 +259,8 @@ All colors MUST be HSL.
 
   /* Apple-style buttons for light mode */
   .light .apple-button {
-    @apply bg-white border border-gray-200 text-gray-900 rounded-lg px-4 py-2 transition-all duration-150;
+    @apply bg-white border border-gray-200 text-gray-900 px-4 py-2 transition-all duration-150;
+    border-radius: 12px;
   }
   
   .light .apple-button:hover {
@@ -275,17 +277,17 @@ All colors MUST be HSL.
   
   /* Soft corner radius for all elements in light mode */
   .light * { 
-    border-radius: 12px !important; 
+    border-radius: 12px; 
   }
   
-  .light .rounded-sm { border-radius: 6px !important; }
-  .light .rounded { border-radius: 8px !important; }
-  .light .rounded-lg { border-radius: 12px !important; }
-  .light .rounded-xl { border-radius: 16px !important; }
+  .light .rounded-sm { border-radius: 6px; }
+  .light .rounded { border-radius: 8px; }
+  .light .rounded-lg { border-radius: 12px; }
+  .light .rounded-xl { border-radius: 16px; }
 
   /* Dark mode keeps square edges */
   .dark * { 
-    border-radius: 0 !important; 
+    border-radius: 0; 
   }
 
   /* Industrial hover states - youthful and dynamic */
