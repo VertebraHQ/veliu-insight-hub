@@ -19,8 +19,9 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'sans': ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-				'mono': ['SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'monospace'],
+				'sans': ['Outfit', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'SF Pro Display', 'Helvetica', 'Arial', 'sans-serif'],
+				'mono': ['SF Mono', 'Fira Code', 'Monaco', 'Inconsolata', 'Roboto Mono', 'monospace'],
+				'display': ['Outfit', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'SF Pro Display', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -130,10 +131,26 @@ export default {
 			},
 			boxShadow: {
 				'card': 'var(--shadow-card)',
-				'card-hover': 'var(--shadow-card-hover)'
+				'card-hover': 'var(--shadow-card-hover)',
+				'copper-glow': '0 0 20px rgba(234, 88, 12, 0.3)',
+				'copper-glow-hover': '0 0 30px rgba(234, 88, 12, 0.5)',
+				'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+				'glass-hover': '0 8px 32px 0 rgba(31, 38, 135, 0.5)'
 			},
 			transitionProperty: {
 				'smooth': 'var(--transition-smooth)'
+			},
+			backdropBlur: {
+				'glass': '20px'
+			},
+			backdropSaturate: {
+				'glass': '180%'
+			},
+			animation: {
+				'accordion-down': 'accordion-down 0.2s ease-out',
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'bounce-gentle': 'bounce 2s infinite',
+				'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
 			}
 		}
 	},
