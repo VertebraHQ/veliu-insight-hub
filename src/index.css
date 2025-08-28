@@ -177,10 +177,10 @@ All colors MUST be HSL.
     --analytics-purple: 270 45% 45%;
     --analytics-purple-light: 270 45% 55%;
 
-    /* Dashboard Surfaces - White with metallic grey borders */
-    --dashboard-surface: 0 0% 95%; /* Light grey boxes with 50% opacity effect */
-    --dashboard-surface-hover: 0 0% 92%;
-    --dashboard-border: 0 0% 75%; /* Metallic grey borders */
+    /* Dashboard Surfaces - Black with 30% opacity */
+    --dashboard-surface: 0 0% 0% / 0.3; /* Black boxes with 30% opacity */
+    --dashboard-surface-hover: 0 0% 0% / 0.4; /* Slightly more opaque on hover */
+    --dashboard-border: 0 0% 0% / 0.2; /* Black borders with 20% opacity */
 
     /* Sidebar colors for light mode */
     --sidebar-background: 0 0% 98%;
