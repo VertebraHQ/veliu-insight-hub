@@ -24,13 +24,11 @@ export function DashboardLayout({ children, currentSection, onSectionChange }: D
   }, []);
 
   const toggleDarkMode = () => {
-    const newDarkMode = !isDarkMode;
-    setIsDarkMode(newDarkMode);
-    
-    if (newDarkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
+    setIsDarkMode(!isDarkMode);
+    if (isDarkMode) {
       document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
     }
   };
 
