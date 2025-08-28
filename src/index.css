@@ -2,13 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Veliu Analytics Dashboard Design System
+Modern, professional analytics interface with vibrant data visualization colors.
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 0 0% 98%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -17,13 +18,13 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 220 91% 56%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 210 40% 96.1%;
+    --muted: 220 14.3% 95.9%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
     --accent: 210 40% 96.1%;
@@ -36,7 +37,38 @@ All colors MUST be HSL.
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Analytics Dashboard Color Palette */
+    --analytics-blue: 220 91% 56%;
+    --analytics-blue-light: 220 91% 65%;
+    --analytics-green: 142 76% 36%;
+    --analytics-green-light: 142 76% 45%;
+    --analytics-orange: 25 95% 53%;
+    --analytics-orange-light: 25 95% 62%;
+    --analytics-red: 0 84% 60%;
+    --analytics-red-light: 0 84% 68%;
+    --analytics-purple: 262 83% 58%;
+    --analytics-purple-light: 262 83% 68%;
+    
+    /* Chart Colors */
+    --chart-1: var(--analytics-blue);
+    --chart-2: var(--analytics-green);
+    --chart-3: var(--analytics-orange);
+    --chart-4: var(--analytics-red);
+    --chart-5: var(--analytics-purple);
+
+    /* Dashboard Specific Colors */
+    --dashboard-surface: 0 0% 100%;
+    --dashboard-surface-hover: 220 14.3% 97%;
+    --dashboard-border: 220 13% 91%;
+    
+    /* Shadows */
+    --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-card-hover: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
+    
+    /* Transitions */
+    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -83,14 +115,23 @@ All colors MUST be HSL.
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Dark mode analytics colors - maintain vibrancy */
+    --analytics-blue: 220 91% 65%;
+    --analytics-blue-light: 220 91% 75%;
+    --analytics-green: 142 76% 45%;
+    --analytics-green-light: 142 76% 55%;
+    --analytics-orange: 25 95% 62%;
+    --analytics-orange-light: 25 95% 72%;
+    --analytics-red: 0 84% 68%;
+    --analytics-red-light: 0 84% 78%;
+    --analytics-purple: 262 83% 68%;
+    --analytics-purple-light: 262 83% 78%;
+    
+    /* Dark dashboard surfaces */
+    --dashboard-surface: 222.2 84% 4.9%;
+    --dashboard-surface-hover: 217.2 32.6% 17.5%;
+    --dashboard-border: 217.2 32.6% 17.5%;
   }
 }
 

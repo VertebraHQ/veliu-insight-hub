@@ -52,6 +52,40 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				analytics: {
+					blue: {
+						DEFAULT: 'hsl(var(--analytics-blue))',
+						light: 'hsl(var(--analytics-blue-light))'
+					},
+					green: {
+						DEFAULT: 'hsl(var(--analytics-green))',
+						light: 'hsl(var(--analytics-green-light))'
+					},
+					orange: {
+						DEFAULT: 'hsl(var(--analytics-orange))',
+						light: 'hsl(var(--analytics-orange-light))'
+					},
+					red: {
+						DEFAULT: 'hsl(var(--analytics-red))',
+						light: 'hsl(var(--analytics-red-light))'
+					},
+					purple: {
+						DEFAULT: 'hsl(var(--analytics-purple))',
+						light: 'hsl(var(--analytics-purple-light))'
+					}
+				},
+				chart: {
+					'1': 'hsl(var(--chart-1))',
+					'2': 'hsl(var(--chart-2))',
+					'3': 'hsl(var(--chart-3))',
+					'4': 'hsl(var(--chart-4))',
+					'5': 'hsl(var(--chart-5))'
+				},
+				dashboard: {
+					surface: 'hsl(var(--dashboard-surface))',
+					'surface-hover': 'hsl(var(--dashboard-surface-hover))',
+					border: 'hsl(var(--dashboard-border))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -89,6 +123,13 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
+			},
+			boxShadow: {
+				'card': 'var(--shadow-card)',
+				'card-hover': 'var(--shadow-card-hover)'
+			},
+			transitionProperty: {
+				'smooth': 'var(--transition-smooth)'
 			}
 		}
 	},
