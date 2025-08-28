@@ -323,36 +323,36 @@ export function UXSection({ onBack }: UXSectionProps) {
         <div className="mb-8">
           <h4 className="text-lg font-mono text-foreground mb-4">Percorso Informativo (18% utenti)</h4>
           <div className="flex items-center justify-center gap-4">
-            <div className="border-2 border-white p-8 w-48 h-40 flex flex-col items-center justify-center rounded-2xl">
-              <Home className="h-12 w-12 text-orange-500 mb-3" />
-              <span className="text-lg font-semibold text-blue-400 mb-1">Homepage</span>
-              <span className="text-base text-blue-400 font-medium">100%</span>
+            <div className="border-2 border-white p-6 w-36 h-30 flex flex-col items-center justify-center rounded-2xl">
+              <Home className="h-9 w-9 text-orange-500 mb-2" />
+              <span className="text-base font-semibold text-blue-400 mb-1">Homepage</span>
+              <span className="text-sm text-blue-400 font-medium">100%</span>
             </div>
             <div className="relative group flex flex-col items-center">
-              <ArrowRight className="h-8 w-8 text-gray-600 mb-2" />
-              <span className="text-lg font-semibold text-gray-700">75%</span>
+              <ArrowRight className="h-6 w-6 text-gray-600 mb-2" />
+              <span className="text-base font-semibold text-gray-700">75%</span>
               <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
                 <div className="font-mono text-analytics-blue">75%</div>
                 <div className="text-xs text-muted-foreground">675 utenti</div>
               </div>
             </div>
-            <div className="border-2 border-white p-8 w-48 h-40 flex flex-col items-center justify-center rounded-2xl">
-              <Users className="h-12 w-12 text-purple-500 mb-3" />
-              <span className="text-lg font-semibold text-blue-400 mb-1">Chi Siamo</span>
-              <span className="text-base text-blue-400 font-medium">75%</span>
+            <div className="border-2 border-white p-6 w-36 h-30 flex flex-col items-center justify-center rounded-2xl">
+              <Users className="h-9 w-9 text-purple-500 mb-2" />
+              <span className="text-base font-semibold text-blue-400 mb-1">Chi Siamo</span>
+              <span className="text-sm text-blue-400 font-medium">75%</span>
             </div>
             <div className="relative group flex flex-col items-center">
-              <ArrowRight className="h-8 w-8 text-gray-600 mb-2" />
-              <span className="text-lg font-semibold text-gray-700">45%</span>
+              <ArrowRight className="h-6 w-6 text-gray-600 mb-2" />
+              <span className="text-base font-semibold text-gray-700">45%</span>
               <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
                 <div className="font-mono text-analytics-blue">45%</div>
                 <div className="text-xs text-muted-foreground">405 utenti</div>
               </div>
             </div>
-            <div className="border-2 border-white p-8 w-48 h-40 flex flex-col items-center justify-center rounded-2xl">
-              <FileText className="h-12 w-12 text-green-500 mb-3" />
-              <span className="text-lg font-semibold text-blue-400 mb-1">Blog</span>
-              <span className="text-base text-blue-400 font-medium">45%</span>
+            <div className="border-2 border-white p-6 w-36 h-30 flex flex-col items-center justify-center rounded-2xl">
+              <FileText className="h-9 w-9 text-green-500 mb-2" />
+              <span className="text-base font-semibold text-blue-400 mb-1">Blog</span>
+              <span className="text-sm text-blue-400 font-medium">45%</span>
             </div>
           </div>
         </div>
@@ -361,36 +361,36 @@ export function UXSection({ onBack }: UXSectionProps) {
         <div className="mb-8">
           <h4 className="text-lg font-mono text-foreground mb-4">Percorso Contenuti (15% utenti)</h4>
           <div className="flex items-center justify-center gap-4">
-            <div className="border-2 border-white p-8 w-48 h-40 flex flex-col items-center justify-center rounded-2xl">
-              <Home className="h-12 w-12 text-orange-500 mb-3" />
-              <span className="text-lg font-semibold text-blue-400 mb-1">Homepage</span>
-              <span className="text-base text-blue-400 font-medium">100%</span>
+            <div className="border-2 border-white p-4 w-28 h-24 flex flex-col items-center justify-center rounded-2xl">
+              <Home className="h-7 w-7 text-orange-500 mb-1" />
+              <span className="text-sm font-semibold text-blue-400 mb-1">Homepage</span>
+              <span className="text-xs text-blue-400 font-medium">100%</span>
             </div>
             <div className="relative group flex flex-col items-center">
-              <ArrowRight className="h-8 w-8 text-gray-600 mb-2" />
-              <span className="text-lg font-semibold text-gray-700">80%</span>
+              <ArrowRight className="h-5 w-5 text-gray-600 mb-1" />
+              <span className="text-sm font-semibold text-gray-700">80%</span>
               <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
                 <div className="font-mono text-analytics-blue">80%</div>
                 <div className="text-xs text-muted-foreground">600 utenti</div>
               </div>
             </div>
-            <div className="border-2 border-white p-8 w-48 h-40 flex flex-col items-center justify-center rounded-2xl">
-              <FileText className="h-12 w-12 text-green-500 mb-3" />
-              <span className="text-lg font-semibold text-blue-400 mb-1">Blog</span>
-              <span className="text-base text-blue-400 font-medium">80%</span>
+            <div className="border-2 border-white p-4 w-28 h-24 flex flex-col items-center justify-center rounded-2xl">
+              <FileText className="h-7 w-7 text-green-500 mb-1" />
+              <span className="text-sm font-semibold text-blue-400 mb-1">Blog</span>
+              <span className="text-xs text-blue-400 font-medium">80%</span>
             </div>
             <div className="relative group flex flex-col items-center">
-              <ArrowRight className="h-8 w-8 text-gray-600 mb-2" />
-              <span className="text-lg font-semibold text-gray-700">35%</span>
+              <ArrowRight className="h-5 w-5 text-gray-600 mb-1" />
+              <span className="text-sm font-semibold text-gray-700">35%</span>
               <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
                 <div className="font-mono text-analytics-blue">35%</div>
                 <div className="text-xs text-muted-foreground">210 utenti</div>
               </div>
             </div>
-            <div className="border-2 border-white p-8 w-48 h-40 flex flex-col items-center justify-center rounded-2xl">
-              <BookOpen className="h-12 w-12 text-red-500 mb-3" />
-              <span className="text-lg font-semibold text-blue-400 mb-1">Articolo</span>
-              <span className="text-base text-blue-400 font-medium">35%</span>
+            <div className="border-2 border-white p-4 w-28 h-24 flex flex-col items-center justify-center rounded-2xl">
+              <BookOpen className="h-7 w-7 text-red-500 mb-1" />
+              <span className="text-sm font-semibold text-blue-400 mb-1">Articolo</span>
+              <span className="text-xs text-blue-400 font-medium">35%</span>
             </div>
           </div>
         </div>
