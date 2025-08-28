@@ -232,21 +232,12 @@ export function UXSection({ onBack }: UXSectionProps) {
           "border border-dashboard-border bg-gradient-to-br from-analytics-blue/10 via-analytics-green/10 to-analytics-orange/10 overflow-auto",
           isHeatmapFullscreen ? "fixed inset-4 z-50 h-[calc(100vh-2rem)]" : "h-96"
         )}>
-          <div className="min-h-[800px] p-8 space-y-6">
-            <div className="text-center space-y-3">
-              <Eye className="h-12 w-12 text-muted-foreground mx-auto" />
-              <p className="text-muted-foreground font-medium font-mono">HEATMAP SIMULAZIONE - {heatmapDevice.toUpperCase()}</p>
-              <p className="text-sm text-muted-foreground font-mono">Scroll verticale abilitato per navigazione reale</p>
-            </div>
-            <div className="space-y-8">
-              {Array.from({ length: 10 }).map((_, i) => (
-                <div key={i} className="bg-dashboard-surface/30 p-4 border border-dashboard-border">
-                  <div className="h-8 bg-analytics-blue/20 mb-2"></div>
-                  <div className="h-4 bg-analytics-green/20 mb-1"></div>
-                  <div className="h-4 bg-analytics-orange/20"></div>
-                </div>
-              ))}
-            </div>
+          <div className="w-full h-full flex items-center justify-center">
+            <img 
+              src="/lovable-uploads/d0679451-ad4a-45d9-b37b-4c675eff3885.png" 
+              alt="VELIU Analytics Interface" 
+              className="w-full h-auto object-contain"
+            />
           </div>
         </div>
         
