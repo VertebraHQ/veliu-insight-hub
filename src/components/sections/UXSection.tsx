@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { KPICard } from "@/components/KPICard";
 import { DateSelector } from "@/components/DateSelector";
+import { NavigationGraph } from "@/components/NavigationGraph";
 import { ArrowLeft, MousePointer, Eye, Navigation, Activity, Maximize2, Monitor, Smartphone, Tablet, Bug, AlertTriangle, Home, Package, Phone, Users, FileText, BookOpen, ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -255,6 +256,16 @@ export function UXSection({ onBack }: UXSectionProps) {
       {/* 3. Analisi Path Utenti - New Design */}
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
         <h3 className="text-lg font-semibold mb-6 font-mono">ANALISI PATH UTENTI</h3>
+        
+        {/* Navigation Graph */}
+        <div className="mb-8">
+          <h4 className="text-base font-mono text-muted-foreground mb-4">Mappa Navigazione Sito</h4>
+          <NavigationGraph />
+          <p className="text-xs text-muted-foreground font-mono mt-3">
+            La grossezza delle frecce indica il volume di traffico tra le pagine. 
+            Ogni nodo rappresenta una pagina principale del sito.
+          </p>
+        </div>
         
         {/* Path Metrics above */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
