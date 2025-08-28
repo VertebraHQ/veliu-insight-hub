@@ -18,23 +18,17 @@ const navigation = [
 export function DashboardLayout({ children, currentSection, onSectionChange }: DashboardLayoutProps) {
   // Initialize dark mode state based on current CSS classes
   const [isDarkMode, setIsDarkMode] = useState(() => {
-    // Check if dark class exists, default to true if neither exists
     const hasDark = document.documentElement.classList.contains("dark");
     const hasLight = document.documentElement.classList.contains("light");
-    return hasDark || !hasLight;
-  });
-
-  // Set initial theme on mount
-  useEffect(() => {
-    // Ensure initial state is reflected in CSS
-    if (isDarkMode) {
-      document.documentElement.classList.remove("light");
+    
+    // If no class is set, default to dark mode and apply it
+    if (!hasDark && !hasLight) {
       document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      document.documentElement.classList.add("light");
+      return true;
     }
-  }, []);
+    
+    return hasDark;
+  });
 
   const toggleDarkMode = () => {
     const newDarkMode = !isDarkMode;
