@@ -191,8 +191,6 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    /* Dark mode as default */
-    @apply dark;
     font-feature-settings: "kern", "liga", "clig", "calt";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
