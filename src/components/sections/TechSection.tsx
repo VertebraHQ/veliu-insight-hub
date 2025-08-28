@@ -1,5 +1,6 @@
 import { KPICard } from "@/components/KPICard";
 import { DateSelector } from "@/components/DateSelector";
+import { CompactDateSelector } from "@/components/sections/CompactDateSelector";
 import { ArrowLeft, AlertTriangle, Bug, FormInput, MousePointer2, Zap, Navigation, Clock, Gauge, Eye, Monitor, Smartphone, Activity } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription } from "@/components/ui/alert";
@@ -124,6 +125,11 @@ export function TechSection({ onBack }: TechSectionProps) {
           </div>
         </div>
         <DateSelector />
+      </div>
+
+      {/* Compact Date Selector */}
+      <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
+        <CompactDateSelector />
       </div>
 
       {/* Critical Issues Alert */}

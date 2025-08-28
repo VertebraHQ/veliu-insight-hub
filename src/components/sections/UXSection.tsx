@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { KPICard } from "@/components/KPICard";
 import { DateSelector } from "@/components/DateSelector";
+import { CompactDateSelector } from "@/components/sections/CompactDateSelector";
 import { ArrowLeft, MousePointer, Eye, Navigation, Activity, Maximize2, Monitor, Smartphone, Tablet, Bug, AlertTriangle, Home, Package, Phone, Users, FileText, BookOpen, ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -160,6 +161,11 @@ export function UXSection({ onBack }: UXSectionProps) {
           </div>
         </div>
         <DateSelector />
+      </div>
+
+      {/* Compact Date Selector */}
+      <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
+        <CompactDateSelector />
       </div>
 
       {/* 1. Quality Scores */}
