@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { KPICard } from "@/components/KPICard";
 import { DateSelector } from "@/components/DateSelector";
-import { NavigationGraph } from "@/components/NavigationGraph";
 import { ArrowLeft, MousePointer, Eye, Navigation, Activity, Maximize2, Monitor, Smartphone, Tablet, Bug, AlertTriangle, Home, Package, Phone, Users, FileText, BookOpen, ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -253,7 +252,7 @@ export function UXSection({ onBack }: UXSectionProps) {
         )}
       </div>
 
-      {/* 3. Analisi Path Utenti - Navigation Graph */}
+      {/* 3. Analisi Path Utenti - New Design */}
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
         <h3 className="text-lg font-semibold mb-6 font-mono">ANALISI PATH UTENTI</h3>
         
@@ -264,7 +263,7 @@ export function UXSection({ onBack }: UXSectionProps) {
               <span className="font-mono text-sm text-muted-foreground">Pagine per Sessione</span>
               <Navigation className="h-4 w-4 text-analytics-blue" />
             </div>
-            <span className="font-bold text-2xl font-mono text-analytics-blue">4.1</span>
+            <span className="font-bold text-2xl font-mono text-analytics-blue">2.4</span>
           </div>
           <div className="bg-dashboard-surface/30 border border-dashboard-border p-4">
             <div className="flex items-center justify-between mb-2">
@@ -278,80 +277,201 @@ export function UXSection({ onBack }: UXSectionProps) {
               <span className="font-mono text-sm text-muted-foreground">Completamento Percorso</span>
               <Eye className="h-4 w-4 text-analytics-orange" />
             </div>
-            <span className="font-bold text-2xl font-mono text-analytics-orange">74%</span>
+            <span className="font-bold text-2xl font-mono text-analytics-orange">68%</span>
           </div>
         </div>
 
-        {/* Navigation Graph */}
-        <div className="space-y-4">
-          <div className="text-center">
-            <p className="text-sm text-muted-foreground font-mono mb-2">
-              Mappa interattiva dei percorsi di navigazione
-            </p>
-            <p className="text-xs text-muted-foreground font-mono">
-              Le frecce più spesse indicano maggior traffico tra le pagine. I numeri mostrano il volume di utenti.
-            </p>
+        {/* Percorso Principale - Blocchi grandi */}
+        <div className="mb-16">
+          <h4 className="text-lg font-mono text-foreground mb-8 text-center">Percorso Principale (25% utenti)</h4>
+          <div className="flex items-center justify-center gap-6">
+            <div className="border-2 border-white p-8 w-48 h-40 flex flex-col items-center justify-center rounded-2xl">
+              <Home className="h-12 w-12 text-orange-500 mb-3" />
+              <span className="text-lg font-semibold text-blue-400 mb-1">Homepage</span>
+              <span className="text-base text-blue-400 font-medium">100%</span>
+            </div>
+            <div className="relative group flex flex-col items-center">
+              <ArrowRight className="h-8 w-8 text-gray-600 mb-2" />
+              <span className="text-lg font-semibold text-gray-700">68%</span>
+              <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                <div className="font-mono text-analytics-blue">68%</div>
+                <div className="text-xs text-muted-foreground">850 utenti</div>
+              </div>
+            </div>
+            <div className="border-2 border-white p-8 w-48 h-40 flex flex-col items-center justify-center rounded-2xl">
+              <Package className="h-12 w-12 text-amber-600 mb-3" />
+              <span className="text-lg font-semibold text-blue-400 mb-1">Prodotti</span>
+              <span className="text-base text-blue-400 font-medium">68%</span>
+            </div>
+            <div className="relative group flex flex-col items-center">
+              <ArrowRight className="h-8 w-8 text-gray-600 mb-2" />
+              <span className="text-lg font-semibold text-gray-700">37%</span>
+              <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                <div className="font-mono text-analytics-blue">37%</div>
+                <div className="text-xs text-muted-foreground">315 utenti</div>
+              </div>
+            </div>
+            <div className="border-2 border-white p-8 w-48 h-40 flex flex-col items-center justify-center rounded-2xl">
+              <Phone className="h-12 w-12 text-pink-500 mb-3" />
+              <span className="text-lg font-semibold text-blue-400 mb-1">Contatti</span>
+              <span className="text-base text-blue-400 font-medium">25%</span>
+            </div>
           </div>
-          <NavigationGraph />
+        </div>
+
+        {/* Percorso Informativo - Blocchi medi */}
+        <div className="mb-16">
+          <h4 className="text-lg font-mono text-foreground mb-8 text-center">Percorso Informativo (18% utenti)</h4>
+          <div className="flex items-center justify-center gap-4">
+            <div className="border-2 border-white p-6 w-36 h-30 flex flex-col items-center justify-center rounded-2xl">
+              <Home className="h-9 w-9 text-orange-500 mb-2" />
+              <span className="text-base font-semibold text-blue-400 mb-1">Homepage</span>
+              <span className="text-sm text-blue-400 font-medium">100%</span>
+            </div>
+            <div className="relative group flex flex-col items-center">
+              <ArrowRight className="h-6 w-6 text-gray-600 mb-2" />
+              <span className="text-base font-semibold text-gray-700">75%</span>
+              <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                <div className="font-mono text-analytics-blue">75%</div>
+                <div className="text-xs text-muted-foreground">675 utenti</div>
+              </div>
+            </div>
+            <div className="border-2 border-white p-6 w-36 h-30 flex flex-col items-center justify-center rounded-2xl">
+              <Users className="h-9 w-9 text-purple-500 mb-2" />
+              <span className="text-base font-semibold text-blue-400 mb-1">Chi Siamo</span>
+              <span className="text-sm text-blue-400 font-medium">75%</span>
+            </div>
+            <div className="relative group flex flex-col items-center">
+              <ArrowRight className="h-6 w-6 text-gray-600 mb-2" />
+              <span className="text-base font-semibold text-gray-700">45%</span>
+              <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                <div className="font-mono text-analytics-blue">45%</div>
+                <div className="text-xs text-muted-foreground">405 utenti</div>
+              </div>
+            </div>
+            <div className="border-2 border-white p-6 w-36 h-30 flex flex-col items-center justify-center rounded-2xl">
+              <FileText className="h-9 w-9 text-green-500 mb-2" />
+              <span className="text-base font-semibold text-blue-400 mb-1">Blog</span>
+              <span className="text-sm text-blue-400 font-medium">45%</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Percorso Contenuti - Blocchi piccoli */}
+        <div className="mb-16">
+          <h4 className="text-lg font-mono text-foreground mb-8 text-center">Percorso Contenuti (15% utenti)</h4>
+          <div className="flex items-center justify-center gap-4">
+            <div className="border-2 border-white p-4 w-28 h-24 flex flex-col items-center justify-center rounded-2xl">
+              <Home className="h-7 w-7 text-orange-500 mb-1" />
+              <span className="text-sm font-semibold text-blue-400 mb-1">Homepage</span>
+              <span className="text-xs text-blue-400 font-medium">100%</span>
+            </div>
+            <div className="relative group flex flex-col items-center">
+              <ArrowRight className="h-5 w-5 text-gray-600 mb-1" />
+              <span className="text-sm font-semibold text-gray-700">80%</span>
+              <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                <div className="font-mono text-analytics-blue">80%</div>
+                <div className="text-xs text-muted-foreground">600 utenti</div>
+              </div>
+            </div>
+            <div className="border-2 border-white p-4 w-28 h-24 flex flex-col items-center justify-center rounded-2xl">
+              <FileText className="h-7 w-7 text-green-500 mb-1" />
+              <span className="text-sm font-semibold text-blue-400 mb-1">Blog</span>
+              <span className="text-xs text-blue-400 font-medium">80%</span>
+            </div>
+            <div className="relative group flex flex-col items-center">
+              <ArrowRight className="h-5 w-5 text-gray-600 mb-1" />
+              <span className="text-sm font-semibold text-gray-700">35%</span>
+              <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                <div className="font-mono text-analytics-blue">35%</div>
+                <div className="text-xs text-muted-foreground">210 utenti</div>
+              </div>
+            </div>
+            <div className="border-2 border-white p-4 w-28 h-24 flex flex-col items-center justify-center rounded-2xl">
+              <BookOpen className="h-7 w-7 text-red-500 mb-1" />
+              <span className="text-sm font-semibold text-blue-400 mb-1">Articolo</span>
+              <span className="text-xs text-blue-400 font-medium">35%</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Menu a tendina per altri percorsi */}
+        <div className="border-t border-dashboard-border pt-6">
+          <details className="group">
+            <summary className="flex items-center justify-between cursor-pointer text-lg font-mono text-foreground hover:text-analytics-blue transition-colors">
+              <span>Vedi gli altri percorsi</span>
+              <ChevronDown className="h-5 w-5 transition-transform group-open:rotate-180" />
+            </summary>
+            <div className="mt-4 space-y-3">
+              <div className="flex items-center gap-2 text-sm bg-dashboard-surface/30 p-3 border border-dashboard-border">
+                <span className="font-mono text-foreground min-w-[20px]">4°</span>
+                <span className="bg-analytics-blue/20 text-analytics-blue px-2 py-1 text-xs">Homepage</span>
+                <ArrowRight className="h-3 w-3" />
+                <span className="bg-analytics-blue/20 text-analytics-blue px-2 py-1 text-xs">Servizi</span>
+                <ArrowRight className="h-3 w-3" />
+                <span className="bg-analytics-blue/20 text-analytics-blue px-2 py-1 text-xs">Preventivo</span>
+                <span className="ml-auto text-muted-foreground text-xs">12% utenti</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm bg-dashboard-surface/30 p-3 border border-dashboard-border">
+                <span className="font-mono text-foreground min-w-[20px]">5°</span>
+                <span className="bg-analytics-blue/20 text-analytics-blue px-2 py-1 text-xs">Homepage</span>
+                <ArrowRight className="h-3 w-3" />
+                <span className="bg-analytics-blue/20 text-analytics-blue px-2 py-1 text-xs">Portfolio</span>
+                <ArrowRight className="h-3 w-3" />
+                <span className="bg-analytics-blue/20 text-analytics-blue px-2 py-1 text-xs">Progetto</span>
+                <span className="ml-auto text-muted-foreground text-xs">8% utenti</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm bg-dashboard-surface/30 p-3 border border-dashboard-border">
+                <span className="font-mono text-foreground min-w-[20px]">6°</span>
+                <span className="bg-analytics-blue/20 text-analytics-blue px-2 py-1 text-xs">Homepage</span>
+                <ArrowRight className="h-3 w-3" />
+                <span className="bg-analytics-blue/20 text-analytics-blue px-2 py-1 text-xs">FAQ</span>
+                <ArrowRight className="h-3 w-3" />
+                <span className="bg-analytics-blue/20 text-analytics-blue px-2 py-1 text-xs">Supporto</span>
+                <span className="ml-auto text-muted-foreground text-xs">5% utenti</span>
+              </div>
+            </div>
+          </details>
         </div>
       </div>
 
-      {/* 4. Behavioral Patterns */}
+      {/* Pattern Comportamentali */}
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
-        <h3 className="text-lg font-semibold mb-6 font-mono">PATTERN COMPORTAMENTALI</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="space-y-4">
-            <div className="flex items-center space-x-3 p-4 bg-analytics-green/10 border border-analytics-green/20">
-              <div className="p-2 bg-analytics-green">
-                <Eye className="h-5 w-5 text-white" />
-              </div>
-              <div>
-                <div className="font-semibold font-mono text-analytics-green">Alta Conversione</div>
-                <div className="text-sm text-muted-foreground font-mono">Percorso Home → Prodotti → Contatti</div>
-              </div>
+        <h3 className="text-lg font-semibold mb-6 font-mono text-analytics-red">PATTERN COMPORTAMENTALI</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="bg-dashboard-surface/30 border border-dashboard-border p-4">
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-mono text-sm text-muted-foreground">Utenti che abbandonano dopo errori</span>
+              <Bug className="h-4 w-4 text-analytics-red" />
             </div>
-            <div className="flex items-center space-x-3 p-4 bg-analytics-orange/10 border border-analytics-orange/20">
-              <div className="p-2 bg-analytics-orange">
-                <Activity className="h-5 w-5 text-white" />
-              </div>
-              <div>
-                <div className="font-semibold font-mono text-analytics-orange">Media Conversione</div>
-                <div className="text-sm text-muted-foreground font-mono">Percorso Blog → Servizi</div>
-              </div>
-            </div>
+            <span className="font-bold text-2xl font-mono text-analytics-green">0.0%</span>
           </div>
-          <div className="space-y-4">
-            <div className="flex items-center space-x-3 p-4 bg-analytics-red/10 border border-analytics-red/20">
-              <div className="p-2 bg-analytics-red">
-                <AlertTriangle className="h-5 w-5 text-white" />
-              </div>
-              <div>
-                <div className="font-semibold font-mono text-analytics-red">Abbandono Elevato</div>
-                <div className="text-sm text-muted-foreground font-mono">Pagina Prodotti senza proseguimento</div>
-              </div>
+          <div className="bg-dashboard-surface/30 border border-dashboard-border p-4">
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-mono text-sm text-muted-foreground">Tempo medio prima della frustrazione</span>
+              <AlertTriangle className="h-4 w-4 text-analytics-orange" />
             </div>
-            <div className="flex items-center space-x-3 p-4 bg-analytics-blue/10 border border-analytics-blue/20">
-              <div className="p-2 bg-analytics-blue">
-                <Bug className="h-5 w-5 text-white" />
-              </div>
-              <div>
-                <div className="font-semibold font-mono text-analytics-blue">Anomalie Rilevate</div>
-                <div className="text-sm text-muted-foreground font-mono">Tempo di permanenza elevato su Chi Siamo</div>
-              </div>
+            <span className="font-bold text-2xl font-mono text-analytics-blue">10s</span>
+          </div>
+          <div className="bg-dashboard-surface/30 border border-dashboard-border p-4">
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-mono text-sm text-muted-foreground">Engagement ratio nelle sessioni problematiche</span>
+              <Activity className="h-4 w-4 text-analytics-green" />
             </div>
+            <span className="font-bold text-2xl font-mono text-analytics-orange">21.3%</span>
           </div>
         </div>
       </div>
 
-      {/* 5. Distribution Analysis */}
+      {/* 4. Device/OS/Browser Distribution */}
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-          <h3 className="text-lg font-semibold font-mono">DISTRIBUZIONE DATI</h3>
+        <h3 className="text-lg font-semibold mb-6 font-mono">DISTRIBUZIONE DEVICE/OS/BROWSER</h3>
+        <div className="space-y-6">
           <div className="flex bg-dashboard-surface border border-dashboard-border">
             {[
-              { id: "device", label: "Device" },
+              { id: "device", label: "DEVICE" },
               { id: "os", label: "OS" },
-              { id: "browser", label: "Browser" }
+              { id: "browser", label: "BROWSER" }
             ].map((tab) => (
               <Button
                 key={tab.id}
@@ -359,7 +479,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                 size="sm"
                 onClick={() => setDistributionTab(tab.id as any)}
                 className={cn(
-                  "font-mono text-xs px-4 py-2 border-0",
+                  "font-mono text-xs px-6 py-2 border-0",
                   distributionTab === tab.id && "bg-analytics-blue text-white"
                 )}
               >
@@ -367,29 +487,30 @@ export function UXSection({ onBack }: UXSectionProps) {
               </Button>
             ))}
           </div>
-        </div>
-        <div className="space-y-3">
-          {getDistributionData().map((item, index) => (
-            <div key={index} className="space-y-2">
-              <div className="flex justify-between items-center">
-                <span className="text-sm font-mono">{item.name}</span>
-                <span className="font-bold font-mono text-analytics-blue">{item.value}%</span>
+          
+          <div className="space-y-4">
+            {getDistributionData().map((item, index) => (
+              <div key={index} className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm font-mono">{item.name}</span>
+                  <span className="font-bold text-analytics-blue font-mono">{item.value}%</span>
+                </div>
+                <Progress value={item.value} className="h-2" />
               </div>
-              <Progress value={item.value} className="h-2" />
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* 6. Regional Distribution */}
+      {/* Regional Distribution */}
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
-        <h3 className="text-lg font-semibold mb-6 font-mono">DISTRIBUZIONE GEOGRAFICA</h3>
-        <div className="space-y-3">
+        <h3 className="text-lg font-semibold mb-6 font-mono">DISTRIBUZIONE REGIONI ITALIA</h3>
+        <div className="space-y-4">
           {regionData.map((region, index) => (
             <div key={index} className="space-y-2">
               <div className="flex justify-between items-center">
                 <span className="text-sm font-mono">{region.name}</span>
-                <span className="font-bold font-mono text-analytics-green">{region.value}%</span>
+                <span className="font-bold text-analytics-blue font-mono">{region.value}%</span>
               </div>
               <Progress value={region.value} className="h-2" />
             </div>
