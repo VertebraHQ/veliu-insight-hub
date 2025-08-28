@@ -25,7 +25,7 @@ export function TrendSelector() {
           size="sm"
           onClick={() => setPeriodType("weekly")}
           className={cn(
-            "font-mono text-xs px-4 py-2 border-0",
+            "text-xs px-4 py-2 border-0",
             periodType === "weekly" && "bg-analytics-blue text-white"
           )}
         >
@@ -36,7 +36,7 @@ export function TrendSelector() {
           size="sm"
           onClick={() => setPeriodType("monthly")}
           className={cn(
-            "font-mono text-xs px-4 py-2 border-0",
+            "text-xs px-4 py-2 border-0",
             periodType === "monthly" && "bg-analytics-blue text-white"
           )}
         >
@@ -49,7 +49,7 @@ export function TrendSelector() {
               size="sm"
               onClick={() => setPeriodType("custom")}
               className={cn(
-                "font-mono text-xs px-3 py-2 border-0",
+                "text-xs px-3 py-2 border-0",
                 periodType === "custom" && "bg-analytics-blue text-white"
               )}
             >
@@ -90,7 +90,7 @@ export function TrendSelector() {
       </div>
       
       {periodType === "custom" && customDateRange.from && customDateRange.to && (
-        <div className="text-xs text-muted-foreground font-mono">
+        <div className="text-xs text-muted-foreground">
           {format(customDateRange.from, "dd/MM")} - {format(customDateRange.to, "dd/MM")}
         </div>
       )}

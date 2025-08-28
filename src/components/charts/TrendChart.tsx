@@ -1,19 +1,18 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const data = [
-  { date: '20', sessioniTotali: 30, funnelCompletati: 0, percentualeConversione: 0 },
-  { date: '21', sessioniTotali: 35, funnelCompletati: 2, percentualeConversione: 0.1 },
-  { date: '22', sessioniTotali: 45, funnelCompletati: 3, percentualeConversione: 0.2 },
-  { date: '23', sessioniTotali: 120, funnelCompletati: 8, percentualeConversione: 0.3 },
-  { date: '24', sessioniTotali: 250, funnelCompletati: 15, percentualeConversione: 0.4 },
-  { date: '25', sessioniTotali: 400, funnelCompletati: 25, percentualeConversione: 0.6 },
-  { date: '26', sessioniTotali: 484, funnelCompletati: 0, percentualeConversione: 0 },
+  { date: '20', sessioniTotali: 30, funnelCompletati: 2, percentualeConversione: 6.7 },
+  { date: '21', sessioniTotali: 45, funnelCompletati: 5, percentualeConversione: 11.1 },
+  { date: '22', sessioniTotali: 78, funnelCompletati: 12, percentualeConversione: 15.4 },
+  { date: '23', sessioniTotali: 125, funnelCompletati: 22, percentualeConversione: 17.6 },
+  { date: '24', sessioniTotali: 298, funnelCompletati: 58, percentualeConversione: 19.5 },
+  { date: '25', sessioniTotali: 420, funnelCompletati: 98, percentualeConversione: 23.3 },
+  { date: '26', sessioniTotali: 484, funnelCompletati: 122, percentualeConversione: 25.2 },
 ];
 
 export function TrendChart() {
   return (
-    <div className="w-full h-80 p-4">
-      <h3 className="text-lg font-semibold mb-4 text-foreground">Trend Principale</h3>
+    <div className="w-full h-80">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />

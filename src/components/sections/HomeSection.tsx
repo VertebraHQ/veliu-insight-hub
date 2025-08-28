@@ -38,6 +38,7 @@ export function HomeSection({ onSectionChange }: HomeSectionProps) {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <h2 className="text-3xl font-bold text-foreground tracking-tight">DASHBOARD</h2>
+        <TrendSelector />
       </div>
 
       {/* KPI Cards Grid */}
@@ -48,19 +49,12 @@ export function HomeSection({ onSectionChange }: HomeSectionProps) {
           icon={Users}
           color="blue"
         />
-        <div className="group relative overflow-hidden border bg-dashboard-surface/60 p-6 shadow-card transition-all duration-150 hover:shadow-card-hover hover:scale-[1.02] dashboard-card border-analytics-green/20 bg-analytics-green/5 text-analytics-green">
-          <div className="flex items-start justify-between">
-            <div className="flex-1">
-              <p className="text-sm font-medium text-muted-foreground">DATA QUALITY</p>
-              <div className="mt-2">
-                <DataQualityTooltip value="96.2%" />
-              </div>
-            </div>
-            <div className="p-2 rounded-lg text-analytics-green">
-              <Target className="h-6 w-6" />
-            </div>
-          </div>
-        </div>
+        <KPICard
+          title="DATA QUALITY"
+          value="96.2%"
+          icon={Target}
+          color="green"
+        />
         <KPICard
           title="FUNNEL COMPLETATI"
           value="122"
@@ -79,7 +73,6 @@ export function HomeSection({ onSectionChange }: HomeSectionProps) {
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
           <h3 className="text-lg font-semibold text-foreground">TREND PRINCIPALE</h3>
-          <TrendSelector />
         </div>
         <TrendChart />
       </div>
