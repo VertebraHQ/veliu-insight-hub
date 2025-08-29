@@ -1,7 +1,7 @@
 import { KPICard } from "@/components/KPICard";
 import { DateSelector } from "@/components/DateSelector";
 import { CompactDateSelector } from "@/components/sections/CompactDateSelector";
-import { ArrowLeft, AlertTriangle, Bug, FormInput, MousePointer2, Zap, Navigation, Clock, Gauge, Eye, Monitor, Smartphone, Activity, Loader2 } from "lucide-react";
+import { ArrowLeft, AlertTriangle, Bug, FormInput, MousePointer2, Zap, Navigation, Clock, Gauge, Eye, Monitor, Smartphone, Activity, Loader2, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Progress } from "@/components/ui/progress";
@@ -301,25 +301,22 @@ export function TechSection({ onBack }: TechSectionProps) {
           {problematicSessions.map((session, index) => (
             <div key={index} className="flex items-center justify-between p-3 bg-muted/30 hover:bg-muted/50 transition-colors border border-dashboard-border">
               <div className="flex items-center space-x-3">
-                <div className={`w-3 h-3 ${
-                  session.severity === 'high' ? 'bg-analytics-red' : 'bg-analytics-orange'
-                }`} />
                 <span className="text-sm font-mono text-muted-foreground">{session.id}</span>
-                <span className="text-xs bg-analytics-blue/20 text-analytics-blue px-2 py-1 font-mono">
-                  {session.type}
-                </span>
-                <span className="text-xs bg-dashboard-surface text-foreground px-2 py-1 border border-dashboard-border font-mono">
-                  {session.browser}
-                </span>
-                <span className="text-xs bg-dashboard-surface text-foreground px-2 py-1 border border-dashboard-border font-mono">
-                  {session.device}
+                <span className={`text-sm font-medium font-mono ${
+                  session.severity === 'high' ? 'text-analytics-red' : 'text-analytics-orange'
+                }`}>
+                  {session.issue}
                 </span>
               </div>
-              <span className={`text-sm font-medium font-mono ${
-                session.severity === 'high' ? 'text-analytics-red' : 'text-analytics-orange'
-              }`}>
-                {session.issue}
-              </span>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => window.open(`https://eu.posthog.com/project/48794/replay/${session.id}`, '_blank')}
+                className="flex items-center space-x-1 text-xs"
+              >
+                <Play className="h-3 w-3" />
+                <span>Video</span>
+              </Button>
             </div>
           ))}
         </div>

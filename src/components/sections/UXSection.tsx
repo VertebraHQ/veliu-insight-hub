@@ -489,10 +489,10 @@ export function UXSection({ onBack }: UXSectionProps) {
           isHeatmapFullscreen ? "fixed inset-4 z-50 h-[calc(100vh-2rem)]" : "h-[700px]"
         )}>
           <div className="w-full h-full flex items-center justify-center">
-            <img 
-              src="/lovable-uploads/d0679451-ad4a-45d9-b37b-4c675eff3885.png" 
-              alt="VELIU Analytics Interface" 
-              className="w-full h-auto object-contain"
+            <img
+              src="/images/test.png"
+              alt="Heatmap Placeholder"
+              className="max-w-full max-h-full object-contain"
             />
           </div>
         </div>

@@ -57,8 +57,8 @@ export function HomeSection({ onSectionChange }: HomeSectionProps) {
   const conversionRate = data ?
     Math.round(data.funnel.conversion_rate * 100 * 100) / 100 : 0;
 
-  const goodSessionsCount = data ?
-    data.ux.session_quality_score.classification.distribution.good : 0;
+  const funnelCompletedCount = data ?
+    data.funnel.converted_sessions : 0;
 
   if (loading) {
     return (
@@ -152,8 +152,8 @@ export function HomeSection({ onSectionChange }: HomeSectionProps) {
           color="green"
         />
         <KPICard
-          title="SESSIONI BUONE"
-          value={goodSessionsCount}
+          title="FUNNEL COMPLETATI"
+          value={funnelCompletedCount}
           icon={TrendingUp}
           color="orange"
         />
