@@ -179,7 +179,7 @@ export function useAnalyticsData(): UseAnalyticsDataReturn {
       const dateString = format(date, 'yyyy-MM-dd');
       const fileName = `aggregates-${dateString}.json`;
       
-      // Try to load the JSON file
+      // Try to load the JSON file from public folder
       const response = await fetch(`/records/${fileName}`);
       
       if (!response.ok) {
