@@ -177,20 +177,17 @@ export function UXSection({ onBack }: UXSectionProps) {
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-lg font-semibold font-mono">QUALITY SCORE</h3>
-          <Popover open={isWeightConfigOpen} onOpenChange={setIsWeightConfigOpen}>
-            <PopoverTrigger asChild>
-              <button className="flex items-center space-x-2 px-3 py-2 bg-dashboard-surface/80 border border-dashboard-border text-sm font-medium text-muted-foreground hover:bg-dashboard-surface-hover/80 hover:text-foreground transition-all duration-150 apple-button">
-                <Settings className="h-4 w-4" />
-                <span>Configura Pesi</span>
-              </button>
-            </PopoverTrigger>
-            <PopoverContent 
-              className="w-[900px] p-0 border border-border shadow-2xl z-50" 
-              align="end"
-              alignOffset={-1000}
-              sideOffset={8}
-            >
-              <div className="bg-background/8 rounded-lg p-8">
+          <button 
+            onClick={() => setIsWeightConfigOpen(!isWeightConfigOpen)}
+            className="flex items-center space-x-2 px-3 py-2 bg-dashboard-surface/80 border border-dashboard-border text-sm font-medium text-muted-foreground hover:bg-dashboard-surface-hover/80 hover:text-foreground transition-all duration-150 apple-button"
+          >
+            <Settings className="h-4 w-4" />
+            <span>Configura Pesi</span>
+          </button>
+        </div>
+
+        {isWeightConfigOpen && (
+          <div className="mb-8 bg-background/8 rounded-lg border border-border p-8 shadow-lg">
                 <div className="mb-8">
                   <h4 className="text-xl font-bold mb-2">Configurazione Pesi Metriche</h4>
                   <p className="text-muted-foreground">Seleziona un valore da 0% a 30% per ogni variabile</p>
@@ -351,9 +348,8 @@ export function UXSection({ onBack }: UXSectionProps) {
                   </Button>
                 </div>
               </div>
-            </PopoverContent>
-          </Popover>
-        </div>
+            )}
+        
         <div className="space-y-4">
           {qualityScores.map((score, index) => (
             <div key={index} className="space-y-2">
