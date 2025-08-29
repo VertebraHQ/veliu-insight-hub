@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { KPICard } from "@/components/KPICard";
 import { DateSelector } from "@/components/DateSelector";
 import { CompactDateSelector } from "@/components/sections/CompactDateSelector";
-import { ArrowLeft, MousePointer, Eye, Navigation, Activity, Maximize2, Monitor, Smartphone, Tablet, Bug, AlertTriangle, Home, Package, Phone, Users, FileText, BookOpen, ArrowRight, ChevronDown, Settings, Loader2, RotateCcw, Save, AlertCircle } from "lucide-react";
+import { ArrowLeft, MousePointer, Eye, Navigation, Activity, Maximize2, Monitor, Smartphone, Tablet, Bug, AlertTriangle, Home, Package, Phone, Users, FileText, BookOpen, ArrowRight, ChevronDown, Settings, Loader2, RotateCcw, Save, AlertCircle, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -289,6 +289,17 @@ export function UXSection({ onBack }: UXSectionProps) {
   ] : [];
 
   const totalClicks = data ? Object.values(data.clickmap_global).reduce((sum, clicks) => sum + clicks, 0) : 0;
+
+  // Generate sample problematic sessions from error examples (duplicated from TechSection)
+  const problematicSessions = data && data.ux.frustration.examples.with_errors ?
+    data.ux.frustration.examples.with_errors.slice(0, 5).map((sessionId, index) => ({
+      id: sessionId,
+      type: "Video",
+      issue: index < 3 ? "Con errori" : "Rage clicks",
+      severity: index < 3 ? "high" as const : "medium" as const,
+      browser: ["Chrome", "Safari", "Firefox", "Chrome", "Edge"][index],
+      device: ["Desktop", "Mobile", "Desktop", "Mobile", "Tablet"][index]
+    })) : [];
 
   const getDistributionData = () => {
     switch (distributionTab) {
@@ -981,6 +992,34 @@ export function UXSection({ onBack }: UXSectionProps) {
               </div>
             </div>
           </details>
+        </div>
+      </div>
+
+      {/* Sessioni Problematiche - Duplicated from TechSection */}
+      <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
+        <h3 className="text-lg font-semibold mb-6 font-mono">SESSIONI PROBLEMATICHE</h3>
+        <div className="space-y-3">
+          {problematicSessions.map((session, index) => (
+            <div key={index} className="flex items-center justify-between p-3 bg-muted/30 hover:bg-muted/50 transition-colors border border-dashboard-border">
+              <div className="flex items-center space-x-3">
+                <span className="text-sm font-mono text-muted-foreground">{session.id}</span>
+                <span className={`text-sm font-medium font-mono ${
+                  session.severity === 'high' ? 'text-analytics-red' : 'text-analytics-orange'
+                }`}>
+                  {session.issue}
+                </span>
+              </div>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => window.open(`https://eu.posthog.com/project/48794/replay/${session.id}`, '_blank')}
+                className="flex items-center space-x-1 text-xs"
+              >
+                <Play className="h-3 w-3" />
+                <span>Video</span>
+              </Button>
+            </div>
+          ))}
         </div>
       </div>
 
