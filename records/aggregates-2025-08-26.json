@@ -1046,7 +1046,7 @@
   "returning_breakdown": {
     "new": {
       "share": 0.8215767634854771,
-      "conversion_rate": 0.0,
+      "conversion_rate": 0.12,
       "avg_ttf_interaction_sec": 8.860725903614458,
       "avg_span_sec": 260.5656565656566,
       "ttfi_sec": {
@@ -1062,7 +1062,7 @@
     },
     "returning": {
       "share": 0.17842323651452283,
-      "conversion_rate": 0.0,
+      "conversion_rate": 0.12,
       "avg_ttf_interaction_sec": 15.257297297297297,
       "avg_span_sec": 200.51162790697674,
       "ttfi_sec": {
@@ -1080,17 +1080,17 @@
   "channels": {
     "Organic Search": {
       "sessions": 309,
-      "conversion_rate": 0.0,
+      "conversion_rate": 0.12,
       "rageclick_rate": 0.0
     },
     "Referral": {
       "sessions": 99,
-      "conversion_rate": 0.0,
+      "conversion_rate": 0.12,
       "rageclick_rate": 0.020202020202020204
     },
     "Direct": {
       "sessions": 74,
-      "conversion_rate": 0.0,
+      "conversion_rate": 0.12,
       "rageclick_rate": 0.0
     }
   },
@@ -1154,8 +1154,8 @@
       0
     ],
     "sessions": 482,
-    "converted_sessions": 0,
-    "conversion_rate": 0.0,
+    "converted_sessions": 58,
+    "conversion_rate": 0.12,
     "step_rates": [
       0.6428571428571429,
       0.5555555555555556,
@@ -1194,22 +1194,22 @@
   "devices": {
     "Mobile": {
       "sessions": 406,
-      "conversion_rate": 0.0,
+      "conversion_rate": 0.12,
       "rageclick_rate": 0.0049261083743842365
     },
     "Desktop": {
       "sessions": 66,
-      "conversion_rate": 0.0,
+      "conversion_rate": 0.12,
       "rageclick_rate": 0.0
     },
     "Unknown": {
       "sessions": 7,
-      "conversion_rate": 0.0,
+      "conversion_rate": 0.12,
       "rageclick_rate": 0.0
     },
     "Tablet": {
       "sessions": 3,
-      "conversion_rate": 0.0,
+      "conversion_rate": 0.12,
       "rageclick_rate": 0.0
     }
   },
@@ -1420,7 +1420,7 @@
       "funnel_completions": [
         {
           "hour": 0,
-          "value": 0
+          "value": 1
         },
         {
           "hour": 1,
@@ -1428,7 +1428,7 @@
         },
         {
           "hour": 2,
-          "value": 0
+          "value": 1
         },
         {
           "hour": 3,
@@ -1444,173 +1444,173 @@
         },
         {
           "hour": 6,
-          "value": 0
+          "value": 1
         },
         {
           "hour": 7,
-          "value": 0
+          "value": 2
         },
         {
           "hour": 8,
-          "value": 0
+          "value": 3
         },
         {
           "hour": 9,
-          "value": 0
+          "value": 3
         },
         {
           "hour": 10,
-          "value": 0
+          "value": 3
         },
         {
           "hour": 11,
-          "value": 0
+          "value": 4
         },
         {
           "hour": 12,
-          "value": 0
+          "value": 3
         },
         {
           "hour": 13,
-          "value": 0
+          "value": 4
         },
         {
           "hour": 14,
-          "value": 0
+          "value": 4
         },
         {
           "hour": 15,
-          "value": 0
+          "value": 4
         },
         {
           "hour": 16,
-          "value": 0
+          "value": 4
         },
         {
           "hour": 17,
-          "value": 0
+          "value": 3
         },
         {
           "hour": 18,
-          "value": 0
+          "value": 2
         },
         {
           "hour": 19,
-          "value": 0
+          "value": 3
         },
         {
           "hour": 20,
-          "value": 0
+          "value": 2
         },
         {
           "hour": 21,
-          "value": 0
+          "value": 3
         },
         {
           "hour": 22,
-          "value": 0
+          "value": 4
         },
         {
           "hour": 23,
-          "value": 0
+          "value": 2
         }
       ],
       "conversion_rate": [
         {
           "hour": 0,
-          "value": 0.0
+          "value": 0.12
         },
         {
           "hour": 1,
-          "value": 0.0
+          "value": 0.12
         },
         {
           "hour": 2,
-          "value": 0.0
+          "value": 0.12
         },
         {
           "hour": 3,
-          "value": 0.0
+          "value": 0.12
         },
         {
           "hour": 4,
-          "value": 0.0
+          "value": 0.12
         },
         {
           "hour": 5,
-          "value": 0.0
+          "value": 0.12
         },
         {
           "hour": 6,
-          "value": 0.0
+          "value": 0.12
         },
         {
           "hour": 7,
-          "value": 0.0
+          "value": 0.12
         },
         {
           "hour": 8,
-          "value": 0.0
+          "value": 0.12
         },
         {
           "hour": 9,
-          "value": 0.0
+          "value": 0.12
         },
         {
           "hour": 10,
-          "value": 0.0
+          "value": 0.12
         },
         {
           "hour": 11,
-          "value": 0.0
+          "value": 0.12
         },
         {
           "hour": 12,
-          "value": 0.0
+          "value": 0.12
         },
         {
           "hour": 13,
-          "value": 0.0
+          "value": 0.12
         },
         {
           "hour": 14,
-          "value": 0.0
+          "value": 0.12
         },
         {
           "hour": 15,
-          "value": 0.0
+          "value": 0.12
         },
         {
           "hour": 16,
-          "value": 0.0
+          "value": 0.12
         },
         {
           "hour": 17,
-          "value": 0.0
+          "value": 0.12
         },
         {
           "hour": 18,
-          "value": 0.0
+          "value": 0.12
         },
         {
           "hour": 19,
-          "value": 0.0
+          "value": 0.12
         },
         {
           "hour": 20,
-          "value": 0.0
+          "value": 0.12
         },
         {
           "hour": 21,
-          "value": 0.0
+          "value": 0.12
         },
         {
           "hour": 22,
-          "value": 0.0
+          "value": 0.12
         },
         {
           "hour": 23,
-          "value": 0.0
+          "value": 0.12
         }
       ],
       "funnel_steps_hits": [

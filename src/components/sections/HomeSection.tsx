@@ -1,10 +1,13 @@
 import { KPICard } from "@/components/KPICard";
 import { TrendSelector } from "@/components/TrendSelector";
+import { DateSelector } from "@/components/DateSelector";
 import { DataQualityTooltip } from "@/components/DataQualityTooltip";
 import { TrendChart } from "@/components/charts/TrendChart";
-import { Users, Target, TrendingUp, Percent, BarChart, Zap } from "lucide-react";
+import { Users, Target, TrendingUp, Percent, BarChart, Zap, AlertCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import { cn } from "@/lib/utils";
+import { useAnalyticsData } from "@/hooks/useAnalyticsData";
 
 interface HomeSectionProps {
   onSectionChange: (section: string) => void;
@@ -33,37 +36,130 @@ const colorClasses = {
 };
 
 export function HomeSection({ onSectionChange }: HomeSectionProps) {
+  const {
+    data,
+    loading,
+    error,
+    availableDates,
+    selectedDate,
+    periodType,
+    customDateRange,
+    setSelectedDate,
+    setPeriodType,
+    setCustomDateRange,
+    refreshData
+  } = useAnalyticsData();
+
+  // Calculate derived values from data
+  const dataQualityPercentage = data ?
+    Math.round(data.data_quality.sampling_rate * 100 * 100) / 100 : 0;
+  
+  const conversionRate = data ?
+    Math.round(data.funnel.conversion_rate * 100 * 100) / 100 : 0;
+
+  const goodSessionsCount = data ?
+    data.ux.session_quality_score.classification.distribution.good : 0;
+
+  if (loading) {
+    return (
+      <div className="space-y-8">
+        <div className="flex items-center justify-center py-12">
+          <Loader2 className="h-8 w-8 animate-spin text-analytics-blue" />
+          <span className="ml-2 text-muted-foreground">Caricamento dati...</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="space-y-8">
+        <Alert variant="destructive">
+          <AlertCircle className="h-4 w-4" />
+          <AlertDescription>
+            Errore nel caricamento dei dati: {error}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={refreshData}
+              className="ml-2"
+            >
+              Riprova
+            </Button>
+          </AlertDescription>
+        </Alert>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-8">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <h2 className="text-3xl font-bold text-foreground tracking-tight">DASHBOARD</h2>
-        <TrendSelector />
+        <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4">
+            {periodType === 'daily' && (
+              <DateSelector
+                selectedDate={selectedDate}
+                onDateChange={setSelectedDate}
+                availableDates={availableDates}
+                disabled={loading}
+              />
+            )}
+            <TrendSelector
+              periodType={periodType}
+              onPeriodTypeChange={setPeriodType}
+              customDateRange={customDateRange}
+              onCustomDateRangeChange={setCustomDateRange}
+              disabled={loading}
+            />
+          </div>
+        </div>
       </div>
+
+      {/* Data Info */}
+      {data && (
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-sm text-muted-foreground bg-dashboard-surface/30 border border-dashboard-border rounded-lg p-4">
+          <div>
+            <span className="font-medium text-analytics-blue">Dati per:</span> {data.meta.date_local} |
+            <span className="font-medium text-analytics-green ml-2">Timezone:</span> {data.meta.timezone}
+          </div>
+          {periodType !== 'daily' && (
+            <div className="text-xs">
+              <span className="font-medium text-analytics-orange">Modalità:</span> {
+                periodType === 'weekly' ? 'Visualizzazione Settimanale' :
+                periodType === 'monthly' ? 'Visualizzazione Mensile' :
+                periodType === 'custom' ? 'Periodo Personalizzato' : ''
+              }
+            </div>
+          )}
+        </div>
+      )}
 
       {/* KPI Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <KPICard
           title="SESSIONI TOTALI"
-          value="484"
+          value={data?.total_sessions_yesterday || 0}
           icon={Users}
           color="blue"
         />
         <KPICard
           title="DATA QUALITY"
-          value="96.2%"
+          value={`${dataQualityPercentage}%`}
           icon={Target}
           color="green"
         />
         <KPICard
-          title="FUNNEL COMPLETATI"
-          value="122"
+          title="SESSIONI BUONE"
+          value={goodSessionsCount}
           icon={TrendingUp}
           color="orange"
         />
         <KPICard
           title="CONVERSION RATE"
-          value="25.2%"
+          value={`${conversionRate}%`}
           icon={Percent}
           color="red"
         />
@@ -74,7 +170,12 @@ export function HomeSection({ onSectionChange }: HomeSectionProps) {
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
           <h3 className="text-lg font-semibold text-foreground">TREND PRINCIPALE</h3>
         </div>
-        <TrendChart />
+        <TrendChart
+          data={data}
+          periodType={periodType}
+          selectedDate={selectedDate}
+          customDateRange={customDateRange}
+        />
       </div>
 
       {/* Analysis Sections */}

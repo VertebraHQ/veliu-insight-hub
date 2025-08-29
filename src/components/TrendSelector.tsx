@@ -3,27 +3,93 @@ import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { CalendarIcon } from "lucide-react";
-import { format } from "date-fns";
+import { format, startOfWeek, endOfWeek, startOfMonth, endOfMonth } from "date-fns";
 import { cn } from "@/lib/utils";
+import { PeriodType, DateRange } from "@/hooks/useAnalyticsData";
+import { DateRange as ReactDayPickerDateRange } from "react-day-picker";
 
-export function TrendSelector() {
-  const [periodType, setPeriodType] = useState<"weekly" | "monthly" | "custom">("weekly");
-  const [customDateRange, setCustomDateRange] = useState<{
-    from: Date | undefined;
-    to: Date | undefined;
-  }>({
-    from: undefined,
-    to: undefined
-  });
+interface TrendSelectorProps {
+  periodType: PeriodType;
+  onPeriodTypeChange: (type: PeriodType) => void;
+  customDateRange: DateRange | null;
+  onCustomDateRangeChange: (range: DateRange | null) => void;
+  disabled?: boolean;
+}
+
+export function TrendSelector({
+  periodType,
+  onPeriodTypeChange,
+  customDateRange,
+  onCustomDateRangeChange,
+  disabled = false
+}: TrendSelectorProps) {
   const [isCustomDateOpen, setIsCustomDateOpen] = useState(false);
+  const [tempDateRange, setTempDateRange] = useState<ReactDayPickerDateRange | undefined>(
+    customDateRange ? { from: customDateRange.from, to: customDateRange.to } : undefined
+  );
+
+  const handlePeriodChange = (type: PeriodType) => {
+    onPeriodTypeChange(type);
+    if (type !== 'custom') {
+      onCustomDateRangeChange(null);
+    }
+  };
+
+  const handleCustomDateComplete = (range: ReactDayPickerDateRange | undefined) => {
+    if (range?.from && range?.to) {
+      onCustomDateRangeChange({
+        from: range.from,
+        to: range.to
+      });
+      setIsCustomDateOpen(false);
+    }
+    setTempDateRange(range);
+  };
+
+  const getPeriodDisplay = () => {
+    const today = new Date();
+    
+    switch (periodType) {
+      case "daily":
+        return "Giornaliero";
+      case "weekly":
+        const weekStart = startOfWeek(today, { weekStartsOn: 1 });
+        const weekEnd = endOfWeek(today, { weekStartsOn: 1 });
+        return `Settimana: ${format(weekStart, "dd/MM")} - ${format(weekEnd, "dd/MM")}`;
+      case "monthly":
+        const monthStart = startOfMonth(today);
+        const monthEnd = endOfMonth(today);
+        return `Mese: ${format(monthStart, "dd/MM")} - ${format(monthEnd, "dd/MM")}`;
+      case "custom":
+        if (customDateRange) {
+          return `Custom: ${format(customDateRange.from, "dd/MM")} - ${format(customDateRange.to, "dd/MM")}`;
+        }
+        return "Custom: Seleziona periodo";
+      default:
+        return "";
+    }
+  };
 
   return (
     <div className="flex items-center space-x-4">
       <div className="flex bg-dashboard-surface border border-dashboard-border">
         <Button
+          variant={periodType === "daily" ? "default" : "ghost"}
+          size="sm"
+          onClick={() => handlePeriodChange("daily")}
+          disabled={disabled}
+          className={cn(
+            "text-xs px-4 py-2 border-0",
+            periodType === "daily" && "bg-analytics-blue text-white"
+          )}
+        >
+          GIORNALIERO
+        </Button>
+        <Button
           variant={periodType === "weekly" ? "default" : "ghost"}
           size="sm"
-          onClick={() => setPeriodType("weekly")}
+          onClick={() => handlePeriodChange("weekly")}
+          disabled={disabled}
           className={cn(
             "text-xs px-4 py-2 border-0",
             periodType === "weekly" && "bg-analytics-blue text-white"
@@ -34,7 +100,8 @@ export function TrendSelector() {
         <Button
           variant={periodType === "monthly" ? "default" : "ghost"}
           size="sm"
-          onClick={() => setPeriodType("monthly")}
+          onClick={() => handlePeriodChange("monthly")}
+          disabled={disabled}
           className={cn(
             "text-xs px-4 py-2 border-0",
             periodType === "monthly" && "bg-analytics-blue text-white"
@@ -47,7 +114,8 @@ export function TrendSelector() {
             <Button
               variant={periodType === "custom" ? "default" : "ghost"}
               size="sm"
-              onClick={() => setPeriodType("custom")}
+              onClick={() => handlePeriodChange("custom")}
+              disabled={disabled}
               className={cn(
                 "text-xs px-3 py-2 border-0",
                 periodType === "custom" && "bg-analytics-blue text-white"
@@ -59,41 +127,24 @@ export function TrendSelector() {
           <PopoverContent className="w-auto p-0" align="start">
             <div className="p-4 space-y-3">
               <div className="text-sm font-medium text-foreground">Seleziona Periodo Custom</div>
-              <div className="space-y-2">
-                <div>
-                  <label className="text-xs text-muted-foreground">Data Inizio</label>
-                  <Calendar
-                    mode="single"
-                    selected={customDateRange.from}
-                    onSelect={(date) => setCustomDateRange(prev => ({ ...prev, from: date }))}
-                    className="p-3 pointer-events-auto"
-                  />
-                </div>
-                <div>
-                  <label className="text-xs text-muted-foreground">Data Fine</label>
-                  <Calendar
-                    mode="single"
-                    selected={customDateRange.to}
-                    onSelect={(date) => {
-                      setCustomDateRange(prev => ({ ...prev, to: date }));
-                      if (date && customDateRange.from) {
-                        setIsCustomDateOpen(false);
-                      }
-                    }}
-                    className="p-3 pointer-events-auto"
-                  />
-                </div>
+              <Calendar
+                mode="range"
+                selected={tempDateRange}
+                onSelect={handleCustomDateComplete}
+                numberOfMonths={2}
+                className="p-3 pointer-events-auto"
+              />
+              <div className="text-xs text-muted-foreground">
+                Seleziona data di inizio e fine per il periodo custom
               </div>
             </div>
           </PopoverContent>
         </Popover>
       </div>
       
-      {periodType === "custom" && customDateRange.from && customDateRange.to && (
-        <div className="text-xs text-muted-foreground">
-          {format(customDateRange.from, "dd/MM")} - {format(customDateRange.to, "dd/MM")}
-        </div>
-      )}
+      <div className="text-xs text-muted-foreground min-w-0">
+        <span className="font-medium text-analytics-blue">Periodo:</span> {getPeriodDisplay()}
+      </div>
     </div>
   );
 }

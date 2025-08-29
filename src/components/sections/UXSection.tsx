@@ -2,54 +2,20 @@ import { useState } from "react";
 import { KPICard } from "@/components/KPICard";
 import { DateSelector } from "@/components/DateSelector";
 import { CompactDateSelector } from "@/components/sections/CompactDateSelector";
-import { ArrowLeft, MousePointer, Eye, Navigation, Activity, Maximize2, Monitor, Smartphone, Tablet, Bug, AlertTriangle, Home, Package, Phone, Users, FileText, BookOpen, ArrowRight, ChevronDown, Settings } from "lucide-react";
+import { ArrowLeft, MousePointer, Eye, Navigation, Activity, Maximize2, Monitor, Smartphone, Tablet, Bug, AlertTriangle, Home, Package, Phone, Users, FileText, BookOpen, ArrowRight, ChevronDown, Settings, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import { cn } from "@/lib/utils";
+import { useAnalyticsData } from "@/hooks/useAnalyticsData";
 
 interface UXSectionProps {
   onBack: () => void;
 }
-
-const deviceData = [
-  { name: 'Desktop', value: 60 },
-  { name: 'Mobile', value: 30 },
-  { name: 'Tablet', value: 10 },
-];
-
-const osData = [
-  { name: 'Windows', value: 45 },
-  { name: 'macOS', value: 25 },
-  { name: 'Android', value: 20 },
-  { name: 'iOS', value: 10 },
-];
-
-const browserData = [
-  { name: 'Chrome', value: 50 },
-  { name: 'Safari', value: 25 },
-  { name: 'Firefox', value: 15 },
-  { name: 'Edge', value: 10 },
-];
-
-const regionData = [
-  { name: 'Lombardia', value: 35 },
-  { name: 'Lazio', value: 18 },
-  { name: 'Veneto', value: 12 },
-  { name: 'Emilia-Romagna', value: 10 },
-  { name: 'Toscana', value: 8 },
-  { name: 'Piemonte', value: 7 },
-  { name: 'Altri', value: 10 },
-];
-
-const qualityScores = [
-  { name: "Good", value: 35, color: "analytics-green" },
-  { name: "Neutral", value: 25, color: "analytics-orange" },
-  { name: "Bad", value: 40, color: "analytics-red" },
-];
 
 const userPaths = [
   { 
@@ -101,6 +67,65 @@ export function UXSection({ onBack }: UXSectionProps) {
   const [isHeatmapFullscreen, setIsHeatmapFullscreen] = useState(false);
   const [isWeightConfigOpen, setIsWeightConfigOpen] = useState(false);
 
+  const {
+    data,
+    loading,
+    error,
+    availableDates,
+    selectedDate,
+    periodType,
+    customDateRange,
+    setSelectedDate,
+    setPeriodType,
+    setCustomDateRange,
+    refreshData
+  } = useAnalyticsData();
+
+  // Calculate data from analytics
+  const deviceData = data ? Object.entries(data.distributions.device_type).map(([name, count]) => ({
+    name: name === 'Unknown' ? 'Altri' : name,
+    value: Math.round((count / data.total_sessions_yesterday) * 100)
+  })) : [];
+
+  const osData = data ? Object.entries(data.distributions.os).map(([name, count]) => ({
+    name: name === 'Mac OS X' ? 'macOS' : name || 'Altri',
+    value: Math.round((count / data.total_sessions_yesterday) * 100)
+  })) : [];
+
+  const browserData = data ? Object.entries(data.distributions.browser).map(([name, count]) => ({
+    name: name === 'Mobile Safari' ? 'Safari' : name === 'Microsoft Edge' ? 'Edge' : name || 'Altri',
+    value: Math.round((count / data.total_sessions_yesterday) * 100)
+  })) : [];
+
+  const regionData = data ? Object.entries(data.distributions.region).map(([name, count]) => ({
+    name: name === 'Lombardy' ? 'Lombardia' :
+          name === 'Emilia-Romagna' ? 'Emilia-Romagna' :
+          name === 'Tuscany' ? 'Toscana' :
+          name === 'Piedmont' ? 'Piemonte' :
+          name || 'Altri',
+    value: Math.round((count / data.total_sessions_yesterday) * 100)
+  })).slice(0, 7) : [];
+
+  const qualityScores = data ? [
+    {
+      name: "Good",
+      value: data.ux.session_quality_score.classification.percentages.good,
+      color: "analytics-green"
+    },
+    {
+      name: "Neutral",
+      value: data.ux.session_quality_score.classification.percentages.neutral,
+      color: "analytics-orange"
+    },
+    {
+      name: "Bad",
+      value: data.ux.session_quality_score.classification.percentages.bad,
+      color: "analytics-red"
+    },
+  ] : [];
+
+  const totalClicks = data ? Object.values(data.clickmap_global).reduce((sum, clicks) => sum + clicks, 0) : 0;
+
   const getDistributionData = () => {
     switch (distributionTab) {
       case "os": return osData;
@@ -108,6 +133,38 @@ export function UXSection({ onBack }: UXSectionProps) {
       default: return deviceData;
     }
   };
+
+  if (loading) {
+    return (
+      <div className="space-y-8">
+        <div className="flex items-center justify-center py-12">
+          <Loader2 className="h-8 w-8 animate-spin text-analytics-blue" />
+          <span className="ml-2 text-muted-foreground">Caricamento dati UX...</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="space-y-8">
+        <Alert variant="destructive">
+          <AlertTriangle className="h-4 w-4" />
+          <AlertDescription>
+            Errore nel caricamento dei dati UX: {error}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={refreshData}
+              className="ml-2"
+            >
+              Riprova
+            </Button>
+          </AlertDescription>
+        </Alert>
+      </div>
+    );
+  }
 
   const renderPathBlock = (path: any) => {
     const sizeClasses = {
@@ -165,12 +222,26 @@ export function UXSection({ onBack }: UXSectionProps) {
             <p className="text-muted-foreground font-mono">Esperienza utente e heatmaps</p>
           </div>
         </div>
-        <DateSelector />
+        <DateSelector
+          selectedDate={selectedDate}
+          onDateChange={setSelectedDate}
+          availableDates={availableDates}
+          disabled={loading}
+        />
       </div>
 
       {/* Compact Date Selector */}
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
-        <CompactDateSelector />
+        <CompactDateSelector
+          selectedDate={selectedDate}
+          onDateChange={setSelectedDate}
+          periodType={periodType}
+          onPeriodTypeChange={setPeriodType}
+          customDateRange={customDateRange}
+          onCustomDateRangeChange={setCustomDateRange}
+          availableDates={availableDates}
+          disabled={loading}
+        />
       </div>
 
       {/* 1. Quality Scores */}
@@ -368,7 +439,7 @@ export function UXSection({ onBack }: UXSectionProps) {
         <h3 className="text-lg font-semibold mb-6 font-mono">CLICK ANALYTICS</h3>
         <KPICard
           title="CLICK TOTALI SITO"
-          value="3,540"
+          value={totalClicks.toLocaleString()}
           subtitle="nelle ultime 24 ore"
           icon={MousePointer}
           color="blue"

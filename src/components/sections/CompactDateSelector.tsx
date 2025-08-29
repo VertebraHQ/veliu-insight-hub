@@ -6,14 +6,44 @@ import { format, subDays, startOfWeek, endOfWeek, startOfMonth, endOfMonth } fro
 import { cn } from "@/lib/utils";
 import { DateRange } from "react-day-picker";
 
-export function CompactDateSelector() {
-  const [selectedType, setSelectedType] = useState<"day" | "week" | "month" | "custom">("day");
-  const [selectedDay, setSelectedDay] = useState<Date>(new Date());
-  const [dateRange, setDateRange] = useState<DateRange | undefined>();
+interface CompactDateSelectorProps {
+  selectedDate?: Date;
+  onDateChange?: (date: Date) => void;
+  periodType?: "daily" | "weekly" | "monthly" | "custom";
+  onPeriodTypeChange?: (type: "daily" | "weekly" | "monthly" | "custom") => void;
+  customDateRange?: { from: Date; to: Date } | null;
+  onCustomDateRangeChange?: (range: { from: Date; to: Date } | null) => void;
+  availableDates?: string[];
+  disabled?: boolean;
+}
+
+export function CompactDateSelector({
+  selectedDate = new Date(),
+  onDateChange = () => {},
+  periodType = "daily",
+  onPeriodTypeChange = () => {},
+  customDateRange = null,
+  onCustomDateRangeChange = () => {},
+  availableDates = [],
+  disabled = false
+}: CompactDateSelectorProps) {
+  const [selectedType, setSelectedType] = useState<"day" | "week" | "month" | "custom">(
+    periodType === "daily" ? "day" :
+    periodType === "weekly" ? "week" :
+    periodType === "monthly" ? "month" : "custom"
+  );
+  const [selectedDay, setSelectedDay] = useState<Date>(selectedDate);
+  const [dateRange, setDateRange] = useState<DateRange | undefined>(
+    customDateRange ? { from: customDateRange.from, to: customDateRange.to } : undefined
+  );
   const [isCustomOpen, setIsCustomOpen] = useState(false);
 
-  // Generate last 7 days
+  // Generate last 7 days, but only show available dates
   const last7Days = Array.from({ length: 7 }, (_, i) => subDays(new Date(), i)).reverse();
+  const availableDaysOnly = last7Days.filter(day => {
+    const dateString = format(day, 'yyyy-MM-dd');
+    return availableDates.length === 0 || availableDates.includes(dateString);
+  });
 
   const getMonthAbbr = (date: Date) => {
     const months = ["GEN", "FEB", "MAR", "APR", "MAG", "GIU", "LUG", "AGO", "SET", "OTT", "NOV", "DIC"];
@@ -47,45 +77,60 @@ export function CompactDateSelector() {
       <h3 className="text-lg font-semibold text-foreground font-mono">SELETTORE DATE</h3>
       
       <div className="flex items-center gap-6">
-        {/* Day Boxes - Last 7 days */}
+        {/* Day Boxes - Available dates only */}
         <div className="flex items-center gap-3">
-          {last7Days.map((day, index) => {
-            const isSelected = selectedType === "day" && format(selectedDay, "yyyy-MM-dd") === format(day, "yyyy-MM-dd");
-            return (
-              <button
-                key={index}
-                onClick={() => {
-                  setSelectedType("day");
-                  setSelectedDay(day);
-                }}
-                className={cn(
-                  "flex flex-col items-center justify-center w-16 h-16 border-2 transition-all duration-200 hover:scale-105",
-                  isSelected 
-                    ? "border-analytics-blue bg-analytics-blue/10" 
-                    : "border-dashboard-border bg-dashboard-surface/30 hover:border-analytics-blue/50"
-                )}
-              >
-                <span className={cn(
-                  "text-xl font-bold font-mono",
-                  isSelected ? "text-analytics-blue" : "text-foreground"
-                )}>
-                  {format(day, "dd")}
-                </span>
-                <span className={cn(
-                  "text-xs font-mono",
-                  isSelected ? "text-analytics-blue" : "text-muted-foreground"
-                )}>
-                  {getMonthAbbr(day)}
-                </span>
-              </button>
-            );
-          })}
+          {availableDaysOnly.length > 0 ? (
+            availableDaysOnly.map((day, index) => {
+              const isSelected = selectedType === "day" && format(selectedDay, "yyyy-MM-dd") === format(day, "yyyy-MM-dd");
+              return (
+                <button
+                  key={index}
+                  onClick={() => {
+                    if (disabled) return;
+                    setSelectedType("day");
+                    setSelectedDay(day);
+                    onDateChange(day);
+                    onPeriodTypeChange("daily");
+                  }}
+                  disabled={disabled}
+                  className={cn(
+                    "flex flex-col items-center justify-center w-16 h-16 border-2 transition-all duration-200 hover:scale-105",
+                    isSelected
+                      ? "border-analytics-blue bg-analytics-blue/10"
+                      : "border-dashboard-border bg-dashboard-surface/30 hover:border-analytics-blue/50"
+                  )}
+                >
+                  <span className={cn(
+                    "text-xl font-bold font-mono",
+                    isSelected ? "text-analytics-blue" : "text-foreground"
+                  )}>
+                    {format(day, "dd")}
+                  </span>
+                  <span className={cn(
+                    "text-xs font-mono",
+                    isSelected ? "text-analytics-blue" : "text-muted-foreground"
+                  )}>
+                    {getMonthAbbr(day)}
+                  </span>
+                </button>
+              );
+            })
+          ) : (
+            <div className="flex items-center justify-center w-full h-16 border-2 border-dashed border-analytics-red/30 bg-analytics-red/5">
+              <span className="text-sm font-mono text-analytics-red">Nessuna data disponibile</span>
+            </div>
+          )}
         </div>
 
         {/* Quick Selection Buttons */}
         <div className="flex items-center gap-1 ml-6 bg-dashboard-surface border border-dashboard-border rounded-lg p-1">
           <button
-            onClick={() => setSelectedType("week")}
+            onClick={() => {
+              if (disabled) return;
+              setSelectedType("week");
+              onPeriodTypeChange("weekly");
+            }}
+            disabled={disabled}
             className={cn(
               "px-4 py-2 text-sm font-medium font-mono rounded-md transition-all duration-200",
               selectedType === "week" 
@@ -97,7 +142,12 @@ export function CompactDateSelector() {
           </button>
           
           <button
-            onClick={() => setSelectedType("month")}
+            onClick={() => {
+              if (disabled) return;
+              setSelectedType("month");
+              onPeriodTypeChange("monthly");
+            }}
+            disabled={disabled}
             className={cn(
               "px-4 py-2 text-sm font-medium font-mono rounded-md transition-all duration-200 flex items-center gap-2",
               selectedType === "month" 
@@ -112,7 +162,12 @@ export function CompactDateSelector() {
           <Popover open={isCustomOpen} onOpenChange={setIsCustomOpen}>
             <PopoverTrigger asChild>
               <button
-                onClick={() => setSelectedType("custom")}
+                onClick={() => {
+                  if (disabled) return;
+                  setSelectedType("custom");
+                  onPeriodTypeChange("custom");
+                }}
+                disabled={disabled}
                 className={cn(
                   "px-4 py-2 text-sm font-medium font-mono rounded-md transition-all duration-200 flex items-center gap-2",
                   selectedType === "custom" 
@@ -128,12 +183,16 @@ export function CompactDateSelector() {
                 mode="range"
                 selected={dateRange}
                 onSelect={(range) => {
+                  if (disabled) return;
                   setDateRange(range);
                   if (range?.from && range?.to) {
                     setSelectedType("custom");
+                    onCustomDateRangeChange({ from: range.from, to: range.to });
+                    onPeriodTypeChange("custom");
                     setIsCustomOpen(false);
                   }
                 }}
+                disabled={disabled ? () => true : undefined}
                 numberOfMonths={2}
                 initialFocus
                 className={cn("p-3 pointer-events-auto")}
@@ -146,6 +205,11 @@ export function CompactDateSelector() {
       {/* Current Selection Display */}
       <div className="text-sm text-muted-foreground font-mono">
         <span className="text-analytics-blue font-medium">Periodo selezionato:</span> {getDateDisplay()}
+        {availableDates.length > 0 && (
+          <div className="mt-1 text-xs">
+            <span className="text-analytics-green">Date disponibili:</span> {availableDates.join(', ')}
+          </div>
+        )}
       </div>
     </div>
   );

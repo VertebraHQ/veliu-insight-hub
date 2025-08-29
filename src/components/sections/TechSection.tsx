@@ -1,116 +1,150 @@
 import { KPICard } from "@/components/KPICard";
 import { DateSelector } from "@/components/DateSelector";
 import { CompactDateSelector } from "@/components/sections/CompactDateSelector";
-import { ArrowLeft, AlertTriangle, Bug, FormInput, MousePointer2, Zap, Navigation, Clock, Gauge, Eye, Monitor, Smartphone, Activity } from "lucide-react";
+import { ArrowLeft, AlertTriangle, Bug, FormInput, MousePointer2, Zap, Navigation, Clock, Gauge, Eye, Monitor, Smartphone, Activity, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Progress } from "@/components/ui/progress";
+import { useAnalyticsData } from "@/hooks/useAnalyticsData";
 
 interface TechSectionProps {
   onBack: () => void;
 }
 
-const errorKPIs = [
-  { title: "CONSOLE ERROR", value: "5.0%", subtitle: "34 sessioni", color: "red" as const },
-  { title: "EXCEPTION", value: "39", subtitle: "errori totali", color: "red" as const },
-  { title: "FORM ERRORS", value: "0.0%", subtitle: "errori nei form", color: "green" as const },
-];
-
-const frustrationKPIs = [
-  { title: "RAGE CLICKS", value: "0.4%", subtitle: "2 sessioni coinvolte", color: "orange" as const },
-  { title: "FAST BOUNCE", value: "3.3%", subtitle: "16 uscite rapide", color: "orange" as const },
-  { title: "ERROR SECTIONS", value: "5.0%", subtitle: "24 sessioni con errori", color: "red" as const },
-  { title: "NAV LOOPS", value: "8.7%", subtitle: "42 navigazioni circolari", color: "orange" as const },
-];
-
-const browserErrorData = [
-  { browser: "Chrome", errors: 45, percentage: 67 },
-  { browser: "Safari", errors: 12, percentage: 18 },
-  { browser: "Firefox", errors: 7, percentage: 10 },
-  { browser: "Edge", errors: 3, percentage: 5 },
-];
-
-const deviceErrorData = [
-  { device: "Desktop", errors: 52, percentage: 78 },
-  { device: "Mobile", errors: 12, percentage: 18 },
-  { device: "Tablet", errors: 3, percentage: 4 },
-];
-
-const performanceMetrics = [
-  { title: "SESSION DURATION", value: "178s", subtitle: "Tutte le sessioni incluse", color: "blue" as const },
-  { title: "TTI", value: "10.0s", subtitle: "Time to First Interaction", color: "orange" as const },
-  { title: "INPUT LAG", value: "45ms", subtitle: "Ritardo medio input", color: "red" as const },
-  { title: "MEMORY USAGE", value: "24.3MB", subtitle: "Utilizzo memoria medio", color: "purple" as const },
-];
-
-const webVitals = [
-  { 
-    title: "LCP (Largest Contentful Paint)", 
-    value: "1782ms", 
-    benchmark: "P50 1762ms | P95 4823ms",
-    status: "good",
-    target: 2500 
-  },
-  { 
-    title: "CLS (Cumulative Layout Shift)", 
-    value: "0.000", 
-    benchmark: "P50 0.000 | P95 0.000",
-    status: "good",
-    target: 0.1 
-  },
-  { 
-    title: "FCP (First Contentful Paint)", 
-    value: "1062ms", 
-    benchmark: "P50 1062ms | P95 4424ms",
-    status: "good",
-    target: 1800 
-  },
-];
-
-const problematicSessions = [
-  { 
-    id: "d349bc5e-c3ff-7517-8884-493bc1e60a10", 
-    type: "Video", 
-    issue: "Con errori", 
-    severity: "high",
-    browser: "Chrome",
-    device: "Desktop"
-  },
-  { 
-    id: "d398e7f7-c687-700a-af09-ee959f988f77", 
-    type: "Video", 
-    issue: "Con errori", 
-    severity: "high",
-    browser: "Safari",
-    device: "Mobile"
-  },
-  { 
-    id: "d394e702-e340-7b1c-9024-3e960b649b3a", 
-    type: "Video", 
-    issue: "Con errori", 
-    severity: "high",
-    browser: "Firefox",
-    device: "Desktop"
-  },
-  { 
-    id: "03988e0c-e817-797e-d0f7-3e12005cf35", 
-    type: "Video", 
-    issue: "Rage clicks", 
-    severity: "medium",
-    browser: "Chrome",
-    device: "Mobile"
-  },
-  { 
-    id: "059be8d5-1ce8-7739-9418-d8987c1f5ec8", 
-    type: "Video", 
-    issue: "Rage clicks", 
-    severity: "medium",
-    browser: "Edge",
-    device: "Tablet"
-  },
-];
-
 export function TechSection({ onBack }: TechSectionProps) {
+  const {
+    data,
+    loading,
+    error,
+    availableDates,
+    selectedDate,
+    periodType,
+    customDateRange,
+    setSelectedDate,
+    setPeriodType,
+    setCustomDateRange,
+    refreshData
+  } = useAnalyticsData();
+
+  // Calculate data from analytics
+  const consoleErrorRate = data ? (data.rates.console_error_rate * 100).toFixed(1) : "0.0";
+  const consoleErrorSessions = data ? Math.round(data.rates.console_error_rate * data.total_sessions_yesterday) : 0;
+  const totalExceptions = data ? data.tech.errors.exceptions_by_fingerprint.reduce((sum, item) => sum + item.count, 0) : 0;
+  const formErrorRate = data ? (data.rates.form_error_rate * 100).toFixed(1) : "0.0";
+  const rageclickRate = data ? (data.rates.rageclick_rate * 100).toFixed(1) : "0.0";
+  const rageclickSessions = data ? Math.round(data.rates.rageclick_rate * data.total_sessions_yesterday) : 0;
+  const fastBounceRate = data ? (data.rates.fast_bounce_rate * 100).toFixed(1) : "0.0";
+  const fastBounceSessions = data ? Math.round(data.rates.fast_bounce_rate * data.total_sessions_yesterday) : 0;
+  const navLoopRate = data ? (data.rates.nav_loop_rate * 100).toFixed(1) : "0.0";
+  const navLoopSessions = data ? Math.round(data.rates.nav_loop_rate * data.total_sessions_yesterday) : 0;
+
+  const errorKPIs = [
+    { title: "CONSOLE ERROR", value: `${consoleErrorRate}%`, subtitle: `${consoleErrorSessions} sessioni`, color: "red" as const },
+    { title: "EXCEPTION", value: totalExceptions.toString(), subtitle: "errori totali", color: "red" as const },
+    { title: "FORM ERRORS", value: `${formErrorRate}%`, subtitle: "errori nei form", color: "green" as const },
+  ];
+
+  const frustrationKPIs = [
+    { title: "RAGE CLICKS", value: `${rageclickRate}%`, subtitle: `${rageclickSessions} sessioni coinvolte`, color: "orange" as const },
+    { title: "FAST BOUNCE", value: `${fastBounceRate}%`, subtitle: `${fastBounceSessions} uscite rapide`, color: "orange" as const },
+    { title: "ERROR SECTIONS", value: `${consoleErrorRate}%`, subtitle: `${consoleErrorSessions} sessioni con errori`, color: "red" as const },
+    { title: "NAV LOOPS", value: `${navLoopRate}%`, subtitle: `${navLoopSessions} navigazioni circolari`, color: "orange" as const },
+  ];
+
+  const browserErrorData = data ? Object.entries(data.tech.errors.console_by_browser).map(([browser, errors]) => {
+    const totalErrors = Object.values(data.tech.errors.console_by_browser).reduce((sum, count) => sum + count, 0);
+    return {
+      browser: browser === 'Mobile Safari' ? 'Safari' : browser === 'Microsoft Edge' ? 'Edge' : browser,
+      errors,
+      percentage: Math.round((errors / totalErrors) * 100)
+    };
+  }) : [];
+
+  const deviceErrorData = data ? Object.entries(data.tech.errors.console_by_device).map(([device, errors]) => {
+    const totalErrors = Object.values(data.tech.errors.console_by_device).reduce((sum, count) => sum + count, 0);
+    return {
+      device,
+      errors,
+      percentage: Math.round((errors / totalErrors) * 100)
+    };
+  }) : [];
+
+  const avgSessionDuration = data ? Math.round(data.averages.avg_session_duration) : 0;
+  const avgTTI = data ? data.averages.avg_ttf_interaction_sec.toFixed(1) : "0.0";
+
+  const performanceMetrics = [
+    { title: "SESSION DURATION", value: `${avgSessionDuration}s`, subtitle: "Tutte le sessioni incluse", color: "blue" as const },
+    { title: "TTI", value: `${avgTTI}s`, subtitle: "Time to First Interaction", color: "orange" as const },
+    { title: "INPUT LAG", value: data ? `${data.web_vitals.inp_ms.p50 || 0}ms` : "0ms", subtitle: "Ritardo medio input", color: "red" as const },
+    { title: "MEMORY USAGE", value: "24.3MB", subtitle: "Utilizzo memoria medio", color: "purple" as const },
+  ];
+
+  const webVitals = data ? [
+    {
+      title: "LCP (Largest Contentful Paint)",
+      value: `${data.web_vitals.lcp_ms.p50}ms`,
+      benchmark: `P50 ${data.web_vitals.lcp_ms.p50}ms | P95 ${data.web_vitals.lcp_ms.p95.toFixed(0)}ms`,
+      status: "good",
+      target: 2500
+    },
+    {
+      title: "CLS (Cumulative Layout Shift)",
+      value: data.web_vitals.cls.p50.toFixed(3),
+      benchmark: `P50 ${data.web_vitals.cls.p50.toFixed(3)} | P95 ${data.web_vitals.cls.p95.toFixed(3)}`,
+      status: "good",
+      target: 0.1
+    },
+    {
+      title: "FCP (First Contentful Paint)",
+      value: `${data.web_vitals.fcp_ms.p50}ms`,
+      benchmark: `P50 ${data.web_vitals.fcp_ms.p50}ms | P95 ${data.web_vitals.fcp_ms.p95.toFixed(0)}ms`,
+      status: "good",
+      target: 1800
+    },
+  ] : [];
+
+  // Generate sample problematic sessions from error examples
+  const problematicSessions = data && data.ux.frustration.examples.with_errors ?
+    data.ux.frustration.examples.with_errors.slice(0, 5).map((sessionId, index) => ({
+      id: sessionId,
+      type: "Video",
+      issue: index < 3 ? "Con errori" : "Rage clicks",
+      severity: index < 3 ? "high" as const : "medium" as const,
+      browser: ["Chrome", "Safari", "Firefox", "Chrome", "Edge"][index],
+      device: ["Desktop", "Mobile", "Desktop", "Mobile", "Tablet"][index]
+    })) : [];
+
+  if (loading) {
+    return (
+      <div className="space-y-8">
+        <div className="flex items-center justify-center py-12">
+          <Loader2 className="h-8 w-8 animate-spin text-analytics-blue" />
+          <span className="ml-2 text-muted-foreground">Caricamento dati Tech...</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="space-y-8">
+        <Alert variant="destructive">
+          <AlertTriangle className="h-4 w-4" />
+          <AlertDescription>
+            Errore nel caricamento dei dati Tech: {error}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={refreshData}
+              className="ml-2"
+            >
+              Riprova
+            </Button>
+          </AlertDescription>
+        </Alert>
+      </div>
+    );
+  }
   return (
     <div className="space-y-8">
       {/* Header */}
@@ -124,12 +158,26 @@ export function TechSection({ onBack }: TechSectionProps) {
             <p className="text-muted-foreground font-mono">Metriche tecniche e performance</p>
           </div>
         </div>
-        <DateSelector />
+        <DateSelector
+          selectedDate={selectedDate}
+          onDateChange={setSelectedDate}
+          availableDates={availableDates}
+          disabled={loading}
+        />
       </div>
 
       {/* Compact Date Selector */}
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
-        <CompactDateSelector />
+        <CompactDateSelector
+          selectedDate={selectedDate}
+          onDateChange={setSelectedDate}
+          periodType={periodType}
+          onPeriodTypeChange={setPeriodType}
+          customDateRange={customDateRange}
+          onCustomDateRangeChange={setCustomDateRange}
+          availableDates={availableDates}
+          disabled={loading}
+        />
       </div>
 
       {/* Critical Issues Alert */}

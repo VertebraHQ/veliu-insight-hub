@@ -6,9 +6,26 @@ import { CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 
-export function DateSelector() {
-  const [date, setDate] = useState<Date>(new Date('2025-08-26'));
+interface DateSelectorProps {
+  selectedDate: Date;
+  onDateChange: (date: Date) => void;
+  availableDates?: string[];
+  disabled?: boolean;
+}
+
+export function DateSelector({
+  selectedDate,
+  onDateChange,
+  availableDates = [],
+  disabled = false
+}: DateSelectorProps) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const isDateAvailable = (date: Date) => {
+    if (availableDates.length === 0) return true;
+    const dateString = format(date, 'yyyy-MM-dd');
+    return availableDates.includes(dateString);
+  };
 
   return (
     <div className="flex flex-col space-y-2">
@@ -20,27 +37,34 @@ export function DateSelector() {
             <Button
               variant="outline"
               className="w-40 justify-start text-left font-normal"
+              disabled={disabled}
             >
               <CalendarIcon className="mr-2 h-4 w-4" />
-              {format(date, "dd/MM/yyyy")}
+              {format(selectedDate, "dd/MM/yyyy")}
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-auto p-0" align="start">
             <Calendar
               mode="single"
-              selected={date}
+              selected={selectedDate}
               onSelect={(newDate) => {
-                if (newDate) {
-                  setDate(newDate);
+                if (newDate && isDateAvailable(newDate)) {
+                  onDateChange(newDate);
                   setIsOpen(false);
                 }
               }}
+              disabled={(date) => !isDateAvailable(date)}
               initialFocus
               className={cn("p-3 pointer-events-auto")}
             />
           </PopoverContent>
         </Popover>
       </div>
+      {availableDates.length > 0 && (
+        <p className="text-xs text-muted-foreground">
+          Date disponibili: {availableDates.length}
+        </p>
+      )}
     </div>
   );
 }
