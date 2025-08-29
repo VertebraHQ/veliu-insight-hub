@@ -285,10 +285,15 @@ All colors MUST be HSL.
   .light .rounded-lg { border-radius: 12px; }
   .light .rounded-xl { border-radius: 16px; }
 
-  /* Dark mode keeps square edges */
+  /* Dark mode uses same rounded corners as light mode */
   .dark * { 
-    border-radius: 0; 
+    border-radius: 12px; 
   }
+  
+  .dark .rounded-sm { border-radius: 6px; }
+  .dark .rounded { border-radius: 8px; }
+  .dark .rounded-lg { border-radius: 12px; }
+  .dark .rounded-xl { border-radius: 16px; }
 
   /* Industrial hover states - youthful and dynamic */
   .hover-minimal:hover {
