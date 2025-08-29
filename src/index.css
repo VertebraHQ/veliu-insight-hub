@@ -161,7 +161,7 @@ All colors MUST be HSL.
     --destructive-foreground: 0 0% 100%;
 
     /* Minimal borders and inputs */
-    --border: 0 0% 75%; /* Bordi più scuri per migliore visibilità */
+    --border: 20 100% 85%; /* Bordi arancione chiaro per look moderno */
     --input: 0 0% 98%;
     --ring: 20 100% 50%; /* Copper orange focus ring */
 
@@ -180,7 +180,7 @@ All colors MUST be HSL.
     /* Dashboard Surfaces - White with soft shadows */
     --dashboard-surface: 0 0% 100%; /* Pure white boxes */
     --dashboard-surface-hover: 0 0% 98%; /* Slight pearl tint on hover */
-    --dashboard-border: 0 0% 70%; /* Bordi più scuri per le dashboard */
+    --dashboard-border: 20 100% 90%; /* Bordi arancione molto chiaro per design moderno */
 
     /* Sidebar colors for light mode */
     --sidebar-background: 0 0% 100%;
@@ -189,7 +189,7 @@ All colors MUST be HSL.
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 97%;
     --sidebar-accent-foreground: 0 0% 7%;
-    --sidebar-border: 0 0% 70%;
+    --sidebar-border: 20 100% 90%;
     --sidebar-ring: 20 100% 50%;
   }
 }
