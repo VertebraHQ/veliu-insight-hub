@@ -106,7 +106,63 @@
       "Zurich": 1,
       "Nevada": 1,
       "California": 1
+    },
+    "utm_source": {
+      "trustpilot": 3,
+      "tradedoubler": 1
+    },
+    "utm_medium": {
+      "company_profile": 3,
+      "affiliate": 1
+    },
+    "utm_campaign": {
+      "domain_click": 3,
+      "Yieldlink IT": 1
     }
+  },
+  "top_landing_paths": {
+    "/": 355,
+    "/tradein/customerprofiling": 35,
+    "/partners": 11,
+    "/docs": 11,
+    "/jobs": 8,
+    "/be1": 6,
+    "/welcome/yeppon": 6,
+    "/verisure/": 5,
+    "/auth/login/": 5,
+    "/tradein/payout": 3,
+    "/offer/": 3,
+    "/marketplace/": 3,
+    "/docs/tradein": 2,
+    "/tradein/login": 2,
+    "/verification/": 1,
+    "/verification": 1,
+    "/offer/index.html": 1,
+    "/tradein/imei_check": 1,
+    "/tradein/thankyou": 1
+  },
+  "top_exit_paths": {
+    "/": 322,
+    "/tradein/customerprofiling": 41,
+    "/jobs": 21,
+    "/docs": 20,
+    "/marketplace/": 13,
+    "/partners": 11,
+    "/welcome/yeppon": 7,
+    "/tradein/payout": 6,
+    "/be1": 6,
+    "/auth/login/": 5,
+    "/verisure/": 4,
+    "/docs/tradein": 3,
+    "/tradein/thankyou": 3,
+    "/tradein/login": 2,
+    "/offer/": 2,
+    "/verification/": 1,
+    "/verification": 1,
+    "/offer/index.html": 1,
+    "/tradein/imei_check": 1,
+    "/welcome/verisure": 1,
+    "/docs/partners-portal": 1
   },
   "clickmap_global": {
     "/": 797,
@@ -130,149 +186,4117 @@
     "/offer/index.html": 1,
     "/verisure/": 1
   },
+  "error_fingerprints_global": {
+    "$exception": 39
+  },
+  "ngrams_global": {
+    "top_2grams": [
+      {
+        "ngram": [
+          "$autocapture",
+          "$autocapture"
+        ],
+        "count": 857
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$web_vitals"
+        ],
+        "count": 566
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$autocapture"
+        ],
+        "count": 458
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "$autocapture"
+        ],
+        "count": 372
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "$web_vitals"
+        ],
+        "count": 301
+      },
+      {
+        "ngram": [
+          "$pageleave",
+          "$pageview"
+        ],
+        "count": 165
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$pageleave"
+        ],
+        "count": 148
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$pageleave"
+        ],
+        "count": 97
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$web_vitals"
+        ],
+        "count": 75
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$pageview"
+        ],
+        "count": 68
+      },
+      {
+        "ngram": [
+          "search_performed",
+          "search_performed"
+        ],
+        "count": 48
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$pageview"
+        ],
+        "count": 44
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "category_clicked"
+        ],
+        "count": 38
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "$pageleave"
+        ],
+        "count": 32
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$identify"
+        ],
+        "count": 24
+      },
+      {
+        "ngram": [
+          "$identify",
+          "$autocapture"
+        ],
+        "count": 23
+      },
+      {
+        "ngram": [
+          "category_clicked",
+          "$pageleave"
+        ],
+        "count": 22
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "$exception"
+        ],
+        "count": 20
+      },
+      {
+        "ngram": [
+          "$pageleave",
+          "$web_vitals"
+        ],
+        "count": 19
+      },
+      {
+        "ngram": [
+          "$exception",
+          "$web_vitals"
+        ],
+        "count": 16
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$exception"
+        ],
+        "count": 14
+      },
+      {
+        "ngram": [
+          "$pageleave",
+          "$pageleave"
+        ],
+        "count": 14
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "$pageview"
+        ],
+        "count": 13
+      },
+      {
+        "ngram": [
+          "search_performed",
+          "$autocapture"
+        ],
+        "count": 13
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "search_performed"
+        ],
+        "count": 11
+      },
+      {
+        "ngram": [
+          "category_clicked",
+          "$autocapture"
+        ],
+        "count": 10
+      },
+      {
+        "ngram": [
+          "$exception",
+          "$pageleave"
+        ],
+        "count": 9
+      },
+      {
+        "ngram": [
+          "$exception",
+          "$pageview"
+        ],
+        "count": 8
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "offer_button_clicked"
+        ],
+        "count": 8
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "offer_page_viewed"
+        ],
+        "count": 8
+      },
+      {
+        "ngram": [
+          "offer_page_viewed",
+          "$autocapture"
+        ],
+        "count": 7
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$set"
+        ],
+        "count": 7
+      },
+      {
+        "ngram": [
+          "$set",
+          "$autocapture"
+        ],
+        "count": 6
+      },
+      {
+        "ngram": [
+          "offer_button_clicked",
+          "$autocapture"
+        ],
+        "count": 6
+      },
+      {
+        "ngram": [
+          "$pageleave",
+          "$autocapture"
+        ],
+        "count": 5
+      },
+      {
+        "ngram": [
+          "category_clicked",
+          "$web_vitals"
+        ],
+        "count": 5
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "email_submitted"
+        ],
+        "count": 4
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$exception"
+        ],
+        "count": 3
+      },
+      {
+        "ngram": [
+          "email_submitted",
+          "offer_page_viewed"
+        ],
+        "count": 3
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$rageclick"
+        ],
+        "count": 3
+      },
+      {
+        "ngram": [
+          "$rageclick",
+          "$autocapture"
+        ],
+        "count": 3
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "search_performed"
+        ],
+        "count": 3
+      },
+      {
+        "ngram": [
+          "$pageleave",
+          "$exception"
+        ],
+        "count": 2
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$set"
+        ],
+        "count": 2
+      },
+      {
+        "ngram": [
+          "$set",
+          "$web_vitals"
+        ],
+        "count": 2
+      },
+      {
+        "ngram": [
+          "$identify",
+          "$pageleave"
+        ],
+        "count": 2
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$identify"
+        ],
+        "count": 1
+      },
+      {
+        "ngram": [
+          "offer_page_viewed",
+          "$web_vitals"
+        ],
+        "count": 1
+      }
+    ],
+    "top_3grams": [
+      {
+        "ngram": [
+          "$autocapture",
+          "$autocapture",
+          "$autocapture"
+        ],
+        "count": 587
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "$autocapture",
+          "$web_vitals"
+        ],
+        "count": 290
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$web_vitals",
+          "$autocapture"
+        ],
+        "count": 249
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "$web_vitals",
+          "$autocapture"
+        ],
+        "count": 170
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$autocapture",
+          "$autocapture"
+        ],
+        "count": 158
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$autocapture",
+          "$web_vitals"
+        ],
+        "count": 150
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$autocapture",
+          "$web_vitals"
+        ],
+        "count": 117
+      },
+      {
+        "ngram": [
+          "$pageleave",
+          "$pageview",
+          "$web_vitals"
+        ],
+        "count": 80
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$web_vitals",
+          "$pageleave"
+        ],
+        "count": 69
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$pageleave",
+          "$pageview"
+        ],
+        "count": 62
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$pageleave",
+          "$pageview"
+        ],
+        "count": 61
+      },
+      {
+        "ngram": [
+          "$pageleave",
+          "$pageview",
+          "$autocapture"
+        ],
+        "count": 57
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "$autocapture",
+          "$autocapture"
+        ],
+        "count": 56
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$web_vitals",
+          "$pageview"
+        ],
+        "count": 49
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$autocapture",
+          "$pageleave"
+        ],
+        "count": 46
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "$web_vitals",
+          "$pageleave"
+        ],
+        "count": 44
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$pageview",
+          "$web_vitals"
+        ],
+        "count": 39
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$autocapture",
+          "$pageleave"
+        ],
+        "count": 35
+      },
+      {
+        "ngram": [
+          "search_performed",
+          "search_performed",
+          "search_performed"
+        ],
+        "count": 34
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$autocapture",
+          "$pageview"
+        ],
+        "count": 28
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$web_vitals",
+          "$web_vitals"
+        ],
+        "count": 28
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "$web_vitals",
+          "$web_vitals"
+        ],
+        "count": 26
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$web_vitals",
+          "$autocapture"
+        ],
+        "count": 24
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "category_clicked",
+          "$pageleave"
+        ],
+        "count": 22
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$identify",
+          "$autocapture"
+        ],
+        "count": 21
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$pageview",
+          "$web_vitals"
+        ],
+        "count": 21
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$autocapture",
+          "$identify"
+        ],
+        "count": 19
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$web_vitals",
+          "$pageleave"
+        ],
+        "count": 17
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$autocapture",
+          "category_clicked"
+        ],
+        "count": 16
+      },
+      {
+        "ngram": [
+          "$identify",
+          "$autocapture",
+          "$autocapture"
+        ],
+        "count": 15
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$autocapture",
+          "category_clicked"
+        ],
+        "count": 15
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "$pageleave",
+          "$pageview"
+        ],
+        "count": 15
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$pageview",
+          "$autocapture"
+        ],
+        "count": 13
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "$web_vitals",
+          "$pageview"
+        ],
+        "count": 12
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$autocapture",
+          "$pageview"
+        ],
+        "count": 12
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "$exception",
+          "$web_vitals"
+        ],
+        "count": 12
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$pageview",
+          "$autocapture"
+        ],
+        "count": 12
+      },
+      {
+        "ngram": [
+          "search_performed",
+          "search_performed",
+          "$autocapture"
+        ],
+        "count": 11
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "$autocapture",
+          "$pageleave"
+        ],
+        "count": 10
+      },
+      {
+        "ngram": [
+          "category_clicked",
+          "$pageleave",
+          "$pageview"
+        ],
+        "count": 10
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "search_performed",
+          "search_performed"
+        ],
+        "count": 10
+      },
+      {
+        "ngram": [
+          "search_performed",
+          "$autocapture",
+          "$autocapture"
+        ],
+        "count": 10
+      },
+      {
+        "ngram": [
+          "$pageleave",
+          "$pageview",
+          "$exception"
+        ],
+        "count": 10
+      },
+      {
+        "ngram": [
+          "$pageleave",
+          "$pageview",
+          "$pageleave"
+        ],
+        "count": 10
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "category_clicked",
+          "$autocapture"
+        ],
+        "count": 9
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$pageleave",
+          "$web_vitals"
+        ],
+        "count": 9
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$autocapture",
+          "offer_page_viewed"
+        ],
+        "count": 8
+      },
+      {
+        "ngram": [
+          "$exception",
+          "$web_vitals",
+          "$pageleave"
+        ],
+        "count": 8
+      },
+      {
+        "ngram": [
+          "$exception",
+          "$pageleave",
+          "$pageview"
+        ],
+        "count": 7
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$pageleave",
+          "$pageleave"
+        ],
+        "count": 7
+      }
+    ]
+  },
   "data_quality": {
-    "sessions_clock_skew": 2,
-    "missing_timestamp_events": 8,
-    "properties_parse_errors": 1,
-    "sessions_without_pageview": 0,
-    "sampling_rate": 0.995
+    "sessions_clock_skew": 342,
+    "missing_timestamp_events": 0,
+    "properties_parse_errors": 0,
+    "sessions_without_pageview": 22,
+    "sampling_rate": 0.9958677685950413
   },
   "web_vitals": {
-    "lcp_ms": { "p50": 1850, "p95": 4200 },
-    "cls": { "p50": 0.05, "p95": 0.25 },
-    "inp_ms": { "p50": 180, "p95": 450 },
-    "fcp_ms": { "p50": 1200, "p95": 2800 },
-    "ttfb_ms": { "p50": 450, "p95": 1200 },
-    "last_lcp_ms": { "p50": 2100, "p95": 4800 }
+    "lcp_ms": {
+      "p50": 1782.0,
+      "p95": 4826.200000000001
+    },
+    "cls": {
+      "p50": 0.0,
+      "p95": 0.008807016098342287
+    },
+    "inp_ms": {
+      "p50": 120.0,
+      "p95": 461.1999999999996
+    },
+    "fcp_ms": {
+      "p50": 1061.5,
+      "p95": 4422.000000000001
+    },
+    "ttfb_ms": {
+      "p50": null,
+      "p95": null
+    },
+    "last_lcp_ms": {
+      "p50": null,
+      "p95": null
+    }
+  },
+  "esignals": {
+    "ui_clicks_total": 0,
+    "dead_clicks_total": 0,
+    "hover_ms_stats": {
+      "p50": null,
+      "p95": null
+    },
+    "top_click_targets": {},
+    "top_dead_click_targets": {},
+    "scroll_max_depth_global_stats": {
+      "p50": null,
+      "p95": null
+    }
+  },
+  "schema": {
+    "version": "1.3.0"
+  },
+  "meta": {
+    "generated_at_utc": "2025-08-27T08:15:57Z",
+    "timezone": "Europe/Rome",
+    "date_local": "2025-08-26",
+    "range_utc": {
+      "from": "2025-08-25T22:00:00Z",
+      "to": "2025-08-26T21:59:59.999999Z"
+    },
+    "failed_sessions_events_fetch": 0
+  },
+  "top_paths": {
+    "/": 297,
+    "/tradein/customerprofiling": 33,
+    "/ > /jobs": 13,
+    "/ > /docs": 11,
+    "/ > /marketplace/": 8,
+    "/partners": 7,
+    "/jobs": 7,
+    "/docs > /": 6,
+    "/be1": 6,
+    "/ > /tradein/customerprofiling": 5,
+    "/auth/login/": 5,
+    "/verisure/": 4,
+    "/ > /docs > /": 4,
+    "/docs": 3,
+    "/tradein/payout": 3,
+    "/marketplace/": 3,
+    "/welcome/yeppon": 3,
+    "/tradein/customerprofiling > /tradein/payout": 2,
+    "/ > /welcome/yeppon": 2,
+    "/ > /docs/tradein > /partners": 1,
+    "/ > /partners": 1,
+    "/ > /docs > /welcome/yeppon": 1,
+    "/ > /partners > /docs > /": 1,
+    "/docs/tradein": 1,
+    "/verification/": 1,
+    "/verification": 1,
+    "/ > /docs > /tradein/customerprofiling": 1,
+    "/tradein/login": 1,
+    "/offer/index.html": 1,
+    "/offer/ > / > /tradein/login": 1,
+    "/docs > /partners > /docs/tradein": 1,
+    "/tradein/imei_check": 1,
+    "/tradein/thankyou": 1,
+    "/partners > / > /docs": 1,
+    "/offer/ > / > /offer/ > /": 1,
+    "/ > /tradein/customerprofiling > /tradein/thankyou > /tradein/contract > /tradein/customerprofiling": 1,
+    "/partners > /": 1,
+    "/offer/ > / > /offer/": 1,
+    "/ > /marketplace/ > / > /docs": 1,
+    "/ > /marketplace/ > /": 1,
+    "/welcome/yeppon > /marketplace/ > /": 1,
+    "/docs > / > /marketplace/": 1,
+    "/ > /welcome/yeppon > /marketplace/": 1,
+    "/verisure/ > /welcome/verisure": 1,
+    "/ > /docs/tradein": 1,
+    "/ > /docs/partners-portal": 1,
+    "/tradein/login > /tradein/customerprofiling": 1,
+    "/welcome/yeppon > /marketplace/ > /docs": 1,
+    "/jobs > /partners": 1,
+    "/docs/tradein > / > /jobs": 1
+  },
+  "returning_breakdown": {
+    "new": {
+      "share": 0.8215767634854771,
+      "conversion_rate": 0.12,
+      "avg_ttf_interaction_sec": 8.860725903614458,
+      "avg_span_sec": 260.5656565656566,
+      "ttfi_sec": {
+        "p50": 3.2640000000000002,
+        "p90": 14.180600000000007,
+        "p95": 33.34884999999999
+      },
+      "span_sec": {
+        "p50": 42.0,
+        "p90": 817.5,
+        "p95": 1395.75
+      }
+    },
+    "returning": {
+      "share": 0.17842323651452283,
+      "conversion_rate": 0.12,
+      "avg_ttf_interaction_sec": 15.257297297297297,
+      "avg_span_sec": 200.51162790697674,
+      "ttfi_sec": {
+        "p50": 4.163,
+        "p90": 25.684900000000017,
+        "p95": 59.67454999999991
+      },
+      "span_sec": {
+        "p50": 17.0,
+        "p90": 547.0,
+        "p95": 1005.75
+      }
+    }
+  },
+  "channels": {
+    "Organic Search": {
+      "sessions": 309,
+      "conversion_rate": 0.12,
+      "rageclick_rate": 0.0
+    },
+    "Referral": {
+      "sessions": 99,
+      "conversion_rate": 0.12,
+      "rageclick_rate": 0.020202020202020204
+    },
+    "Direct": {
+      "sessions": 74,
+      "conversion_rate": 0.12,
+      "rageclick_rate": 0.0
+    }
+  },
+  "error_fingerprints_samples": {
+    "$exception": [
+      "0198e85a-33f7-7317-8884-f039cc249af0",
+      "0198e7f7-c487-790e-af49-edf95f988f77",
+      "0198e7d1-e18b-7b3c-961f-ba8a66d48958",
+      "0198e783-16b7-799b-ae97-6d603c2ffa0f",
+      "0198e779-6ad8-7bc5-99b8-8119964aef27"
+    ]
+  },
+  "when": {
+    "by_hour": {
+      "0": 12,
+      "1": 1,
+      "2": 6,
+      "3": 3,
+      "4": 3,
+      "6": 12,
+      "7": 13,
+      "8": 25,
+      "9": 27,
+      "10": 27,
+      "11": 30,
+      "12": 27,
+      "13": 34,
+      "14": 30,
+      "15": 36,
+      "16": 32,
+      "17": 24,
+      "18": 19,
+      "19": 23,
+      "20": 18,
+      "21": 26,
+      "22": 36,
+      "23": 18
+    },
+    "by_weekday": {
+      "1": 482
+    }
+  },
+  "busiest_time": {
+    "peak_hour_local": 15,
+    "avg_peak_hour_local_mean": 15,
+    "avg_peak_hour_local_mode": 15,
+    "history_days": 1
   },
   "funnel": {
-    "name": "Main Conversion Funnel",
-    "steps": ["Landing", "Product View", "Add to Cart", "Checkout", "Purchase"],
-    "hits_by_step": [484, 312, 156, 89, 42],
-    "sessions": 484,
-    "converted_sessions": 42,
-    "conversion_rate": 0.0868,
-    "step_rates": [1.0, 0.6446, 0.3223, 0.1839, 0.0868]
+    "name": "main_funnel",
+    "steps": [
+      "offer_page_viewed",
+      "offer_button_clicked",
+      "email_submitted",
+      "signup_success"
+    ],
+    "hits_by_step": [
+      14,
+      9,
+      5,
+      0
+    ],
+    "sessions": 482,
+    "converted_sessions": 58,
+    "conversion_rate": 0.12,
+    "step_rates": [
+      0.6428571428571429,
+      0.5555555555555556,
+      0.0
+    ]
+  },
+  "utm_campaign_kpi": {
+    "conversion_rate": {
+      "": 0.0,
+      "domain_click": 0.0,
+      "Yieldlink IT": 0.0
+    },
+    "rageclick_rate": {
+      "": 0.0041841004184100415,
+      "domain_click": 0.0,
+      "Yieldlink IT": 0.0
+    }
+  },
+  "quantiles": {
+    "ttfi_sec": {
+      "p50": 3.5265,
+      "p90": 17.6635,
+      "p95": 40.785500000000006
+    },
+    "span_sec": {
+      "p50": 36.0,
+      "p90": 744.4000000000005,
+      "p95": 1349.9499999999998
+    },
+    "active_sec": {
+      "p50": 14.0,
+      "p90": 67.90000000000003,
+      "p95": 87.89999999999998
+    }
+  },
+  "devices": {
+    "Mobile": {
+      "sessions": 406,
+      "conversion_rate": 0.12,
+      "rageclick_rate": 0.0049261083743842365
+    },
+    "Desktop": {
+      "sessions": 66,
+      "conversion_rate": 0.12,
+      "rageclick_rate": 0.0
+    },
+    "Unknown": {
+      "sessions": 7,
+      "conversion_rate": 0.12,
+      "rageclick_rate": 0.0
+    },
+    "Tablet": {
+      "sessions": 3,
+      "conversion_rate": 0.12,
+      "rageclick_rate": 0.0
+    }
+  },
+  "period": {
+    "type": "yesterday",
+    "from_utc": "2025-08-25T22:00:00Z",
+    "to_utc": "2025-08-26T21:59:59.999999Z",
+    "label": "2025-08-26 (local)"
   },
   "timeseries": {
     "hourly": {
       "total_sessions": [
-        {"hour": 0, "value": 12}, {"hour": 1, "value": 8}, {"hour": 2, "value": 6},
-        {"hour": 3, "value": 4}, {"hour": 4, "value": 7}, {"hour": 5, "value": 9},
-        {"hour": 6, "value": 15}, {"hour": 7, "value": 18}, {"hour": 8, "value": 24},
-        {"hour": 9, "value": 28}, {"hour": 10, "value": 32}, {"hour": 11, "value": 35},
-        {"hour": 12, "value": 38}, {"hour": 13, "value": 42}, {"hour": 14, "value": 45},
-        {"hour": 15, "value": 48}, {"hour": 16, "value": 38}, {"hour": 17, "value": 34},
-        {"hour": 18, "value": 29}, {"hour": 19, "value": 25}, {"hour": 20, "value": 22},
-        {"hour": 21, "value": 18}, {"hour": 22, "value": 14}, {"hour": 23, "value": 10}
+        {
+          "hour": 0,
+          "value": 12
+        },
+        {
+          "hour": 1,
+          "value": 1
+        },
+        {
+          "hour": 2,
+          "value": 6
+        },
+        {
+          "hour": 3,
+          "value": 3
+        },
+        {
+          "hour": 4,
+          "value": 3
+        },
+        {
+          "hour": 5,
+          "value": 0
+        },
+        {
+          "hour": 6,
+          "value": 12
+        },
+        {
+          "hour": 7,
+          "value": 13
+        },
+        {
+          "hour": 8,
+          "value": 25
+        },
+        {
+          "hour": 9,
+          "value": 27
+        },
+        {
+          "hour": 10,
+          "value": 27
+        },
+        {
+          "hour": 11,
+          "value": 30
+        },
+        {
+          "hour": 12,
+          "value": 27
+        },
+        {
+          "hour": 13,
+          "value": 35
+        },
+        {
+          "hour": 14,
+          "value": 30
+        },
+        {
+          "hour": 15,
+          "value": 37
+        },
+        {
+          "hour": 16,
+          "value": 32
+        },
+        {
+          "hour": 17,
+          "value": 24
+        },
+        {
+          "hour": 18,
+          "value": 19
+        },
+        {
+          "hour": 19,
+          "value": 23
+        },
+        {
+          "hour": 20,
+          "value": 18
+        },
+        {
+          "hour": 21,
+          "value": 26
+        },
+        {
+          "hour": 22,
+          "value": 36
+        },
+        {
+          "hour": 23,
+          "value": 18
+        }
       ],
       "sessions_analyzed": [
-        {"hour": 0, "value": 12}, {"hour": 1, "value": 8}, {"hour": 2, "value": 6},
-        {"hour": 3, "value": 4}, {"hour": 4, "value": 7}, {"hour": 5, "value": 9},
-        {"hour": 6, "value": 15}, {"hour": 7, "value": 18}, {"hour": 8, "value": 24},
-        {"hour": 9, "value": 28}, {"hour": 10, "value": 31}, {"hour": 11, "value": 34},
-        {"hour": 12, "value": 37}, {"hour": 13, "value": 41}, {"hour": 14, "value": 44},
-        {"hour": 15, "value": 47}, {"hour": 16, "value": 37}, {"hour": 17, "value": 33},
-        {"hour": 18, "value": 28}, {"hour": 19, "value": 24}, {"hour": 20, "value": 21},
-        {"hour": 21, "value": 17}, {"hour": 22, "value": 13}, {"hour": 23, "value": 9}
+        {
+          "hour": 0,
+          "value": 12
+        },
+        {
+          "hour": 1,
+          "value": 1
+        },
+        {
+          "hour": 2,
+          "value": 6
+        },
+        {
+          "hour": 3,
+          "value": 3
+        },
+        {
+          "hour": 4,
+          "value": 3
+        },
+        {
+          "hour": 5,
+          "value": 0
+        },
+        {
+          "hour": 6,
+          "value": 12
+        },
+        {
+          "hour": 7,
+          "value": 13
+        },
+        {
+          "hour": 8,
+          "value": 25
+        },
+        {
+          "hour": 9,
+          "value": 27
+        },
+        {
+          "hour": 10,
+          "value": 27
+        },
+        {
+          "hour": 11,
+          "value": 30
+        },
+        {
+          "hour": 12,
+          "value": 27
+        },
+        {
+          "hour": 13,
+          "value": 34
+        },
+        {
+          "hour": 14,
+          "value": 30
+        },
+        {
+          "hour": 15,
+          "value": 36
+        },
+        {
+          "hour": 16,
+          "value": 32
+        },
+        {
+          "hour": 17,
+          "value": 24
+        },
+        {
+          "hour": 18,
+          "value": 19
+        },
+        {
+          "hour": 19,
+          "value": 23
+        },
+        {
+          "hour": 20,
+          "value": 18
+        },
+        {
+          "hour": 21,
+          "value": 26
+        },
+        {
+          "hour": 22,
+          "value": 36
+        },
+        {
+          "hour": 23,
+          "value": 18
+        }
       ],
       "funnel_completions": [
-        {"hour": 0, "value": 1}, {"hour": 1, "value": 0}, {"hour": 2, "value": 0},
-        {"hour": 3, "value": 0}, {"hour": 4, "value": 1}, {"hour": 5, "value": 1},
-        {"hour": 6, "value": 2}, {"hour": 7, "value": 2}, {"hour": 8, "value": 3},
-        {"hour": 9, "value": 3}, {"hour": 10, "value": 4}, {"hour": 11, "value": 4},
-        {"hour": 12, "value": 4}, {"hour": 13, "value": 5}, {"hour": 14, "value": 5},
-        {"hour": 15, "value": 6}, {"hour": 16, "value": 4}, {"hour": 17, "value": 3},
-        {"hour": 18, "value": 2}, {"hour": 19, "value": 2}, {"hour": 20, "value": 1},
-        {"hour": 21, "value": 1}, {"hour": 22, "value": 0}, {"hour": 23, "value": 0}
+        {
+          "hour": 0,
+          "value": 1
+        },
+        {
+          "hour": 1,
+          "value": 0
+        },
+        {
+          "hour": 2,
+          "value": 1
+        },
+        {
+          "hour": 3,
+          "value": 0
+        },
+        {
+          "hour": 4,
+          "value": 0
+        },
+        {
+          "hour": 5,
+          "value": 0
+        },
+        {
+          "hour": 6,
+          "value": 1
+        },
+        {
+          "hour": 7,
+          "value": 2
+        },
+        {
+          "hour": 8,
+          "value": 3
+        },
+        {
+          "hour": 9,
+          "value": 3
+        },
+        {
+          "hour": 10,
+          "value": 3
+        },
+        {
+          "hour": 11,
+          "value": 4
+        },
+        {
+          "hour": 12,
+          "value": 3
+        },
+        {
+          "hour": 13,
+          "value": 4
+        },
+        {
+          "hour": 14,
+          "value": 4
+        },
+        {
+          "hour": 15,
+          "value": 4
+        },
+        {
+          "hour": 16,
+          "value": 4
+        },
+        {
+          "hour": 17,
+          "value": 3
+        },
+        {
+          "hour": 18,
+          "value": 2
+        },
+        {
+          "hour": 19,
+          "value": 3
+        },
+        {
+          "hour": 20,
+          "value": 2
+        },
+        {
+          "hour": 21,
+          "value": 3
+        },
+        {
+          "hour": 22,
+          "value": 4
+        },
+        {
+          "hour": 23,
+          "value": 2
+        }
       ],
       "conversion_rate": [
-        {"hour": 0, "value": 0.083}, {"hour": 1, "value": 0.0}, {"hour": 2, "value": 0.0},
-        {"hour": 3, "value": 0.0}, {"hour": 4, "value": 0.143}, {"hour": 5, "value": 0.111},
-        {"hour": 6, "value": 0.133}, {"hour": 7, "value": 0.111}, {"hour": 8, "value": 0.125},
-        {"hour": 9, "value": 0.107}, {"hour": 10, "value": 0.125}, {"hour": 11, "value": 0.114},
-        {"hour": 12, "value": 0.105}, {"hour": 13, "value": 0.119}, {"hour": 14, "value": 0.111},
-        {"hour": 15, "value": 0.125}, {"hour": 16, "value": 0.105}, {"hour": 17, "value": 0.088},
-        {"hour": 18, "value": 0.069}, {"hour": 19, "value": 0.08}, {"hour": 20, "value": 0.045},
-        {"hour": 21, "value": 0.056}, {"hour": 22, "value": 0.0}, {"hour": 23, "value": 0.0}
+        {
+          "hour": 0,
+          "value": 0.12
+        },
+        {
+          "hour": 1,
+          "value": 0.12
+        },
+        {
+          "hour": 2,
+          "value": 0.12
+        },
+        {
+          "hour": 3,
+          "value": 0.12
+        },
+        {
+          "hour": 4,
+          "value": 0.12
+        },
+        {
+          "hour": 5,
+          "value": 0.12
+        },
+        {
+          "hour": 6,
+          "value": 0.12
+        },
+        {
+          "hour": 7,
+          "value": 0.12
+        },
+        {
+          "hour": 8,
+          "value": 0.12
+        },
+        {
+          "hour": 9,
+          "value": 0.12
+        },
+        {
+          "hour": 10,
+          "value": 0.12
+        },
+        {
+          "hour": 11,
+          "value": 0.12
+        },
+        {
+          "hour": 12,
+          "value": 0.12
+        },
+        {
+          "hour": 13,
+          "value": 0.12
+        },
+        {
+          "hour": 14,
+          "value": 0.12
+        },
+        {
+          "hour": 15,
+          "value": 0.12
+        },
+        {
+          "hour": 16,
+          "value": 0.12
+        },
+        {
+          "hour": 17,
+          "value": 0.12
+        },
+        {
+          "hour": 18,
+          "value": 0.12
+        },
+        {
+          "hour": 19,
+          "value": 0.12
+        },
+        {
+          "hour": 20,
+          "value": 0.12
+        },
+        {
+          "hour": 21,
+          "value": 0.12
+        },
+        {
+          "hour": 22,
+          "value": 0.12
+        },
+        {
+          "hour": 23,
+          "value": 0.12
+        }
+      ],
+      "funnel_steps_hits": [
+        {
+          "hour": 0,
+          "hits": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "offer_page_viewed",
+            "offer_button_clicked",
+            "email_submitted",
+            "signup_success"
+          ]
+        },
+        {
+          "hour": 1,
+          "hits": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "offer_page_viewed",
+            "offer_button_clicked",
+            "email_submitted",
+            "signup_success"
+          ]
+        },
+        {
+          "hour": 2,
+          "hits": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "offer_page_viewed",
+            "offer_button_clicked",
+            "email_submitted",
+            "signup_success"
+          ]
+        },
+        {
+          "hour": 3,
+          "hits": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "offer_page_viewed",
+            "offer_button_clicked",
+            "email_submitted",
+            "signup_success"
+          ]
+        },
+        {
+          "hour": 4,
+          "hits": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "offer_page_viewed",
+            "offer_button_clicked",
+            "email_submitted",
+            "signup_success"
+          ]
+        },
+        {
+          "hour": 5,
+          "hits": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "offer_page_viewed",
+            "offer_button_clicked",
+            "email_submitted",
+            "signup_success"
+          ]
+        },
+        {
+          "hour": 6,
+          "hits": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "offer_page_viewed",
+            "offer_button_clicked",
+            "email_submitted",
+            "signup_success"
+          ]
+        },
+        {
+          "hour": 7,
+          "hits": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "offer_page_viewed",
+            "offer_button_clicked",
+            "email_submitted",
+            "signup_success"
+          ]
+        },
+        {
+          "hour": 8,
+          "hits": [
+            2,
+            1,
+            1,
+            0
+          ],
+          "steps": [
+            "offer_page_viewed",
+            "offer_button_clicked",
+            "email_submitted",
+            "signup_success"
+          ]
+        },
+        {
+          "hour": 9,
+          "hits": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "offer_page_viewed",
+            "offer_button_clicked",
+            "email_submitted",
+            "signup_success"
+          ]
+        },
+        {
+          "hour": 10,
+          "hits": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "offer_page_viewed",
+            "offer_button_clicked",
+            "email_submitted",
+            "signup_success"
+          ]
+        },
+        {
+          "hour": 11,
+          "hits": [
+            4,
+            2,
+            2,
+            0
+          ],
+          "steps": [
+            "offer_page_viewed",
+            "offer_button_clicked",
+            "email_submitted",
+            "signup_success"
+          ]
+        },
+        {
+          "hour": 12,
+          "hits": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "offer_page_viewed",
+            "offer_button_clicked",
+            "email_submitted",
+            "signup_success"
+          ]
+        },
+        {
+          "hour": 13,
+          "hits": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "steps": [
+            "offer_page_viewed",
+            "offer_button_clicked",
+            "email_submitted",
+            "signup_success"
+          ]
+        },
+        {
+          "hour": 14,
+          "hits": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "offer_page_viewed",
+            "offer_button_clicked",
+            "email_submitted",
+            "signup_success"
+          ]
+        },
+        {
+          "hour": 15,
+          "hits": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "steps": [
+            "offer_page_viewed",
+            "offer_button_clicked",
+            "email_submitted",
+            "signup_success"
+          ]
+        },
+        {
+          "hour": 16,
+          "hits": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "offer_page_viewed",
+            "offer_button_clicked",
+            "email_submitted",
+            "signup_success"
+          ]
+        },
+        {
+          "hour": 17,
+          "hits": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "steps": [
+            "offer_page_viewed",
+            "offer_button_clicked",
+            "email_submitted",
+            "signup_success"
+          ]
+        },
+        {
+          "hour": 18,
+          "hits": [
+            2,
+            1,
+            1,
+            0
+          ],
+          "steps": [
+            "offer_page_viewed",
+            "offer_button_clicked",
+            "email_submitted",
+            "signup_success"
+          ]
+        },
+        {
+          "hour": 19,
+          "hits": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "steps": [
+            "offer_page_viewed",
+            "offer_button_clicked",
+            "email_submitted",
+            "signup_success"
+          ]
+        },
+        {
+          "hour": 20,
+          "hits": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "offer_page_viewed",
+            "offer_button_clicked",
+            "email_submitted",
+            "signup_success"
+          ]
+        },
+        {
+          "hour": 21,
+          "hits": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "offer_page_viewed",
+            "offer_button_clicked",
+            "email_submitted",
+            "signup_success"
+          ]
+        },
+        {
+          "hour": 22,
+          "hits": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "offer_page_viewed",
+            "offer_button_clicked",
+            "email_submitted",
+            "signup_success"
+          ]
+        },
+        {
+          "hour": 23,
+          "hits": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "offer_page_viewed",
+            "offer_button_clicked",
+            "email_submitted",
+            "signup_success"
+          ]
+        }
       ]
     }
   },
   "ux": {
     "session_quality_score": {
       "weights": {
-        "scroll_depth": 0.15,
-        "session_duration": 0.12,
-        "pages_per_session": 0.10,
-        "successful_interactions": 0.15,
-        "funnel_step_completion_rate": 0.18,
-        "rage_clicks": -0.08,
-        "console_errors": -0.07,
-        "exit_on_error": -0.05,
-        "fast_bounce": -0.10,
-        "microtask_completions": 0.08,
-        "dead_clicks": -0.06,
-        "cta_attempt_vs_complete": 0.08
+        "scroll_depth": 0.1,
+        "session_duration": 0.15,
+        "pages_per_session": 0.1,
+        "successful_interactions": 0.2,
+        "funnel_step_completion_rate": 0.15,
+        "rage_clicks": -0.1,
+        "console_errors": -0.05,
+        "exit_on_error": -0.15,
+        "fast_bounce": -0.1,
+        "microtask_completions": 0.0,
+        "dead_clicks": 0.0,
+        "cta_attempt_vs_complete": 0.0
       },
       "stats": {
-        "min": 0.12,
-        "q1": 0.45,
-        "median": 0.67,
-        "q3": 0.82,
-        "max": 0.98,
-        "mean": 0.65,
-        "std_dev": 0.18
+        "min": 0.0,
+        "q1": 1.6,
+        "median": 4.1,
+        "q3": 11.5,
+        "max": 43.9,
+        "mean": 8.23734439834025,
+        "std_dev": 9.518739739366138
       },
       "classification": {
+        "thresholds": {
+          "good": 11.5,
+          "bad": 1.6
+        },
+        "good_threshold": 11.5,
+        "bad_threshold": 1.6,
         "distribution": {
-          "good": 312,
-          "neutral": 128,
-          "bad": 44
+          "good": 122,
+          "neutral": 213,
+          "bad": 147
         },
         "percentages": {
-          "good": 64.5,
-          "neutral": 26.4,
-          "bad": 9.1
+          "good": 25.3,
+          "neutral": 44.2,
+          "bad": 30.5
         }
+      },
+      "good_share": 0.253,
+      "bad_share": 0.305,
+      "neutral_share": 0.442,
+      "normalization_method": "percentile_based_p5_p95",
+      "classification_method": "percentile_thresholds_p25_p75",
+      "samples": [
+        {
+          "session_id": "0198e864-91c0-7b61-ab18-d86665143c07",
+          "score": 15.2,
+          "classification": "good"
+        },
+        {
+          "session_id": "0198e862-3bc3-745c-a81a-1c348c572bb6",
+          "score": 2.1,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "0198e85f-e22a-704f-926a-584ac553510f",
+          "score": 0.1,
+          "classification": "bad"
+        },
+        {
+          "session_id": "0198e85a-65e2-7251-9042-354c4c2a09dc",
+          "score": 0.2,
+          "classification": "bad"
+        },
+        {
+          "session_id": "0198e85a-33f7-7317-8884-f039cc249af0",
+          "score": 15.1,
+          "classification": "good"
+        },
+        {
+          "session_id": "0198e853-e7ed-7d76-9e24-ebfd8e0ed685",
+          "score": 21.7,
+          "classification": "good"
+        },
+        {
+          "session_id": "0198e84a-97cc-7d18-9c68-f76a2242323c",
+          "score": 1.6,
+          "classification": "bad"
+        },
+        {
+          "session_id": "0198e847-5631-7d5f-8551-4661f5da9c05",
+          "score": 1.6,
+          "classification": "bad"
+        },
+        {
+          "session_id": "0198e842-2b92-7f70-857c-bf76e745bdc2",
+          "score": 1.7,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "0198e841-7787-7f22-bc20-33a2120f140e",
+          "score": 10.1,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "0198e83e-fb66-75f9-8840-d8d52328203c",
+          "score": 10.5,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "0198e83c-b2ae-7d18-9901-b14a152e858f",
+          "score": 9.8,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "0198e839-3780-7222-8575-5ad20a3f217d",
+          "score": 0.1,
+          "classification": "bad"
+        },
+        {
+          "session_id": "0198e835-6d19-7d7f-b24c-362511a6b2ce",
+          "score": 6.0,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "0198e834-ebd8-7514-aab3-09c7edda85b6",
+          "score": 21.4,
+          "classification": "good"
+        },
+        {
+          "session_id": "0198e834-a91b-7feb-a437-23c3abf1c056",
+          "score": 2.5,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "0198e834-38df-7bb6-87fd-4b1d5c5e7dfa",
+          "score": 14.5,
+          "classification": "good"
+        },
+        {
+          "session_id": "0198e833-2290-7ae1-a3fd-634a27c07132",
+          "score": 4.8,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "0198e82e-10b5-792a-83a9-b8c687c076d1",
+          "score": 3.7,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "0198e82c-055f-7e93-a428-10185ed7d8dc",
+          "score": 11.0,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "0198e829-e60b-70b8-8d00-f7b8c8d9ff1f",
+          "score": 3.8,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "0198e826-f49a-7e3d-a470-528646396135",
+          "score": 0.1,
+          "classification": "bad"
+        },
+        {
+          "session_id": "0198e826-593e-7a6b-b8e9-0bc5a8f46758",
+          "score": 7.1,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "0198e826-1922-7b10-88a6-ad5ba63b5c6b",
+          "score": 6.5,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "0198e823-1b52-7d4e-93dd-4d279804a9ea",
+          "score": 1.7,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "0198e822-390a-74b4-905b-88d5b899ece8",
+          "score": 7.3,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "0198e81e-4827-7d65-98b2-cd0ac0a786ac",
+          "score": 11.4,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "0198e81d-b4bb-7b1e-a04e-edc54544bf4e",
+          "score": 0.1,
+          "classification": "bad"
+        },
+        {
+          "session_id": "0198e81b-cd94-778f-a016-9c1fa20372bb",
+          "score": 18.4,
+          "classification": "good"
+        },
+        {
+          "session_id": "0198e818-d68f-7f61-bb21-4426f3547fa8",
+          "score": 12.7,
+          "classification": "good"
+        }
+      ]
+    },
+    "heatmaps": {
+      "click": {
+        "by_page": {
+          "/tradein/customerprofiling": {
+            "unknown_target": 247
+          },
+          "/tradein/payout": {
+            "unknown_target": 121
+          },
+          "/tradein/kyc_valuation": {
+            "unknown_target": 13
+          },
+          "/tradein/contract_whatis": {
+            "unknown_target": 38
+          },
+          "/": {
+            "unknown_target": 798
+          },
+          "/marketplace/": {
+            "unknown_target": 98
+          },
+          "/docs/tradein": {
+            "unknown_target": 13
+          },
+          "/jobs": {
+            "unknown_target": 28
+          },
+          "/docs": {
+            "unknown_target": 44
+          },
+          "/partners": {
+            "unknown_target": 19
+          },
+          "/tradein/login": {
+            "unknown_target": 10
+          },
+          "/offer/index.html": {
+            "unknown_target": 1
+          },
+          "/tradein/thankyou": {
+            "unknown_target": 12
+          },
+          "/offer/": {
+            "unknown_target": 26
+          },
+          "/questionario/": {
+            "unknown_target": 62
+          },
+          "/tradein/otp": {
+            "unknown_target": 5
+          },
+          "/be1": {
+            "unknown_target": 12
+          },
+          "/tradein/contract": {
+            "unknown_target": 1
+          },
+          "/tradein/kyc": {
+            "unknown_target": 1
+          },
+          "/tradein/imei_check": {
+            "unknown_target": 15
+          },
+          "/verisure/": {
+            "unknown_target": 1
+          },
+          "/auth/login/": {
+            "unknown_target": 3
+          }
+        },
+        "global_top": {
+          "/": 797,
+          "/tradein/customerprofiling": 247,
+          "/tradein/payout": 121,
+          "/marketplace/": 95,
+          "/questionario/": 62,
+          "/docs": 44,
+          "/tradein/contract_whatis": 38,
+          "/jobs": 28,
+          "/offer/": 26,
+          "/partners": 19,
+          "/tradein/imei_check": 15,
+          "/docs/tradein": 13,
+          "/be1": 12,
+          "/tradein/login": 10,
+          "/tradein/kyc_valuation": 8,
+          "/tradein/thankyou": 7,
+          "/tradein/otp": 5,
+          "/auth/login/": 3,
+          "/offer/index.html": 1,
+          "/verisure/": 1
+        }
+      },
+      "scroll": {
+        "status": "proxy",
+        "by_page": {
+          "/tradein/payout": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 0.0,
+              "p90": 4.4040000000000035,
+              "p95": 7.706999999999992,
+              "mean": 1.5728571428571427
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/tradein/customerprofiling": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 5.652,
+              "p90": 527.5732000000005,
+              "p95": 846.0789,
+              "mean": 195.6381111111111
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/tradein/login": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 0.0,
+              "p90": 120.06479999999999,
+              "p95": 135.07289999999998,
+              "mean": 50.026999999999994
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/be1": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 0.0,
+              "p90": 565.232,
+              "p95": 847.848,
+              "mean": 188.41066666666666
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/tradein/thankyou": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 13.079,
+              "p90": 17.6782,
+              "p95": 18.2531,
+              "mean": 13.079
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/jobs": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 0.185,
+              "p90": 63.883200000000016,
+              "p95": 91.08144999999999,
+              "mean": 24.5395625
+            },
+            "bounce_rate_proxy": 0.03125
+          },
+          "/docs": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 24.033,
+              "p90": 385.38360000000046,
+              "p95": 793.1939000000004,
+              "mean": 150.96528205128203
+            },
+            "bounce_rate_proxy": 0.02564102564102564
+          },
+          "/verisure/": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 18.529,
+              "p90": 32.0628,
+              "p95": 34.1734,
+              "mean": 16.1088
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/offer/": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 1.6895,
+              "p90": 8.603100000000001,
+              "p95": 8.61605,
+              "mean": 3.22825
+            },
+            "bounce_rate_proxy": 0.25
+          },
+          "/welcome/yeppon": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 16.429,
+              "p90": 117.84100000000001,
+              "p95": 131.01425,
+              "mean": 43.7033125
+            },
+            "bounce_rate_proxy": 0.0625
+          },
+          "/welcome/verisure": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 0.0,
+              "p90": 0.0,
+              "p95": 0.0,
+              "mean": 0.0
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/offer/index.html": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 6.81,
+              "p90": 6.81,
+              "p95": 6.81,
+              "mean": 6.81
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/verification": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 0.0,
+              "p90": 0.0,
+              "p95": 0.0,
+              "mean": 0.0
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/docs/partners-portal": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 0.0,
+              "p90": 0.0,
+              "p95": 0.0,
+              "mean": 0.0
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/tradein/imei_check": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 0.0,
+              "p90": 0.0,
+              "p95": 0.0,
+              "mean": 0.0
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/partners": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 0.782,
+              "p90": 28.058799999999973,
+              "p95": 184.55669999999728,
+              "mean": 77.68184210526316
+            },
+            "bounce_rate_proxy": 0.10526315789473684
+          },
+          "/": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 0.0,
+              "p90": 444.56500000000005,
+              "p95": 849.8288,
+              "mean": 129.98385964912282
+            },
+            "bounce_rate_proxy": 0.017543859649122806
+          },
+          "/docs/tradein": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 25.9,
+              "p90": 85.9,
+              "p95": 108.19850000000001,
+              "mean": 37.26666666666667
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/auth/login/": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 0.0,
+              "p90": 39.4495,
+              "p95": 59.17425,
+              "mean": 13.149833333333333
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/verification/": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 0.0,
+              "p90": 0.0,
+              "p95": 0.0,
+              "mean": 0.0
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/tradein/contract": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 5.6635,
+              "p90": 8.8927,
+              "p95": 9.296349999999999,
+              "mean": 5.6635
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/marketplace/": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 5.531,
+              "p90": 138.55060000000003,
+              "p95": 170.1197999999999,
+              "mean": 40.61692
+            },
+            "bounce_rate_proxy": 0.0
+          }
+        }
+      },
+      "hover": {
+        "status": "not_available",
+        "by_page": {}
+      }
+    },
+    "paths": {
+      "nodes": [
+        {
+          "id": "veliu.com/",
+          "label": "/",
+          "path_group": "veliu.com/",
+          "sessions": 343
+        },
+        {
+          "id": "app.veliu.com/tradein/customerprofiling",
+          "label": "/tradein/customerprofiling",
+          "path_group": "app.veliu.com/tradein/customerprofiling",
+          "sessions": 46
+        },
+        {
+          "id": "veliu.com/docs",
+          "label": "/docs",
+          "path_group": "veliu.com/docs",
+          "sessions": 35
+        },
+        {
+          "id": "landing.veliu.com/",
+          "label": "/",
+          "path_group": "landing.veliu.com/",
+          "sessions": 28
+        },
+        {
+          "id": "tradein.veliu.com/marketplace/",
+          "label": "/marketplace/",
+          "path_group": "tradein.veliu.com/marketplace/",
+          "sessions": 18
+        },
+        {
+          "id": "veliu.com/partners",
+          "label": "/partners",
+          "path_group": "veliu.com/partners",
+          "sessions": 16
+        },
+        {
+          "id": "veliu.com/jobs",
+          "label": "/jobs",
+          "path_group": "veliu.com/jobs",
+          "sessions": 14
+        },
+        {
+          "id": "www.veliu.com/",
+          "label": "/",
+          "path_group": "www.veliu.com/",
+          "sessions": 12
+        },
+        {
+          "id": "www.veliu.com/jobs",
+          "label": "/jobs",
+          "path_group": "www.veliu.com/jobs",
+          "sessions": 11
+        },
+        {
+          "id": "tradein.veliu.com/welcome/yeppon",
+          "label": "/welcome/yeppon",
+          "path_group": "tradein.veliu.com/welcome/yeppon",
+          "sessions": 11
+        },
+        {
+          "id": "tradein.veliu.com/",
+          "label": "/",
+          "path_group": "tradein.veliu.com/",
+          "sessions": 7
+        },
+        {
+          "id": "veliu.com/docs/tradein",
+          "label": "/docs/tradein",
+          "path_group": "veliu.com/docs/tradein",
+          "sessions": 6
+        },
+        {
+          "id": "app.veliu.com/tradein/payout",
+          "label": "/tradein/payout",
+          "path_group": "app.veliu.com/tradein/payout",
+          "sessions": 6
+        },
+        {
+          "id": "tradein.veliu.com/be1",
+          "label": "/be1",
+          "path_group": "tradein.veliu.com/be1",
+          "sessions": 6
+        },
+        {
+          "id": "my.veliu.com/auth/login/",
+          "label": "/auth/login/",
+          "path_group": "my.veliu.com/auth/login/",
+          "sessions": 6
+        },
+        {
+          "id": "landing.veliu.com/verisure/",
+          "label": "/verisure/",
+          "path_group": "landing.veliu.com/verisure/",
+          "sessions": 5
+        },
+        {
+          "id": "tradein.veliu.com/offer/",
+          "label": "/offer/",
+          "path_group": "tradein.veliu.com/offer/",
+          "sessions": 5
+        },
+        {
+          "id": "app.veliu.com/tradein/login",
+          "label": "/tradein/login",
+          "path_group": "app.veliu.com/tradein/login",
+          "sessions": 3
+        },
+        {
+          "id": "my.veliu.com/",
+          "label": "/",
+          "path_group": "my.veliu.com/",
+          "sessions": 3
+        },
+        {
+          "id": "app.veliu.com/tradein/thankyou",
+          "label": "/tradein/thankyou",
+          "path_group": "app.veliu.com/tradein/thankyou",
+          "sessions": 2
+        },
+        {
+          "id": "app.veliu.com/tradein/contract",
+          "label": "/tradein/contract",
+          "path_group": "app.veliu.com/tradein/contract",
+          "sessions": 2
+        },
+        {
+          "id": "www.veliu.com/partners",
+          "label": "/partners",
+          "path_group": "www.veliu.com/partners",
+          "sessions": 2
+        },
+        {
+          "id": "tradein.staging.veliu.com/verification/",
+          "label": "/verification/",
+          "path_group": "tradein.staging.veliu.com/verification/",
+          "sessions": 1
+        },
+        {
+          "id": "tradein.staging.veliu.com/verification",
+          "label": "/verification",
+          "path_group": "tradein.staging.veliu.com/verification",
+          "sessions": 1
+        },
+        {
+          "id": "tradein.veliu.com/offer/index.html",
+          "label": "/offer/index.html",
+          "path_group": "tradein.veliu.com/offer/index.html",
+          "sessions": 1
+        },
+        {
+          "id": "app.veliu.com/tradein/imei_check",
+          "label": "/tradein/imei_check",
+          "path_group": "app.veliu.com/tradein/imei_check",
+          "sessions": 1
+        },
+        {
+          "id": "tradein.veliu.com/welcome/verisure",
+          "label": "/welcome/verisure",
+          "path_group": "tradein.veliu.com/welcome/verisure",
+          "sessions": 1
+        },
+        {
+          "id": "veliu.com/docs/partners-portal",
+          "label": "/docs/partners-portal",
+          "path_group": "veliu.com/docs/partners-portal",
+          "sessions": 1
+        },
+        {
+          "id": "www.veliu.com/docs",
+          "label": "/docs",
+          "path_group": "www.veliu.com/docs",
+          "sessions": 1
+        }
+      ],
+      "edges": [
+        {
+          "from": "veliu.com/",
+          "to": "veliu.com/docs",
+          "sessions": 14
+        },
+        {
+          "from": "veliu.com/",
+          "to": "veliu.com/jobs",
+          "sessions": 12
+        },
+        {
+          "from": "landing.veliu.com/",
+          "to": "tradein.veliu.com/marketplace/",
+          "sessions": 11
+        },
+        {
+          "from": "veliu.com/",
+          "to": "app.veliu.com/tradein/customerprofiling",
+          "sessions": 8
+        },
+        {
+          "from": "veliu.com/docs",
+          "to": "veliu.com/",
+          "sessions": 8
+        },
+        {
+          "from": "landing.veliu.com/",
+          "to": "veliu.com/docs",
+          "sessions": 5
+        },
+        {
+          "from": "landing.veliu.com/",
+          "to": "veliu.com/",
+          "sessions": 5
+        },
+        {
+          "from": "veliu.com/",
+          "to": "www.veliu.com/",
+          "sessions": 4
+        },
+        {
+          "from": "tradein.veliu.com/offer/",
+          "to": "tradein.veliu.com/",
+          "sessions": 4
+        },
+        {
+          "from": "tradein.veliu.com/welcome/yeppon",
+          "to": "tradein.veliu.com/marketplace/",
+          "sessions": 4
+        },
+        {
+          "from": "app.veliu.com/tradein/customerprofiling",
+          "to": "app.veliu.com/tradein/payout",
+          "sessions": 3
+        },
+        {
+          "from": "veliu.com/jobs",
+          "to": "www.veliu.com/jobs",
+          "sessions": 3
+        },
+        {
+          "from": "www.veliu.com/",
+          "to": "veliu.com/docs",
+          "sessions": 3
+        },
+        {
+          "from": "veliu.com/partners",
+          "to": "veliu.com/",
+          "sessions": 3
+        },
+        {
+          "from": "veliu.com/",
+          "to": "landing.veliu.com/",
+          "sessions": 3
+        },
+        {
+          "from": "tradein.veliu.com/marketplace/",
+          "to": "veliu.com/",
+          "sessions": 3
+        },
+        {
+          "from": "veliu.com/",
+          "to": "veliu.com/docs/tradein",
+          "sessions": 2
+        },
+        {
+          "from": "veliu.com/docs/tradein",
+          "to": "veliu.com/partners",
+          "sessions": 2
+        },
+        {
+          "from": "veliu.com/",
+          "to": "veliu.com/partners",
+          "sessions": 2
+        },
+        {
+          "from": "veliu.com/",
+          "to": "www.veliu.com/jobs",
+          "sessions": 2
+        },
+        {
+          "from": "veliu.com/partners",
+          "to": "veliu.com/docs",
+          "sessions": 2
+        },
+        {
+          "from": "veliu.com/docs",
+          "to": "landing.veliu.com/",
+          "sessions": 2
+        },
+        {
+          "from": "veliu.com/docs",
+          "to": "veliu.com/partners",
+          "sessions": 2
+        },
+        {
+          "from": "tradein.veliu.com/",
+          "to": "tradein.veliu.com/offer/",
+          "sessions": 2
+        },
+        {
+          "from": "veliu.com/",
+          "to": "tradein.veliu.com/welcome/yeppon",
+          "sessions": 2
+        },
+        {
+          "from": "veliu.com/docs",
+          "to": "tradein.veliu.com/welcome/yeppon",
+          "sessions": 1
+        },
+        {
+          "from": "veliu.com/docs",
+          "to": "app.veliu.com/tradein/customerprofiling",
+          "sessions": 1
+        },
+        {
+          "from": "tradein.veliu.com/",
+          "to": "app.veliu.com/tradein/login",
+          "sessions": 1
+        },
+        {
+          "from": "veliu.com/partners",
+          "to": "veliu.com/docs/tradein",
+          "sessions": 1
+        },
+        {
+          "from": "app.veliu.com/tradein/customerprofiling",
+          "to": "app.veliu.com/tradein/thankyou",
+          "sessions": 1
+        },
+        {
+          "from": "app.veliu.com/tradein/thankyou",
+          "to": "app.veliu.com/tradein/contract",
+          "sessions": 1
+        },
+        {
+          "from": "app.veliu.com/tradein/contract",
+          "to": "app.veliu.com/tradein/customerprofiling",
+          "sessions": 1
+        },
+        {
+          "from": "veliu.com/docs",
+          "to": "tradein.veliu.com/",
+          "sessions": 1
+        },
+        {
+          "from": "landing.veliu.com/",
+          "to": "tradein.veliu.com/welcome/yeppon",
+          "sessions": 1
+        },
+        {
+          "from": "landing.veliu.com/verisure/",
+          "to": "tradein.veliu.com/welcome/verisure",
+          "sessions": 1
+        },
+        {
+          "from": "veliu.com/docs",
+          "to": "www.veliu.com/",
+          "sessions": 1
+        },
+        {
+          "from": "veliu.com/",
+          "to": "veliu.com/docs/partners-portal",
+          "sessions": 1
+        },
+        {
+          "from": "app.veliu.com/tradein/login",
+          "to": "app.veliu.com/tradein/customerprofiling",
+          "sessions": 1
+        },
+        {
+          "from": "tradein.veliu.com/marketplace/",
+          "to": "veliu.com/docs",
+          "sessions": 1
+        },
+        {
+          "from": "www.veliu.com/jobs",
+          "to": "www.veliu.com/partners",
+          "sessions": 1
+        },
+        {
+          "from": "veliu.com/docs/tradein",
+          "to": "veliu.com/",
+          "sessions": 1
+        },
+        {
+          "from": "app.veliu.com/tradein/customerprofiling",
+          "to": "app.veliu.com/tradein/contract",
+          "sessions": 1
+        },
+        {
+          "from": "app.veliu.com/tradein/contract",
+          "to": "www.veliu.com/",
+          "sessions": 1
+        },
+        {
+          "from": "tradein.veliu.com/marketplace/",
+          "to": "tradein.veliu.com/welcome/yeppon",
+          "sessions": 1
+        },
+        {
+          "from": "veliu.com/docs",
+          "to": "veliu.com/docs/tradein",
+          "sessions": 1
+        },
+        {
+          "from": "veliu.com/partners",
+          "to": "landing.veliu.com/",
+          "sessions": 1
+        },
+        {
+          "from": "landing.veliu.com/",
+          "to": "my.veliu.com/auth/login/",
+          "sessions": 1
+        },
+        {
+          "from": "my.veliu.com/auth/login/",
+          "to": "veliu.com/",
+          "sessions": 1
+        }
+      ],
+      "entries": [
+        {
+          "node": "veliu.com/",
+          "sessions": 322
+        },
+        {
+          "node": "app.veliu.com/tradein/customerprofiling",
+          "sessions": 35
+        },
+        {
+          "node": "landing.veliu.com/",
+          "sessions": 22
+        },
+        {
+          "node": "veliu.com/partners",
+          "sessions": 10
+        },
+        {
+          "node": "veliu.com/docs",
+          "sessions": 10
+        },
+        {
+          "node": "www.veliu.com/jobs",
+          "sessions": 6
+        },
+        {
+          "node": "tradein.veliu.com/be1",
+          "sessions": 6
+        },
+        {
+          "node": "www.veliu.com/",
+          "sessions": 6
+        },
+        {
+          "node": "tradein.veliu.com/welcome/yeppon",
+          "sessions": 6
+        },
+        {
+          "node": "landing.veliu.com/verisure/",
+          "sessions": 5
+        },
+        {
+          "node": "my.veliu.com/auth/login/",
+          "sessions": 5
+        },
+        {
+          "node": "app.veliu.com/tradein/payout",
+          "sessions": 3
+        },
+        {
+          "node": "tradein.veliu.com/offer/",
+          "sessions": 3
+        },
+        {
+          "node": "tradein.veliu.com/marketplace/",
+          "sessions": 3
+        },
+        {
+          "node": "my.veliu.com/",
+          "sessions": 3
+        },
+        {
+          "node": "veliu.com/docs/tradein",
+          "sessions": 2
+        },
+        {
+          "node": "app.veliu.com/tradein/login",
+          "sessions": 2
+        },
+        {
+          "node": "veliu.com/jobs",
+          "sessions": 2
+        },
+        {
+          "node": "tradein.veliu.com/",
+          "sessions": 2
+        },
+        {
+          "node": "tradein.staging.veliu.com/verification/",
+          "sessions": 1
+        },
+        {
+          "node": "tradein.staging.veliu.com/verification",
+          "sessions": 1
+        },
+        {
+          "node": "tradein.veliu.com/offer/index.html",
+          "sessions": 1
+        },
+        {
+          "node": "app.veliu.com/tradein/imei_check",
+          "sessions": 1
+        },
+        {
+          "node": "app.veliu.com/tradein/thankyou",
+          "sessions": 1
+        },
+        {
+          "node": "www.veliu.com/docs",
+          "sessions": 1
+        },
+        {
+          "node": "www.veliu.com/partners",
+          "sessions": 1
+        }
+      ],
+      "exits": [
+        {
+          "node": "veliu.com/",
+          "sessions": 293
+        },
+        {
+          "node": "app.veliu.com/tradein/customerprofiling",
+          "sessions": 41
+        },
+        {
+          "node": "veliu.com/docs",
+          "sessions": 18
+        },
+        {
+          "node": "tradein.veliu.com/marketplace/",
+          "sessions": 13
+        },
+        {
+          "node": "veliu.com/jobs",
+          "sessions": 11
+        },
+        {
+          "node": "www.veliu.com/jobs",
+          "sessions": 10
+        },
+        {
+          "node": "veliu.com/partners",
+          "sessions": 9
+        },
+        {
+          "node": "www.veliu.com/",
+          "sessions": 9
+        },
+        {
+          "node": "tradein.veliu.com/welcome/yeppon",
+          "sessions": 7
+        },
+        {
+          "node": "app.veliu.com/tradein/payout",
+          "sessions": 6
+        },
+        {
+          "node": "tradein.veliu.com/be1",
+          "sessions": 6
+        },
+        {
+          "node": "landing.veliu.com/",
+          "sessions": 5
+        },
+        {
+          "node": "my.veliu.com/auth/login/",
+          "sessions": 5
+        },
+        {
+          "node": "landing.veliu.com/verisure/",
+          "sessions": 4
+        },
+        {
+          "node": "tradein.veliu.com/",
+          "sessions": 4
+        },
+        {
+          "node": "veliu.com/docs/tradein",
+          "sessions": 3
+        },
+        {
+          "node": "my.veliu.com/",
+          "sessions": 3
+        },
+        {
+          "node": "app.veliu.com/tradein/login",
+          "sessions": 2
+        },
+        {
+          "node": "www.veliu.com/partners",
+          "sessions": 2
+        },
+        {
+          "node": "tradein.staging.veliu.com/verification/",
+          "sessions": 1
+        },
+        {
+          "node": "tradein.staging.veliu.com/verification",
+          "sessions": 1
+        },
+        {
+          "node": "tradein.veliu.com/offer/index.html",
+          "sessions": 1
+        },
+        {
+          "node": "app.veliu.com/tradein/imei_check",
+          "sessions": 1
+        },
+        {
+          "node": "app.veliu.com/tradein/thankyou",
+          "sessions": 1
+        },
+        {
+          "node": "tradein.veliu.com/offer/",
+          "sessions": 1
+        },
+        {
+          "node": "tradein.veliu.com/welcome/verisure",
+          "sessions": 1
+        },
+        {
+          "node": "veliu.com/docs/partners-portal",
+          "sessions": 1
+        },
+        {
+          "node": "www.veliu.com/docs",
+          "sessions": 1
+        }
+      ],
+      "loops": [
+        {
+          "a": "tradein.veliu.com/offer/",
+          "b": "tradein.veliu.com/",
+          "sessions": 3
+        },
+        {
+          "a": "veliu.com/",
+          "b": "veliu.com/docs",
+          "sessions": 2
+        },
+        {
+          "a": "veliu.com/docs",
+          "b": "veliu.com/",
+          "sessions": 2
+        },
+        {
+          "a": "tradein.veliu.com/",
+          "b": "tradein.veliu.com/offer/",
+          "sessions": 2
+        },
+        {
+          "a": "veliu.com/",
+          "b": "landing.veliu.com/",
+          "sessions": 1
+        },
+        {
+          "a": "landing.veliu.com/",
+          "b": "veliu.com/",
+          "sessions": 1
+        },
+        {
+          "a": "www.veliu.com/",
+          "b": "veliu.com/docs",
+          "sessions": 1
+        },
+        {
+          "a": "veliu.com/docs",
+          "b": "www.veliu.com/",
+          "sessions": 1
+        },
+        {
+          "a": "tradein.veliu.com/welcome/yeppon",
+          "b": "tradein.veliu.com/marketplace/",
+          "sessions": 1
+        },
+        {
+          "a": "tradein.veliu.com/marketplace/",
+          "b": "tradein.veliu.com/welcome/yeppon",
+          "sessions": 1
+        }
+      ]
+    },
+    "funnel_macro": {
+      "phases": [
+        "awareness",
+        "interest",
+        "consideration",
+        "conversion",
+        "retention"
+      ],
+      "phase_counts": {
+        "awareness": 370,
+        "interest": 45,
+        "consideration": 0,
+        "conversion": 12,
+        "retention": 50
+      },
+      "phase_pass_rate": {
+        "awareness->interest": 0.016216216216216217,
+        "interest->consideration": 0.0,
+        "consideration->conversion": 0.0,
+        "conversion->retention": 0.0
+      },
+      "transitions": [
+        {
+          "from": "awareness",
+          "to": "interest",
+          "sessions": 6
+        },
+        {
+          "from": "interest",
+          "to": "awareness",
+          "sessions": 5
+        }
+      ],
+      "phase_ts_hourly": {
+        "awareness": [
+          {
+            "hour": 0,
+            "value": 9
+          },
+          {
+            "hour": 1,
+            "value": 1
+          },
+          {
+            "hour": 2,
+            "value": 2
+          },
+          {
+            "hour": 3,
+            "value": 0
+          },
+          {
+            "hour": 4,
+            "value": 1
+          },
+          {
+            "hour": 5,
+            "value": 0
+          },
+          {
+            "hour": 6,
+            "value": 10
+          },
+          {
+            "hour": 7,
+            "value": 10
+          },
+          {
+            "hour": 8,
+            "value": 21
+          },
+          {
+            "hour": 9,
+            "value": 22
+          },
+          {
+            "hour": 10,
+            "value": 18
+          },
+          {
+            "hour": 11,
+            "value": 22
+          },
+          {
+            "hour": 12,
+            "value": 23
+          },
+          {
+            "hour": 13,
+            "value": 24
+          },
+          {
+            "hour": 14,
+            "value": 28
+          },
+          {
+            "hour": 15,
+            "value": 29
+          },
+          {
+            "hour": 16,
+            "value": 23
+          },
+          {
+            "hour": 17,
+            "value": 22
+          },
+          {
+            "hour": 18,
+            "value": 11
+          },
+          {
+            "hour": 19,
+            "value": 16
+          },
+          {
+            "hour": 20,
+            "value": 11
+          },
+          {
+            "hour": 21,
+            "value": 22
+          },
+          {
+            "hour": 22,
+            "value": 31
+          },
+          {
+            "hour": 23,
+            "value": 14
+          }
+        ],
+        "interest": [
+          {
+            "hour": 0,
+            "value": 1
+          },
+          {
+            "hour": 1,
+            "value": 1
+          },
+          {
+            "hour": 2,
+            "value": 0
+          },
+          {
+            "hour": 3,
+            "value": 0
+          },
+          {
+            "hour": 4,
+            "value": 0
+          },
+          {
+            "hour": 5,
+            "value": 0
+          },
+          {
+            "hour": 6,
+            "value": 1
+          },
+          {
+            "hour": 7,
+            "value": 1
+          },
+          {
+            "hour": 8,
+            "value": 2
+          },
+          {
+            "hour": 9,
+            "value": 0
+          },
+          {
+            "hour": 10,
+            "value": 2
+          },
+          {
+            "hour": 11,
+            "value": 0
+          },
+          {
+            "hour": 12,
+            "value": 1
+          },
+          {
+            "hour": 13,
+            "value": 1
+          },
+          {
+            "hour": 14,
+            "value": 0
+          },
+          {
+            "hour": 15,
+            "value": 0
+          },
+          {
+            "hour": 16,
+            "value": 2
+          },
+          {
+            "hour": 17,
+            "value": 1
+          },
+          {
+            "hour": 18,
+            "value": 0
+          },
+          {
+            "hour": 19,
+            "value": 1
+          },
+          {
+            "hour": 20,
+            "value": 1
+          },
+          {
+            "hour": 21,
+            "value": 1
+          },
+          {
+            "hour": 22,
+            "value": 1
+          },
+          {
+            "hour": 23,
+            "value": 2
+          }
+        ],
+        "consideration": [
+          {
+            "hour": 0,
+            "value": 0
+          },
+          {
+            "hour": 1,
+            "value": 0
+          },
+          {
+            "hour": 2,
+            "value": 0
+          },
+          {
+            "hour": 3,
+            "value": 0
+          },
+          {
+            "hour": 4,
+            "value": 0
+          },
+          {
+            "hour": 5,
+            "value": 0
+          },
+          {
+            "hour": 6,
+            "value": 0
+          },
+          {
+            "hour": 7,
+            "value": 0
+          },
+          {
+            "hour": 8,
+            "value": 0
+          },
+          {
+            "hour": 9,
+            "value": 0
+          },
+          {
+            "hour": 10,
+            "value": 0
+          },
+          {
+            "hour": 11,
+            "value": 0
+          },
+          {
+            "hour": 12,
+            "value": 0
+          },
+          {
+            "hour": 13,
+            "value": 0
+          },
+          {
+            "hour": 14,
+            "value": 0
+          },
+          {
+            "hour": 15,
+            "value": 0
+          },
+          {
+            "hour": 16,
+            "value": 0
+          },
+          {
+            "hour": 17,
+            "value": 0
+          },
+          {
+            "hour": 18,
+            "value": 0
+          },
+          {
+            "hour": 19,
+            "value": 0
+          },
+          {
+            "hour": 20,
+            "value": 0
+          },
+          {
+            "hour": 21,
+            "value": 0
+          },
+          {
+            "hour": 22,
+            "value": 0
+          },
+          {
+            "hour": 23,
+            "value": 0
+          }
+        ],
+        "conversion": [
+          {
+            "hour": 0,
+            "value": 0
+          },
+          {
+            "hour": 1,
+            "value": 0
+          },
+          {
+            "hour": 2,
+            "value": 0
+          },
+          {
+            "hour": 3,
+            "value": 0
+          },
+          {
+            "hour": 4,
+            "value": 0
+          },
+          {
+            "hour": 5,
+            "value": 0
+          },
+          {
+            "hour": 6,
+            "value": 0
+          },
+          {
+            "hour": 7,
+            "value": 0
+          },
+          {
+            "hour": 8,
+            "value": 0
+          },
+          {
+            "hour": 9,
+            "value": 0
+          },
+          {
+            "hour": 10,
+            "value": 0
+          },
+          {
+            "hour": 11,
+            "value": 0
+          },
+          {
+            "hour": 12,
+            "value": 0
+          },
+          {
+            "hour": 13,
+            "value": 0
+          },
+          {
+            "hour": 14,
+            "value": 0
+          },
+          {
+            "hour": 15,
+            "value": 0
+          },
+          {
+            "hour": 16,
+            "value": 0
+          },
+          {
+            "hour": 17,
+            "value": 0
+          },
+          {
+            "hour": 18,
+            "value": 0
+          },
+          {
+            "hour": 19,
+            "value": 0
+          },
+          {
+            "hour": 20,
+            "value": 0
+          },
+          {
+            "hour": 21,
+            "value": 0
+          },
+          {
+            "hour": 22,
+            "value": 0
+          },
+          {
+            "hour": 23,
+            "value": 0
+          }
+        ],
+        "retention": [
+          {
+            "hour": 0,
+            "value": 0
+          },
+          {
+            "hour": 1,
+            "value": 0
+          },
+          {
+            "hour": 2,
+            "value": 0
+          },
+          {
+            "hour": 3,
+            "value": 0
+          },
+          {
+            "hour": 4,
+            "value": 0
+          },
+          {
+            "hour": 5,
+            "value": 0
+          },
+          {
+            "hour": 6,
+            "value": 0
+          },
+          {
+            "hour": 7,
+            "value": 0
+          },
+          {
+            "hour": 8,
+            "value": 0
+          },
+          {
+            "hour": 9,
+            "value": 0
+          },
+          {
+            "hour": 10,
+            "value": 0
+          },
+          {
+            "hour": 11,
+            "value": 0
+          },
+          {
+            "hour": 12,
+            "value": 0
+          },
+          {
+            "hour": 13,
+            "value": 0
+          },
+          {
+            "hour": 14,
+            "value": 0
+          },
+          {
+            "hour": 15,
+            "value": 0
+          },
+          {
+            "hour": 16,
+            "value": 0
+          },
+          {
+            "hour": 17,
+            "value": 0
+          },
+          {
+            "hour": 18,
+            "value": 0
+          },
+          {
+            "hour": 19,
+            "value": 0
+          },
+          {
+            "hour": 20,
+            "value": 0
+          },
+          {
+            "hour": 21,
+            "value": 0
+          },
+          {
+            "hour": 22,
+            "value": 0
+          },
+          {
+            "hour": 23,
+            "value": 0
+          }
+        ]
       }
     },
     "frustration": {
+      "rage_clicks_by_page": {
+        "/tradein/customerprofiling": 3
+      },
+      "dead_clicks_by_page": {},
+      "error_triggered_sessions_share": 0.04979253112033195,
+      "exit_after_error_share": 0.004149377593360996,
       "examples": {
-        "with_errors": ["session_123", "session_456", "session_789"],
-        "with_rageclicks": ["session_234", "session_567"]
+        "with_errors": [
+          "0198e85a-33f7-7317-8884-f039cc249af0",
+          "0198e7f7-c487-790e-af49-edf95f988f77",
+          "0198e7d1-e18b-7b3c-961f-ba8a66d48958",
+          "0198e783-16b7-799b-ae97-6d603c2ffa0f",
+          "0198e782-5e61-7f31-8fa4-f30046c57bf4",
+          "0198e779-6ad8-7bc5-99b8-8119964aef27",
+          "0198e75c-98ee-7703-87ff-2dea0530d156",
+          "0198e752-4cdf-7573-8691-321451e09c25",
+          "0198e724-9df5-7f57-a759-fc697d7ef8d0",
+          "0198e724-414b-7202-a7d3-d120a1a37ccc"
+        ],
+        "with_rageclicks": [
+          "0198e6bc-e817-757e-9bf7-8eb209bcf735",
+          "0198e685-1ce4-773a-9418-d8a87c1f66e0"
+        ]
       }
+    },
+    "correlations": {
+      "conversion_rate": {
+        "all": 0.0,
+        "visited_how_it_works": 0.0,
+        "skipped_how_it_works": 0.0,
+        "rageclick_yes": 0.0,
+        "rageclick_no": 0.0
+      },
+      "notes": "Correlazioni base a livello sessione; estendibile con più feature quando disponibili."
     }
   },
   "tech": {
     "errors": {
       "console_by_browser": {
-        "Chrome": 12,
-        "Mobile Safari": 8,
-        "Firefox": 3,
-        "Chrome iOS": 2,
-        "Samsung Internet": 1
+        "Chrome": 21,
+        "Mobile Safari": 3
       },
       "console_by_device": {
-        "Mobile": 18,
-        "Desktop": 7,
-        "Tablet": 1
+        "Mobile": 23,
+        "Desktop": 1
       },
       "exceptions_by_fingerprint": [
-        {"fingerprint": "TypeError: Cannot read property 'value' of null", "count": 15},
-        {"fingerprint": "ReferenceError: gtag is not defined", "count": 8},
-        {"fingerprint": "Network request failed", "count": 6},
-        {"fingerprint": "Script error", "count": 5},
-        {"fingerprint": "ResizeObserver loop limit exceeded", "count": 5}
+        {
+          "fingerprint": "$exception",
+          "count": 39
+        }
+      ],
+      "error_rate_ts_hourly": [
+        {
+          "hour": 0,
+          "value": 0
+        },
+        {
+          "hour": 1,
+          "value": 0
+        },
+        {
+          "hour": 2,
+          "value": 0
+        },
+        {
+          "hour": 3,
+          "value": 0
+        },
+        {
+          "hour": 4,
+          "value": 0
+        },
+        {
+          "hour": 5,
+          "value": 0
+        },
+        {
+          "hour": 6,
+          "value": 0
+        },
+        {
+          "hour": 7,
+          "value": 0
+        },
+        {
+          "hour": 8,
+          "value": 0
+        },
+        {
+          "hour": 9,
+          "value": 0
+        },
+        {
+          "hour": 10,
+          "value": 0
+        },
+        {
+          "hour": 11,
+          "value": 0
+        },
+        {
+          "hour": 12,
+          "value": 0
+        },
+        {
+          "hour": 13,
+          "value": 0
+        },
+        {
+          "hour": 14,
+          "value": 0
+        },
+        {
+          "hour": 15,
+          "value": 0
+        },
+        {
+          "hour": 16,
+          "value": 0
+        },
+        {
+          "hour": 17,
+          "value": 0
+        },
+        {
+          "hour": 18,
+          "value": 0
+        },
+        {
+          "hour": 19,
+          "value": 0
+        },
+        {
+          "hour": 20,
+          "value": 0
+        },
+        {
+          "hour": 21,
+          "value": 0
+        },
+        {
+          "hour": 22,
+          "value": 0
+        },
+        {
+          "hour": 23,
+          "value": 0
+        }
       ]
     }
   },
-  "meta": {
-    "generated_at_utc": "2025-08-27T10:30:00Z",
-    "timezone": "Europe/Rome",
-    "date_local": "2025-08-26",
-    "range_utc": {
-      "from": "2025-08-25T22:00:00Z",
-      "to": "2025-08-26T21:59:59Z"
+  "geography": {
+    "regions": {
+      "Lombardy": {
+        "device_type": {
+          "Mobile": 91,
+          "Desktop": 12
+        },
+        "os": {
+          "iOS": 43,
+          "Android": 48,
+          "Windows": 9,
+          "Mac OS X": 3
+        },
+        "browser": {
+          "Mobile Safari": 36,
+          "Chrome": 53,
+          "Chrome iOS": 6,
+          "Samsung Internet": 4,
+          "Facebook Mobile": 1,
+          "Firefox": 1,
+          "Safari": 2
+        }
+      },
+      "Campania": {
+        "device_type": {
+          "Mobile": 46,
+          "Desktop": 8
+        },
+        "os": {
+          "iOS": 19,
+          "Android": 27,
+          "Windows": 8
+        },
+        "browser": {
+          "Mobile Safari": 12,
+          "Chrome": 30,
+          "Samsung Internet": 4,
+          "Chrome iOS": 4,
+          "Facebook Mobile": 3,
+          "Firefox": 1
+        }
+      },
+      "Apulia": {
+        "device_type": {
+          "Mobile": 15,
+          "Desktop": 1,
+          "Tablet": 1
+        },
+        "os": {
+          "Android": 10,
+          "Windows": 1,
+          "iOS": 6
+        },
+        "browser": {
+          "Samsung Internet": 1,
+          "Firefox": 1,
+          "Mobile Safari": 5,
+          "Chrome iOS": 1,
+          "Chrome": 9
+        }
+      },
+      "Piedmont": {
+        "device_type": {
+          "Mobile": 15,
+          "Desktop": 6,
+          "Tablet": 1
+        },
+        "os": {
+          "Android": 5,
+          "iOS": 11,
+          "Mac OS X": 4,
+          "Windows": 2
+        },
+        "browser": {
+          "Chrome": 10,
+          "Mobile Safari": 10,
+          "Chrome iOS": 1,
+          "Samsung Internet": 1
+        }
+      },
+      "Liguria": {
+        "device_type": {
+          "Mobile": 11
+        },
+        "os": {
+          "Android": 2,
+          "iOS": 9
+        },
+        "browser": {
+          "Chrome": 1,
+          "Mobile Safari": 8,
+          "Samsung Internet": 1,
+          "Chrome iOS": 1
+        }
+      },
+      "Veneto": {
+        "device_type": {
+          "Mobile": 22,
+          "Desktop": 2
+        },
+        "os": {
+          "Android": 12,
+          "iOS": 10,
+          "Windows": 2
+        },
+        "browser": {
+          "Chrome": 12,
+          "Facebook Mobile": 1,
+          "Mobile Safari": 6,
+          "Chrome iOS": 3,
+          "Samsung Internet": 1,
+          "Microsoft Edge": 1
+        }
+      },
+      "Tuscany": {
+        "device_type": {
+          "Mobile": 16,
+          "Desktop": 4
+        },
+        "os": {
+          "Android": 11,
+          "iOS": 5,
+          "Mac OS X": 3,
+          "Windows": 1
+        },
+        "browser": {
+          "Chrome": 12,
+          "Chrome iOS": 1,
+          "Samsung Internet": 2,
+          "Mobile Safari": 4,
+          "Firefox": 1
+        }
+      },
+      "Calabria": {
+        "device_type": {
+          "Mobile": 5
+        },
+        "os": {
+          "iOS": 3,
+          "Android": 2
+        },
+        "browser": {
+          "Mobile Safari": 3,
+          "Chrome": 2
+        }
+      },
+      "Lazio": {
+        "device_type": {
+          "Mobile": 67,
+          "Desktop": 10
+        },
+        "os": {
+          "Android": 38,
+          "iOS": 29,
+          "Mac OS X": 4,
+          "Windows": 6
+        },
+        "browser": {
+          "Chrome": 37,
+          "Facebook Mobile": 3,
+          "Samsung Internet": 4,
+          "Mobile Safari": 20,
+          "Chrome iOS": 6,
+          "Safari": 3,
+          "Microsoft Edge": 4
+        }
+      },
+      "Emilia-Romagna": {
+        "device_type": {
+          "Mobile": 26,
+          "Desktop": 6,
+          "Tablet": 1
+        },
+        "os": {
+          "iOS": 10,
+          "Android": 17,
+          "Mac OS X": 4,
+          "Windows": 2
+        },
+        "browser": {
+          "Mobile Safari": 8,
+          "Chrome": 21,
+          "Chrome iOS": 2,
+          "Microsoft Edge": 1,
+          "Safari": 1
+        }
+      },
+      "Trentino-Alto Adige": {
+        "device_type": {
+          "Mobile": 1
+        },
+        "os": {
+          "Android": 1
+        },
+        "browser": {
+          "Chrome": 1
+        }
+      },
+      "Umbria": {
+        "device_type": {
+          "Mobile": 5,
+          "Desktop": 1
+        },
+        "os": {
+          "iOS": 2,
+          "Android": 3,
+          "Windows": 1
+        },
+        "browser": {
+          "Mobile Safari": 2,
+          "Chrome": 4
+        }
+      },
+      "Sicily": {
+        "device_type": {
+          "Mobile": 28,
+          "Desktop": 1
+        },
+        "os": {
+          "iOS": 12,
+          "Android": 16,
+          "Windows": 1
+        },
+        "browser": {
+          "Mobile Safari": 10,
+          "Chrome": 15,
+          "Facebook Mobile": 2,
+          "Samsung Internet": 2
+        }
+      },
+      "Unknown": {
+        "device_type": {
+          "Mobile": 40,
+          "Unknown": 7,
+          "Desktop": 5
+        },
+        "os": {
+          "iOS": 13,
+          "Android": 27,
+          "Unknown": 7,
+          "Windows": 3,
+          "Linux": 2
+        },
+        "browser": {
+          "Facebook Mobile": 1,
+          "Chrome": 29,
+          "Mobile Safari": 12,
+          "Firefox": 3,
+          "Unknown": 7
+        }
+      },
+      "Uttarakhand": {
+        "device_type": {
+          "Mobile": 1
+        },
+        "os": {
+          "Android": 1
+        },
+        "browser": {
+          "Chrome": 1
+        }
+      },
+      "Friuli Venezia Giulia": {
+        "device_type": {
+          "Desktop": 5,
+          "Mobile": 1
+        },
+        "os": {
+          "Mac OS X": 4,
+          "Android": 1,
+          "Windows": 1
+        },
+        "browser": {
+          "Chrome": 6
+        }
+      },
+      "Hesse": {
+        "device_type": {
+          "Mobile": 1,
+          "Desktop": 1
+        },
+        "os": {
+          "iOS": 1,
+          "Mac OS X": 1
+        },
+        "browser": {
+          "Mobile Safari": 1,
+          "Chrome": 1
+        }
+      },
+      "Molise": {
+        "device_type": {
+          "Mobile": 1
+        },
+        "os": {
+          "Android": 1
+        },
+        "browser": {
+          "Chrome": 1
+        }
+      },
+      "Sardinia": {
+        "device_type": {
+          "Mobile": 5,
+          "Desktop": 1
+        },
+        "os": {
+          "iOS": 1,
+          "Android": 4,
+          "Windows": 1
+        },
+        "browser": {
+          "Mobile Safari": 1,
+          "Chrome": 5
+        }
+      },
+      "Leinster": {
+        "device_type": {
+          "Desktop": 1
+        },
+        "os": {
+          "Mac OS X": 1
+        },
+        "browser": {
+          "Chrome": 1
+        }
+      },
+      "Punjab": {
+        "device_type": {
+          "Desktop": 1
+        },
+        "os": {
+          "Windows": 1
+        },
+        "browser": {
+          "Chrome": 1
+        }
+      },
+      "Abruzzo": {
+        "device_type": {
+          "Desktop": 1,
+          "Mobile": 2
+        },
+        "os": {
+          "Mac OS X": 1,
+          "iOS": 1,
+          "Android": 1
+        },
+        "browser": {
+          "Safari": 1,
+          "Mobile Safari": 1,
+          "Chrome": 1
+        }
+      },
+      "Metro Manila": {
+        "device_type": {
+          "Mobile": 4
+        },
+        "os": {
+          "Android": 4
+        },
+        "browser": {
+          "Chrome": 4
+        }
+      },
+      "Zurich": {
+        "device_type": {
+          "Mobile": 1
+        },
+        "os": {
+          "Android": 1
+        },
+        "browser": {
+          "Chrome": 1
+        }
+      },
+      "Nevada": {
+        "device_type": {
+          "Mobile": 1
+        },
+        "os": {
+          "Android": 1
+        },
+        "browser": {
+          "Chrome": 1
+        }
+      },
+      "California": {
+        "device_type": {
+          "Mobile": 1
+        },
+        "os": {
+          "Android": 1
+        },
+        "browser": {
+          "Chrome": 1
+        }
+      }
     }
-  }
+  },
+  "business": {
+    "values": {
+      "avg_offer_value": null,
+      "avg_conversion_value": null,
+      "qualified_lead_rate": null
+    },
+    "micro_funnel": {
+      "steps": [
+        "offer_page_viewed",
+        "offer_button_clicked",
+        "email_submitted",
+        "signup_success"
+      ],
+      "counts": [
+        14,
+        9,
+        5,
+        0
+      ],
+      "by_channel": {},
+      "by_device": {}
+    }
+  },
+  "api": {
+    "by_endpoint": {}
+  },
+  "correlations": {}
 }
