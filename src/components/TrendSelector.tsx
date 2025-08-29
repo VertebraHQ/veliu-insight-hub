@@ -19,25 +19,29 @@ export function TrendSelector() {
 
   return (
     <div className="flex items-center space-x-4">
-      <div className="flex bg-dashboard-surface border border-dashboard-border">
+      <div className="flex gap-1">
         <Button
-          variant={periodType === "weekly" ? "default" : "ghost"}
+          variant="outline"
           size="sm"
           onClick={() => setPeriodType("weekly")}
           className={cn(
-            "text-xs px-4 py-2 border-0",
-            periodType === "weekly" && "bg-analytics-blue text-white"
+            "text-xs px-4 py-3 h-auto rounded-none border border-dashboard-border bg-dashboard-surface",
+            periodType === "weekly" 
+              ? "bg-primary text-primary-foreground border-primary" 
+              : "hover:bg-dashboard-surface-hover text-muted-foreground"
           )}
         >
           SETTIMANALE
         </Button>
         <Button
-          variant={periodType === "monthly" ? "default" : "ghost"}
+          variant="outline"
           size="sm"
           onClick={() => setPeriodType("monthly")}
           className={cn(
-            "text-xs px-4 py-2 border-0",
-            periodType === "monthly" && "bg-analytics-blue text-white"
+            "text-xs px-4 py-3 h-auto rounded-none border border-dashboard-border bg-dashboard-surface",
+            periodType === "monthly" 
+              ? "bg-primary text-primary-foreground border-primary" 
+              : "hover:bg-dashboard-surface-hover text-muted-foreground"
           )}
         >
           MENSILE
@@ -45,12 +49,14 @@ export function TrendSelector() {
         <Popover open={isCustomDateOpen} onOpenChange={setIsCustomDateOpen}>
           <PopoverTrigger asChild>
             <Button
-              variant={periodType === "custom" ? "default" : "ghost"}
+              variant="outline"
               size="sm"
               onClick={() => setPeriodType("custom")}
               className={cn(
-                "text-xs px-3 py-2 border-0",
-                periodType === "custom" && "bg-analytics-blue text-white"
+                "text-xs px-3 py-3 h-auto rounded-none border border-dashboard-border bg-dashboard-surface",
+                periodType === "custom" 
+                  ? "bg-primary text-primary-foreground border-primary" 
+                  : "hover:bg-dashboard-surface-hover text-muted-foreground"
               )}
             >
               <CalendarIcon className="h-3 w-3" />
