@@ -8,6 +8,7 @@ import { Progress } from "@/components/ui/progress";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 
 interface UXSectionProps {
@@ -98,6 +99,7 @@ export function UXSection({ onBack }: UXSectionProps) {
   const [distributionTab, setDistributionTab] = useState<"device" | "os" | "browser">("device");
   const [heatmapDevice, setHeatmapDevice] = useState<"desktop" | "mobile" | "tablet">("desktop");
   const [isHeatmapFullscreen, setIsHeatmapFullscreen] = useState(false);
+  const [isWeightConfigOpen, setIsWeightConfigOpen] = useState(false);
 
   const getDistributionData = () => {
     switch (distributionTab) {
@@ -175,136 +177,179 @@ export function UXSection({ onBack }: UXSectionProps) {
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-lg font-semibold font-mono">QUALITY SCORE</h3>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
+          <Dialog open={isWeightConfigOpen} onOpenChange={setIsWeightConfigOpen}>
+            <DialogTrigger asChild>
               <button className="flex items-center space-x-2 px-3 py-2 bg-dashboard-surface/80 border border-dashboard-border text-sm font-medium text-muted-foreground hover:bg-dashboard-surface-hover/80 hover:text-foreground transition-all duration-150 apple-button">
                 <Settings className="h-4 w-4" />
                 <span>Configura Pesi</span>
               </button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-96 p-6 bg-background border border-border" align="end">
-              <h4 className="text-sm font-semibold mb-4">Configurazione Pesi Metriche</h4>
-              <div className="grid grid-cols-1 gap-4">
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="scroll-depth" className="text-xs">Scroll Depth</Label>
-                    <Input 
-                      id="scroll-depth" 
-                      type="number" 
-                      min="0" 
-                      max="30" 
-                      defaultValue="10" 
-                      className="h-8 text-xs"
-                      placeholder="0-30%"
-                    />
+            </DialogTrigger>
+            <DialogContent className="max-w-none w-screen h-screen p-0 bg-background/45 backdrop-blur-sm border-0">
+              <div className="flex items-center justify-center min-h-screen p-8">
+                <div className="bg-background border border-border rounded-xl shadow-2xl p-8 w-full max-w-6xl">
+                  <DialogHeader className="mb-8">
+                    <DialogTitle className="text-2xl font-bold text-center">Configurazione Pesi Metriche</DialogTitle>
+                    <p className="text-center text-muted-foreground mt-2">Seleziona un valore da 0% a 30% per ogni variabile</p>
+                  </DialogHeader>
+                  
+                  <div className="grid grid-cols-3 gap-12 mb-8">
+                    {/* First Column */}
+                    <div className="space-y-8">
+                      <div className="space-y-4">
+                        <Label className="text-lg font-medium">Scroll Depth</Label>
+                        <div className="relative">
+                          <Input 
+                            type="number" 
+                            min="0" 
+                            max="30" 
+                            defaultValue="10" 
+                            className="h-12 text-lg pr-8"
+                          />
+                          <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">%</span>
+                        </div>
+                        <p className="text-sm text-analytics-blue">Positive (10%)</p>
+                      </div>
+                      
+                      <div className="space-y-4">
+                        <Label className="text-lg font-medium">Successful Interactions</Label>
+                        <div className="relative">
+                          <Input 
+                            type="number" 
+                            min="0" 
+                            max="30" 
+                            defaultValue="20" 
+                            className="h-12 text-lg pr-8"
+                          />
+                          <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">%</span>
+                        </div>
+                        <p className="text-sm text-analytics-blue">Positive (20%)</p>
+                      </div>
+                      
+                      <div className="space-y-4">
+                        <Label className="text-lg font-medium">Console Errors</Label>
+                        <div className="relative">
+                          <Input 
+                            type="number" 
+                            min="0" 
+                            max="30" 
+                            defaultValue="5" 
+                            className="h-12 text-lg pr-8"
+                          />
+                          <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">%</span>
+                        </div>
+                        <p className="text-sm text-red-500">Negative (-5%)</p>
+                      </div>
+                    </div>
+
+                    {/* Second Column */}
+                    <div className="space-y-8">
+                      <div className="space-y-4">
+                        <Label className="text-lg font-medium">Session Duration</Label>
+                        <div className="relative">
+                          <Input 
+                            type="number" 
+                            min="0" 
+                            max="30" 
+                            defaultValue="15" 
+                            className="h-12 text-lg pr-8"
+                          />
+                          <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">%</span>
+                        </div>
+                        <p className="text-sm text-analytics-blue">Positive (15%)</p>
+                      </div>
+                      
+                      <div className="space-y-4">
+                        <Label className="text-lg font-medium">Funnel Step Completion Rate</Label>
+                        <div className="relative">
+                          <Input 
+                            type="number" 
+                            min="0" 
+                            max="30" 
+                            defaultValue="15" 
+                            className="h-12 text-lg pr-8"
+                          />
+                          <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">%</span>
+                        </div>
+                        <p className="text-sm text-analytics-blue">Positive (15%)</p>
+                      </div>
+                      
+                      <div className="space-y-4">
+                        <Label className="text-lg font-medium">Exit On Error</Label>
+                        <div className="relative">
+                          <Input 
+                            type="number" 
+                            min="0" 
+                            max="30" 
+                            defaultValue="15" 
+                            className="h-12 text-lg pr-8"
+                          />
+                          <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">%</span>
+                        </div>
+                        <p className="text-sm text-red-500">Negative (-15%)</p>
+                      </div>
+                    </div>
+
+                    {/* Third Column */}
+                    <div className="space-y-8">
+                      <div className="space-y-4">
+                        <Label className="text-lg font-medium">Pages Per Session</Label>
+                        <div className="relative">
+                          <Input 
+                            type="number" 
+                            min="0" 
+                            max="30" 
+                            defaultValue="10" 
+                            className="h-12 text-lg pr-8"
+                          />
+                          <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">%</span>
+                        </div>
+                        <p className="text-sm text-analytics-blue">Positive (10%)</p>
+                      </div>
+                      
+                      <div className="space-y-4">
+                        <Label className="text-lg font-medium">Rage Clicks</Label>
+                        <div className="relative">
+                          <Input 
+                            type="number" 
+                            min="0" 
+                            max="30" 
+                            defaultValue="10" 
+                            className="h-12 text-lg pr-8"
+                          />
+                          <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">%</span>
+                        </div>
+                        <p className="text-sm text-red-500">Negative (-10%)</p>
+                      </div>
+                      
+                      <div className="space-y-4">
+                        <Label className="text-lg font-medium">Fast Bounce</Label>
+                        <div className="relative">
+                          <Input 
+                            type="number" 
+                            min="0" 
+                            max="30" 
+                            defaultValue="10" 
+                            className="h-12 text-lg pr-8"
+                          />
+                          <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">%</span>
+                        </div>
+                        <p className="text-sm text-red-500">Negative (-10%)</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="session-duration" className="text-xs">Session Duration</Label>
-                    <Input 
-                      id="session-duration" 
-                      type="number" 
-                      min="0" 
-                      max="30" 
-                      defaultValue="15" 
-                      className="h-8 text-xs"
-                      placeholder="0-30%"
-                    />
+                  
+                  <div className="flex justify-center gap-4 pt-6 border-t border-border">
+                    <Button variant="outline" onClick={() => setIsWeightConfigOpen(false)}>
+                      Annulla
+                    </Button>
+                    <Button onClick={() => setIsWeightConfigOpen(false)}>
+                      Salva Configurazione
+                    </Button>
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="pages-per-session" className="text-xs">Pages Per Session</Label>
-                    <Input 
-                      id="pages-per-session" 
-                      type="number" 
-                      min="0" 
-                      max="30" 
-                      defaultValue="10" 
-                      className="h-8 text-xs"
-                      placeholder="0-30%"
-                    />
-                  </div>
-                </div>
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="successful-interactions" className="text-xs">Successful Interactions</Label>
-                    <Input 
-                      id="successful-interactions" 
-                      type="number" 
-                      min="0" 
-                      max="30" 
-                      defaultValue="20" 
-                      className="h-8 text-xs"
-                      placeholder="0-30%"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="funnel-completion" className="text-xs">Funnel Step Completion Rate</Label>
-                    <Input 
-                      id="funnel-completion" 
-                      type="number" 
-                      min="0" 
-                      max="30" 
-                      defaultValue="15" 
-                      className="h-8 text-xs"
-                      placeholder="0-30%"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="rage-clicks" className="text-xs">Rage Clicks</Label>
-                    <Input 
-                      id="rage-clicks" 
-                      type="number" 
-                      min="0" 
-                      max="30" 
-                      defaultValue="10" 
-                      className="h-8 text-xs"
-                      placeholder="0-30%"
-                    />
-                  </div>
-                </div>
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="console-errors" className="text-xs">Console Errors</Label>
-                    <Input 
-                      id="console-errors" 
-                      type="number" 
-                      min="0" 
-                      max="30" 
-                      defaultValue="5" 
-                      className="h-8 text-xs"
-                      placeholder="0-30%"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="exit-on-error" className="text-xs">Exit On Error</Label>
-                    <Input 
-                      id="exit-on-error" 
-                      type="number" 
-                      min="0" 
-                      max="30" 
-                      defaultValue="15" 
-                      className="h-8 text-xs"
-                      placeholder="0-30%"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="fast-bounce" className="text-xs">Fast Bounce</Label>
-                    <Input 
-                      id="fast-bounce" 
-                      type="number" 
-                      min="0" 
-                      max="30" 
-                      defaultValue="10" 
-                      className="h-8 text-xs"
-                      placeholder="0-30%"
-                    />
-                  </div>
-                </div>
-                <div className="flex justify-end mt-4 pt-4 border-t border-border">
-                  <Button size="sm" className="text-xs">Salva Configurazione</Button>
                 </div>
               </div>
-            </DropdownMenuContent>
-          </DropdownMenu>
+            </DialogContent>
+          </Dialog>
         </div>
         <div className="space-y-4">
           {qualityScores.map((score, index) => (
