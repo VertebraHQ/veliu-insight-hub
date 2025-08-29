@@ -196,145 +196,145 @@ export function UXSection({ onBack }: UXSectionProps) {
                 <div className="grid grid-cols-3 gap-8 mb-8">
                   {/* First Column */}
                   <div className="space-y-6">
-                    <div className="bg-black/90 rounded-lg p-4 border border-gray-800">
-                      <Label className="text-base font-medium text-white mb-3 block">Scroll Depth</Label>
-                      <div className="relative mb-2">
+                    <div className="space-y-3">
+                      <Label className="text-base font-medium">Scroll Depth</Label>
+                      <div className="relative">
                         <Input 
                           type="number" 
                           min="0" 
                           max="30" 
                           defaultValue="10" 
-                          className="h-10 text-base pr-8 bg-black border-gray-700 text-white"
+                          className="h-10 text-base pr-8"
                         />
-                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 font-medium">%</span>
+                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
-                      <p className="text-sm text-blue-400">Positive (10%)</p>
+                      <p className="text-sm text-analytics-blue">Positive (10%)</p>
                     </div>
                     
-                    <div className="bg-black/90 rounded-lg p-4 border border-gray-800">
-                      <Label className="text-base font-medium text-white mb-3 block">Successful Interactions</Label>
-                      <div className="relative mb-2">
+                    <div className="space-y-3">
+                      <Label className="text-base font-medium">Successful Interactions</Label>
+                      <div className="relative">
                         <Input 
                           type="number" 
                           min="0" 
                           max="30" 
                           defaultValue="20" 
-                          className="h-10 text-base pr-8 bg-black border-gray-700 text-white"
+                          className="h-10 text-base pr-8"
                         />
-                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 font-medium">%</span>
+                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
-                      <p className="text-sm text-blue-400">Positive (20%)</p>
+                      <p className="text-sm text-analytics-blue">Positive (20%)</p>
                     </div>
                     
-                    <div className="bg-black/90 rounded-lg p-4 border border-gray-800">
-                      <Label className="text-base font-medium text-white mb-3 block">Console Errors</Label>
-                      <div className="relative mb-2">
+                    <div className="space-y-3">
+                      <Label className="text-base font-medium">Console Errors</Label>
+                      <div className="relative">
                         <Input 
                           type="number" 
                           min="0" 
                           max="30" 
                           defaultValue="5" 
-                          className="h-10 text-base pr-8 bg-black border-gray-700 text-white"
+                          className="h-10 text-base pr-8"
                         />
-                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 font-medium">%</span>
+                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
-                      <p className="text-sm text-red-400">Negative (-5%)</p>
+                      <p className="text-sm text-red-500">Negative (-5%)</p>
                     </div>
                   </div>
 
                   {/* Second Column */}
                   <div className="space-y-6">
-                    <div className="bg-black/90 rounded-lg p-4 border border-gray-800">
-                      <Label className="text-base font-medium text-white mb-3 block">Session Duration</Label>
-                      <div className="relative mb-2">
+                    <div className="space-y-3">
+                      <Label className="text-base font-medium">Session Duration</Label>
+                      <div className="relative">
                         <Input 
                           type="number" 
                           min="0" 
                           max="30" 
                           defaultValue="15" 
-                          className="h-10 text-base pr-8 bg-black border-gray-700 text-white"
+                          className="h-10 text-base pr-8"
                         />
-                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 font-medium">%</span>
+                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
-                      <p className="text-sm text-blue-400">Positive (15%)</p>
+                      <p className="text-sm text-analytics-blue">Positive (15%)</p>
                     </div>
                     
-                    <div className="bg-black/90 rounded-lg p-4 border border-gray-800">
-                      <Label className="text-base font-medium text-white mb-3 block">Funnel Step Completion Rate</Label>
-                      <div className="relative mb-2">
+                    <div className="space-y-3">
+                      <Label className="text-base font-medium">Funnel Step Completion Rate</Label>
+                      <div className="relative">
                         <Input 
                           type="number" 
                           min="0" 
                           max="30" 
                           defaultValue="15" 
-                          className="h-10 text-base pr-8 bg-black border-gray-700 text-white"
+                          className="h-10 text-base pr-8"
                         />
-                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 font-medium">%</span>
+                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
-                      <p className="text-sm text-blue-400">Positive (15%)</p>
+                      <p className="text-sm text-analytics-blue">Positive (15%)</p>
                     </div>
                     
-                    <div className="bg-black/90 rounded-lg p-4 border border-gray-800">
-                      <Label className="text-base font-medium text-white mb-3 block">Exit On Error</Label>
-                      <div className="relative mb-2">
+                    <div className="space-y-3">
+                      <Label className="text-base font-medium">Exit On Error</Label>
+                      <div className="relative">
                         <Input 
                           type="number" 
                           min="0" 
                           max="30" 
                           defaultValue="15" 
-                          className="h-10 text-base pr-8 bg-black border-gray-700 text-white"
+                          className="h-10 text-base pr-8"
                         />
-                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 font-medium">%</span>
+                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
-                      <p className="text-sm text-red-400">Negative (-15%)</p>
+                      <p className="text-sm text-red-500">Negative (-15%)</p>
                     </div>
                   </div>
 
                   {/* Third Column */}
                   <div className="space-y-6">
-                    <div className="bg-black/90 rounded-lg p-4 border border-gray-800">
-                      <Label className="text-base font-medium text-white mb-3 block">Pages Per Session</Label>
-                      <div className="relative mb-2">
+                    <div className="space-y-3">
+                      <Label className="text-base font-medium">Pages Per Session</Label>
+                      <div className="relative">
                         <Input 
                           type="number" 
                           min="0" 
                           max="30" 
                           defaultValue="10" 
-                          className="h-10 text-base pr-8 bg-black border-gray-700 text-white"
+                          className="h-10 text-base pr-8"
                         />
-                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 font-medium">%</span>
+                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
-                      <p className="text-sm text-blue-400">Positive (10%)</p>
+                      <p className="text-sm text-analytics-blue">Positive (10%)</p>
                     </div>
                     
-                    <div className="bg-black/90 rounded-lg p-4 border border-gray-800">
-                      <Label className="text-base font-medium text-white mb-3 block">Rage Clicks</Label>
-                      <div className="relative mb-2">
+                    <div className="space-y-3">
+                      <Label className="text-base font-medium">Rage Clicks</Label>
+                      <div className="relative">
                         <Input 
                           type="number" 
                           min="0" 
                           max="30" 
                           defaultValue="10" 
-                          className="h-10 text-base pr-8 bg-black border-gray-700 text-white"
+                          className="h-10 text-base pr-8"
                         />
-                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 font-medium">%</span>
+                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
-                      <p className="text-sm text-red-400">Negative (-10%)</p>
+                      <p className="text-sm text-red-500">Negative (-10%)</p>
                     </div>
                     
-                    <div className="bg-black/90 rounded-lg p-4 border border-gray-800">
-                      <Label className="text-base font-medium text-white mb-3 block">Fast Bounce</Label>
-                      <div className="relative mb-2">
+                    <div className="space-y-3">
+                      <Label className="text-base font-medium">Fast Bounce</Label>
+                      <div className="relative">
                         <Input 
                           type="number" 
                           min="0" 
                           max="30" 
                           defaultValue="10" 
-                          className="h-10 text-base pr-8 bg-black border-gray-700 text-white"
+                          className="h-10 text-base pr-8"
                         />
-                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 font-medium">%</span>
+                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
-                      <p className="text-sm text-red-400">Negative (-10%)</p>
+                      <p className="text-sm text-red-500">Negative (-10%)</p>
                     </div>
                   </div>
                 </div>
