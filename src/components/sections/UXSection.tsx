@@ -5,6 +5,9 @@ import { CompactDateSelector } from "@/components/sections/CompactDateSelector";
 import { ArrowLeft, MousePointer, Eye, Navigation, Activity, Maximize2, Monitor, Smartphone, Tablet, Bug, AlertTriangle, Home, Package, Phone, Users, FileText, BookOpen, ArrowRight, ChevronDown, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 
 interface UXSectionProps {
@@ -172,10 +175,136 @@ export function UXSection({ onBack }: UXSectionProps) {
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-lg font-semibold font-mono">QUALITY SCORE</h3>
-          <button className="flex items-center space-x-2 px-3 py-2 bg-dashboard-surface/80 border border-dashboard-border text-sm font-medium text-muted-foreground hover:bg-dashboard-surface-hover/80 hover:text-foreground transition-all duration-150 apple-button">
-            <Settings className="h-4 w-4" />
-            <span>Configura Pesi</span>
-          </button>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className="flex items-center space-x-2 px-3 py-2 bg-dashboard-surface/80 border border-dashboard-border text-sm font-medium text-muted-foreground hover:bg-dashboard-surface-hover/80 hover:text-foreground transition-all duration-150 apple-button">
+                <Settings className="h-4 w-4" />
+                <span>Configura Pesi</span>
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-96 p-6 bg-background border border-border" align="end">
+              <h4 className="text-sm font-semibold mb-4">Configurazione Pesi Metriche</h4>
+              <div className="grid grid-cols-1 gap-4">
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="scroll-depth" className="text-xs">Scroll Depth</Label>
+                    <Input 
+                      id="scroll-depth" 
+                      type="number" 
+                      min="0" 
+                      max="30" 
+                      defaultValue="10" 
+                      className="h-8 text-xs"
+                      placeholder="0-30%"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="session-duration" className="text-xs">Session Duration</Label>
+                    <Input 
+                      id="session-duration" 
+                      type="number" 
+                      min="0" 
+                      max="30" 
+                      defaultValue="15" 
+                      className="h-8 text-xs"
+                      placeholder="0-30%"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="pages-per-session" className="text-xs">Pages Per Session</Label>
+                    <Input 
+                      id="pages-per-session" 
+                      type="number" 
+                      min="0" 
+                      max="30" 
+                      defaultValue="10" 
+                      className="h-8 text-xs"
+                      placeholder="0-30%"
+                    />
+                  </div>
+                </div>
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="successful-interactions" className="text-xs">Successful Interactions</Label>
+                    <Input 
+                      id="successful-interactions" 
+                      type="number" 
+                      min="0" 
+                      max="30" 
+                      defaultValue="20" 
+                      className="h-8 text-xs"
+                      placeholder="0-30%"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="funnel-completion" className="text-xs">Funnel Step Completion Rate</Label>
+                    <Input 
+                      id="funnel-completion" 
+                      type="number" 
+                      min="0" 
+                      max="30" 
+                      defaultValue="15" 
+                      className="h-8 text-xs"
+                      placeholder="0-30%"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="rage-clicks" className="text-xs">Rage Clicks</Label>
+                    <Input 
+                      id="rage-clicks" 
+                      type="number" 
+                      min="0" 
+                      max="30" 
+                      defaultValue="10" 
+                      className="h-8 text-xs"
+                      placeholder="0-30%"
+                    />
+                  </div>
+                </div>
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="console-errors" className="text-xs">Console Errors</Label>
+                    <Input 
+                      id="console-errors" 
+                      type="number" 
+                      min="0" 
+                      max="30" 
+                      defaultValue="5" 
+                      className="h-8 text-xs"
+                      placeholder="0-30%"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="exit-on-error" className="text-xs">Exit On Error</Label>
+                    <Input 
+                      id="exit-on-error" 
+                      type="number" 
+                      min="0" 
+                      max="30" 
+                      defaultValue="15" 
+                      className="h-8 text-xs"
+                      placeholder="0-30%"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="fast-bounce" className="text-xs">Fast Bounce</Label>
+                    <Input 
+                      id="fast-bounce" 
+                      type="number" 
+                      min="0" 
+                      max="30" 
+                      defaultValue="10" 
+                      className="h-8 text-xs"
+                      placeholder="0-30%"
+                    />
+                  </div>
+                </div>
+                <div className="flex justify-end mt-4 pt-4 border-t border-border">
+                  <Button size="sm" className="text-xs">Salva Configurazione</Button>
+                </div>
+              </div>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
         <div className="space-y-4">
           {qualityScores.map((score, index) => (
