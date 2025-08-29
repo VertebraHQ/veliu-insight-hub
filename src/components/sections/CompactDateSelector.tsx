@@ -5,6 +5,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { format, subDays, startOfWeek, endOfWeek, startOfMonth, endOfMonth } from "date-fns";
 import { cn } from "@/lib/utils";
 import { DateRange } from "react-day-picker";
+import { CalendarDays } from "lucide-react";
 
 interface CompactDateSelectorProps {
   selectedDate?: Date;
@@ -76,21 +77,110 @@ export function CompactDateSelector({
     <div className="flex flex-col space-y-4">
       <h3 className="text-lg font-semibold text-foreground font-mono">SELETTORE DATE</h3>
       
-      <div className="flex items-center gap-6">
-        {/* Day Boxes - Available dates only */}
+      {/* Main Period Selector - Identical to reference image */}
+      <div className="flex items-center bg-dashboard-surface/80 border border-dashboard-border rounded-lg overflow-hidden">
+        <button
+          onClick={() => {
+            if (disabled) return;
+            setSelectedType("day");
+            onPeriodTypeChange("daily");
+          }}
+          disabled={disabled}
+          className={cn(
+            "px-6 py-3 text-sm font-bold font-mono transition-all duration-200 flex-1 text-center",
+            selectedType === "day" 
+              ? "bg-analytics-blue text-white" 
+              : "bg-transparent text-white hover:bg-white/10"
+          )}
+        >
+          GIORNALIERO
+        </button>
+        
+        <button
+          onClick={() => {
+            if (disabled) return;
+            setSelectedType("week");
+            onPeriodTypeChange("weekly");
+          }}
+          disabled={disabled}
+          className={cn(
+            "px-6 py-3 text-sm font-bold font-mono transition-all duration-200 flex-1 text-center",
+            selectedType === "week" 
+              ? "bg-analytics-blue text-white" 
+              : "bg-transparent text-white hover:bg-white/10"
+          )}
+        >
+          SETTIMANALE
+        </button>
+        
+        <button
+          onClick={() => {
+            if (disabled) return;
+            setSelectedType("month");
+            onPeriodTypeChange("monthly");
+          }}
+          disabled={disabled}
+          className={cn(
+            "px-6 py-3 text-sm font-bold font-mono transition-all duration-200 flex-1 text-center",
+            selectedType === "month" 
+              ? "bg-analytics-blue text-white" 
+              : "bg-transparent text-white hover:bg-white/10"
+          )}
+        >
+          MENSILE
+        </button>
+        
+        {/* Calendar Icon */}
+        <Popover open={isCustomOpen} onOpenChange={setIsCustomOpen}>
+          <PopoverTrigger asChild>
+            <button
+              onClick={() => {
+                if (disabled) return;
+                setSelectedType("custom");
+                onPeriodTypeChange("custom");
+              }}
+              disabled={disabled}
+              className="px-4 py-3 bg-transparent text-white hover:bg-white/10 transition-all duration-200 border-l border-dashboard-border"
+            >
+              <CalendarDays className="h-4 w-4" />
+            </button>
+          </PopoverTrigger>
+          <PopoverContent className="w-auto p-0" align="start">
+            <Calendar
+              mode="range"
+              selected={dateRange}
+              onSelect={(range) => {
+                if (disabled) return;
+                setDateRange(range);
+                if (range?.from && range?.to) {
+                  setSelectedType("custom");
+                  onCustomDateRangeChange({ from: range.from, to: range.to });
+                  onPeriodTypeChange("custom");
+                  setIsCustomOpen(false);
+                }
+              }}
+              disabled={disabled ? () => true : undefined}
+              numberOfMonths={2}
+              initialFocus
+              className={cn("p-3 pointer-events-auto")}
+            />
+          </PopoverContent>
+        </Popover>
+      </div>
+
+      {/* Day Selection - Only show for daily mode */}
+      {selectedType === "day" && (
         <div className="flex items-center gap-3">
           {availableDaysOnly.length > 0 ? (
             availableDaysOnly.map((day, index) => {
-              const isSelected = selectedType === "day" && format(selectedDay, "yyyy-MM-dd") === format(day, "yyyy-MM-dd");
+              const isSelected = format(selectedDay, "yyyy-MM-dd") === format(day, "yyyy-MM-dd");
               return (
                 <button
                   key={index}
                   onClick={() => {
                     if (disabled) return;
-                    setSelectedType("day");
                     setSelectedDay(day);
                     onDateChange(day);
-                    onPeriodTypeChange("daily");
                   }}
                   disabled={disabled}
                   className={cn(
@@ -121,91 +211,12 @@ export function CompactDateSelector({
             </div>
           )}
         </div>
-
-        {/* Quick Selection Buttons */}
-        <div className="flex items-center gap-1 ml-6 bg-dashboard-surface border border-dashboard-border rounded-lg p-1">
-          <button
-            onClick={() => {
-              if (disabled) return;
-              setSelectedType("week");
-              onPeriodTypeChange("weekly");
-            }}
-            disabled={disabled}
-            className={cn(
-              "px-4 py-2 text-sm font-medium font-mono rounded-md transition-all duration-200",
-              selectedType === "week" 
-                ? "bg-analytics-blue text-white shadow-sm" 
-                : "text-muted-foreground hover:text-foreground hover:bg-dashboard-surface-hover/50"
-            )}
-          >
-            SETTIMANALE
-          </button>
-          
-          <button
-            onClick={() => {
-              if (disabled) return;
-              setSelectedType("month");
-              onPeriodTypeChange("monthly");
-            }}
-            disabled={disabled}
-            className={cn(
-              "px-4 py-2 text-sm font-medium font-mono rounded-md transition-all duration-200 flex items-center gap-2",
-              selectedType === "month" 
-                ? "bg-analytics-blue text-white shadow-sm" 
-                : "text-muted-foreground hover:text-foreground hover:bg-dashboard-surface-hover/50"
-            )}
-          >
-            MENSILE
-          </button>
-
-          {/* Custom Range Selector */}
-          <Popover open={isCustomOpen} onOpenChange={setIsCustomOpen}>
-            <PopoverTrigger asChild>
-              <button
-                onClick={() => {
-                  if (disabled) return;
-                  setSelectedType("custom");
-                  onPeriodTypeChange("custom");
-                }}
-                disabled={disabled}
-                className={cn(
-                  "px-4 py-2 text-sm font-medium font-mono rounded-md transition-all duration-200 flex items-center gap-2",
-                  selectedType === "custom" 
-                    ? "bg-analytics-blue text-white shadow-sm" 
-                    : "text-muted-foreground hover:text-foreground hover:bg-dashboard-surface-hover/50"
-                )}
-              >
-                📅 CUSTOM
-              </button>
-            </PopoverTrigger>
-            <PopoverContent className="w-auto p-0" align="start">
-              <Calendar
-                mode="range"
-                selected={dateRange}
-                onSelect={(range) => {
-                  if (disabled) return;
-                  setDateRange(range);
-                  if (range?.from && range?.to) {
-                    setSelectedType("custom");
-                    onCustomDateRangeChange({ from: range.from, to: range.to });
-                    onPeriodTypeChange("custom");
-                    setIsCustomOpen(false);
-                  }
-                }}
-                disabled={disabled ? () => true : undefined}
-                numberOfMonths={2}
-                initialFocus
-                className={cn("p-3 pointer-events-auto")}
-              />
-            </PopoverContent>
-          </Popover>
-        </div>
-      </div>
+      )}
 
       {/* Current Selection Display */}
       <div className="text-sm text-muted-foreground font-mono">
         <span className="text-analytics-blue font-medium">Periodo selezionato:</span> {getDateDisplay()}
-        {availableDates.length > 0 && (
+        {availableDates.length > 0 && selectedType === "day" && (
           <div className="mt-1 text-xs">
             <span className="text-analytics-green">Date disponibili:</span> {availableDates.join(', ')}
           </div>
