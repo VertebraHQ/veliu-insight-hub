@@ -180,14 +180,6 @@ export function TechSection({ onBack }: TechSectionProps) {
         />
       </div>
 
-      {/* Critical Issues Alert */}
-      <Alert className="border-analytics-red/20 bg-analytics-red/10 dashboard-card">
-        <AlertTriangle className="h-4 w-4 text-analytics-red" />
-        <AlertDescription className="text-analytics-red font-medium font-mono">
-          <span className="font-bold">ATTENZIONE: PROBLEMI CRITICI RILEVATI</span><br />
-          • Errori tecnici frequenti
-        </AlertDescription>
-      </Alert>
 
       {/* Error Analysis */}
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
