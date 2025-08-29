@@ -204,7 +204,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                           min="0" 
                           max="30" 
                           defaultValue="10" 
-                          className="h-10 text-base pr-8"
+                          className="h-10 text-base pr-8 bg-muted/50"
                         />
                         <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
@@ -219,7 +219,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                           min="0" 
                           max="30" 
                           defaultValue="20" 
-                          className="h-10 text-base pr-8"
+                          className="h-10 text-base pr-8 bg-muted/50"
                         />
                         <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
@@ -234,7 +234,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                           min="0" 
                           max="30" 
                           defaultValue="5" 
-                          className="h-10 text-base pr-8"
+                          className="h-10 text-base pr-8 bg-muted/50"
                         />
                         <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
@@ -252,7 +252,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                           min="0" 
                           max="30" 
                           defaultValue="15" 
-                          className="h-10 text-base pr-8"
+                          className="h-10 text-base pr-8 bg-muted/50"
                         />
                         <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
@@ -267,7 +267,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                           min="0" 
                           max="30" 
                           defaultValue="15" 
-                          className="h-10 text-base pr-8"
+                          className="h-10 text-base pr-8 bg-muted/50"
                         />
                         <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
@@ -282,7 +282,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                           min="0" 
                           max="30" 
                           defaultValue="15" 
-                          className="h-10 text-base pr-8"
+                          className="h-10 text-base pr-8 bg-muted/50"
                         />
                         <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
@@ -300,7 +300,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                           min="0" 
                           max="30" 
                           defaultValue="10" 
-                          className="h-10 text-base pr-8"
+                          className="h-10 text-base pr-8 bg-muted/50"
                         />
                         <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
@@ -315,7 +315,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                           min="0" 
                           max="30" 
                           defaultValue="10" 
-                          className="h-10 text-base pr-8"
+                          className="h-10 text-base pr-8 bg-muted/50"
                         />
                         <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
@@ -330,7 +330,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                           min="0" 
                           max="30" 
                           defaultValue="10" 
-                          className="h-10 text-base pr-8"
+                          className="h-10 text-base pr-8 bg-muted/50"
                         />
                         <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
