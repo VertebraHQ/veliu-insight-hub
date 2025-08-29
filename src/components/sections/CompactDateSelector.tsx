@@ -89,8 +89,8 @@ export function CompactDateSelector({
           className={cn(
             "px-6 py-3 text-sm font-bold font-mono transition-all duration-200 flex-1 text-center",
             selectedType === "day" 
-              ? "bg-analytics-blue text-white" 
-              : "bg-transparent text-white hover:bg-white/10"
+              ? "bg-primary text-primary-foreground" 
+              : "bg-transparent text-muted-foreground hover:bg-accent/10 hover:text-accent-foreground"
           )}
         >
           GIORNALIERO
@@ -106,8 +106,8 @@ export function CompactDateSelector({
           className={cn(
             "px-6 py-3 text-sm font-bold font-mono transition-all duration-200 flex-1 text-center",
             selectedType === "week" 
-              ? "bg-analytics-blue text-white" 
-              : "bg-transparent text-white hover:bg-white/10"
+              ? "bg-primary text-primary-foreground" 
+              : "bg-transparent text-muted-foreground hover:bg-accent/10 hover:text-accent-foreground"
           )}
         >
           SETTIMANALE
@@ -123,8 +123,8 @@ export function CompactDateSelector({
           className={cn(
             "px-6 py-3 text-sm font-bold font-mono transition-all duration-200 flex-1 text-center",
             selectedType === "month" 
-              ? "bg-analytics-blue text-white" 
-              : "bg-transparent text-white hover:bg-white/10"
+              ? "bg-primary text-primary-foreground" 
+              : "bg-transparent text-muted-foreground hover:bg-accent/10 hover:text-accent-foreground"
           )}
         >
           MENSILE
@@ -140,7 +140,7 @@ export function CompactDateSelector({
                 onPeriodTypeChange("custom");
               }}
               disabled={disabled}
-              className="px-4 py-3 bg-transparent text-white hover:bg-white/10 transition-all duration-200 border-l border-dashboard-border"
+              className="px-4 py-3 bg-transparent text-muted-foreground hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 border-l border-dashboard-border"
             >
               <CalendarDays className="h-4 w-4" />
             </button>
