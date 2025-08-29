@@ -699,78 +699,106 @@ export function UXSection({ onBack }: UXSectionProps) {
         </div>
       </div>
 
-      {/* 2. Click Analytics & Heatmap */}
-      <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
-        <h3 className="text-lg font-semibold mb-6 font-mono">CLICK ANALYTICS</h3>
-        <KPICard
-          title="CLICK TOTALI SITO"
-          value={totalClicks.toLocaleString()}
-          subtitle="nelle ultime 24 ore"
-          icon={MousePointer}
-          color="blue"
-        />
-      </div>
-
-      <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
-        <div className="flex justify-between items-center mb-6">
-          <h3 className="text-lg font-semibold font-mono">HEATMAP INTERATTIVA</h3>
-          <div className="flex items-center space-x-2">
-            <div className="flex bg-dashboard-surface border border-dashboard-border">
-              {[
-                { id: "desktop", icon: Monitor, label: "Desktop" },
-                { id: "mobile", icon: Smartphone, label: "Mobile" },
-                { id: "tablet", icon: Tablet, label: "Tablet" }
-              ].map((device) => {
-                const Icon = device.icon;
-                return (
-                  <Button
-                    key={device.id}
-                    variant={heatmapDevice === device.id ? "default" : "ghost"}
-                    size="sm"
-                    onClick={() => setHeatmapDevice(device.id as any)}
-                    className={cn(
-                      "font-mono text-xs px-3 py-2 border-0",
-                      heatmapDevice === device.id && "bg-analytics-blue text-white"
-                    )}
-                  >
-                    <Icon className="h-3 w-3" />
-                  </Button>
-                );
-              })}
+      {/* 2. Click Analytics & Heatmap - Side by Side Layout */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Heatmap - Takes 2/3 of width on desktop */}
+        <div className="lg:col-span-2 bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
+          <div className="flex justify-between items-center mb-6">
+            <h3 className="text-lg font-semibold font-mono">HEATMAP INTERATTIVA</h3>
+            <div className="flex items-center space-x-2">
+              <div className="flex bg-dashboard-surface border border-dashboard-border">
+                {[
+                  { id: "desktop", icon: Monitor, label: "Desktop" },
+                  { id: "mobile", icon: Smartphone, label: "Mobile" },
+                  { id: "tablet", icon: Tablet, label: "Tablet" }
+                ].map((device) => {
+                  const Icon = device.icon;
+                  return (
+                    <Button
+                      key={device.id}
+                      variant={heatmapDevice === device.id ? "default" : "ghost"}
+                      size="sm"
+                      onClick={() => setHeatmapDevice(device.id as any)}
+                      className={cn(
+                        "font-mono text-xs px-3 py-2 border-0",
+                        heatmapDevice === device.id && "bg-analytics-blue text-white"
+                      )}
+                    >
+                      <Icon className="h-3 w-3" />
+                    </Button>
+                  );
+                })}
+              </div>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsHeatmapFullscreen(!isHeatmapFullscreen)}
+                className="font-mono text-xs"
+              >
+                <Maximize2 className="h-3 w-3" />
+              </Button>
             </div>
+          </div>
+          
+          <div className={cn(
+            "border border-dashboard-border bg-gradient-to-br from-analytics-blue/10 via-analytics-green/10 to-analytics-orange/10 overflow-auto",
+            isHeatmapFullscreen ? "fixed inset-4 z-50 h-[calc(100vh-2rem)]" : "h-[500px]"
+          )}>
+            <div className="w-full h-full flex items-center justify-center">
+              <img
+                src="/images/test.png"
+                alt="Heatmap Placeholder"
+                className="max-w-full max-h-full object-contain"
+              />
+            </div>
+          </div>
+          
+          {isHeatmapFullscreen && (
             <Button
               variant="ghost"
-              size="sm"
-              onClick={() => setIsHeatmapFullscreen(!isHeatmapFullscreen)}
-              className="font-mono text-xs"
+              onClick={() => setIsHeatmapFullscreen(false)}
+              className="fixed top-8 right-8 z-50 font-mono"
             >
-              <Maximize2 className="h-3 w-3" />
+              ✕ CHIUDI
             </Button>
-          </div>
+          )}
         </div>
         
-        <div className={cn(
-          "border border-dashboard-border bg-gradient-to-br from-analytics-blue/10 via-analytics-green/10 to-analytics-orange/10 overflow-auto",
-          isHeatmapFullscreen ? "fixed inset-4 z-50 h-[calc(100vh-2rem)]" : "h-[700px]"
-        )}>
-          <div className="w-full h-full flex items-center justify-center">
-            <img
-              src="/images/test.png"
-              alt="Heatmap Placeholder"
-              className="max-w-full max-h-full object-contain"
+        {/* Click Analytics - Takes 1/3 of width on desktop, vertical layout */}
+        <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
+          <h3 className="text-lg font-semibold mb-6 font-mono">CLICK ANALYTICS</h3>
+          <div className="space-y-6">
+            <KPICard
+              title="CLICK TOTALI SITO"
+              value={totalClicks.toLocaleString()}
+              subtitle="nelle ultime 24 ore"
+              icon={MousePointer}
+              color="blue"
+              className="h-auto"
             />
+            
+            {/* Additional click metrics can be added here */}
+            <div className="space-y-4">
+              <div className="text-sm font-medium text-muted-foreground font-mono">
+                BREAKDOWN CLICK
+              </div>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-muted-foreground">Home Page</span>
+                  <span className="font-bold font-mono text-analytics-blue">45%</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-muted-foreground">Products</span>
+                  <span className="font-bold font-mono text-analytics-green">32%</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-muted-foreground">Contact</span>
+                  <span className="font-bold font-mono text-analytics-orange">23%</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        
-        {isHeatmapFullscreen && (
-          <Button
-            variant="ghost"
-            onClick={() => setIsHeatmapFullscreen(false)}
-            className="fixed top-8 right-8 z-50 font-mono"
-          >
-            ✕ CHIUDI
-          </Button>
-        )}
       </div>
 
       {/* 3. Analisi Path Utenti - New Design */}
