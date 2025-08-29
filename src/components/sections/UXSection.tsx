@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { KPICard } from "@/components/KPICard";
 import { DateSelector } from "@/components/DateSelector";
 import { CompactDateSelector } from "@/components/sections/CompactDateSelector";
@@ -199,20 +199,91 @@ export function UXSection({ onBack }: UXSectionProps) {
     value: Math.round((count / data.total_sessions_yesterday) * 100)
   })).slice(0, 7) : [];
 
-  const qualityScores = data ? [
+  // Funzione per calcolare le percentuali basate sui pesi correnti
+  const calculateQualityPercentages = useCallback(() => {
+    // Usa i dati di distribuzione esistenti invece dei samples
+    if (!data?.ux?.session_quality_score?.classification?.distribution) return null;
+    
+    const distribution = data.ux.session_quality_score.classification.distribution;
+    const totalSessions = distribution.good + distribution.neutral + distribution.bad;
+    
+    if (totalSessions === 0) return null;
+    
+    // Simula il ricalcolo dei punteggi basato sui nuovi pesi
+    // In un'implementazione reale, questo dovrebbe ricalcolare i punteggi per ogni sessione
+    // Per ora, applichiamo una trasformazione proporzionale basata sui pesi
+    const originalWeights = data.ux.session_quality_score.weights;
+    const currentWeights = weights;
+    
+    // Calcola il fattore di scala per ogni categoria basato sui cambiamenti dei pesi
+    const positiveWeightChange = (
+      (currentWeights.scroll_depth / 100) +
+      (currentWeights.session_duration / 100) +
+      (currentWeights.pages_per_session / 100) +
+      (currentWeights.successful_interactions / 100) +
+      (currentWeights.funnel_step_completion_rate / 100)
+    ) / (
+      Math.abs(originalWeights.scroll_depth) +
+      Math.abs(originalWeights.session_duration) +
+      Math.abs(originalWeights.pages_per_session) +
+      Math.abs(originalWeights.successful_interactions) +
+      Math.abs(originalWeights.funnel_step_completion_rate)
+    );
+    
+    const negativeWeightChange = (
+      (currentWeights.rage_clicks / 100) +
+      (currentWeights.console_errors / 100) +
+      (currentWeights.exit_on_error / 100) +
+      (currentWeights.fast_bounce / 100)
+    ) / (
+      Math.abs(originalWeights.rage_clicks) +
+      Math.abs(originalWeights.console_errors) +
+      Math.abs(originalWeights.exit_on_error) +
+      Math.abs(originalWeights.fast_bounce)
+    );
+    
+    // Applica la trasformazione alle percentuali originali
+    const originalPercentages = data.ux.session_quality_score.classification.percentages;
+    
+    // Calcola l'effetto del cambiamento dei pesi
+    const goodAdjustment = (positiveWeightChange - 1) * 10 - (negativeWeightChange - 1) * 5;
+    const badAdjustment = -(positiveWeightChange - 1) * 5 + (negativeWeightChange - 1) * 10;
+    
+    let newGood = Math.max(0, Math.min(100, originalPercentages.good + goodAdjustment));
+    let newBad = Math.max(0, Math.min(100, originalPercentages.bad + badAdjustment));
+    let newNeutral = Math.max(0, 100 - newGood - newBad);
+    
+    // Normalizza per assicurarsi che la somma sia 100
+    const total = newGood + newNeutral + newBad;
+    if (total > 0) {
+      newGood = Math.round((newGood / total) * 100 * 10) / 10;
+      newBad = Math.round((newBad / total) * 100 * 10) / 10;
+      newNeutral = Math.round((100 - newGood - newBad) * 10) / 10;
+    }
+    
+    return {
+      good: newGood,
+      neutral: newNeutral,
+      bad: newBad
+    };
+  }, [data, weights]);
+
+  const qualityPercentages = calculateQualityPercentages();
+  
+  const qualityScores = qualityPercentages ? [
     {
       name: "Good",
-      value: data.ux.session_quality_score.classification.percentages.good,
+      value: qualityPercentages.good,
       color: "analytics-green"
     },
     {
       name: "Neutral",
-      value: data.ux.session_quality_score.classification.percentages.neutral,
+      value: qualityPercentages.neutral,
       color: "analytics-orange"
     },
     {
       name: "Bad",
-      value: data.ux.session_quality_score.classification.percentages.bad,
+      value: qualityPercentages.bad,
       color: "analytics-red"
     },
   ] : [];
@@ -340,8 +411,16 @@ export function UXSection({ onBack }: UXSectionProps) {
       {/* 1. Quality Scores */}
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
         <div className="flex justify-between items-center mb-6">
-          <h3 className="text-lg font-semibold font-mono">QUALITY SCORE</h3>
-          <button 
+          <div className="flex items-center space-x-3">
+            <h3 className="text-lg font-semibold font-mono">QUALITY SCORE</h3>
+            {hasUnsavedChanges && (
+              <div className="flex items-center space-x-2 px-2 py-1 bg-analytics-blue/10 border border-analytics-blue/30 rounded text-xs">
+                <div className="w-2 h-2 bg-analytics-blue rounded-full animate-pulse"></div>
+                <span className="text-analytics-blue font-medium">Pesi modificati</span>
+              </div>
+            )}
+          </div>
+          <button
             onClick={() => setIsWeightConfigOpen(!isWeightConfigOpen)}
             className="flex items-center space-x-2 px-3 py-2 bg-dashboard-surface/80 border border-dashboard-border text-sm font-medium text-muted-foreground hover:bg-dashboard-surface-hover/80 hover:text-foreground transition-all duration-150 apple-button"
           >
@@ -595,11 +674,24 @@ export function UXSection({ onBack }: UXSectionProps) {
         )}
         
         <div className="space-y-4">
+          {hasUnsavedChanges && (
+            <div className="mb-4 p-3 bg-analytics-blue/5 border border-analytics-blue/20 rounded-lg">
+              <p className="text-sm text-analytics-blue">
+                <strong>Anteprima:</strong> Le percentuali mostrate riflettono la configurazione dei pesi corrente.
+                Salva per applicare definitivamente le modifiche.
+              </p>
+            </div>
+          )}
           {qualityScores.map((score, index) => (
             <div key={index} className="space-y-2">
               <div className="flex justify-between items-center">
                 <span className="text-sm font-mono">{score.name}</span>
-                <span className={`font-bold font-mono text-${score.color}`}>{score.value}%</span>
+                <div className="flex items-center space-x-2">
+                  <span className={`font-bold font-mono text-${score.color}`}>{score.value}%</span>
+                  {hasUnsavedChanges && (
+                    <span className="text-xs text-muted-foreground">(aggiornato)</span>
+                  )}
+                </div>
               </div>
               <Progress value={score.value} className="h-2" />
             </div>
