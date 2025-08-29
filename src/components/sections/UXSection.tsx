@@ -478,7 +478,7 @@ export function UXSection({ onBack }: UXSectionProps) {
               )}
             </div>
             
-            <div className="grid grid-cols-3 gap-8 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-8">
               {/* First Column */}
               <div className="space-y-6">
                 <div className="space-y-3">
@@ -710,14 +710,14 @@ export function UXSection({ onBack }: UXSectionProps) {
         </div>
       </div>
 
-      {/* 2. Click Analytics & Heatmap - Side by Side Layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      {/* 2. Click Analytics & Heatmap - Responsive Layout */}
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
         {/* Heatmap - Takes 2/3 of width on desktop */}
-        <div className="lg:col-span-2 bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
-          <div className="flex justify-between items-center mb-6">
+        <div className="xl:col-span-2 bg-dashboard-surface/60 border border-dashboard-border shadow-card p-4 md:p-6 dashboard-card">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
             <h3 className="text-lg font-semibold font-mono">HEATMAP INTERATTIVA</h3>
-            <div className="flex items-center space-x-2">
-              <div className="flex bg-dashboard-surface border border-dashboard-border">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-2 w-full sm:w-auto">
+              <div className="flex bg-dashboard-surface border border-dashboard-border overflow-hidden">
                 {[
                   { id: "desktop", icon: Monitor, label: "Desktop" },
                   { id: "mobile", icon: Smartphone, label: "Mobile" },
@@ -731,7 +731,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                       size="sm"
                       onClick={() => setHeatmapDevice(device.id as any)}
                       className={cn(
-                        "font-mono text-xs px-3 py-2 border-0",
+                        "font-mono text-xs px-2 md:px-3 py-2 border-0 whitespace-nowrap",
                         heatmapDevice === device.id && "bg-analytics-blue text-white"
                       )}
                     >
@@ -744,7 +744,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsHeatmapFullscreen(!isHeatmapFullscreen)}
-                className="font-mono text-xs"
+                className="font-mono text-xs hidden sm:block"
               >
                 <Maximize2 className="h-3 w-3" />
               </Button>
@@ -776,7 +776,7 @@ export function UXSection({ onBack }: UXSectionProps) {
         </div>
         
         {/* Click Analytics - Takes 1/3 of width on desktop, vertical layout */}
-        <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
+        <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-4 md:p-6 dashboard-card container-safe">
           <h3 className="text-lg font-semibold mb-6 font-mono">CLICK ANALYTICS</h3>
           <div className="space-y-6">
             <KPICard
@@ -844,8 +844,8 @@ export function UXSection({ onBack }: UXSectionProps) {
         {/* Percorso Principale - Blocchi grandi */}
         <div className="mb-16">
           <h4 className="text-lg font-mono text-foreground mb-8 text-center">Percorso Principale (25% utenti)</h4>
-          <div className="flex items-center justify-center gap-6">
-            <div className="border-2 border-white p-8 w-48 h-40 flex flex-col items-center justify-center rounded-2xl">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-6 overflow-x-auto">
+            <div className="border-2 border-white p-4 lg:p-8 w-32 lg:w-48 h-24 lg:h-40 flex flex-col items-center justify-center rounded-2xl min-w-[8rem]">
               <Home className="h-12 w-12 text-orange-500 mb-3" />
               <span className="text-lg font-semibold text-blue-400 mb-1">Homepage</span>
               <span className="text-base text-blue-400 font-medium">100%</span>
@@ -882,8 +882,8 @@ export function UXSection({ onBack }: UXSectionProps) {
         {/* Percorso Informativo - Blocchi medi */}
         <div className="mb-16">
           <h4 className="text-lg font-mono text-foreground mb-8 text-center">Percorso Informativo (18% utenti)</h4>
-          <div className="flex items-center justify-center gap-4">
-            <div className="border-2 border-white p-6 w-36 h-30 flex flex-col items-center justify-center rounded-2xl">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-3 lg:gap-4 overflow-x-auto">
+            <div className="border-2 border-white p-3 lg:p-6 w-24 lg:w-36 h-20 lg:h-30 flex flex-col items-center justify-center rounded-2xl min-w-[6rem]">
               <Home className="h-9 w-9 text-orange-500 mb-2" />
               <span className="text-base font-semibold text-blue-400 mb-1">Homepage</span>
               <span className="text-sm text-blue-400 font-medium">100%</span>
@@ -920,8 +920,8 @@ export function UXSection({ onBack }: UXSectionProps) {
         {/* Percorso Contenuti - Blocchi piccoli */}
         <div className="mb-16">
           <h4 className="text-lg font-mono text-foreground mb-8 text-center">Percorso Contenuti (15% utenti)</h4>
-          <div className="flex items-center justify-center gap-4">
-            <div className="border-2 border-white p-4 w-28 h-24 flex flex-col items-center justify-center rounded-2xl">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-3 lg:gap-4 overflow-x-auto">
+            <div className="border-2 border-white p-2 lg:p-4 w-20 lg:w-28 h-16 lg:h-24 flex flex-col items-center justify-center rounded-2xl min-w-[5rem]">
               <Home className="h-7 w-7 text-orange-500 mb-1" />
               <span className="text-sm font-semibold text-blue-400 mb-1">Homepage</span>
               <span className="text-xs text-blue-400 font-medium">100%</span>
@@ -963,7 +963,7 @@ export function UXSection({ onBack }: UXSectionProps) {
               <ChevronDown className="h-5 w-5 transition-transform group-open:rotate-180" />
             </summary>
             <div className="mt-4 space-y-3">
-              <div className="flex items-center gap-2 text-sm bg-dashboard-surface/30 p-3 border border-dashboard-border">
+              <div className="flex items-center gap-2 text-sm bg-dashboard-surface/30 p-3 border border-dashboard-border mobile-scroll text-overflow-safe">
                 <span className="font-mono text-foreground min-w-[20px]">4°</span>
                 <span className="bg-analytics-blue/20 text-analytics-blue px-2 py-1 text-xs">Homepage</span>
                 <ArrowRight className="h-3 w-3" />
