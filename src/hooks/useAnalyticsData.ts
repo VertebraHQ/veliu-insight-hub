@@ -64,6 +64,20 @@ export interface AnalyticsData {
   };
   ux: {
     session_quality_score: {
+      weights: {
+        scroll_depth: number;
+        session_duration: number;
+        pages_per_session: number;
+        successful_interactions: number;
+        funnel_step_completion_rate: number;
+        rage_clicks: number;
+        console_errors: number;
+        exit_on_error: number;
+        fast_bounce: number;
+        microtask_completions: number;
+        dead_clicks: number;
+        cta_attempt_vs_complete: number;
+      };
       stats: {
         min: number;
         q1: number;

@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { KPICard } from "@/components/KPICard";
 import { DateSelector } from "@/components/DateSelector";
 import { CompactDateSelector } from "@/components/sections/CompactDateSelector";
-import { ArrowLeft, MousePointer, Eye, Navigation, Activity, Maximize2, Monitor, Smartphone, Tablet, Bug, AlertTriangle, Home, Package, Phone, Users, FileText, BookOpen, ArrowRight, ChevronDown, Settings, Loader2 } from "lucide-react";
+import { ArrowLeft, MousePointer, Eye, Navigation, Activity, Maximize2, Monitor, Smartphone, Tablet, Bug, AlertTriangle, Home, Package, Phone, Users, FileText, BookOpen, ArrowRight, ChevronDown, Settings, Loader2, RotateCcw, Save, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -61,11 +61,40 @@ const pathMetrics = [
   { title: "Completamento Percorso", value: "74%", color: "orange" },
 ];
 
+// Interfaccia per i pesi delle metriche
+interface WeightConfig {
+  scroll_depth: number;
+  session_duration: number;
+  pages_per_session: number;
+  successful_interactions: number;
+  funnel_step_completion_rate: number;
+  rage_clicks: number;
+  console_errors: number;
+  exit_on_error: number;
+  fast_bounce: number;
+}
+
+// Configurazione di default dei pesi
+const DEFAULT_WEIGHTS: WeightConfig = {
+  scroll_depth: 10,
+  session_duration: 15,
+  pages_per_session: 10,
+  successful_interactions: 20,
+  funnel_step_completion_rate: 15,
+  rage_clicks: 10,
+  console_errors: 5,
+  exit_on_error: 10,
+  fast_bounce: 5,
+};
+
 export function UXSection({ onBack }: UXSectionProps) {
   const [distributionTab, setDistributionTab] = useState<"device" | "os" | "browser">("device");
   const [heatmapDevice, setHeatmapDevice] = useState<"desktop" | "mobile" | "tablet">("desktop");
   const [isHeatmapFullscreen, setIsHeatmapFullscreen] = useState(false);
   const [isWeightConfigOpen, setIsWeightConfigOpen] = useState(false);
+  const [weights, setWeights] = useState<WeightConfig>(DEFAULT_WEIGHTS);
+  const [originalWeights, setOriginalWeights] = useState<WeightConfig>(DEFAULT_WEIGHTS);
+  const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
 
   const {
     data,
@@ -80,6 +109,70 @@ export function UXSection({ onBack }: UXSectionProps) {
     setCustomDateRange,
     refreshData
   } = useAnalyticsData();
+
+  // Inizializza i pesi dai dati quando disponibili, ma usa sempre i DEFAULT_WEIGHTS come base
+  useEffect(() => {
+    // Usa sempre i DEFAULT_WEIGHTS come valori di base corretti
+    setWeights(DEFAULT_WEIGHTS);
+    setOriginalWeights(DEFAULT_WEIGHTS);
+    
+    // Se ci sono dati API e sono diversi dai default, mostra che ci sono modifiche non salvate
+    if (data?.ux?.session_quality_score?.weights) {
+      const apiWeights = data.ux.session_quality_score.weights;
+      const apiWeightsConverted: WeightConfig = {
+        scroll_depth: Math.abs(apiWeights.scroll_depth * 100),
+        session_duration: Math.abs(apiWeights.session_duration * 100),
+        pages_per_session: Math.abs(apiWeights.pages_per_session * 100),
+        successful_interactions: Math.abs(apiWeights.successful_interactions * 100),
+        funnel_step_completion_rate: Math.abs(apiWeights.funnel_step_completion_rate * 100),
+        rage_clicks: Math.abs(apiWeights.rage_clicks * 100),
+        console_errors: Math.abs(apiWeights.console_errors * 100),
+        exit_on_error: Math.abs(apiWeights.exit_on_error * 100),
+        fast_bounce: Math.abs(apiWeights.fast_bounce * 100),
+      };
+      
+      // Se i pesi API sono diversi dai default, usa i default ma non impostare come "originali"
+      const apiTotal = Object.values(apiWeightsConverted).reduce((sum, weight) => sum + weight, 0);
+      if (apiTotal !== 100) {
+        // I pesi API non sono validi, mantieni i DEFAULT_WEIGHTS
+        console.log('Pesi API non validi (totale:', apiTotal, '%), usando DEFAULT_WEIGHTS');
+      }
+    }
+  }, [data]);
+
+  // Calcola la somma totale dei pesi
+  const totalWeight = Object.values(weights).reduce((sum, weight) => sum + weight, 0);
+  const isValidTotal = totalWeight === 100;
+
+  // Gestisce il cambiamento di un peso
+  const handleWeightChange = (key: keyof WeightConfig, value: string) => {
+    const numValue = Math.max(0, Math.min(30, parseInt(value) || 0));
+    const newWeights = { ...weights, [key]: numValue };
+    setWeights(newWeights);
+    setHasUnsavedChanges(JSON.stringify(newWeights) !== JSON.stringify(originalWeights));
+  };
+
+  // Salva la configurazione
+  const handleSaveWeights = () => {
+    if (!isValidTotal) return;
+    setOriginalWeights(weights);
+    setHasUnsavedChanges(false);
+    setIsWeightConfigOpen(false);
+    // Qui potresti aggiungere una chiamata API per salvare i pesi
+    console.log('Pesi salvati:', weights);
+  };
+
+  // Reset ai valori originali
+  const handleResetWeights = () => {
+    setWeights(originalWeights);
+    setHasUnsavedChanges(false);
+  };
+
+  // Reset ai valori di default
+  const handleResetToDefault = () => {
+    setWeights(DEFAULT_WEIGHTS);
+    setHasUnsavedChanges(JSON.stringify(DEFAULT_WEIGHTS) !== JSON.stringify(originalWeights));
+  };
 
   // Calculate data from analytics
   const deviceData = data ? Object.entries(data.distributions.device_type).map(([name, count]) => ({
@@ -259,167 +352,247 @@ export function UXSection({ onBack }: UXSectionProps) {
 
         {isWeightConfigOpen && (
           <div className="mb-8 bg-background/8 rounded-lg border border-border p-8 shadow-lg">
-                <div className="mb-8">
-                  <h4 className="text-xl font-bold mb-2">Configurazione Pesi Metriche</h4>
-                  <p className="text-muted-foreground">Seleziona un valore da 0% a 30% per ogni variabile</p>
-                </div>
-                
-                <div className="grid grid-cols-3 gap-8 mb-8">
-                  {/* First Column */}
-                  <div className="space-y-6">
-                    <div className="space-y-3">
-                      <Label className="text-base font-medium">Scroll Depth</Label>
-                      <div className="relative">
-                        <Input 
-                          type="number" 
-                          min="0" 
-                          max="30" 
-                          defaultValue="10" 
-                          className="h-10 text-base pr-8 bg-muted/50"
-                        />
-                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
-                      </div>
-                      <p className="text-sm text-analytics-green">Positive (10%)</p>
-                    </div>
-                    
-                    <div className="space-y-3">
-                      <Label className="text-base font-medium">Successful Interactions</Label>
-                      <div className="relative">
-                        <Input 
-                          type="number" 
-                          min="0" 
-                          max="30" 
-                          defaultValue="20" 
-                          className="h-10 text-base pr-8 bg-muted/50"
-                        />
-                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
-                      </div>
-                      <p className="text-sm text-analytics-green">Positive (20%)</p>
-                    </div>
-                    
-                    <div className="space-y-3">
-                      <Label className="text-base font-medium">Console Errors</Label>
-                      <div className="relative">
-                        <Input 
-                          type="number" 
-                          min="0" 
-                          max="30" 
-                          defaultValue="5" 
-                          className="h-10 text-base pr-8 bg-muted/50"
-                        />
-                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
-                      </div>
-                      <p className="text-sm text-red-500">Negative (-5%)</p>
-                    </div>
-                  </div>
+            <div className="mb-8">
+              <h4 className="text-xl font-bold mb-2">Configurazione Pesi Metriche</h4>
+              <p className="text-muted-foreground">Seleziona un valore da 0% a 30% per ogni variabile</p>
+            </div>
 
-                  {/* Second Column */}
-                  <div className="space-y-6">
-                    <div className="space-y-3">
-                      <Label className="text-base font-medium">Session Duration</Label>
-                      <div className="relative">
-                        <Input 
-                          type="number" 
-                          min="0" 
-                          max="30" 
-                          defaultValue="15" 
-                          className="h-10 text-base pr-8 bg-muted/50"
-                        />
-                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
-                      </div>
-                      <p className="text-sm text-analytics-green">Positive (15%)</p>
-                    </div>
-                    
-                    <div className="space-y-3">
-                      <Label className="text-base font-medium">Funnel Step Completion Rate</Label>
-                      <div className="relative">
-                        <Input 
-                          type="number" 
-                          min="0" 
-                          max="30" 
-                          defaultValue="15" 
-                          className="h-10 text-base pr-8 bg-muted/50"
-                        />
-                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
-                      </div>
-                      <p className="text-sm text-analytics-green">Positive (15%)</p>
-                    </div>
-                    
-                    <div className="space-y-3">
-                      <Label className="text-base font-medium">Exit On Error</Label>
-                      <div className="relative">
-                        <Input 
-                          type="number" 
-                          min="0" 
-                          max="30" 
-                          defaultValue="15" 
-                          className="h-10 text-base pr-8 bg-muted/50"
-                        />
-                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
-                      </div>
-                      <p className="text-sm text-red-500">Negative (-15%)</p>
-                    </div>
-                  </div>
-
-                  {/* Third Column */}
-                  <div className="space-y-6">
-                    <div className="space-y-3">
-                      <Label className="text-base font-medium">Pages Per Session</Label>
-                      <div className="relative">
-                        <Input 
-                          type="number" 
-                          min="0" 
-                          max="30" 
-                          defaultValue="10" 
-                          className="h-10 text-base pr-8 bg-muted/50"
-                        />
-                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
-                      </div>
-                      <p className="text-sm text-analytics-green">Positive (10%)</p>
-                    </div>
-                    
-                    <div className="space-y-3">
-                      <Label className="text-base font-medium">Rage Clicks</Label>
-                      <div className="relative">
-                        <Input 
-                          type="number" 
-                          min="0" 
-                          max="30" 
-                          defaultValue="10" 
-                          className="h-10 text-base pr-8 bg-muted/50"
-                        />
-                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
-                      </div>
-                      <p className="text-sm text-red-500">Negative (-10%)</p>
-                    </div>
-                    
-                    <div className="space-y-3">
-                      <Label className="text-base font-medium">Fast Bounce</Label>
-                      <div className="relative">
-                        <Input 
-                          type="number" 
-                          min="0" 
-                          max="30" 
-                          defaultValue="10" 
-                          className="h-10 text-base pr-8 bg-muted/50"
-                        />
-                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
-                      </div>
-                      <p className="text-sm text-red-500">Negative (-10%)</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="flex justify-end gap-3 pt-6 border-t border-border">
-                  <Button variant="outline" onClick={() => setIsWeightConfigOpen(false)}>
-                    Annulla
-                  </Button>
-                  <Button onClick={() => setIsWeightConfigOpen(false)}>
-                    Salva Configurazione
-                  </Button>
+            {/* Indicatore somma totale */}
+            <div className="mb-6 p-4 bg-muted/30 rounded-lg border">
+              <div className="flex items-center justify-between mb-2">
+                <span className="font-medium">Somma Totale Pesi:</span>
+                <div className="flex items-center gap-2">
+                  <span className={cn(
+                    "font-bold text-lg",
+                    isValidTotal ? "text-analytics-green" : "text-analytics-red"
+                  )}>
+                    {totalWeight}%
+                  </span>
+                  {!isValidTotal && <AlertCircle className="h-4 w-4 text-analytics-red" />}
                 </div>
               </div>
+              <Progress
+                value={Math.min(totalWeight, 100)}
+                className={cn(
+                  "h-2",
+                  totalWeight > 100 ? "bg-red-100" : ""
+                )}
+              />
+              {!isValidTotal && (
+                <p className="text-sm text-analytics-red mt-2">
+                  {totalWeight > 100
+                    ? `Riduci di ${totalWeight - 100}% per raggiungere il 100%`
+                    : `Aggiungi ${100 - totalWeight}% per raggiungere il 100%`
+                  }
+                </p>
+              )}
+            </div>
+            
+            <div className="grid grid-cols-3 gap-8 mb-8">
+              {/* First Column */}
+              <div className="space-y-6">
+                <div className="space-y-3">
+                  <Label className="text-base font-medium">Scroll Depth</Label>
+                  <div className="relative">
+                    <Input
+                      type="number"
+                      min="0"
+                      max="30"
+                      value={weights.scroll_depth}
+                      onChange={(e) => handleWeightChange('scroll_depth', e.target.value)}
+                      className="h-10 text-base pr-8 bg-muted/50"
+                    />
+                    <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
+                  </div>
+                  <p className="text-sm text-analytics-green">Positive (+{weights.scroll_depth}%)</p>
+                </div>
+                
+                <div className="space-y-3">
+                  <Label className="text-base font-medium">Successful Interactions</Label>
+                  <div className="relative">
+                    <Input
+                      type="number"
+                      min="0"
+                      max="30"
+                      value={weights.successful_interactions}
+                      onChange={(e) => handleWeightChange('successful_interactions', e.target.value)}
+                      className="h-10 text-base pr-8 bg-muted/50"
+                    />
+                    <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
+                  </div>
+                  <p className="text-sm text-analytics-green">Positive (+{weights.successful_interactions}%)</p>
+                </div>
+                
+                <div className="space-y-3">
+                  <Label className="text-base font-medium">Console Errors</Label>
+                  <div className="relative">
+                    <Input
+                      type="number"
+                      min="0"
+                      max="30"
+                      value={weights.console_errors}
+                      onChange={(e) => handleWeightChange('console_errors', e.target.value)}
+                      className="h-10 text-base pr-8 bg-muted/50"
+                    />
+                    <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
+                  </div>
+                  <p className="text-sm text-red-500">Negative (-{weights.console_errors}%)</p>
+                </div>
+              </div>
+
+              {/* Second Column */}
+              <div className="space-y-6">
+                <div className="space-y-3">
+                  <Label className="text-base font-medium">Session Duration</Label>
+                  <div className="relative">
+                    <Input
+                      type="number"
+                      min="0"
+                      max="30"
+                      value={weights.session_duration}
+                      onChange={(e) => handleWeightChange('session_duration', e.target.value)}
+                      className="h-10 text-base pr-8 bg-muted/50"
+                    />
+                    <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
+                  </div>
+                  <p className="text-sm text-analytics-green">Positive (+{weights.session_duration}%)</p>
+                </div>
+                
+                <div className="space-y-3">
+                  <Label className="text-base font-medium">Funnel Step Completion Rate</Label>
+                  <div className="relative">
+                    <Input
+                      type="number"
+                      min="0"
+                      max="30"
+                      value={weights.funnel_step_completion_rate}
+                      onChange={(e) => handleWeightChange('funnel_step_completion_rate', e.target.value)}
+                      className="h-10 text-base pr-8 bg-muted/50"
+                    />
+                    <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
+                  </div>
+                  <p className="text-sm text-analytics-green">Positive (+{weights.funnel_step_completion_rate}%)</p>
+                </div>
+                
+                <div className="space-y-3">
+                  <Label className="text-base font-medium">Exit On Error</Label>
+                  <div className="relative">
+                    <Input
+                      type="number"
+                      min="0"
+                      max="30"
+                      value={weights.exit_on_error}
+                      onChange={(e) => handleWeightChange('exit_on_error', e.target.value)}
+                      className="h-10 text-base pr-8 bg-muted/50"
+                    />
+                    <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
+                  </div>
+                  <p className="text-sm text-red-500">Negative (-{weights.exit_on_error}%)</p>
+                </div>
+              </div>
+
+              {/* Third Column */}
+              <div className="space-y-6">
+                <div className="space-y-3">
+                  <Label className="text-base font-medium">Pages Per Session</Label>
+                  <div className="relative">
+                    <Input
+                      type="number"
+                      min="0"
+                      max="30"
+                      value={weights.pages_per_session}
+                      onChange={(e) => handleWeightChange('pages_per_session', e.target.value)}
+                      className="h-10 text-base pr-8 bg-muted/50"
+                    />
+                    <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
+                  </div>
+                  <p className="text-sm text-analytics-green">Positive (+{weights.pages_per_session}%)</p>
+                </div>
+                
+                <div className="space-y-3">
+                  <Label className="text-base font-medium">Rage Clicks</Label>
+                  <div className="relative">
+                    <Input
+                      type="number"
+                      min="0"
+                      max="30"
+                      value={weights.rage_clicks}
+                      onChange={(e) => handleWeightChange('rage_clicks', e.target.value)}
+                      className="h-10 text-base pr-8 bg-muted/50"
+                    />
+                    <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
+                  </div>
+                  <p className="text-sm text-red-500">Negative (-{weights.rage_clicks}%)</p>
+                </div>
+                
+                <div className="space-y-3">
+                  <Label className="text-base font-medium">Fast Bounce</Label>
+                  <div className="relative">
+                    <Input
+                      type="number"
+                      min="0"
+                      max="30"
+                      value={weights.fast_bounce}
+                      onChange={(e) => handleWeightChange('fast_bounce', e.target.value)}
+                      className="h-10 text-base pr-8 bg-muted/50"
+                    />
+                    <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
+                  </div>
+                  <p className="text-sm text-red-500">Negative (-{weights.fast_bounce}%)</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Alert per modifiche non salvate */}
+            {hasUnsavedChanges && (
+              <Alert className="mb-6">
+                <AlertCircle className="h-4 w-4" />
+                <AlertDescription>
+                  Hai modifiche non salvate. Salva o annulla per continuare.
+                </AlertDescription>
+              </Alert>
             )}
+            
+            <div className="flex justify-between items-center pt-6 border-t border-border">
+              <div className="flex gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={handleResetToDefault}
+                  className="flex items-center gap-2"
+                >
+                  <RotateCcw className="h-4 w-4" />
+                  Reset Default
+                </Button>
+                {hasUnsavedChanges && (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={handleResetWeights}
+                    className="flex items-center gap-2"
+                  >
+                    <RotateCcw className="h-4 w-4" />
+                    Annulla Modifiche
+                  </Button>
+                )}
+              </div>
+              
+              <div className="flex gap-3">
+                <Button variant="outline" onClick={() => setIsWeightConfigOpen(false)}>
+                  Chiudi
+                </Button>
+                <Button
+                  onClick={handleSaveWeights}
+                  disabled={!isValidTotal}
+                  className="flex items-center gap-2"
+                >
+                  <Save className="h-4 w-4" />
+                  Salva Configurazione
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
         
         <div className="space-y-4">
           {qualityScores.map((score, index) => (
