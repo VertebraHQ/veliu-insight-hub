@@ -83,45 +83,45 @@ export function CompactDateSelector() {
         </div>
 
         {/* Quick Selection Buttons */}
-        <div className="flex items-center gap-3 ml-6">
-          <Button
-            variant={selectedType === "week" ? "default" : "outline"}
-            size="sm"
+        <div className="flex items-center gap-1 ml-6 bg-dashboard-surface border border-dashboard-border rounded-lg p-1">
+          <button
             onClick={() => setSelectedType("week")}
             className={cn(
-              "text-sm font-mono px-4 py-2",
-              selectedType === "week" && "bg-analytics-blue text-white border-analytics-blue"
+              "px-4 py-2 text-sm font-medium font-mono rounded-md transition-all duration-200",
+              selectedType === "week" 
+                ? "bg-analytics-blue text-white shadow-sm" 
+                : "text-muted-foreground hover:text-foreground hover:bg-dashboard-surface-hover/50"
             )}
           >
-            Ultima Settimana
-          </Button>
+            SETTIMANALE
+          </button>
           
-          <Button
-            variant={selectedType === "month" ? "default" : "outline"}
-            size="sm"
+          <button
             onClick={() => setSelectedType("month")}
             className={cn(
-              "text-sm font-mono px-4 py-2",
-              selectedType === "month" && "bg-analytics-blue text-white border-analytics-blue"
+              "px-4 py-2 text-sm font-medium font-mono rounded-md transition-all duration-200 flex items-center gap-2",
+              selectedType === "month" 
+                ? "bg-analytics-blue text-white shadow-sm" 
+                : "text-muted-foreground hover:text-foreground hover:bg-dashboard-surface-hover/50"
             )}
           >
-            Ultimo Mese
-          </Button>
+            MENSILE
+          </button>
 
           {/* Custom Range Selector */}
           <Popover open={isCustomOpen} onOpenChange={setIsCustomOpen}>
             <PopoverTrigger asChild>
-              <Button
-                variant={selectedType === "custom" ? "default" : "outline"}
-                size="sm"
+              <button
                 onClick={() => setSelectedType("custom")}
                 className={cn(
-                  "text-sm font-mono px-4 py-2 gap-2",
-                  selectedType === "custom" && "bg-analytics-blue text-white border-analytics-blue"
+                  "px-4 py-2 text-sm font-medium font-mono rounded-md transition-all duration-200 flex items-center gap-2",
+                  selectedType === "custom" 
+                    ? "bg-analytics-blue text-white shadow-sm" 
+                    : "text-muted-foreground hover:text-foreground hover:bg-dashboard-surface-hover/50"
                 )}
               >
-                📅 Periodo Custom
-              </Button>
+                📅 CUSTOM
+              </button>
             </PopoverTrigger>
             <PopoverContent className="w-auto p-0" align="start">
               <Calendar
