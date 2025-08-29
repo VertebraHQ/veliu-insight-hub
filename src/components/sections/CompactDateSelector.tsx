@@ -75,7 +75,7 @@ export function CompactDateSelector({
 
   return (
     <div className="flex flex-col space-y-4">
-      <h3 className="text-lg font-semibold text-foreground font-mono">SELETTORE DATE</h3>
+      <h3 className="text-lg font-semibold text-foreground">SELETTORE DATE</h3>
       
       {/* Main Period Selector - Identical to reference image */}
       <div className="flex items-center bg-dashboard-surface/80 border border-dashboard-border rounded-lg overflow-hidden">
@@ -87,7 +87,7 @@ export function CompactDateSelector({
           }}
           disabled={disabled}
           className={cn(
-            "px-6 py-3 text-sm font-bold font-mono transition-all duration-200 flex-1 text-center",
+            "px-6 py-3 text-sm font-semibold transition-all duration-200 flex-1 text-center",
             selectedType === "day" 
               ? "bg-primary text-primary-foreground" 
               : "bg-transparent text-muted-foreground hover:bg-accent/10 hover:text-accent-foreground"
@@ -104,7 +104,7 @@ export function CompactDateSelector({
           }}
           disabled={disabled}
           className={cn(
-            "px-6 py-3 text-sm font-bold font-mono transition-all duration-200 flex-1 text-center",
+            "px-6 py-3 text-sm font-semibold transition-all duration-200 flex-1 text-center",
             selectedType === "week" 
               ? "bg-primary text-primary-foreground" 
               : "bg-transparent text-muted-foreground hover:bg-accent/10 hover:text-accent-foreground"
@@ -121,7 +121,7 @@ export function CompactDateSelector({
           }}
           disabled={disabled}
           className={cn(
-            "px-6 py-3 text-sm font-bold font-mono transition-all duration-200 flex-1 text-center",
+            "px-6 py-3 text-sm font-semibold transition-all duration-200 flex-1 text-center",
             selectedType === "month" 
               ? "bg-primary text-primary-foreground" 
               : "bg-transparent text-muted-foreground hover:bg-accent/10 hover:text-accent-foreground"
@@ -191,13 +191,13 @@ export function CompactDateSelector({
                   )}
                 >
                   <span className={cn(
-                    "text-xl font-bold font-mono",
+                    "text-xl font-bold",
                     isSelected ? "text-analytics-blue" : "text-foreground"
                   )}>
                     {format(day, "dd")}
                   </span>
                   <span className={cn(
-                    "text-xs font-mono",
+                    "text-xs",
                     isSelected ? "text-analytics-blue" : "text-muted-foreground"
                   )}>
                     {getMonthAbbr(day)}
@@ -207,14 +207,14 @@ export function CompactDateSelector({
             })
           ) : (
             <div className="flex items-center justify-center w-full h-16 border-2 border-dashed border-analytics-red/30 bg-analytics-red/5">
-              <span className="text-sm font-mono text-analytics-red">Nessuna data disponibile</span>
+              <span className="text-sm text-analytics-red">Nessuna data disponibile</span>
             </div>
           )}
         </div>
       )}
 
       {/* Current Selection Display */}
-      <div className="text-sm text-muted-foreground font-mono">
+      <div className="text-sm text-muted-foreground">
         <span className="text-analytics-blue font-medium">Periodo selezionato:</span> {getDateDisplay()}
         {availableDates.length > 0 && selectedType === "day" && (
           <div className="mt-1 text-xs">

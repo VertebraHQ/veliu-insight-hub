@@ -228,7 +228,7 @@ All colors MUST be HSL.
   }
 
   /* Mono font for technical data - SF Mono style */
-  .font-mono, code, pre {
+  code, pre {
     font-family: 'SF Mono', 'Fira Code', Monaco, Inconsolata, 'Roboto Mono', monospace;
   }
 

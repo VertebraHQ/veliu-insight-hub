@@ -154,8 +154,8 @@ export function TechSection({ onBack }: TechSectionProps) {
             <ArrowLeft className="h-5 w-5" />
           </Button>
           <div>
-            <h2 className="text-3xl font-bold text-foreground font-mono tracking-tight">ANALISI TECH</h2>
-            <p className="text-muted-foreground font-mono">Metriche tecniche e performance</p>
+            <h2 className="text-3xl font-bold text-foreground tracking-tight">ANALISI TECH</h2>
+            <p className="text-muted-foreground">Metriche tecniche e performance</p>
           </div>
         </div>
         <DateSelector
@@ -185,15 +185,15 @@ export function TechSection({ onBack }: TechSectionProps) {
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
         <div className="flex items-center space-x-3 mb-6">
           <Bug className="h-6 w-6 text-analytics-red" />
-          <h3 className="text-lg font-semibold font-mono">ANALISI ERRORI E SEGNALI DI USER FRUSTRATION</h3>
-          <span className="text-xs bg-analytics-red/20 text-analytics-red px-2 py-1 font-medium font-mono">
+          <h3 className="text-lg font-semibold">ANALISI ERRORI E SEGNALI DI USER FRUSTRATION</h3>
+          <span className="text-xs bg-analytics-red/20 text-analytics-red px-2 py-1 font-medium">
             LIVELLO: BASSO (4.4%)
           </span>
         </div>
 
         <div className="space-y-8">
           <div>
-            <h4 className="text-md font-medium mb-4 text-analytics-red font-mono">ERRORI TECNICI</h4>
+            <h4 className="text-md font-medium mb-4 text-analytics-red">ERRORI TECNICI</h4>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {errorKPIs.map((kpi, index) => (
                 <KPICard
@@ -209,7 +209,7 @@ export function TechSection({ onBack }: TechSectionProps) {
           </div>
 
           <div>
-            <h4 className="text-md font-medium mb-4 text-analytics-orange font-mono">METRICHE DI FRUSTRAZIONE UTENTE</h4>
+            <h4 className="text-md font-medium mb-4 text-analytics-orange">METRICHE DI FRUSTRAZIONE UTENTE</h4>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               {frustrationKPIs.map((kpi, index) => (
                 <KPICard
@@ -229,15 +229,15 @@ export function TechSection({ onBack }: TechSectionProps) {
       {/* Browser and Device Error Distribution */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
-          <h3 className="text-lg font-semibold mb-6 font-mono">ERRORI PER BROWSER</h3>
+          <h3 className="text-lg font-semibold mb-6">ERRORI PER BROWSER</h3>
           <div className="space-y-4">
             {browserErrorData.map((item, index) => (
               <div key={index} className="space-y-2">
                 <div className="flex justify-between items-center">
-                  <span className="text-sm font-mono">{item.browser}</span>
+                  <span className="text-sm">{item.browser}</span>
                   <div className="flex items-center space-x-2">
-                    <span className="font-bold text-analytics-red font-mono">{item.errors}</span>
-                    <span className="text-xs text-muted-foreground font-mono">({item.percentage}%)</span>
+                    <span className="font-bold text-analytics-red">{item.errors}</span>
+                    <span className="text-xs text-muted-foreground">({item.percentage}%)</span>
                   </div>
                 </div>
                 <Progress value={item.percentage} className="h-2" />
@@ -247,19 +247,19 @@ export function TechSection({ onBack }: TechSectionProps) {
         </div>
 
         <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
-          <h3 className="text-lg font-semibold mb-6 font-mono">ERRORI PER DEVICE</h3>
+          <h3 className="text-lg font-semibold mb-6">ERRORI PER DEVICE</h3>
           <div className="space-y-4">
             {deviceErrorData.map((item, index) => (
               <div key={index} className="space-y-2">
                 <div className="flex justify-between items-center">
                   <div className="flex items-center space-x-2">
-                    <span className="text-sm font-mono">{item.device}</span>
+                    <span className="text-sm">{item.device}</span>
                     {item.device === 'Desktop' && <Monitor className="h-3 w-3" />}
                     {item.device === 'Mobile' && <Smartphone className="h-3 w-3" />}
                   </div>
                   <div className="flex items-center space-x-2">
-                    <span className="font-bold text-analytics-red font-mono">{item.errors}</span>
-                    <span className="text-xs text-muted-foreground font-mono">({item.percentage}%)</span>
+                    <span className="font-bold text-analytics-red">{item.errors}</span>
+                    <span className="text-xs text-muted-foreground">({item.percentage}%)</span>
                   </div>
                 </div>
                 <Progress value={item.percentage} className="h-2" />
@@ -271,7 +271,7 @@ export function TechSection({ onBack }: TechSectionProps) {
 
       {/* Performance Metrics */}
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
-        <h3 className="text-lg font-semibold mb-6 font-mono">METRICHE DI PERFORMANCE</h3>
+        <h3 className="text-lg font-semibold mb-6">METRICHE DI PERFORMANCE</h3>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {performanceMetrics.map((metric, index) => (
             <KPICard
@@ -288,13 +288,13 @@ export function TechSection({ onBack }: TechSectionProps) {
 
       {/* Problematic Sessions */}
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
-        <h3 className="text-lg font-semibold mb-6 font-mono">SESSIONI PROBLEMATICHE</h3>
+        <h3 className="text-lg font-semibold mb-6">SESSIONI PROBLEMATICHE</h3>
         <div className="space-y-3">
           {problematicSessions.map((session, index) => (
             <div key={index} className="flex items-center justify-between p-3 bg-muted/30 hover:bg-muted/50 transition-colors border border-dashboard-border">
               <div className="flex items-center space-x-3">
-                <span className="text-sm font-mono text-muted-foreground">{session.id}</span>
-                <span className={`text-sm font-medium font-mono ${
+                <span className="text-sm text-muted-foreground">{session.id}</span>
+                <span className={`text-sm font-medium ${
                   session.severity === 'high' ? 'text-analytics-red' : 'text-analytics-orange'
                 }`}>
                   {session.issue}
@@ -316,48 +316,48 @@ export function TechSection({ onBack }: TechSectionProps) {
 
       {/* Pattern Comportamentali */}
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
-        <h3 className="text-lg font-semibold mb-6 font-mono text-analytics-red">PATTERN COMPORTAMENTALI</h3>
+        <h3 className="text-lg font-semibold mb-6 text-analytics-red">PATTERN COMPORTAMENTALI</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-dashboard-surface/30 border border-dashboard-border p-4">
             <div className="flex items-center justify-between mb-2">
-              <span className="font-mono text-sm text-muted-foreground">Utenti che abbandonano dopo errori</span>
+              <span className="text-sm text-muted-foreground">Utenti che abbandonano dopo errori</span>
               <Bug className="h-4 w-4 text-analytics-red" />
             </div>
-            <span className="font-bold text-2xl font-mono text-analytics-green">0.0%</span>
+            <span className="font-bold text-2xl text-analytics-green">0.0%</span>
           </div>
           <div className="bg-dashboard-surface/30 border border-dashboard-border p-4">
             <div className="flex items-center justify-between mb-2">
-              <span className="font-mono text-sm text-muted-foreground">Tempo medio prima della frustrazione</span>
+              <span className="text-sm text-muted-foreground">Tempo medio prima della frustrazione</span>
               <AlertTriangle className="h-4 w-4 text-analytics-orange" />
             </div>
-            <span className="font-bold text-2xl font-mono text-analytics-blue">10s</span>
+            <span className="font-bold text-2xl text-analytics-blue">10s</span>
           </div>
           <div className="bg-dashboard-surface/30 border border-dashboard-border p-4">
             <div className="flex items-center justify-between mb-2">
-              <span className="font-mono text-sm text-muted-foreground">Engagement ratio nelle sessioni problematiche</span>
+              <span className="text-sm text-muted-foreground">Engagement ratio nelle sessioni problematiche</span>
               <Activity className="h-4 w-4 text-analytics-green" />
             </div>
-            <span className="font-bold text-2xl font-mono text-analytics-orange">21.3%</span>
+            <span className="font-bold text-2xl text-analytics-orange">21.3%</span>
           </div>
         </div>
       </div>
 
       {/* Web Vitals */}
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
-        <h3 className="text-lg font-semibold mb-6 font-mono">WEB VITALS</h3>
+        <h3 className="text-lg font-semibold mb-6">WEB VITALS</h3>
         <div className="space-y-4">
           {webVitals.map((vital, index) => (
             <div key={index} className="p-4 border border-dashboard-border">
               <div className="flex justify-between items-start mb-2">
                 <div>
-                  <h4 className="font-medium text-foreground font-mono">{vital.title}</h4>
-                  <p className="text-2xl font-bold text-analytics-green mt-1 font-mono">{vital.value}</p>
+                  <h4 className="font-medium text-foreground">{vital.title}</h4>
+                  <p className="text-2xl font-bold text-analytics-green mt-1">{vital.value}</p>
                 </div>
-                <span className="bg-analytics-green/20 text-analytics-green px-3 py-1 text-xs font-medium font-mono">
+                <span className="bg-analytics-green/20 text-analytics-green px-3 py-1 text-xs font-medium">
                   {vital.status.toUpperCase()}
                 </span>
               </div>
-              <p className="text-xs text-muted-foreground font-mono">{vital.benchmark}</p>
+              <p className="text-xs text-muted-foreground">{vital.benchmark}</p>
             </div>
           ))}
         </div>

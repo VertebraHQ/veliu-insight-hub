@@ -357,7 +357,7 @@ export function UXSection({ onBack }: UXSectionProps) {
           <div className="flex flex-wrap items-center gap-2">
             {path.path.map((step: string, index: number) => (
               <div key={index} className="flex items-center">
-                <div className="px-3 py-1 bg-analytics-blue/20 text-analytics-blue text-xs font-mono border border-analytics-blue/30">
+                <div className="px-3 py-1 bg-analytics-blue/20 text-analytics-blue text-xs border border-analytics-blue/30">
                   {step}
                 </div>
                 {index < path.path.length - 1 && (
@@ -373,10 +373,10 @@ export function UXSection({ onBack }: UXSectionProps) {
             ))}
           </div>
           <div className="space-y-1">
-            <div className="text-sm text-muted-foreground font-mono">{path.occurrences} occorrenze</div>
+            <div className="text-sm text-muted-foreground">{path.occurrences} occorrenze</div>
             <div className="flex items-center space-x-2">
               <Progress value={path.completionRate} className="flex-1 h-1" />
-              <span className="text-xs font-mono text-analytics-green">{path.completionRate}%</span>
+              <span className="text-xs text-analytics-green">{path.completionRate}%</span>
             </div>
           </div>
         </div>
@@ -393,8 +393,8 @@ export function UXSection({ onBack }: UXSectionProps) {
             <ArrowLeft className="h-5 w-5" />
           </Button>
           <div>
-            <h2 className="text-3xl font-bold text-foreground font-mono tracking-tight">ANALISI UX</h2>
-            <p className="text-muted-foreground font-mono">Esperienza utente e heatmaps</p>
+            <h2 className="text-3xl font-bold text-foreground tracking-tight">ANALISI UX</h2>
+            <p className="text-muted-foreground">Esperienza utente e heatmaps</p>
           </div>
         </div>
         <DateSelector
@@ -423,7 +423,7 @@ export function UXSection({ onBack }: UXSectionProps) {
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
         <div className="flex justify-between items-center mb-6">
           <div className="flex items-center space-x-3">
-            <h3 className="text-lg font-semibold font-mono">QUALITY SCORE</h3>
+            <h3 className="text-lg font-semibold">QUALITY SCORE</h3>
             {hasUnsavedChanges && (
               <div className="flex items-center space-x-2 px-2 py-1 bg-analytics-blue/10 border border-analytics-blue/30 rounded text-xs">
                 <div className="w-2 h-2 bg-analytics-blue rounded-full animate-pulse"></div>
@@ -696,9 +696,9 @@ export function UXSection({ onBack }: UXSectionProps) {
           {qualityScores.map((score, index) => (
             <div key={index} className="space-y-2">
               <div className="flex justify-between items-center">
-                <span className="text-sm font-mono">{score.name}</span>
+                <span className="text-sm">{score.name}</span>
                 <div className="flex items-center space-x-2">
-                  <span className={`font-bold font-mono text-${score.color}`}>{score.value}%</span>
+                  <span className={`font-bold text-${score.color}`}>{score.value}%</span>
                   {hasUnsavedChanges && (
                     <span className="text-xs text-muted-foreground">(aggiornato)</span>
                   )}
@@ -715,7 +715,7 @@ export function UXSection({ onBack }: UXSectionProps) {
         {/* Heatmap - Takes 2/3 of width on desktop */}
         <div className="xl:col-span-2 bg-dashboard-surface/60 border border-dashboard-border shadow-card p-4 md:p-6 dashboard-card">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
-            <h3 className="text-lg font-semibold font-mono">HEATMAP INTERATTIVA</h3>
+            <h3 className="text-lg font-semibold">HEATMAP INTERATTIVA</h3>
             <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-2 w-full sm:w-auto">
               <div className="flex bg-dashboard-surface border border-dashboard-border overflow-hidden">
                 {[
@@ -731,7 +731,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                       size="sm"
                       onClick={() => setHeatmapDevice(device.id as any)}
                       className={cn(
-                        "font-mono text-xs px-2 md:px-3 py-2 border-0 whitespace-nowrap",
+                        "text-xs px-2 md:px-3 py-2 border-0 whitespace-nowrap",
                         heatmapDevice === device.id && "bg-analytics-blue text-white"
                       )}
                     >
@@ -744,7 +744,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsHeatmapFullscreen(!isHeatmapFullscreen)}
-                className="font-mono text-xs hidden sm:block"
+                className="text-xs hidden sm:block"
               >
                 <Maximize2 className="h-3 w-3" />
               </Button>
@@ -768,7 +768,7 @@ export function UXSection({ onBack }: UXSectionProps) {
             <Button
               variant="ghost"
               onClick={() => setIsHeatmapFullscreen(false)}
-              className="fixed top-8 right-8 z-50 font-mono"
+              className="fixed top-8 right-8 z-50"
             >
               ✕ CHIUDI
             </Button>
@@ -777,7 +777,7 @@ export function UXSection({ onBack }: UXSectionProps) {
         
         {/* Click Analytics - Takes 1/3 of width on desktop, vertical layout */}
         <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-4 md:p-6 dashboard-card container-safe">
-          <h3 className="text-lg font-semibold mb-6 font-mono">CLICK ANALYTICS</h3>
+          <h3 className="text-lg font-semibold mb-6">CLICK ANALYTICS</h3>
           <div className="space-y-6">
             <KPICard
               title="CLICK TOTALI SITO"
@@ -790,21 +790,21 @@ export function UXSection({ onBack }: UXSectionProps) {
             
             {/* Additional click metrics can be added here */}
             <div className="space-y-4">
-              <div className="text-sm font-medium text-muted-foreground font-mono">
+              <div className="text-sm font-medium text-muted-foreground">
                 BREAKDOWN CLICK
               </div>
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-muted-foreground">Home Page</span>
-                  <span className="font-bold font-mono text-analytics-blue">45%</span>
+                  <span className="font-bold text-analytics-blue">45%</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-muted-foreground">Products</span>
-                  <span className="font-bold font-mono text-analytics-green">32%</span>
+                  <span className="font-bold text-analytics-green">32%</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-muted-foreground">Contact</span>
-                  <span className="font-bold font-mono text-analytics-orange">23%</span>
+                  <span className="font-bold text-analytics-orange">23%</span>
                 </div>
               </div>
             </div>
@@ -814,16 +814,16 @@ export function UXSection({ onBack }: UXSectionProps) {
 
       {/* 3. Analisi Path Utenti - New Design */}
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
-        <h3 className="text-lg font-semibold mb-6 font-mono">ANALISI PATH UTENTI</h3>
+        <h3 className="text-lg font-semibold mb-6">ANALISI PATH UTENTI</h3>
         
         {/* Path Metrics above */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
           <div className="bg-dashboard-surface/30 border border-dashboard-border p-4">
             <div className="flex items-center justify-between mb-2">
-              <span className="font-mono text-sm text-muted-foreground">Pagine per Sessione</span>
+              <span className="text-sm text-muted-foreground">Pagine per Sessione</span>
               <Navigation className="h-4 w-4 text-analytics-blue" />
             </div>
-            <span className="font-bold text-2xl font-mono text-analytics-blue">2.4</span>
+            <span className="font-bold text-2xl text-analytics-blue">2.4</span>
           </div>
           <div className="bg-dashboard-surface/30 border border-dashboard-border p-4">
             <div className="flex items-center justify-between mb-2">
