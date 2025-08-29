@@ -845,7 +845,7 @@ export function UXSection({ onBack }: UXSectionProps) {
         <div className="mb-16">
           <h4 className="text-lg font-mono text-foreground mb-8 text-center">Percorso Principale (25% utenti)</h4>
           <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-6 overflow-x-auto">
-            <div className="border-2 border-white p-4 lg:p-8 w-32 lg:w-48 h-24 lg:h-40 flex flex-col items-center justify-center rounded-2xl min-w-[8rem]">
+            <div className="border-2 border-primary p-4 lg:p-8 w-32 lg:w-48 h-24 lg:h-40 flex flex-col items-center justify-center rounded-2xl min-w-[8rem]">
               <Home className="h-12 w-12 text-orange-500 mb-3" />
               <span className="text-lg font-semibold text-blue-400 mb-1">Homepage</span>
               <span className="text-base text-blue-400 font-medium">100%</span>
@@ -858,7 +858,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                 <div className="text-xs text-muted-foreground">850 utenti</div>
               </div>
             </div>
-            <div className="border-2 border-white p-8 w-48 h-40 flex flex-col items-center justify-center rounded-2xl">
+            <div className="border-2 border-primary p-8 w-48 h-40 flex flex-col items-center justify-center rounded-2xl">
               <Package className="h-12 w-12 text-amber-600 mb-3" />
               <span className="text-lg font-semibold text-blue-400 mb-1">Prodotti</span>
               <span className="text-base text-blue-400 font-medium">68%</span>
@@ -871,7 +871,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                 <div className="text-xs text-muted-foreground">315 utenti</div>
               </div>
             </div>
-            <div className="border-2 border-white p-8 w-48 h-40 flex flex-col items-center justify-center rounded-2xl">
+            <div className="border-2 border-primary p-8 w-48 h-40 flex flex-col items-center justify-center rounded-2xl">
               <Phone className="h-12 w-12 text-pink-500 mb-3" />
               <span className="text-lg font-semibold text-blue-400 mb-1">Contatti</span>
               <span className="text-base text-blue-400 font-medium">25%</span>
@@ -883,7 +883,7 @@ export function UXSection({ onBack }: UXSectionProps) {
         <div className="mb-16">
           <h4 className="text-lg font-mono text-foreground mb-8 text-center">Percorso Informativo (18% utenti)</h4>
           <div className="flex flex-col lg:flex-row items-center justify-center gap-3 lg:gap-4 overflow-x-auto">
-            <div className="border-2 border-white p-6 w-36 h-30 flex flex-col items-center justify-center rounded-2xl">
+            <div className="border-2 border-primary p-6 w-36 h-30 flex flex-col items-center justify-center rounded-2xl">
               <Home className="h-9 w-9 text-orange-500 mb-2" />
               <span className="text-base font-semibold text-blue-400 mb-1">Homepage</span>
               <span className="text-sm text-blue-400 font-medium">100%</span>
@@ -896,7 +896,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                 <div className="text-xs text-muted-foreground">675 utenti</div>
               </div>
             </div>
-            <div className="border-2 border-white p-6 w-36 h-30 flex flex-col items-center justify-center rounded-2xl">
+            <div className="border-2 border-primary p-6 w-36 h-30 flex flex-col items-center justify-center rounded-2xl">
               <Users className="h-9 w-9 text-purple-500 mb-2" />
               <span className="text-base font-semibold text-blue-400 mb-1">Chi Siamo</span>
               <span className="text-sm text-blue-400 font-medium">75%</span>
@@ -909,7 +909,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                 <div className="text-xs text-muted-foreground">405 utenti</div>
               </div>
             </div>
-            <div className="border-2 border-white p-6 w-36 h-30 flex flex-col items-center justify-center rounded-2xl">
+            <div className="border-2 border-primary p-6 w-36 h-30 flex flex-col items-center justify-center rounded-2xl">
               <FileText className="h-9 w-9 text-green-500 mb-2" />
               <span className="text-base font-semibold text-blue-400 mb-1">Blog</span>
               <span className="text-sm text-blue-400 font-medium">45%</span>
@@ -921,7 +921,7 @@ export function UXSection({ onBack }: UXSectionProps) {
         <div className="mb-16">
           <h4 className="text-lg font-mono text-foreground mb-8 text-center">Percorso Contenuti (15% utenti)</h4>
           <div className="flex flex-col lg:flex-row items-center justify-center gap-3 lg:gap-4 overflow-x-auto">
-            <div className="border-2 border-white p-4 w-28 h-24 flex flex-col items-center justify-center rounded-2xl">
+            <div className="border-2 border-primary p-4 w-28 h-24 flex flex-col items-center justify-center rounded-2xl">
               <Home className="h-7 w-7 text-orange-500 mb-1" />
               <span className="text-sm font-semibold text-blue-400 mb-1">Homepage</span>
               <span className="text-xs text-blue-400 font-medium">100%</span>
@@ -934,7 +934,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                 <div className="text-xs text-muted-foreground">600 utenti</div>
               </div>
             </div>
-            <div className="border-2 border-white p-4 w-28 h-24 flex flex-col items-center justify-center rounded-2xl">
+            <div className="border-2 border-primary p-4 w-28 h-24 flex flex-col items-center justify-center rounded-2xl">
               <FileText className="h-7 w-7 text-green-500 mb-1" />
               <span className="text-sm font-semibold text-blue-400 mb-1">Blog</span>
               <span className="text-xs text-blue-400 font-medium">80%</span>
@@ -947,7 +947,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                 <div className="text-xs text-muted-foreground">210 utenti</div>
               </div>
             </div>
-            <div className="border-2 border-white p-4 w-28 h-24 flex flex-col items-center justify-center rounded-2xl">
+            <div className="border-2 border-primary p-4 w-28 h-24 flex flex-col items-center justify-center rounded-2xl">
               <BookOpen className="h-7 w-7 text-red-500 mb-1" />
               <span className="text-sm font-semibold text-blue-400 mb-1">Articolo</span>
               <span className="text-xs text-blue-400 font-medium">35%</span>
