@@ -883,7 +883,7 @@ export function UXSection({ onBack }: UXSectionProps) {
         <div className="mb-16">
           <h4 className="text-lg font-mono text-foreground mb-8 text-center">Percorso Informativo (18% utenti)</h4>
           <div className="flex flex-col lg:flex-row items-center justify-center gap-3 lg:gap-4 overflow-x-auto">
-            <div className="border-2 border-white p-3 lg:p-6 w-24 lg:w-36 h-20 lg:h-30 flex flex-col items-center justify-center rounded-2xl min-w-[6rem]">
+            <div className="border-2 border-white p-6 w-36 h-30 flex flex-col items-center justify-center rounded-2xl">
               <Home className="h-9 w-9 text-orange-500 mb-2" />
               <span className="text-base font-semibold text-blue-400 mb-1">Homepage</span>
               <span className="text-sm text-blue-400 font-medium">100%</span>
@@ -921,7 +921,7 @@ export function UXSection({ onBack }: UXSectionProps) {
         <div className="mb-16">
           <h4 className="text-lg font-mono text-foreground mb-8 text-center">Percorso Contenuti (15% utenti)</h4>
           <div className="flex flex-col lg:flex-row items-center justify-center gap-3 lg:gap-4 overflow-x-auto">
-            <div className="border-2 border-white p-2 lg:p-4 w-20 lg:w-28 h-16 lg:h-24 flex flex-col items-center justify-center rounded-2xl min-w-[5rem]">
+            <div className="border-2 border-white p-4 w-28 h-24 flex flex-col items-center justify-center rounded-2xl">
               <Home className="h-7 w-7 text-orange-500 mb-1" />
               <span className="text-sm font-semibold text-blue-400 mb-1">Homepage</span>
               <span className="text-xs text-blue-400 font-medium">100%</span>
