@@ -187,10 +187,10 @@ export function UXSection({ onBack }: UXSectionProps) {
             <PopoverContent 
               className="w-[900px] p-0 border border-border shadow-2xl z-50" 
               align="end"
-              alignOffset={-400}
+              alignOffset={-500}
               sideOffset={8}
             >
-              <div className="bg-background rounded-lg p-8">
+              <div className="bg-background/12 rounded-lg p-8">
                 <div className="mb-8">
                   <h4 className="text-xl font-bold mb-2">Configurazione Pesi Metriche</h4>
                   <p className="text-muted-foreground">Seleziona un valore da 0% a 30% per ogni variabile</p>
