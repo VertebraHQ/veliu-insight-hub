@@ -8,7 +8,7 @@ import { Progress } from "@/components/ui/progress";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 
 interface UXSectionProps {
@@ -177,179 +177,182 @@ export function UXSection({ onBack }: UXSectionProps) {
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-lg font-semibold font-mono">QUALITY SCORE</h3>
-          <Dialog open={isWeightConfigOpen} onOpenChange={setIsWeightConfigOpen}>
-            <DialogTrigger asChild>
+          <Popover open={isWeightConfigOpen} onOpenChange={setIsWeightConfigOpen}>
+            <PopoverTrigger asChild>
               <button className="flex items-center space-x-2 px-3 py-2 bg-dashboard-surface/80 border border-dashboard-border text-sm font-medium text-muted-foreground hover:bg-dashboard-surface-hover/80 hover:text-foreground transition-all duration-150 apple-button">
                 <Settings className="h-4 w-4" />
                 <span>Configura Pesi</span>
               </button>
-            </DialogTrigger>
-            <DialogContent className="max-w-none w-screen h-screen p-0 bg-background/45 backdrop-blur-sm border-0">
-              <div className="flex items-center justify-center min-h-screen p-8">
-                <div className="bg-background border border-border rounded-xl shadow-2xl p-8 w-full max-w-6xl">
-                  <DialogHeader className="mb-8">
-                    <DialogTitle className="text-2xl font-bold text-center">Configurazione Pesi Metriche</DialogTitle>
-                    <p className="text-center text-muted-foreground mt-2">Seleziona un valore da 0% a 30% per ogni variabile</p>
-                  </DialogHeader>
-                  
-                  <div className="grid grid-cols-3 gap-12 mb-8">
-                    {/* First Column */}
-                    <div className="space-y-8">
-                      <div className="space-y-4">
-                        <Label className="text-lg font-medium">Scroll Depth</Label>
-                        <div className="relative">
-                          <Input 
-                            type="number" 
-                            min="0" 
-                            max="30" 
-                            defaultValue="10" 
-                            className="h-12 text-lg pr-8"
-                          />
-                          <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">%</span>
-                        </div>
-                        <p className="text-sm text-analytics-blue">Positive (10%)</p>
+            </PopoverTrigger>
+            <PopoverContent 
+              className="w-[900px] p-0 border border-border shadow-2xl z-50" 
+              align="end"
+              alignOffset={-400}
+              sideOffset={8}
+            >
+              <div className="bg-background rounded-lg p-8">
+                <div className="mb-8">
+                  <h4 className="text-xl font-bold mb-2">Configurazione Pesi Metriche</h4>
+                  <p className="text-muted-foreground">Seleziona un valore da 0% a 30% per ogni variabile</p>
+                </div>
+                
+                <div className="grid grid-cols-3 gap-8 mb-8">
+                  {/* First Column */}
+                  <div className="space-y-6">
+                    <div className="space-y-3">
+                      <Label className="text-base font-medium">Scroll Depth</Label>
+                      <div className="relative">
+                        <Input 
+                          type="number" 
+                          min="0" 
+                          max="30" 
+                          defaultValue="10" 
+                          className="h-10 text-base pr-8"
+                        />
+                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
-                      
-                      <div className="space-y-4">
-                        <Label className="text-lg font-medium">Successful Interactions</Label>
-                        <div className="relative">
-                          <Input 
-                            type="number" 
-                            min="0" 
-                            max="30" 
-                            defaultValue="20" 
-                            className="h-12 text-lg pr-8"
-                          />
-                          <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">%</span>
-                        </div>
-                        <p className="text-sm text-analytics-blue">Positive (20%)</p>
-                      </div>
-                      
-                      <div className="space-y-4">
-                        <Label className="text-lg font-medium">Console Errors</Label>
-                        <div className="relative">
-                          <Input 
-                            type="number" 
-                            min="0" 
-                            max="30" 
-                            defaultValue="5" 
-                            className="h-12 text-lg pr-8"
-                          />
-                          <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">%</span>
-                        </div>
-                        <p className="text-sm text-red-500">Negative (-5%)</p>
-                      </div>
+                      <p className="text-sm text-analytics-blue">Positive (10%)</p>
                     </div>
-
-                    {/* Second Column */}
-                    <div className="space-y-8">
-                      <div className="space-y-4">
-                        <Label className="text-lg font-medium">Session Duration</Label>
-                        <div className="relative">
-                          <Input 
-                            type="number" 
-                            min="0" 
-                            max="30" 
-                            defaultValue="15" 
-                            className="h-12 text-lg pr-8"
-                          />
-                          <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">%</span>
-                        </div>
-                        <p className="text-sm text-analytics-blue">Positive (15%)</p>
+                    
+                    <div className="space-y-3">
+                      <Label className="text-base font-medium">Successful Interactions</Label>
+                      <div className="relative">
+                        <Input 
+                          type="number" 
+                          min="0" 
+                          max="30" 
+                          defaultValue="20" 
+                          className="h-10 text-base pr-8"
+                        />
+                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
-                      
-                      <div className="space-y-4">
-                        <Label className="text-lg font-medium">Funnel Step Completion Rate</Label>
-                        <div className="relative">
-                          <Input 
-                            type="number" 
-                            min="0" 
-                            max="30" 
-                            defaultValue="15" 
-                            className="h-12 text-lg pr-8"
-                          />
-                          <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">%</span>
-                        </div>
-                        <p className="text-sm text-analytics-blue">Positive (15%)</p>
-                      </div>
-                      
-                      <div className="space-y-4">
-                        <Label className="text-lg font-medium">Exit On Error</Label>
-                        <div className="relative">
-                          <Input 
-                            type="number" 
-                            min="0" 
-                            max="30" 
-                            defaultValue="15" 
-                            className="h-12 text-lg pr-8"
-                          />
-                          <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">%</span>
-                        </div>
-                        <p className="text-sm text-red-500">Negative (-15%)</p>
-                      </div>
+                      <p className="text-sm text-analytics-blue">Positive (20%)</p>
                     </div>
-
-                    {/* Third Column */}
-                    <div className="space-y-8">
-                      <div className="space-y-4">
-                        <Label className="text-lg font-medium">Pages Per Session</Label>
-                        <div className="relative">
-                          <Input 
-                            type="number" 
-                            min="0" 
-                            max="30" 
-                            defaultValue="10" 
-                            className="h-12 text-lg pr-8"
-                          />
-                          <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">%</span>
-                        </div>
-                        <p className="text-sm text-analytics-blue">Positive (10%)</p>
+                    
+                    <div className="space-y-3">
+                      <Label className="text-base font-medium">Console Errors</Label>
+                      <div className="relative">
+                        <Input 
+                          type="number" 
+                          min="0" 
+                          max="30" 
+                          defaultValue="5" 
+                          className="h-10 text-base pr-8"
+                        />
+                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
-                      
-                      <div className="space-y-4">
-                        <Label className="text-lg font-medium">Rage Clicks</Label>
-                        <div className="relative">
-                          <Input 
-                            type="number" 
-                            min="0" 
-                            max="30" 
-                            defaultValue="10" 
-                            className="h-12 text-lg pr-8"
-                          />
-                          <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">%</span>
-                        </div>
-                        <p className="text-sm text-red-500">Negative (-10%)</p>
-                      </div>
-                      
-                      <div className="space-y-4">
-                        <Label className="text-lg font-medium">Fast Bounce</Label>
-                        <div className="relative">
-                          <Input 
-                            type="number" 
-                            min="0" 
-                            max="30" 
-                            defaultValue="10" 
-                            className="h-12 text-lg pr-8"
-                          />
-                          <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">%</span>
-                        </div>
-                        <p className="text-sm text-red-500">Negative (-10%)</p>
-                      </div>
+                      <p className="text-sm text-red-500">Negative (-5%)</p>
                     </div>
                   </div>
-                  
-                  <div className="flex justify-center gap-4 pt-6 border-t border-border">
-                    <Button variant="outline" onClick={() => setIsWeightConfigOpen(false)}>
-                      Annulla
-                    </Button>
-                    <Button onClick={() => setIsWeightConfigOpen(false)}>
-                      Salva Configurazione
-                    </Button>
+
+                  {/* Second Column */}
+                  <div className="space-y-6">
+                    <div className="space-y-3">
+                      <Label className="text-base font-medium">Session Duration</Label>
+                      <div className="relative">
+                        <Input 
+                          type="number" 
+                          min="0" 
+                          max="30" 
+                          defaultValue="15" 
+                          className="h-10 text-base pr-8"
+                        />
+                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
+                      </div>
+                      <p className="text-sm text-analytics-blue">Positive (15%)</p>
+                    </div>
+                    
+                    <div className="space-y-3">
+                      <Label className="text-base font-medium">Funnel Step Completion Rate</Label>
+                      <div className="relative">
+                        <Input 
+                          type="number" 
+                          min="0" 
+                          max="30" 
+                          defaultValue="15" 
+                          className="h-10 text-base pr-8"
+                        />
+                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
+                      </div>
+                      <p className="text-sm text-analytics-blue">Positive (15%)</p>
+                    </div>
+                    
+                    <div className="space-y-3">
+                      <Label className="text-base font-medium">Exit On Error</Label>
+                      <div className="relative">
+                        <Input 
+                          type="number" 
+                          min="0" 
+                          max="30" 
+                          defaultValue="15" 
+                          className="h-10 text-base pr-8"
+                        />
+                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
+                      </div>
+                      <p className="text-sm text-red-500">Negative (-15%)</p>
+                    </div>
+                  </div>
+
+                  {/* Third Column */}
+                  <div className="space-y-6">
+                    <div className="space-y-3">
+                      <Label className="text-base font-medium">Pages Per Session</Label>
+                      <div className="relative">
+                        <Input 
+                          type="number" 
+                          min="0" 
+                          max="30" 
+                          defaultValue="10" 
+                          className="h-10 text-base pr-8"
+                        />
+                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
+                      </div>
+                      <p className="text-sm text-analytics-blue">Positive (10%)</p>
+                    </div>
+                    
+                    <div className="space-y-3">
+                      <Label className="text-base font-medium">Rage Clicks</Label>
+                      <div className="relative">
+                        <Input 
+                          type="number" 
+                          min="0" 
+                          max="30" 
+                          defaultValue="10" 
+                          className="h-10 text-base pr-8"
+                        />
+                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
+                      </div>
+                      <p className="text-sm text-red-500">Negative (-10%)</p>
+                    </div>
+                    
+                    <div className="space-y-3">
+                      <Label className="text-base font-medium">Fast Bounce</Label>
+                      <div className="relative">
+                        <Input 
+                          type="number" 
+                          min="0" 
+                          max="30" 
+                          defaultValue="10" 
+                          className="h-10 text-base pr-8"
+                        />
+                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
+                      </div>
+                      <p className="text-sm text-red-500">Negative (-10%)</p>
+                    </div>
                   </div>
                 </div>
+                
+                <div className="flex justify-end gap-3 pt-6 border-t border-border">
+                  <Button variant="outline" onClick={() => setIsWeightConfigOpen(false)}>
+                    Annulla
+                  </Button>
+                  <Button onClick={() => setIsWeightConfigOpen(false)}>
+                    Salva Configurazione
+                  </Button>
+                </div>
               </div>
-            </DialogContent>
-          </Dialog>
+            </PopoverContent>
+          </Popover>
         </div>
         <div className="space-y-4">
           {qualityScores.map((score, index) => (
