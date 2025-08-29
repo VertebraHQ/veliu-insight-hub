@@ -208,7 +208,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                         />
                         <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
-                      <p className="text-sm text-analytics-blue">Positive (10%)</p>
+                      <p className="text-sm text-analytics-green">Positive (10%)</p>
                     </div>
                     
                     <div className="space-y-3">
@@ -223,7 +223,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                         />
                         <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
-                      <p className="text-sm text-analytics-blue">Positive (20%)</p>
+                      <p className="text-sm text-analytics-green">Positive (20%)</p>
                     </div>
                     
                     <div className="space-y-3">
@@ -256,7 +256,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                         />
                         <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
-                      <p className="text-sm text-analytics-blue">Positive (15%)</p>
+                      <p className="text-sm text-analytics-green">Positive (15%)</p>
                     </div>
                     
                     <div className="space-y-3">
@@ -271,7 +271,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                         />
                         <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
-                      <p className="text-sm text-analytics-blue">Positive (15%)</p>
+                      <p className="text-sm text-analytics-green">Positive (15%)</p>
                     </div>
                     
                     <div className="space-y-3">
@@ -304,7 +304,7 @@ export function UXSection({ onBack }: UXSectionProps) {
                         />
                         <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground font-medium">%</span>
                       </div>
-                      <p className="text-sm text-analytics-blue">Positive (10%)</p>
+                      <p className="text-sm text-analytics-green">Positive (10%)</p>
                     </div>
                     
                     <div className="space-y-3">
