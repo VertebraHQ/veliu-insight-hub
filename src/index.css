@@ -129,68 +129,68 @@ All colors MUST be HSL.
     --dashboard-border: 0 0% 20%;
   }
 
-  /* Light mode - Million Mindset Luxury Industrial */
+  /* Light mode - Industrial Metallic Luxury */
   .light {
-    /* Deep metallic luxury background */
-    --background: 220 15% 88%; /* Rich metallic base */
-    --foreground: 220 20% 8%; /* Sharp luxury black */
+    /* Metallic aluminum background with industrial tones */
+    --background: 220 8% 96%; /* Light metallic aluminum */
+    --foreground: 220 15% 12%; /* Dark steel for high contrast */
 
-    /* Premium metallic cards - dark grey opaque */
-    --card: 220 25% 25% / 0.35; /* Dark metallic grey 35% opacity */
-    --card-foreground: 220 5% 95%; /* Luxury white text */
+    /* Brushed aluminum cards with metallic sheen */
+    --card: 220 12% 98%; /* Brushed aluminum surface */
+    --card-foreground: 220 15% 12%;
 
-    --popover: 220 25% 25% / 0.35;
-    --popover-foreground: 220 5% 95%;
+    --popover: 220 12% 98%;
+    --popover-foreground: 220 15% 12%;
 
-    /* Platinum accent - luxury metal */
-    --primary: 220 15% 35%; /* Dark platinum */
-    --primary-foreground: 220 5% 95%;
+    /* Steel blue as primary accent - luxury aviation */
+    --primary: 220 70% 55%; /* Steel blue */
+    --primary-foreground: 0 0% 100%;
 
-    /* Metallic luxury surfaces */
-    --secondary: 220 20% 20% / 0.4; /* Dark luxury metal */
-    --secondary-foreground: 220 5% 90%;
+    /* Metallic grey surfaces */
+    --secondary: 220 10% 94%; /* Light brushed metal */
+    --secondary-foreground: 220 12% 25%; /* Medium steel grey */
 
-    --muted: 220 15% 30% / 0.3;
-    --muted-foreground: 220 8% 85%;
+    --muted: 220 8% 92%;
+    --muted-foreground: 220 10% 35%; /* Steel grey */
 
-    --accent: 220 20% 20% / 0.4;
-    --accent-foreground: 220 5% 90%;
+    --accent: 220 10% 94%;
+    --accent-foreground: 220 15% 12%;
 
     /* Critical indicators */
     --destructive: 0 65% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Sharp luxury borders - no softness */
-    --border: 220 30% 15%; /* Dark sharp metallic */
-    --input: 220 25% 25% / 0.3;
-    --ring: 220 15% 35%; /* Dark platinum focus */
+    /* Industrial metallic borders */
+    --border: 220 20% 75%; /* Steel border */
+    --input: 220 12% 97%;
+    --ring: 220 70% 55%; /* Steel blue focus ring */
 
-    /* Analytics Colors - Luxury platinum and gold accents */
-    --analytics-blue: 220 15% 35%; /* Dark platinum */
-    --analytics-blue-light: 220 20% 45%;
-    --analytics-green: 140 30% 35%; /* Dark luxury green */
-    --analytics-green-light: 140 35% 45%;
-    --analytics-orange: 35 60% 45%; /* Dark luxury gold */
-    --analytics-orange-light: 35 65% 55%;
-    --analytics-red: 0 50% 40%;
-    --analytics-red-light: 0 55% 50%;
-    --analytics-purple: 270 30% 40%;
-    --analytics-purple-light: 270 35% 50%;
+    /* Analytics Colors - Industrial steel and precision */
+    --analytics-blue: 220 70% 55%; /* Steel blue */
+    --analytics-blue-light: 220 70% 65%;
+    --analytics-green: 140 45% 45%; /* Industrial green */
+    --analytics-green-light: 140 45% 55%;
+    --analytics-orange: 35 75% 55%; /* Industrial orange */
+    --analytics-orange-light: 35 75% 65%;
+    --analytics-red: 0 60% 50%;
+    --analytics-red-light: 0 60% 60%;
+    --analytics-purple: 270 45% 50%;
+    --analytics-purple-light: 270 45% 60%;
 
-    /* Dashboard Surfaces - Dark metallic grey opaque */
-    --dashboard-surface: 220 25% 25% / 0.35; /* Dark metallic grey 35% opacity */
-    --dashboard-surface-hover: 220 25% 20% / 0.45; /* Darker on hover */
-    --dashboard-border: 220 30% 15%; /* Sharp dark metallic border */
+    /* Dashboard Surfaces - Brushed aluminum metallic */
+    --dashboard-surface: 220 12% 98%; /* Brushed aluminum */
+    --dashboard-surface-hover: 220 15% 96%; /* Slightly darker aluminum on hover */
+    --dashboard-border: 220 20% 70%; /* Steel border with metallic tint */
 
-    /* Sidebar colors - Million mindset luxury */
-    --sidebar-background: 220 25% 25% / 0.35;
-    --sidebar-foreground: 220 5% 95%;
-    --sidebar-primary: 220 5% 95%;
-    --sidebar-primary-foreground: 220 25% 25%;
-    --sidebar-accent: 220 20% 20% / 0.4;
-    --sidebar-accent-foreground: 220 5% 90%;
-    --sidebar-border: 220 30% 15%;
-    --sidebar-ring: 220 15% 35%;
+    /* Sidebar colors for light mode - Industrial steel */
+    --sidebar-background: 220 12% 98%;
+    --sidebar-foreground: 220 15% 12%;
+    --sidebar-primary: 220 15% 12%;
+    --sidebar-primary-foreground: 220 12% 98%;
+    --sidebar-accent: 220 10% 94%;
+    --sidebar-accent-foreground: 220 15% 12%;
+    --sidebar-border: 220 20% 70%;
+    --sidebar-ring: 220 70% 55%;
   }
 }
 
@@ -249,21 +249,24 @@ All colors MUST be HSL.
 }
 
 @layer components {
-  /* Million Mindset Luxury - Dark metallic cards with sharp edges */
+  /* Industrial metallic cards - jet hangar style */
   .light .dashboard-card {
     @apply bg-dashboard-surface border border-dashboard-border p-6 transition-all duration-300;
-    border-radius: 0; /* Sharp luxury angles - no rounded corners */
-    /* Dark metallic grey 35% opacity with luxury finish */
-    background: hsla(220, 25%, 25%, 0.35);
-    backdrop-filter: blur(10px) saturate(150%);
-    /* Luxury metallic shadows - ultra sharp and premium */
+    border-radius: 8px;
+    /* Metallic brushed aluminum effect */
+    background: linear-gradient(135deg, 
+      hsl(var(--dashboard-surface)) 0%, 
+      hsl(220 15% 96%) 25%, 
+      hsl(var(--dashboard-surface)) 50%, 
+      hsl(220 15% 96%) 75%, 
+      hsl(var(--dashboard-surface)) 100%);
+    /* Industrial metallic shadows */
     box-shadow: 
-      0 4px 16px rgba(0, 0, 0, 0.25),
-      0 2px 8px rgba(0, 0, 0, 0.15),
-      inset 0 1px 0 rgba(255, 255, 255, 0.08),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.3),
-      0 0 1px rgba(255, 255, 255, 0.1);
-    /* Ultra premium metallic sheen */
+      0 2px 8px rgba(0, 0, 0, 0.12),
+      0 1px 3px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    /* Subtle metallic sheen */
     position: relative;
     overflow: hidden;
   }
@@ -277,11 +280,9 @@ All colors MUST be HSL.
     height: 100%;
     background: linear-gradient(90deg, 
       transparent 0%, 
-      rgba(255, 255, 255, 0.08) 30%,
       rgba(255, 255, 255, 0.15) 50%, 
-      rgba(255, 255, 255, 0.08) 70%,
       transparent 100%);
-    transition: left 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: left 0.6s ease;
   }
   
   .light .dashboard-card:hover::before {
@@ -289,16 +290,14 @@ All colors MUST be HSL.
   }
   
   .light .dashboard-card:hover {
-    @apply scale-[1.03] -translate-y-2;
-    /* Ultra luxury hover - million mindset glow */
-    background: hsla(220, 25%, 20%, 0.45);
+    @apply scale-[1.02] -translate-y-1;
+    /* Enhanced metallic glow on hover */
     box-shadow: 
-      0 12px 32px rgba(0, 0, 0, 0.35),
-      0 6px 16px rgba(0, 0, 0, 0.25),
-      inset 0 2px 0 rgba(255, 255, 255, 0.12),
-      inset 0 -2px 0 rgba(0, 0, 0, 0.4),
-      0 0 2px rgba(255, 255, 255, 0.15),
-      0 0 40px rgba(220, 70%, 55%, 0.15);
+      0 8px 24px rgba(0, 0, 0, 0.16),
+      0 4px 12px rgba(0, 0, 0, 0.12),
+      inset 0 2px 0 rgba(255, 255, 255, 0.4),
+      inset 0 -2px 0 rgba(0, 0, 0, 0.15),
+      0 0 20px rgba(34, 197, 94, 0.1);
   }
 
   /* Dark mode cards maintain brutalist style */
@@ -312,50 +311,51 @@ All colors MUST be HSL.
     transform: translateY(-1px);
   }
 
-  /* Million Mindset Luxury - Sharp metallic buttons */
+  /* Industrial metallic buttons for light mode */
   .light .apple-button {
-    @apply bg-dashboard-surface border border-dashboard-border text-card-foreground px-4 py-2 transition-all duration-300;
-    border-radius: 0; /* Sharp luxury angles */
-    background: hsla(220, 25%, 25%, 0.35);
-    backdrop-filter: blur(10px) saturate(150%);
+    @apply bg-dashboard-surface border border-dashboard-border text-foreground px-4 py-2 transition-all duration-300;
+    border-radius: 6px;
+    background: linear-gradient(135deg, 
+      hsl(var(--dashboard-surface)) 0%, 
+      hsl(220 15% 96%) 50%, 
+      hsl(var(--dashboard-surface)) 100%);
     box-shadow: 
-      0 2px 8px rgba(0, 0, 0, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.08),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+      0 1px 3px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.05);
   }
   
   .light .apple-button:hover {
-    @apply border-primary -translate-y-1 scale-[1.02];
-    background: hsla(220, 25%, 20%, 0.45);
+    @apply border-primary;
     box-shadow: 
-      0 4px 16px rgba(0, 0, 0, 0.25),
-      inset 0 1px 0 rgba(255, 255, 255, 0.12),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.4);
+      0 2px 6px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
   }
   
   .light .apple-button.active {
     @apply bg-primary text-primary-foreground border-primary;
-    background: hsl(var(--primary));
     box-shadow: 
-      0 6px 20px rgba(0, 0, 0, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      0 3px 8px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
   }
 
   /* Minimal spacing and clean layout */
   .apple-spacing { @apply space-y-6; }
   .apple-grid { @apply grid gap-6; }
   
-  /* Sharp luxury angles - Million Mindset style */
+  /* Soft corner radius for all elements in light mode */
   .light * { 
-    border-radius: 0; /* Zero rounded corners for luxury industrial look */
+    border-radius: 12px; 
   }
   
-  .light .rounded-sm { border-radius: 0; }
-  .light .rounded { border-radius: 0; }
-  .light .rounded-lg { border-radius: 0; }
-  .light .rounded-xl { border-radius: 0; }
+  .light .rounded-sm { border-radius: 6px; }
+  .light .rounded { border-radius: 8px; }
+  .light .rounded-lg { border-radius: 12px; }
+  .light .rounded-xl { border-radius: 16px; }
 
-  /* Dark mode maintains existing rounded corners */
+  /* Dark mode uses same rounded corners as light mode */
   .dark * { 
     border-radius: 12px; 
   }
