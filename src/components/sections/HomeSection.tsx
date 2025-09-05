@@ -79,14 +79,6 @@ export function HomeSection({ onSectionChange }: HomeSectionProps) {
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>
             {error}
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={refreshData}
-              className="ml-2"
-            >
-              Riprova
-            </Button>
           </AlertDescription>
         </Alert>
       )}
