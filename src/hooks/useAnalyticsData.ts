@@ -155,6 +155,140 @@ export interface AnalyticsData {
   };
 }
 
+// Function to create empty/zero analytics data structure
+function createEmptyAnalyticsData(): AnalyticsData {
+  return {
+    total_sessions_yesterday: 0,
+    sessions_analyzed: 0,
+    rates: {
+      rageclick_rate: 0,
+      console_error_rate: 0,
+      form_error_rate: 0,
+      fast_bounce_rate: 0,
+      nav_loop_rate: 0,
+    },
+    averages: {
+      avg_ttf_interaction_sec: 0,
+      avg_span_sec: 0,
+      avg_recording_sec: 0,
+      avg_active_sec: 0,
+      avg_engagement_ratio: 0,
+      avg_session_duration: 0,
+    },
+    distributions: {
+      os: {},
+      browser: {},
+      country: {},
+      referrer: {},
+      device_type: {},
+      viewport_bucket: {},
+      region: {},
+    },
+    clickmap_global: {},
+    data_quality: {
+      sessions_clock_skew: 0,
+      missing_timestamp_events: 0,
+      properties_parse_errors: 0,
+      sessions_without_pageview: 0,
+      sampling_rate: 0,
+    },
+    web_vitals: {
+      lcp_ms: { p50: 0, p95: 0 },
+      cls: { p50: 0, p95: 0 },
+      inp_ms: { p50: 0, p95: 0 },
+      fcp_ms: { p50: 0, p95: 0 },
+      ttfb_ms: { p50: null, p95: null },
+      last_lcp_ms: { p50: null, p95: null },
+    },
+    funnel: {
+      name: "N/A",
+      steps: [],
+      hits_by_step: [],
+      sessions: 0,
+      converted_sessions: 0,
+      conversion_rate: 0,
+      step_rates: [],
+    },
+    timeseries: {
+      hourly: {
+        total_sessions: [],
+        sessions_analyzed: [],
+        funnel_completions: [],
+        conversion_rate: [],
+      },
+    },
+    ux: {
+      session_quality_score: {
+        weights: {
+          scroll_depth: 0,
+          session_duration: 0,
+          pages_per_session: 0,
+          successful_interactions: 0,
+          funnel_step_completion_rate: 0,
+          rage_clicks: 0,
+          console_errors: 0,
+          exit_on_error: 0,
+          fast_bounce: 0,
+          microtask_completions: 0,
+          dead_clicks: 0,
+          cta_attempt_vs_complete: 0,
+        },
+        stats: {
+          min: 0,
+          q1: 0,
+          median: 0,
+          q3: 0,
+          max: 0,
+          mean: 0,
+          std_dev: 0,
+        },
+        classification: {
+          distribution: {
+            good: 0,
+            neutral: 0,
+            bad: 0,
+          },
+          percentages: {
+            good: 0,
+            neutral: 0,
+            bad: 0,
+          },
+        },
+      },
+      frustration: {
+        examples: {
+          with_errors: [],
+          with_rageclicks: [],
+        },
+      },
+      paths: {
+        nodes: [],
+        edges: [],
+        entries: [],
+        exits: [],
+        loops: [],
+      },
+    },
+    tech: {
+      errors: {
+        console_by_browser: {},
+        console_by_device: {},
+        exceptions_by_fingerprint: [],
+      },
+    },
+    top_paths: {},
+    meta: {
+      generated_at_utc: new Date().toISOString(),
+      timezone: "UTC",
+      date_local: format(new Date(), 'yyyy-MM-dd'),
+      range_utc: {
+        from: new Date().toISOString(),
+        to: new Date().toISOString(),
+      },
+    },
+  };
+}
+
 export type PeriodType = 'daily' | 'weekly' | 'monthly' | 'custom';
 
 export interface DateRange {
@@ -239,15 +373,39 @@ export function useAnalyticsData(): UseAnalyticsDataReturn {
       const response = await fetch(`/records/${fileName}`);
       
       if (!response.ok) {
-        throw new Error(`File not found: ${fileName}`);
+        // If file not found, show user-friendly message and provide empty data
+        const emptyData = createEmptyAnalyticsData();
+        emptyData.meta.date_local = dateString;
+        setData(emptyData);
+        setError(`Data non disponibile per la data ${format(date, 'dd/MM/yyyy')}. Tutti i campi sono stati impostati a 0.`);
+        return;
+      }
+      
+      // Check if response is actually JSON
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        // If not JSON (e.g., HTML error page), provide empty data
+        const emptyData = createEmptyAnalyticsData();
+        emptyData.meta.date_local = dateString;
+        setData(emptyData);
+        setError(`Data non disponibile per la data ${format(date, 'dd/MM/yyyy')}. Tutti i campi sono stati impostati a 0.`);
+        return;
       }
       
       const jsonData: AnalyticsData = await response.json();
       setData(jsonData);
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'Unknown error occurred';
-      setError(errorMessage);
-      setData(null);
+      // Handle any other errors (network issues, JSON parsing errors, etc.)
+      const dateString = format(date, 'yyyy-MM-dd');
+      const emptyData = createEmptyAnalyticsData();
+      emptyData.meta.date_local = dateString;
+      setData(emptyData);
+      
+      if (err instanceof Error && err.message.includes('JSON')) {
+        setError(`Data non disponibile per la data ${format(date, 'dd/MM/yyyy')}. Tutti i campi sono stati impostati a 0.`);
+      } else {
+        setError(`Errore nel caricamento dei dati per la data ${format(date, 'dd/MM/yyyy')}. Tutti i campi sono stati impostati a 0.`);
+      }
     } finally {
       setLoading(false);
     }
@@ -264,7 +422,26 @@ export function useAnalyticsData(): UseAnalyticsDataReturn {
       const response = await fetch('/records/aggregates-2025-08-26.json');
       
       if (!response.ok) {
-        throw new Error('Data not available for the selected period');
+        // If file not found, provide empty data with user-friendly message
+        const emptyData = createEmptyAnalyticsData();
+        const periodLabel = type === 'weekly' ? 'settimanale' :
+                           type === 'monthly' ? 'mensile' :
+                           type === 'custom' ? 'personalizzato' : 'selezionato';
+        setData(emptyData);
+        setError(`Dati non disponibili per il periodo ${periodLabel}. Tutti i campi sono stati impostati a 0.`);
+        return;
+      }
+      
+      // Check if response is actually JSON
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        const emptyData = createEmptyAnalyticsData();
+        const periodLabel = type === 'weekly' ? 'settimanale' :
+                           type === 'monthly' ? 'mensile' :
+                           type === 'custom' ? 'personalizzato' : 'selezionato';
+        setData(emptyData);
+        setError(`Dati non disponibili per il periodo ${periodLabel}. Tutti i campi sono stati impostati a 0.`);
+        return;
       }
       
       const jsonData: AnalyticsData = await response.json();
@@ -274,9 +451,13 @@ export function useAnalyticsData(): UseAnalyticsDataReturn {
       // instead of hourly data
       setData(jsonData);
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'Unknown error occurred';
-      setError(errorMessage);
-      setData(null);
+      // Handle any other errors and provide empty data
+      const emptyData = createEmptyAnalyticsData();
+      const periodLabel = type === 'weekly' ? 'settimanale' :
+                         type === 'monthly' ? 'mensile' :
+                         type === 'custom' ? 'personalizzato' : 'selezionato';
+      setData(emptyData);
+      setError(`Errore nel caricamento dei dati per il periodo ${periodLabel}. Tutti i campi sono stati impostati a 0.`);
     } finally {
       setLoading(false);
     }

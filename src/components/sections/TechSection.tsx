@@ -125,13 +125,14 @@ export function TechSection({ onBack }: TechSectionProps) {
     );
   }
 
-  if (error) {
-    return (
-      <div className="space-y-8">
+  return (
+    <div className="space-y-8">
+      {/* Error Alert - show if there's an error but still display data */}
+      {error && (
         <Alert variant="destructive">
           <AlertTriangle className="h-4 w-4" />
           <AlertDescription>
-            Errore nel caricamento dei dati Tech: {error}
+            {error}
             <Button
               variant="outline"
               size="sm"
@@ -142,11 +143,7 @@ export function TechSection({ onBack }: TechSectionProps) {
             </Button>
           </AlertDescription>
         </Alert>
-      </div>
-    );
-  }
-  return (
-    <div className="space-y-8">
+      )}
       {/* Header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">

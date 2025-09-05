@@ -347,27 +347,6 @@ export function UXSection({ onBack }: UXSectionProps) {
     );
   }
 
-  if (error) {
-    return (
-      <div className="space-y-8">
-        <Alert variant="destructive">
-          <AlertTriangle className="h-4 w-4" />
-          <AlertDescription>
-            Errore nel caricamento dei dati UX: {error}
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={refreshData}
-              className="ml-2"
-            >
-              Riprova
-            </Button>
-          </AlertDescription>
-        </Alert>
-      </div>
-    );
-  }
-
   const renderPathBlock = (path: any) => {
     const sizeClasses = {
       large: "col-span-2 row-span-2 p-6",
@@ -413,6 +392,24 @@ export function UXSection({ onBack }: UXSectionProps) {
 
   return (
     <div className="space-y-8">
+      {/* Error Alert - show if there's an error but still display data */}
+      {error && (
+        <Alert variant="destructive">
+          <AlertTriangle className="h-4 w-4" />
+          <AlertDescription>
+            {error}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={refreshData}
+              className="ml-2"
+            >
+              Riprova
+            </Button>
+          </AlertDescription>
+        </Alert>
+      )}
+
       {/* Header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">

@@ -71,13 +71,14 @@ export function HomeSection({ onSectionChange }: HomeSectionProps) {
     );
   }
 
-  if (error) {
-    return (
-      <div className="space-y-8">
+  return (
+    <div className="space-y-8">
+      {/* Error Alert - show if there's an error but still display data */}
+      {error && (
         <Alert variant="destructive">
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>
-            Errore nel caricamento dei dati: {error}
+            {error}
             <Button
               variant="outline"
               size="sm"
@@ -88,12 +89,7 @@ export function HomeSection({ onSectionChange }: HomeSectionProps) {
             </Button>
           </AlertDescription>
         </Alert>
-      </div>
-    );
-  }
-
-  return (
-    <div className="space-y-8">
+      )}
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <h2 className="text-3xl font-bold text-foreground tracking-tight">DASHBOARD</h2>
