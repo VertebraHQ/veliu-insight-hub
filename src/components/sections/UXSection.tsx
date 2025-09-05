@@ -791,7 +791,7 @@ export function UXSection({ onBack }: UXSectionProps) {
           <div className="w-full h-full flex items-center justify-center">
             <img
               src="/images/test.png"
-              alt="Heatmap Placeholder"
+              alt="Heatmap Interattiva"
               className="max-w-full max-h-full object-contain"
             />
           </div>

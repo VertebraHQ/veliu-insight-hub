@@ -205,11 +205,6 @@ export function CompactDateSelector({
       {/* Current Selection Display */}
       <div className="text-sm text-muted-foreground font-mono">
         <span className="text-analytics-blue font-medium">Periodo selezionato:</span> {getDateDisplay()}
-        {availableDates.length > 0 && (
-          <div className="mt-1 text-xs">
-            <span className="text-analytics-green">Date disponibili:</span> {availableDates.join(', ')}
-          </div>
-        )}
       </div>
     </div>
   );

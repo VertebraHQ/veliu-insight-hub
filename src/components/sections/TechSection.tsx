@@ -104,15 +104,37 @@ export function TechSection({ onBack }: TechSectionProps) {
   ] : [];
 
   // Generate sample problematic sessions from error examples
-  const problematicSessions = data && data.ux.frustration.examples.with_errors ?
-    data.ux.frustration.examples.with_errors.slice(0, 5).map((sessionId, index) => ({
-      id: sessionId,
-      type: "Video",
-      issue: index < 3 ? "Con errori" : "Rage clicks",
-      severity: index < 3 ? "high" as const : "medium" as const,
-      browser: ["Chrome", "Safari", "Firefox", "Chrome", "Edge"][index],
-      device: ["Desktop", "Mobile", "Desktop", "Mobile", "Tablet"][index]
-    })) : [];
+  const problematicSessions = data && data.ux.frustration.examples ? (() => {
+    const sessions = [];
+    
+    // Add 3 sessions with errors
+    if (data.ux.frustration.examples.with_errors) {
+      const errorSessions = data.ux.frustration.examples.with_errors.slice(0, 3).map((sessionId, index) => ({
+        id: sessionId,
+        type: "Video",
+        issue: "Con errori",
+        severity: "high" as const,
+        browser: ["Chrome", "Safari", "Firefox"][index],
+        device: ["Desktop", "Mobile", "Desktop"][index]
+      }));
+      sessions.push(...errorSessions);
+    }
+    
+    // Add 3 sessions with rage clicks
+    if (data.ux.frustration.examples.with_rageclicks) {
+      const rageclickSessions = data.ux.frustration.examples.with_rageclicks.slice(0, 3).map((sessionId, index) => ({
+        id: sessionId,
+        type: "Video",
+        issue: "Rage clicks",
+        severity: "medium" as const,
+        browser: ["Chrome", "Edge", "Safari"][index],
+        device: ["Mobile", "Tablet", "Desktop"][index]
+      }));
+      sessions.push(...rageclickSessions);
+    }
+    
+    return sessions;
+  })() : [];
 
   if (loading) {
     return (
