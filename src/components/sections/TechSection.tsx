@@ -311,7 +311,7 @@ export function TechSection({ onBack }: TechSectionProps) {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => window.open(`https://eu.posthog.com/project/48794/replay/${session.id}`, '_blank')}
+                onClick={() => window.open(`https://eu.posthog.com/project/76393/replay/${session.id}`, '_blank')}
                 className="flex items-center space-x-1 text-xs"
               >
                 <Play className="h-3 w-3" />

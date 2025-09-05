@@ -1,0 +1,6254 @@
+{
+  "total_sessions_yesterday": 1000,
+  "sessions_analyzed": 874,
+  "rates": {
+    "rageclick_rate": 0.04576659038901602,
+    "console_error_rate": 0.13157894736842105,
+    "form_error_rate": 0.0,
+    "fast_bounce_rate": 0.034324942791762014,
+    "nav_loop_rate": 0.2745995423340961
+  },
+  "averages": {
+    "avg_ttf_interaction_sec": 30.580147826086957,
+    "avg_span_sec": 472.91075514874143,
+    "avg_recording_sec": 480.3970251716247,
+    "avg_active_sec": 111.09725400457666,
+    "avg_engagement_ratio": 0.4470679830390721,
+    "avg_session_duration": 244.54029241754506
+  },
+  "distributions": {
+    "os": {
+      "Android": 406,
+      "iOS": 361,
+      "Windows": 49,
+      "Mac OS X": 48,
+      "": 7,
+      "Linux": 3
+    },
+    "browser": {
+      "Chrome": 476,
+      "Mobile Safari": 295,
+      "Facebook Mobile": 37,
+      "Chrome iOS": 29,
+      "Samsung Internet": 14,
+      "Microsoft Edge": 8,
+      "": 7,
+      "Opera": 4,
+      "Safari": 3,
+      "Firefox": 1
+    },
+    "country": {
+      "Italy": 862,
+      "": 7,
+      "United Kingdom": 2,
+      "Germany": 1,
+      "Belgium": 1,
+      "Ireland": 1
+    },
+    "referrer": {
+      "$direct": 272,
+      "https://veliu.com/": 162,
+      "http://instagram.com/": 135,
+      "http://m.facebook.com/": 102,
+      "https://www.google.com/": 54,
+      "https://l.instagram.com/": 37,
+      "https://www.tiktok.com/": 25,
+      "https://clk.tradedoubler.com/": 16,
+      "https://l.facebook.com/": 11,
+      "https://instagram.com/": 7,
+      "https://google.com/": 7,
+      "": 7,
+      "https://tradein.veliu.com/": 6,
+      "https://www.facebook.com/": 6,
+      "https://www.veliu.com/": 6,
+      "https://www.instagram.com/": 5,
+      "https://www.hdblog.it/": 3,
+      "https://bag.veliu.com/search?image=true&session=session_1756655085548_dkwldxlw6&referrer=veliu&q=Asciugamanopiccolo40x60": 3,
+      "https://www.google.it/": 2,
+      "https://lovable.dev/": 2,
+      "https://bag.veliu.com/search?image=true&session=session_1754981750122_hw2uspons&referrer=veliu": 2,
+      "https://bag.veliu.com/search?q=Angelothun&session=session_1756390850160_rlbmvspce&referrer=veliu": 1,
+      "android-app://com.google.android.googlequicksearchbox/": 1,
+      "https://bag.veliu.com/login": 1,
+      "https://bag.veliu.com/search?q=LenovoV110": 1
+    },
+    "device_type": {
+      "Mobile": 761,
+      "Desktop": 100,
+      "Unknown": 7,
+      "Tablet": 6
+    },
+    "viewport_bucket": {
+      "mobile": 763,
+      "desktop-large": 88,
+      "desktop-medium": 9,
+      "desktop-small": 6,
+      "tablet": 1
+    },
+    "region": {
+      "Lombardy": 225,
+      "Lazio": 89,
+      "Campania": 89,
+      "Apulia": 55,
+      "Veneto": 54,
+      "Tuscany": 49,
+      "Emilia-Romagna": 44,
+      "Piedmont": 38,
+      "Sicily": 37,
+      "Sardinia": 18,
+      "Abruzzo": 16,
+      "Calabria": 12,
+      "Friuli Venezia Giulia": 10,
+      "Liguria": 8,
+      "Basilicate": 7,
+      "The Marches": 7,
+      "Trentino-Alto Adige": 6,
+      "Umbria": 6,
+      "England": 2,
+      "Hesse": 1,
+      "Brussels Capital": 1,
+      "Leinster": 1,
+      "Molise": 1
+    },
+    "utm_source": {
+      "Facebook": 391,
+      "tiktok": 54
+    },
+    "utm_medium": {
+      "Paid": 391,
+      "paid": 55
+    },
+    "utm_campaign": {
+      "DM - TOF - Scaling - Veliu Bag - CBO": 217,
+      "DM - TOF - Testing - Veliu Bag - CBO - Lead Registered Veliu Bag": 172,
+      "DM - TOF - Testing - Sito Bag - ABO - Lead Registered": 54,
+      "{{campaign.name}}": 1,
+      "DM": 1
+    }
+  },
+  "top_landing_paths": {
+    "/": 747,
+    "/bag": 38,
+    "/search": 33,
+    "/portal": 9,
+    "/orders": 8,
+    "/portal/auth": 3,
+    "/profile": 2,
+    "/login": 1,
+    "/portal/order/3209b8e8-b749-4ea5-a570-b90f311a5c81": 1,
+    "/portal/order/60ac5f52-6ad8-4de1-a74d-e423b500cd1e": 1,
+    "/portal/order/d943115b-7052-44d1-861e-95bd138aec2e": 1,
+    "/terms": 1
+  },
+  "top_exit_paths": {
+    "/search": 368,
+    "/": 361,
+    "/bag": 80,
+    "/orders": 14,
+    "/portal": 11,
+    "/login": 9,
+    "/terms": 2,
+    "/portal/order/2af8ef9c-8c0a-4eb9-9e46-1a24c7fcd399": 1,
+    "/profile": 1,
+    "/portal/order/51ce32ab-7921-4e91-b01e-8c54f1ae936f": 1,
+    "/portal/order/98c9bb39-fc50-4ce8-bead-9d4c166348aa": 1,
+    "/portal/order/2533c83c-6f9c-4197-ba86-9cbbcf616282": 1,
+    "/portal/order/017476a4-ad02-4796-81fc-f1c7e25e98ae": 1,
+    "/portal/order/184ba4e2-5237-494d-a1f1-c154437a1303": 1,
+    "/portal/auth": 1,
+    "/portal/order/a79737f5-0cb1-48ef-ba81-f5e9726527a8": 1,
+    "/portal/order/acfdd5a9-5376-470a-93a0-80e1a4eb7a6a": 1
+  },
+  "clickmap_global": {
+    "/search": 7014,
+    "/": 3706,
+    "/bag": 1213,
+    "/portal": 313,
+    "/login": 226,
+    "/orders": 121,
+    "/profile": 87,
+    "/portal/auth": 56,
+    "/portal/order/dd7d47d5-5a0f-4cf5-8970-1bed502c549d": 6,
+    "/portal/order/3aca8a93-f994-4b24-8a35-151131cc6185": 6,
+    "/portal/order/28c7e337-0c6f-4f29-ac1d-fbe450ab3027": 5,
+    "/portal/order/4141d923-8a2e-4350-8b0e-18c3bc456524": 5,
+    "/portal/order/3209b8e8-b749-4ea5-a570-b90f311a5c81": 3,
+    "/portal/order/495a26be-d2f4-439d-9aca-2ee3a19ec64d": 3,
+    "/portal/order/95f95e23-998e-461f-a304-a8e9e146df64": 3,
+    "/portal/order/fb5b31a3-8aa6-4d8f-a8c4-0e51745164f9": 2,
+    "/portal/order/184ba4e2-5237-494d-a1f1-c154437a1303": 2,
+    "/portal/order/b44cd587-62c5-44b1-aaf1-604b639f018f": 2,
+    "/portal/order/98c9bb39-fc50-4ce8-bead-9d4c166348aa": 1,
+    "/portal/order/b961a808-509d-4341-86d6-55d1da194026": 1,
+    "/portal/order/4ee0fcdf-c832-49d2-809a-204cea85e1c8": 1,
+    "/portal/order/44aec761-7f18-40ee-b4ff-b8bfbfaa07fa": 1,
+    "/portal/order/60ac5f52-6ad8-4de1-a74d-e423b500cd1e": 1,
+    "/portal/order/8589451e-3ca7-4d92-9d34-468b5bdfb967": 1,
+    "/portal/order/acfdd5a9-5376-470a-93a0-80e1a4eb7a6a": 1,
+    "/portal/order/0c9ccfb6-7297-446f-a38d-047522107ee8": 1,
+    "/portal/order/3f978427-054e-48fb-b55a-70c606df1bf9": 1,
+    "/portal/order/d943115b-7052-44d1-861e-95bd138aec2e": 1,
+    "/portal/order/017476a4-ad02-4796-81fc-f1c7e25e98ae": 1,
+    "/portal/order/a79737f5-0cb1-48ef-ba81-f5e9726527a8": 1,
+    "/terms": 1
+  },
+  "error_fingerprints_global": {},
+  "ngrams_global": {
+    "top_2grams": [
+      {
+        "ngram": [
+          "$autocapture",
+          "$autocapture"
+        ],
+        "count": 10401
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$pageview"
+        ],
+        "count": 1822
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "$autocapture"
+        ],
+        "count": 1518
+      },
+      {
+        "ngram": [
+          "page_viewed",
+          "$set"
+        ],
+        "count": 1442
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$autocapture"
+        ],
+        "count": 1320
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "page_viewed"
+        ],
+        "count": 1143
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$web_vitals"
+        ],
+        "count": 1020
+      },
+      {
+        "ngram": [
+          "page_viewed",
+          "$pageview"
+        ],
+        "count": 790
+      },
+      {
+        "ngram": [
+          "$set",
+          "page_viewed"
+        ],
+        "count": 721
+      },
+      {
+        "ngram": [
+          "page_viewed",
+          "page_viewed"
+        ],
+        "count": 533
+      },
+      {
+        "ngram": [
+          "bag_offers_section_viewed",
+          "bag_offers_section_viewed"
+        ],
+        "count": 444
+      },
+      {
+        "ngram": [
+          "condition_selected",
+          "$autocapture"
+        ],
+        "count": 432
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "condition_selected"
+        ],
+        "count": 408
+      },
+      {
+        "ngram": [
+          "$set",
+          "$autocapture"
+        ],
+        "count": 370
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "$web_vitals"
+        ],
+        "count": 370
+      },
+      {
+        "ngram": [
+          "page_viewed",
+          "$autocapture"
+        ],
+        "count": 361
+      },
+      {
+        "ngram": [
+          "$pageleave",
+          "$pageview"
+        ],
+        "count": 265
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "bag_offers_section_viewed"
+        ],
+        "count": 258
+      },
+      {
+        "ngram": [
+          "bag_offers_section_viewed",
+          "$autocapture"
+        ],
+        "count": 204
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "bag_clicked"
+        ],
+        "count": 180
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "washing_label_answered"
+        ],
+        "count": 173
+      },
+      {
+        "ngram": [
+          "washing_label_answered",
+          "condition_selected"
+        ],
+        "count": 163
+      },
+      {
+        "ngram": [
+          "bag_clicked",
+          "$pageview"
+        ],
+        "count": 155
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "page_viewed"
+        ],
+        "count": 154
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$pageleave"
+        ],
+        "count": 140
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$web_vitals"
+        ],
+        "count": 140
+      },
+      {
+        "ngram": [
+          "page_viewed",
+          "$web_vitals"
+        ],
+        "count": 138
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "non_mi_convince_clicked"
+        ],
+        "count": 135
+      },
+      {
+        "ngram": [
+          "non_mi_convince_clicked",
+          "$autocapture"
+        ],
+        "count": 127
+      },
+      {
+        "ngram": [
+          "session_id_sync",
+          "page_viewed"
+        ],
+        "count": 108
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$pageview"
+        ],
+        "count": 103
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "offer_rejected_with_reason"
+        ],
+        "count": 100
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "$pageview"
+        ],
+        "count": 94
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$pageleave"
+        ],
+        "count": 82
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "session_id_sync"
+        ],
+        "count": 76
+      },
+      {
+        "ngram": [
+          "offer_rejected_with_reason",
+          "$autocapture"
+        ],
+        "count": 68
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "$pageleave"
+        ],
+        "count": 59
+      },
+      {
+        "ngram": [
+          "$set",
+          "$pageview"
+        ],
+        "count": 52
+      },
+      {
+        "ngram": [
+          "bag_offers_section_viewed",
+          "$web_vitals"
+        ],
+        "count": 51
+      },
+      {
+        "ngram": [
+          "page_viewed",
+          "$pageleave"
+        ],
+        "count": 47
+      },
+      {
+        "ngram": [
+          "$set",
+          "$web_vitals"
+        ],
+        "count": 47
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "rivendi_clicked"
+        ],
+        "count": 47
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "page_viewed"
+        ],
+        "count": 44
+      },
+      {
+        "ngram": [
+          "$rageclick",
+          "$autocapture"
+        ],
+        "count": 43
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$rageclick"
+        ],
+        "count": 42
+      },
+      {
+        "ngram": [
+          "$set",
+          "$set"
+        ],
+        "count": 33
+      },
+      {
+        "ngram": [
+          "$identify",
+          "page_viewed"
+        ],
+        "count": 32
+      },
+      {
+        "ngram": [
+          "rivendi_clicked",
+          "$autocapture"
+        ],
+        "count": 32
+      },
+      {
+        "ngram": [
+          "page_viewed",
+          "$identify"
+        ],
+        "count": 31
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "bag_offers_section_viewed"
+        ],
+        "count": 28
+      }
+    ],
+    "top_3grams": [
+      {
+        "ngram": [
+          "$autocapture",
+          "$autocapture",
+          "$autocapture"
+        ],
+        "count": 7263
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$autocapture",
+          "$pageview"
+        ],
+        "count": 1132
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "$autocapture",
+          "$autocapture"
+        ],
+        "count": 908
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$pageview",
+          "$autocapture"
+        ],
+        "count": 881
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$autocapture",
+          "$autocapture"
+        ],
+        "count": 809
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$web_vitals",
+          "$autocapture"
+        ],
+        "count": 710
+      },
+      {
+        "ngram": [
+          "page_viewed",
+          "$set",
+          "page_viewed"
+        ],
+        "count": 661
+      },
+      {
+        "ngram": [
+          "$set",
+          "page_viewed",
+          "$set"
+        ],
+        "count": 643
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$pageview",
+          "page_viewed"
+        ],
+        "count": 455
+      },
+      {
+        "ngram": [
+          "page_viewed",
+          "page_viewed",
+          "$set"
+        ],
+        "count": 425
+      },
+      {
+        "ngram": [
+          "page_viewed",
+          "$pageview",
+          "$autocapture"
+        ],
+        "count": 425
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "page_viewed",
+          "page_viewed"
+        ],
+        "count": 386
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$autocapture",
+          "condition_selected"
+        ],
+        "count": 377
+      },
+      {
+        "ngram": [
+          "page_viewed",
+          "$set",
+          "$autocapture"
+        ],
+        "count": 358
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$autocapture",
+          "$web_vitals"
+        ],
+        "count": 347
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "$autocapture",
+          "$web_vitals"
+        ],
+        "count": 296
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "condition_selected",
+          "$autocapture"
+        ],
+        "count": 254
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "page_viewed",
+          "$autocapture"
+        ],
+        "count": 251
+      },
+      {
+        "ngram": [
+          "condition_selected",
+          "$autocapture",
+          "$autocapture"
+        ],
+        "count": 211
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "bag_offers_section_viewed",
+          "bag_offers_section_viewed"
+        ],
+        "count": 202
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "$web_vitals",
+          "$autocapture"
+        ],
+        "count": 178
+      },
+      {
+        "ngram": [
+          "$set",
+          "$autocapture",
+          "$autocapture"
+        ],
+        "count": 159
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$autocapture",
+          "washing_label_answered"
+        ],
+        "count": 157
+      },
+      {
+        "ngram": [
+          "page_viewed",
+          "$pageview",
+          "$web_vitals"
+        ],
+        "count": 156
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "washing_label_answered",
+          "condition_selected"
+        ],
+        "count": 152
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$autocapture",
+          "$pageview"
+        ],
+        "count": 152
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "bag_clicked",
+          "$pageview"
+        ],
+        "count": 151
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "$autocapture",
+          "$pageview"
+        ],
+        "count": 150
+      },
+      {
+        "ngram": [
+          "page_viewed",
+          "$autocapture",
+          "$autocapture"
+        ],
+        "count": 144
+      },
+      {
+        "ngram": [
+          "bag_offers_section_viewed",
+          "bag_offers_section_viewed",
+          "$autocapture"
+        ],
+        "count": 124
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "non_mi_convince_clicked",
+          "$autocapture"
+        ],
+        "count": 105
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "page_viewed",
+          "$web_vitals"
+        ],
+        "count": 105
+      },
+      {
+        "ngram": [
+          "washing_label_answered",
+          "condition_selected",
+          "$autocapture"
+        ],
+        "count": 104
+      },
+      {
+        "ngram": [
+          "non_mi_convince_clicked",
+          "$autocapture",
+          "$autocapture"
+        ],
+        "count": 95
+      },
+      {
+        "ngram": [
+          "bag_clicked",
+          "$pageview",
+          "bag_offers_section_viewed"
+        ],
+        "count": 93
+      },
+      {
+        "ngram": [
+          "$web_vitals",
+          "$autocapture",
+          "$web_vitals"
+        ],
+        "count": 88
+      },
+      {
+        "ngram": [
+          "page_viewed",
+          "$pageview",
+          "page_viewed"
+        ],
+        "count": 77
+      },
+      {
+        "ngram": [
+          "bag_offers_section_viewed",
+          "bag_offers_section_viewed",
+          "bag_offers_section_viewed"
+        ],
+        "count": 77
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "page_viewed",
+          "$pageview"
+        ],
+        "count": 76
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$pageview",
+          "$web_vitals"
+        ],
+        "count": 76
+      },
+      {
+        "ngram": [
+          "page_viewed",
+          "$web_vitals",
+          "$autocapture"
+        ],
+        "count": 75
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$autocapture",
+          "page_viewed"
+        ],
+        "count": 74
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "page_viewed",
+          "$set"
+        ],
+        "count": 73
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "session_id_sync",
+          "page_viewed"
+        ],
+        "count": 71
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$pageleave",
+          "$pageview"
+        ],
+        "count": 70
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$autocapture",
+          "offer_rejected_with_reason"
+        ],
+        "count": 67
+      },
+      {
+        "ngram": [
+          "page_viewed",
+          "$autocapture",
+          "$web_vitals"
+        ],
+        "count": 66
+      },
+      {
+        "ngram": [
+          "$pageview",
+          "page_viewed",
+          "$pageview"
+        ],
+        "count": 65
+      },
+      {
+        "ngram": [
+          "$pageleave",
+          "$pageview",
+          "page_viewed"
+        ],
+        "count": 62
+      },
+      {
+        "ngram": [
+          "$autocapture",
+          "$pageview",
+          "session_id_sync"
+        ],
+        "count": 62
+      }
+    ]
+  },
+  "data_quality": {
+    "sessions_clock_skew": 729,
+    "missing_timestamp_events": 0,
+    "properties_parse_errors": 0,
+    "sessions_without_pageview": 29,
+    "sampling_rate": 0.874
+  },
+  "web_vitals": {
+    "lcp_ms": {
+      "p50": 1612.0,
+      "p95": 4345.199999999999
+    },
+    "cls": {
+      "p50": 0.0,
+      "p95": 0.04664439558847507
+    },
+    "inp_ms": {
+      "p50": 168.0,
+      "p95": 560.0
+    },
+    "fcp_ms": {
+      "p50": 1036.0,
+      "p95": 3440.0
+    },
+    "ttfb_ms": {
+      "p50": null,
+      "p95": null
+    },
+    "last_lcp_ms": {
+      "p50": null,
+      "p95": null
+    }
+  },
+  "esignals": {
+    "ui_clicks_total": 0,
+    "dead_clicks_total": 0,
+    "hover_ms_stats": {
+      "p50": null,
+      "p95": null
+    },
+    "top_click_targets": {},
+    "top_dead_click_targets": {},
+    "scroll_max_depth_global_stats": {
+      "p50": null,
+      "p95": null
+    }
+  },
+  "schema": {
+    "version": "1.3.0"
+  },
+  "meta": {
+    "generated_at_utc": "2025-09-05T12:55:52Z",
+    "timezone": "Europe/Rome",
+    "date_local": "2025-09-04",
+    "range_utc": {
+      "from": "2025-09-03T22:00:00Z",
+      "to": "2025-09-04T21:59:59.999999Z"
+    },
+    "failed_sessions_events_fetch": 119
+  },
+  "top_paths": {
+    "/ > /search": 225,
+    "/": 124,
+    "/ > /search > /": 90,
+    "/ > /search > / > /search": 45,
+    "/ > /search > / > /search > / > /search > / > /search": 19,
+    "/ > /search > / > /search > /": 17,
+    "/ > /login > /": 14,
+    "/ > /search > /bag": 13,
+    "/bag": 12,
+    "/ > /bag > /": 8,
+    "/search": 8,
+    "/ > /login > / > /search": 7,
+    "/ > /search > / > /search > / > /search": 6,
+    "/ > /search > / > /search > / > /search > /": 6,
+    "/ > /login": 5,
+    "/bag > / > /bag > /": 5,
+    "/ > /bag": 5,
+    "/search > /": 5,
+    "/orders": 5,
+    "/ > /login > / > /login > / > /search": 4,
+    "/ > /bag > /orders": 4,
+    "/ > /login > / > /search > /": 4,
+    "/ > /login > / > /login > / > /login > / > /search": 4,
+    "/ > /login > / > /search > / > /search > /": 4,
+    "/bag > /": 4,
+    "/ > /search > /bag > /search > /": 4,
+    "/ > /login > / > /search > / > /search > / > /search": 4,
+    "/ > /search > / > /login > /": 3,
+    "/ > /search > / > /bag > /": 3,
+    "/ > /bag > /orders > /bag": 3,
+    "/ > /login > / > /search > / > /search": 3,
+    "/bag > / > /search > /": 3,
+    "/search > /bag > /search": 3,
+    "/ > /search > /bag > /search > /bag > /search > / > /search": 3,
+    "/ > /bag > /orders > /bag > /": 3,
+    "/ > /login > / > /bag > /orders > /bag": 3,
+    "/search > / > /search > /bag": 2,
+    "/ > /bag > / > /bag > /": 2,
+    "/ > /search > / > /search > /bag": 2,
+    "/bag > / > /search > / > /search": 2,
+    "/ > /login > / > /login > /": 2,
+    "/search > / > /search": 2,
+    "/ > /search > /bag > /search > / > /search > / > /search": 2,
+    "/ > /search > / > /search > / > /search > / > /login": 2,
+    "/ > /bag > /orders > /bag > / > /bag > / > /search": 2,
+    "/ > /bag > /search": 2,
+    "/ > /search > /bag > /search": 2,
+    "/portal": 2,
+    "/ > /bag > / > /bag": 2,
+    "/search > / > /search > / > /login > / > /bag > /": 2
+  },
+  "returning_breakdown": {
+    "new": {
+      "share": 0.030892448512585814,
+      "conversion_rate": 0.1111111111111111,
+      "avg_ttf_interaction_sec": 10.955925925925927,
+      "avg_span_sec": 1128.2962962962963,
+      "ttfi_sec": {
+        "p50": 3.323,
+        "p90": 27.975000000000023,
+        "p95": 45.797699999999985
+      },
+      "span_sec": {
+        "p50": 577.0,
+        "p90": 2719.6000000000004,
+        "p95": 3247.7
+      }
+    },
+    "returning": {
+      "share": 0.9691075514874142,
+      "conversion_rate": 0.06729634002361275,
+      "avg_ttf_interaction_sec": 31.2611940874036,
+      "avg_span_sec": 452.01889020070837,
+      "ttfi_sec": {
+        "p50": 3.4525,
+        "p90": 20.94370000000005,
+        "p95": 67.52084999999997
+      },
+      "span_sec": {
+        "p50": 113.0,
+        "p90": 1080.5999999999997,
+        "p95": 1795.1
+      }
+    }
+  },
+  "channels": {
+    "Paid Search": {
+      "sessions": 446,
+      "conversion_rate": 0.02242152466367713,
+      "rageclick_rate": 0.02466367713004484
+    },
+    "Referral": {
+      "sessions": 268,
+      "conversion_rate": 0.11194029850746269,
+      "rageclick_rate": 0.05223880597014925
+    },
+    "Direct": {
+      "sessions": 111,
+      "conversion_rate": 0.12612612612612611,
+      "rageclick_rate": 0.036036036036036036
+    },
+    "Organic Search": {
+      "sessions": 49,
+      "conversion_rate": 0.12244897959183673,
+      "rageclick_rate": 0.22448979591836735
+    }
+  },
+  "error_fingerprints_samples": {},
+  "when": {
+    "by_hour": {
+      "8": 18,
+      "9": 66,
+      "10": 51,
+      "11": 65,
+      "12": 50,
+      "13": 55,
+      "14": 72,
+      "15": 75,
+      "16": 57,
+      "17": 50,
+      "18": 54,
+      "19": 40,
+      "20": 53,
+      "21": 65,
+      "22": 63,
+      "23": 40
+    },
+    "by_weekday": {
+      "3": 874
+    }
+  },
+  "busiest_time": {
+    "peak_hour_local": 15,
+    "avg_peak_hour_local_mean": 15,
+    "avg_peak_hour_local_mode": 15,
+    "history_days": 1
+  },
+  "funnel": {
+    "name": "veliu_funnel",
+    "steps": [
+      "ricerche",
+      "valuation",
+      "offer",
+      "orders"
+    ],
+    "hits_by_step": [
+      845,
+      611,
+      0,
+      60
+    ],
+    "sessions": 874,
+    "converted_sessions": 60,
+    "conversion_rate": 0.06864988558352403,
+    "step_rates": [
+      0.7230769230769231,
+      0.0,
+      0.0
+    ]
+  },
+  "utm_campaign_kpi": {
+    "conversion_rate": {
+      "": 0.11655011655011654,
+      "DM - TOF - Testing - Veliu Bag - CBO - Lead Registered Veliu Bag": 0.023255813953488372,
+      "DM - TOF - Scaling - Veliu Bag - CBO": 0.018433179723502304,
+      "DM - TOF - Testing - Sito Bag - ABO - Lead Registered": 0.037037037037037035,
+      "{{campaign.name}}": 0.0,
+      "DM": 0.0
+    },
+    "rageclick_rate": {
+      "": 0.0675990675990676,
+      "DM - TOF - Testing - Veliu Bag - CBO - Lead Registered Veliu Bag": 0.023255813953488372,
+      "DM - TOF - Scaling - Veliu Bag - CBO": 0.02304147465437788,
+      "DM - TOF - Testing - Sito Bag - ABO - Lead Registered": 0.037037037037037035,
+      "{{campaign.name}}": 0.0,
+      "DM": 0.0
+    }
+  },
+  "quantiles": {
+    "ttfi_sec": {
+      "p50": 3.45,
+      "p90": 21.486000000000004,
+      "p95": 67.09779999999998
+    },
+    "span_sec": {
+      "p50": 119.0,
+      "p90": 1138.1000000000001,
+      "p95": 1809.1499999999992
+    },
+    "active_sec": {
+      "p50": 63.0,
+      "p90": 243.70000000000005,
+      "p95": 377.0
+    }
+  },
+  "devices": {
+    "Mobile": {
+      "sessions": 761,
+      "conversion_rate": 0.06438896189224705,
+      "rageclick_rate": 0.0328515111695138
+    },
+    "Desktop": {
+      "sessions": 100,
+      "conversion_rate": 0.11,
+      "rageclick_rate": 0.15
+    },
+    "Unknown": {
+      "sessions": 7,
+      "conversion_rate": 0.0,
+      "rageclick_rate": 0.0
+    },
+    "Tablet": {
+      "sessions": 6,
+      "conversion_rate": 0.0,
+      "rageclick_rate": 0.0
+    }
+  },
+  "period": {
+    "type": "yesterday",
+    "from_utc": "2025-09-03T22:00:00Z",
+    "to_utc": "2025-09-04T21:59:59.999999Z",
+    "label": "2025-09-04 (local)"
+  },
+  "timeseries": {
+    "hourly": {
+      "total_sessions": [
+        {
+          "hour": 0,
+          "value": 0
+        },
+        {
+          "hour": 1,
+          "value": 0
+        },
+        {
+          "hour": 2,
+          "value": 0
+        },
+        {
+          "hour": 3,
+          "value": 0
+        },
+        {
+          "hour": 4,
+          "value": 0
+        },
+        {
+          "hour": 5,
+          "value": 0
+        },
+        {
+          "hour": 6,
+          "value": 20
+        },
+        {
+          "hour": 7,
+          "value": 48
+        },
+        {
+          "hour": 8,
+          "value": 71
+        },
+        {
+          "hour": 9,
+          "value": 66
+        },
+        {
+          "hour": 10,
+          "value": 51
+        },
+        {
+          "hour": 11,
+          "value": 65
+        },
+        {
+          "hour": 12,
+          "value": 51
+        },
+        {
+          "hour": 13,
+          "value": 56
+        },
+        {
+          "hour": 14,
+          "value": 72
+        },
+        {
+          "hour": 15,
+          "value": 76
+        },
+        {
+          "hour": 16,
+          "value": 58
+        },
+        {
+          "hour": 17,
+          "value": 50
+        },
+        {
+          "hour": 18,
+          "value": 54
+        },
+        {
+          "hour": 19,
+          "value": 41
+        },
+        {
+          "hour": 20,
+          "value": 53
+        },
+        {
+          "hour": 21,
+          "value": 65
+        },
+        {
+          "hour": 22,
+          "value": 63
+        },
+        {
+          "hour": 23,
+          "value": 40
+        }
+      ],
+      "sessions_analyzed": [
+        {
+          "hour": 0,
+          "value": 0
+        },
+        {
+          "hour": 1,
+          "value": 0
+        },
+        {
+          "hour": 2,
+          "value": 0
+        },
+        {
+          "hour": 3,
+          "value": 0
+        },
+        {
+          "hour": 4,
+          "value": 0
+        },
+        {
+          "hour": 5,
+          "value": 0
+        },
+        {
+          "hour": 6,
+          "value": 0
+        },
+        {
+          "hour": 7,
+          "value": 0
+        },
+        {
+          "hour": 8,
+          "value": 18
+        },
+        {
+          "hour": 9,
+          "value": 66
+        },
+        {
+          "hour": 10,
+          "value": 51
+        },
+        {
+          "hour": 11,
+          "value": 65
+        },
+        {
+          "hour": 12,
+          "value": 50
+        },
+        {
+          "hour": 13,
+          "value": 55
+        },
+        {
+          "hour": 14,
+          "value": 72
+        },
+        {
+          "hour": 15,
+          "value": 75
+        },
+        {
+          "hour": 16,
+          "value": 57
+        },
+        {
+          "hour": 17,
+          "value": 50
+        },
+        {
+          "hour": 18,
+          "value": 54
+        },
+        {
+          "hour": 19,
+          "value": 40
+        },
+        {
+          "hour": 20,
+          "value": 53
+        },
+        {
+          "hour": 21,
+          "value": 65
+        },
+        {
+          "hour": 22,
+          "value": 63
+        },
+        {
+          "hour": 23,
+          "value": 40
+        }
+      ],
+      "funnel_completions": [
+        {
+          "hour": 0,
+          "value": 0
+        },
+        {
+          "hour": 1,
+          "value": 0
+        },
+        {
+          "hour": 2,
+          "value": 0
+        },
+        {
+          "hour": 3,
+          "value": 0
+        },
+        {
+          "hour": 4,
+          "value": 0
+        },
+        {
+          "hour": 5,
+          "value": 0
+        },
+        {
+          "hour": 6,
+          "value": 0
+        },
+        {
+          "hour": 7,
+          "value": 0
+        },
+        {
+          "hour": 8,
+          "value": 0
+        },
+        {
+          "hour": 9,
+          "value": 6
+        },
+        {
+          "hour": 10,
+          "value": 3
+        },
+        {
+          "hour": 11,
+          "value": 2
+        },
+        {
+          "hour": 12,
+          "value": 6
+        },
+        {
+          "hour": 13,
+          "value": 4
+        },
+        {
+          "hour": 14,
+          "value": 6
+        },
+        {
+          "hour": 15,
+          "value": 4
+        },
+        {
+          "hour": 16,
+          "value": 2
+        },
+        {
+          "hour": 17,
+          "value": 3
+        },
+        {
+          "hour": 18,
+          "value": 3
+        },
+        {
+          "hour": 19,
+          "value": 6
+        },
+        {
+          "hour": 20,
+          "value": 5
+        },
+        {
+          "hour": 21,
+          "value": 7
+        },
+        {
+          "hour": 22,
+          "value": 1
+        },
+        {
+          "hour": 23,
+          "value": 2
+        }
+      ],
+      "conversion_rate": [
+        {
+          "hour": 0,
+          "value": 0.0
+        },
+        {
+          "hour": 1,
+          "value": 0.0
+        },
+        {
+          "hour": 2,
+          "value": 0.0
+        },
+        {
+          "hour": 3,
+          "value": 0.0
+        },
+        {
+          "hour": 4,
+          "value": 0.0
+        },
+        {
+          "hour": 5,
+          "value": 0.0
+        },
+        {
+          "hour": 6,
+          "value": 0.0
+        },
+        {
+          "hour": 7,
+          "value": 0.0
+        },
+        {
+          "hour": 8,
+          "value": 0.0
+        },
+        {
+          "hour": 9,
+          "value": 0.09090909090909091
+        },
+        {
+          "hour": 10,
+          "value": 0.058823529411764705
+        },
+        {
+          "hour": 11,
+          "value": 0.03076923076923077
+        },
+        {
+          "hour": 12,
+          "value": 0.11764705882352941
+        },
+        {
+          "hour": 13,
+          "value": 0.07142857142857142
+        },
+        {
+          "hour": 14,
+          "value": 0.08333333333333333
+        },
+        {
+          "hour": 15,
+          "value": 0.05263157894736842
+        },
+        {
+          "hour": 16,
+          "value": 0.034482758620689655
+        },
+        {
+          "hour": 17,
+          "value": 0.06
+        },
+        {
+          "hour": 18,
+          "value": 0.05555555555555555
+        },
+        {
+          "hour": 19,
+          "value": 0.14634146341463414
+        },
+        {
+          "hour": 20,
+          "value": 0.09433962264150944
+        },
+        {
+          "hour": 21,
+          "value": 0.1076923076923077
+        },
+        {
+          "hour": 22,
+          "value": 0.015873015873015872
+        },
+        {
+          "hour": 23,
+          "value": 0.05
+        }
+      ],
+      "funnel_steps_hits": [
+        {
+          "hour": 0,
+          "hits": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "ricerche",
+            "valuation",
+            "offer",
+            "orders"
+          ]
+        },
+        {
+          "hour": 1,
+          "hits": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "ricerche",
+            "valuation",
+            "offer",
+            "orders"
+          ]
+        },
+        {
+          "hour": 2,
+          "hits": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "ricerche",
+            "valuation",
+            "offer",
+            "orders"
+          ]
+        },
+        {
+          "hour": 3,
+          "hits": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "ricerche",
+            "valuation",
+            "offer",
+            "orders"
+          ]
+        },
+        {
+          "hour": 4,
+          "hits": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "ricerche",
+            "valuation",
+            "offer",
+            "orders"
+          ]
+        },
+        {
+          "hour": 5,
+          "hits": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "ricerche",
+            "valuation",
+            "offer",
+            "orders"
+          ]
+        },
+        {
+          "hour": 6,
+          "hits": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "ricerche",
+            "valuation",
+            "offer",
+            "orders"
+          ]
+        },
+        {
+          "hour": 7,
+          "hits": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "steps": [
+            "ricerche",
+            "valuation",
+            "offer",
+            "orders"
+          ]
+        },
+        {
+          "hour": 8,
+          "hits": [
+            18,
+            13,
+            0,
+            0
+          ],
+          "steps": [
+            "ricerche",
+            "valuation",
+            "offer",
+            "orders"
+          ]
+        },
+        {
+          "hour": 9,
+          "hits": [
+            65,
+            43,
+            0,
+            6
+          ],
+          "steps": [
+            "ricerche",
+            "valuation",
+            "offer",
+            "orders"
+          ]
+        },
+        {
+          "hour": 10,
+          "hits": [
+            48,
+            30,
+            0,
+            3
+          ],
+          "steps": [
+            "ricerche",
+            "valuation",
+            "offer",
+            "orders"
+          ]
+        },
+        {
+          "hour": 11,
+          "hits": [
+            64,
+            41,
+            0,
+            2
+          ],
+          "steps": [
+            "ricerche",
+            "valuation",
+            "offer",
+            "orders"
+          ]
+        },
+        {
+          "hour": 12,
+          "hits": [
+            49,
+            35,
+            0,
+            6
+          ],
+          "steps": [
+            "ricerche",
+            "valuation",
+            "offer",
+            "orders"
+          ]
+        },
+        {
+          "hour": 13,
+          "hits": [
+            51,
+            37,
+            0,
+            4
+          ],
+          "steps": [
+            "ricerche",
+            "valuation",
+            "offer",
+            "orders"
+          ]
+        },
+        {
+          "hour": 14,
+          "hits": [
+            69,
+            50,
+            0,
+            6
+          ],
+          "steps": [
+            "ricerche",
+            "valuation",
+            "offer",
+            "orders"
+          ]
+        },
+        {
+          "hour": 15,
+          "hits": [
+            73,
+            51,
+            0,
+            4
+          ],
+          "steps": [
+            "ricerche",
+            "valuation",
+            "offer",
+            "orders"
+          ]
+        },
+        {
+          "hour": 16,
+          "hits": [
+            54,
+            44,
+            0,
+            2
+          ],
+          "steps": [
+            "ricerche",
+            "valuation",
+            "offer",
+            "orders"
+          ]
+        },
+        {
+          "hour": 17,
+          "hits": [
+            49,
+            34,
+            0,
+            3
+          ],
+          "steps": [
+            "ricerche",
+            "valuation",
+            "offer",
+            "orders"
+          ]
+        },
+        {
+          "hour": 18,
+          "hits": [
+            54,
+            43,
+            0,
+            3
+          ],
+          "steps": [
+            "ricerche",
+            "valuation",
+            "offer",
+            "orders"
+          ]
+        },
+        {
+          "hour": 19,
+          "hits": [
+            38,
+            28,
+            0,
+            6
+          ],
+          "steps": [
+            "ricerche",
+            "valuation",
+            "offer",
+            "orders"
+          ]
+        },
+        {
+          "hour": 20,
+          "hits": [
+            51,
+            43,
+            0,
+            5
+          ],
+          "steps": [
+            "ricerche",
+            "valuation",
+            "offer",
+            "orders"
+          ]
+        },
+        {
+          "hour": 21,
+          "hits": [
+            64,
+            46,
+            0,
+            7
+          ],
+          "steps": [
+            "ricerche",
+            "valuation",
+            "offer",
+            "orders"
+          ]
+        },
+        {
+          "hour": 22,
+          "hits": [
+            60,
+            47,
+            0,
+            1
+          ],
+          "steps": [
+            "ricerche",
+            "valuation",
+            "offer",
+            "orders"
+          ]
+        },
+        {
+          "hour": 23,
+          "hits": [
+            38,
+            26,
+            0,
+            2
+          ],
+          "steps": [
+            "ricerche",
+            "valuation",
+            "offer",
+            "orders"
+          ]
+        }
+      ]
+    }
+  },
+  "ux": {
+    "session_quality_score": {
+      "weights": {
+        "scroll_depth": 0.1,
+        "session_duration": 0.15,
+        "pages_per_session": 0.1,
+        "successful_interactions": 0.2,
+        "funnel_step_completion_rate": 0.15,
+        "rage_clicks": -0.1,
+        "console_errors": -0.05,
+        "exit_on_error": -0.15,
+        "fast_bounce": -0.1,
+        "microtask_completions": 0.0,
+        "dead_clicks": 0.0,
+        "cta_attempt_vs_complete": 0.0
+      },
+      "stats": {
+        "min": 0.0,
+        "q1": 4.6,
+        "median": 10.2,
+        "q3": 17.1,
+        "max": 60.0,
+        "mean": 12.775629290617848,
+        "std_dev": 11.223940114675186
+      },
+      "classification": {
+        "thresholds": {
+          "good": 17.1,
+          "bad": 4.6
+        },
+        "good_threshold": 17.1,
+        "bad_threshold": 4.6,
+        "distribution": {
+          "good": 220,
+          "neutral": 433,
+          "bad": 221
+        },
+        "percentages": {
+          "good": 25.2,
+          "neutral": 49.5,
+          "bad": 25.3
+        }
+      },
+      "good_share": 0.252,
+      "bad_share": 0.253,
+      "neutral_share": 0.495,
+      "normalization_method": "percentile_based_p5_p95",
+      "classification_method": "percentile_thresholds_p25_p75",
+      "samples": [
+        {
+          "session_id": "019916bd-e100-7b9b-b400-4540d3087e69",
+          "score": 0.0,
+          "classification": "bad"
+        },
+        {
+          "session_id": "019916bd-e07a-7a48-ae54-1a85df90acc3",
+          "score": 0.0,
+          "classification": "bad"
+        },
+        {
+          "session_id": "019916bb-cf21-7df5-a7ce-a3f838bea6e3",
+          "score": 30.9,
+          "classification": "good"
+        },
+        {
+          "session_id": "019916ba-cff8-7c07-92c6-19d8db20917a",
+          "score": 0.4,
+          "classification": "bad"
+        },
+        {
+          "session_id": "019916b9-bb3f-7a77-ac04-f4e78a063955",
+          "score": 32.7,
+          "classification": "good"
+        },
+        {
+          "session_id": "019916b9-5bc9-70a7-ad92-2abea7eff520",
+          "score": 16.0,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "019916b7-0620-7ba7-91b3-7fb0490cd629",
+          "score": 1.8,
+          "classification": "bad"
+        },
+        {
+          "session_id": "019916b4-d1d7-7c36-9a79-938ec11ee7cf",
+          "score": 36.7,
+          "classification": "good"
+        },
+        {
+          "session_id": "019916b5-d472-7ef3-835c-df4fa1222c85",
+          "score": 8.9,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "019916b5-0048-7e4b-8aa5-80460041694f",
+          "score": 15.8,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "019916b5-2029-7913-96f2-1f6d946b61a9",
+          "score": 0.5,
+          "classification": "bad"
+        },
+        {
+          "session_id": "019916b4-ba29-7ea0-a1de-cc3af09a341e",
+          "score": 6.3,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "019916b3-0613-71c0-974a-4c14b13f4609",
+          "score": 17.4,
+          "classification": "good"
+        },
+        {
+          "session_id": "019916b0-e476-7f53-be87-41827c0e6cda",
+          "score": 23.1,
+          "classification": "good"
+        },
+        {
+          "session_id": "019916ae-32c1-7cfd-964b-4d3acbe7890d",
+          "score": 2.3,
+          "classification": "bad"
+        },
+        {
+          "session_id": "019916ae-1e11-774f-91de-b13475bec0db",
+          "score": 16.5,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "019916ad-41ce-73b3-9224-2bcd3468ae51",
+          "score": 5.6,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "019916aa-e872-7d3e-b25b-87c1ad0c29a4",
+          "score": 24.7,
+          "classification": "good"
+        },
+        {
+          "session_id": "019916aa-0e1b-7234-8df2-cbc27f81777c",
+          "score": 15.1,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "019916a9-2ed5-7ad5-a29a-3a3bcfafcfe7",
+          "score": 19.3,
+          "classification": "good"
+        },
+        {
+          "session_id": "019916a7-3d29-7d87-b6e6-e6a40466ffef",
+          "score": 8.3,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "019916a6-99ff-7beb-9007-af7a2a6a4060",
+          "score": 8.8,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "019916a5-4723-7e38-a466-637d2cbdb6d7",
+          "score": 10.4,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "019916a5-3c91-7c9b-85ca-42727bd28f58",
+          "score": 28.2,
+          "classification": "good"
+        },
+        {
+          "session_id": "019916a1-662b-772d-8726-34a4cfc454a4",
+          "score": 3.5,
+          "classification": "bad"
+        },
+        {
+          "session_id": "0199169f-2b83-7cdb-a88b-b421aacd0dbf",
+          "score": 27.7,
+          "classification": "good"
+        },
+        {
+          "session_id": "0199169e-fcdb-70e7-90ab-7abf471f2376",
+          "score": 4.8,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "0199169b-5efe-7260-8c35-a635452dbee5",
+          "score": 30.4,
+          "classification": "good"
+        },
+        {
+          "session_id": "01991699-8f53-79a0-8718-25524ee3dcb9",
+          "score": 5.4,
+          "classification": "neutral"
+        },
+        {
+          "session_id": "01991697-b683-77c1-8534-973334fa6c4c",
+          "score": 11.3,
+          "classification": "neutral"
+        }
+      ]
+    },
+    "heatmaps": {
+      "click": {
+        "by_page": {
+          "/": {
+            "unknown_target": 3706
+          },
+          "/bag": {
+            "unknown_target": 1216
+          },
+          "/search": {
+            "unknown_target": 7014
+          },
+          "/login": {
+            "unknown_target": 230
+          },
+          "/profile": {
+            "unknown_target": 87
+          },
+          "/orders": {
+            "unknown_target": 121
+          },
+          "/portal/order/98c9bb39-fc50-4ce8-bead-9d4c166348aa": {
+            "unknown_target": 1
+          },
+          "/portal": {
+            "unknown_target": 315
+          },
+          "/portal/auth": {
+            "unknown_target": 58
+          },
+          "/portal/order/b961a808-509d-4341-86d6-55d1da194026": {
+            "unknown_target": 1
+          },
+          "/portal/order/4ee0fcdf-c832-49d2-809a-204cea85e1c8": {
+            "unknown_target": 1
+          },
+          "/portal/order/44aec761-7f18-40ee-b4ff-b8bfbfaa07fa": {
+            "unknown_target": 1
+          },
+          "/portal/order/ea3b47b9-3c68-4105-b9e1-079105b044ee": {
+            "unknown_target": 1
+          },
+          "/portal/order/f40a0d5a-d296-4e4f-a83b-011334caa912": {
+            "unknown_target": 5
+          },
+          "/portal/order/93aa0f1a-2a90-4b15-b33d-d07942b2e57b": {
+            "unknown_target": 4
+          },
+          "/portal/order/dd7d47d5-5a0f-4cf5-8970-1bed502c549d": {
+            "unknown_target": 7
+          },
+          "/portal/order/28c7e337-0c6f-4f29-ac1d-fbe450ab3027": {
+            "unknown_target": 5
+          },
+          "/portal/order/87309943-296c-4099-b920-4ba6982d4e53": {
+            "unknown_target": 4
+          },
+          "/portal/order/2643e604-cde6-4881-938c-40be9f519e84": {
+            "unknown_target": 4
+          },
+          "/portal/order/6f9e0b25-cc9a-4381-b856-48b1df93f4d3": {
+            "unknown_target": 2
+          },
+          "/portal/order/d3cbe108-43d0-457b-916e-e9ca0519cfc0": {
+            "unknown_target": 1
+          },
+          "/portal/order/43bc5cae-738a-451c-8779-cb15607b9297": {
+            "unknown_target": 1
+          },
+          "/portal/order/73415faa-a079-4725-96ec-38b203206fd3": {
+            "unknown_target": 1
+          },
+          "/portal/order/3aca8a93-f994-4b24-8a35-151131cc6185": {
+            "unknown_target": 6
+          },
+          "/portal/order/4141d923-8a2e-4350-8b0e-18c3bc456524": {
+            "unknown_target": 5
+          },
+          "/portal/order/7d4c8be4-5a38-40fe-bcc2-05c700bc3729": {
+            "unknown_target": 5
+          },
+          "/portal/order/079351ae-9b2a-441a-b76d-ac8f2d7d0f7d": {
+            "unknown_target": 4
+          },
+          "/portal/order/7c2a39e3-88db-415b-ae6e-da0dc9c50694": {
+            "unknown_target": 4
+          },
+          "/portal/order/a044655e-dc0b-4fc7-ae76-89db5549709b": {
+            "unknown_target": 4
+          },
+          "/portal/order/e425e126-6576-42bf-85f8-2ede0fed8585": {
+            "unknown_target": 5
+          },
+          "/portal/order/89cd7695-30ed-4d89-bf00-c047858c1f81": {
+            "unknown_target": 4
+          },
+          "/portal/order/9a74807b-980d-4c28-ac43-7b3556086a42": {
+            "unknown_target": 3
+          },
+          "/portal/order/2533c83c-6f9c-4197-ba86-9cbbcf616282": {
+            "unknown_target": 4
+          },
+          "/portal/order/6bdc9375-3b0c-4ffa-9acb-9dac9d054047": {
+            "unknown_target": 5
+          },
+          "/portal/order/51ce32ab-7921-4e91-b01e-8c54f1ae936f": {
+            "unknown_target": 3
+          },
+          "/portal/order/3209b8e8-b749-4ea5-a570-b90f311a5c81": {
+            "unknown_target": 3
+          },
+          "/portal/order/60ac5f52-6ad8-4de1-a74d-e423b500cd1e": {
+            "unknown_target": 1
+          },
+          "/portal/order/8589451e-3ca7-4d92-9d34-468b5bdfb967": {
+            "unknown_target": 1
+          },
+          "/portal/order/acfdd5a9-5376-470a-93a0-80e1a4eb7a6a": {
+            "unknown_target": 1
+          },
+          "/portal/order/0c9ccfb6-7297-446f-a38d-047522107ee8": {
+            "unknown_target": 1
+          },
+          "/portal/order/fb5b31a3-8aa6-4d8f-a8c4-0e51745164f9": {
+            "unknown_target": 4
+          },
+          "/portal/order/3f978427-054e-48fb-b55a-70c606df1bf9": {
+            "unknown_target": 1
+          },
+          "/portal/order/90c7495c-2c56-46e7-8df9-211a1a4fd399": {
+            "unknown_target": 1
+          },
+          "/portal/order/184ba4e2-5237-494d-a1f1-c154437a1303": {
+            "unknown_target": 2
+          },
+          "/portal/order/d943115b-7052-44d1-861e-95bd138aec2e": {
+            "unknown_target": 1
+          },
+          "/portal/order/017476a4-ad02-4796-81fc-f1c7e25e98ae": {
+            "unknown_target": 1
+          },
+          "/portal/order/a79737f5-0cb1-48ef-ba81-f5e9726527a8": {
+            "unknown_target": 2
+          },
+          "/terms": {
+            "unknown_target": 1
+          },
+          "/portal/order/495a26be-d2f4-439d-9aca-2ee3a19ec64d": {
+            "unknown_target": 3
+          },
+          "/portal/order/3cdd9b31-0f2c-460e-bf19-25a4992a6d6b": {
+            "unknown_target": 1
+          },
+          "/portal/order/b44cd587-62c5-44b1-aaf1-604b639f018f": {
+            "unknown_target": 2
+          },
+          "/portal/order/e66bffaa-f628-49bd-94d3-75c3bb892f7f": {
+            "unknown_target": 2
+          },
+          "/portal/order/3f4d1034-2de6-45cb-9e2e-75bfd64fde97": {
+            "unknown_target": 2
+          },
+          "/portal/order/ba64ed6a-d76b-429a-a485-f159e58e2479": {
+            "unknown_target": 2
+          },
+          "/portal/order/4c1d9edc-968b-49d4-b5df-e2ca60268fa3": {
+            "unknown_target": 1
+          },
+          "/portal/order/7ce7fffc-7e35-4732-b168-217afdf08333": {
+            "unknown_target": 1
+          },
+          "/portal/order/8f430513-3933-48f0-853d-75e31d2499cc": {
+            "unknown_target": 1
+          },
+          "/portal/order/b57c97ae-7519-48ae-84cc-65036da19960": {
+            "unknown_target": 1
+          },
+          "/portal/order/2ec08daf-0590-4101-9f85-95175d7c146c": {
+            "unknown_target": 1
+          },
+          "/portal/order/cedab390-4393-49bf-8a7b-2548dd510b71": {
+            "unknown_target": 1
+          },
+          "/portal/order/95f95e23-998e-461f-a304-a8e9e146df64": {
+            "unknown_target": 3
+          },
+          "/portal/order/8195b544-d56b-440f-93e4-848a58f95c73": {
+            "unknown_target": 1
+          },
+          "/portal/order/d08c3751-74f2-4b97-a1f2-d4bdb32e224d": {
+            "unknown_target": 1
+          },
+          "/portal/order/d4d2dd04-a366-4516-83da-ccd9267d387e": {
+            "unknown_target": 2
+          },
+          "/portal/order/38724b58-c673-4cc4-b103-ea3289f664a7": {
+            "unknown_target": 1
+          },
+          "/portal/order/cef01c13-d621-41be-867f-dfdce3ee4c20": {
+            "unknown_target": 1
+          },
+          "/portal/order/5e645b8c-f91b-42b2-b30a-4ee551aad44d": {
+            "unknown_target": 1
+          },
+          "/portal/order/ca456c75-d89d-4e9f-88f6-6ba4702945e4": {
+            "unknown_target": 1
+          },
+          "/portal/order/e8072cac-f004-407b-8b80-2ab935605be5": {
+            "unknown_target": 1
+          },
+          "/portal/order/0c4ef2fc-481b-446a-9ee9-2fc432e092a8": {
+            "unknown_target": 1
+          },
+          "/portal/order/231abc34-874d-47ae-a85e-9c1596a691cf": {
+            "unknown_target": 1
+          },
+          "/portal/order/c91defab-0204-4b0f-8100-9e70e8fb712c": {
+            "unknown_target": 2
+          },
+          "/portal/order/2c0a5ee6-bf55-4cc1-a7c5-1c584c3fbe6c": {
+            "unknown_target": 1
+          }
+        },
+        "global_top": {
+          "/search": 7014,
+          "/": 3706,
+          "/bag": 1213,
+          "/portal": 313,
+          "/login": 226,
+          "/orders": 121,
+          "/profile": 87,
+          "/portal/auth": 56,
+          "/portal/order/dd7d47d5-5a0f-4cf5-8970-1bed502c549d": 6,
+          "/portal/order/3aca8a93-f994-4b24-8a35-151131cc6185": 6,
+          "/portal/order/28c7e337-0c6f-4f29-ac1d-fbe450ab3027": 5,
+          "/portal/order/4141d923-8a2e-4350-8b0e-18c3bc456524": 5,
+          "/portal/order/3209b8e8-b749-4ea5-a570-b90f311a5c81": 3,
+          "/portal/order/495a26be-d2f4-439d-9aca-2ee3a19ec64d": 3,
+          "/portal/order/95f95e23-998e-461f-a304-a8e9e146df64": 3,
+          "/portal/order/fb5b31a3-8aa6-4d8f-a8c4-0e51745164f9": 2,
+          "/portal/order/184ba4e2-5237-494d-a1f1-c154437a1303": 2,
+          "/portal/order/b44cd587-62c5-44b1-aaf1-604b639f018f": 2,
+          "/portal/order/98c9bb39-fc50-4ce8-bead-9d4c166348aa": 1,
+          "/portal/order/b961a808-509d-4341-86d6-55d1da194026": 1,
+          "/portal/order/4ee0fcdf-c832-49d2-809a-204cea85e1c8": 1,
+          "/portal/order/44aec761-7f18-40ee-b4ff-b8bfbfaa07fa": 1,
+          "/portal/order/60ac5f52-6ad8-4de1-a74d-e423b500cd1e": 1,
+          "/portal/order/8589451e-3ca7-4d92-9d34-468b5bdfb967": 1,
+          "/portal/order/acfdd5a9-5376-470a-93a0-80e1a4eb7a6a": 1,
+          "/portal/order/0c9ccfb6-7297-446f-a38d-047522107ee8": 1,
+          "/portal/order/3f978427-054e-48fb-b55a-70c606df1bf9": 1,
+          "/portal/order/d943115b-7052-44d1-861e-95bd138aec2e": 1,
+          "/portal/order/017476a4-ad02-4796-81fc-f1c7e25e98ae": 1,
+          "/portal/order/a79737f5-0cb1-48ef-ba81-f5e9726527a8": 1,
+          "/terms": 1
+        }
+      },
+      "scroll": {
+        "status": "proxy",
+        "by_page": {
+          "/portal/order/cef01c13-d621-41be-867f-dfdce3ee4c20": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 883.181,
+              "p90": 883.181,
+              "p95": 883.181,
+              "mean": 883.181
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/495a26be-d2f4-439d-9aca-2ee3a19ec64d": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 308.161,
+              "p90": 522.133,
+              "p95": 548.8795,
+              "mean": 308.161
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/b961a808-509d-4341-86d6-55d1da194026": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 12.554,
+              "p90": 12.554,
+              "p95": 12.554,
+              "mean": 12.554
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/ea3b47b9-3c68-4105-b9e1-079105b044ee": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 181.968,
+              "p90": 181.968,
+              "p95": 181.968,
+              "mean": 181.968
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/6bdc9375-3b0c-4ffa-9acb-9dac9d0540472": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 7.9670000000000005,
+              "p90": 7.981400000000001,
+              "p95": 7.9832,
+              "mean": 7.9670000000000005
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/95f95e23-998e-461f-a304-a8e9e146df64": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 35.366,
+              "p90": 128.3404,
+              "p95": 139.9622,
+              "mean": 64.071
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/3cdd9b31-0f2c-460e-bf19-25a4992a6d6b": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 929.815,
+              "p90": 929.815,
+              "p95": 929.815,
+              "mean": 929.815
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/c91defab-0204-4b0f-8100-9e70e8fb712c": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 1308.438,
+              "p90": 1308.438,
+              "p95": 1308.438,
+              "mean": 1308.438
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/89cd7695-30ed-4d89-bf00-c047858c1f81": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 285.077,
+              "p90": 285.077,
+              "p95": 285.077,
+              "mean": 285.077
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/7d4c8be4-5a38-40fe-bcc2-05c700bc3729": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 569.644,
+              "p90": 569.644,
+              "p95": 569.644,
+              "mean": 569.644
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/2c0a5ee6-bf55-4cc1-a7c5-1c584c3fbe6c": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 107.848,
+              "p90": 107.848,
+              "p95": 107.848,
+              "mean": 107.848
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/8589451e-3ca7-4d92-9d34-468b5bdfb967": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 289.361,
+              "p90": 289.361,
+              "p95": 289.361,
+              "mean": 289.361
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/2ec08daf-0590-4101-9f85-95175d7c146c": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 67.784,
+              "p90": 67.784,
+              "p95": 67.784,
+              "mean": 67.784
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/43bc5cae-738a-451c-8779-cb15607b9297": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 2.865,
+              "p90": 2.865,
+              "p95": 2.865,
+              "mean": 2.865
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/4ee0fcdf-c832-49d2-809a-204cea85e1c8": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 7.166,
+              "p90": 7.166,
+              "p95": 7.166,
+              "mean": 7.166
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/profile": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 7.301,
+              "p90": 58.06440000000001,
+              "p95": 123.02239999999996,
+              "mean": 28.0786
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/9a74807b-980d-4c28-ac43-7b3556086a42": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 388.926,
+              "p90": 388.926,
+              "p95": 388.926,
+              "mean": 388.926
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/e66bffaa-f628-49bd-94d3-75c3bb892f7f": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 40.6765,
+              "p90": 67.3777,
+              "p95": 70.71534999999999,
+              "mean": 40.6765
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/terms": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 0.0,
+              "p90": 0.0,
+              "p95": 0.0,
+              "mean": 0.0
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/porta": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 2.114,
+              "p90": 2.7996000000000003,
+              "p95": 2.8853,
+              "mean": 2.114
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/f40a0d5a-d296-4e4f-a83b-011334caa912": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 538.7095,
+              "p90": 964.6947,
+              "p95": 1017.94285,
+              "mean": 538.7095
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/4c1d9edc-968b-49d4-b5df-e2ca60268fa3": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 27.359,
+              "p90": 27.359,
+              "p95": 27.359,
+              "mean": 27.359
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/d943115b-7052-44d1-861e-95bd138aec2e": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 741.0,
+              "p90": 741.0,
+              "p95": 741.0,
+              "mean": 741.0
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/3f978427-054e-48fb-b55a-70c606df1bf9": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 222.997,
+              "p90": 222.997,
+              "p95": 222.997,
+              "mean": 222.997
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/b44cd587-62c5-44b1-aaf1-604b639f018f": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 132.88649999999998,
+              "p90": 228.6181,
+              "p95": 240.58454999999998,
+              "mean": 132.88649999999998
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/90c7495c-2c56-46e7-8df9-211a1a4fd399": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 925.595,
+              "p90": 925.595,
+              "p95": 925.595,
+              "mean": 925.595
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/e8072cac-f004-407b-8b80-2ab935605be5": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 62.7735,
+              "p90": 112.9299,
+              "p95": 119.19944999999998,
+              "mean": 62.7735
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/d3cbe108-43d0-457b-916e-e9ca0519cfc0": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 6.749,
+              "p90": 6.749,
+              "p95": 6.749,
+              "mean": 6.749
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/login": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 11.236,
+              "p90": 29.238000000000003,
+              "p95": 36.26639999999998,
+              "mean": 17.846906976744183
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/c5477141-e4ed-484c-8376-551db9a19f87": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 65.046,
+              "p90": 65.046,
+              "p95": 65.046,
+              "mean": 65.046
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/5e645b8c-f91b-42b2-b30a-4ee551aad44d": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 4.22,
+              "p90": 4.22,
+              "p95": 4.22,
+              "mean": 4.22
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/3f4d1034-2de6-45cb-9e2e-75bfd64fde97": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 49.5465,
+              "p90": 82.68610000000001,
+              "p95": 86.82854999999999,
+              "mean": 49.5465
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 12.609,
+              "p90": 78.27580000000003,
+              "p95": 179.03469999999956,
+              "mean": 55.907106984478936
+            },
+            "bounce_rate_proxy": 0.009423503325942351
+          },
+          "/portal/order/dd7d47d5-5a0f-4cf5-8970-1bed502c549d": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 221.416,
+              "p90": 362.5992,
+              "p95": 380.2471,
+              "mean": 209.73833333333334
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/a79737f5-0cb1-48ef-ba81-f5e9726527a8": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 0.372,
+              "p90": 2.244,
+              "p95": 2.4779999999999998,
+              "mean": 1.028
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/auth": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 3.74,
+              "p90": 42.304,
+              "p95": 51.398,
+              "mean": 25.10361904761905
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/38724b58-c673-4cc4-b103-ea3289f664a7": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 83.078,
+              "p90": 122.76599999999999,
+              "p95": 127.72699999999999,
+              "mean": 83.078
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/231abc34-874d-47ae-a85e-9c1596a691cf": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 3.133,
+              "p90": 3.133,
+              "p95": 3.133,
+              "mean": 3.133
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/d4d2dd04-a366-4516-83da-ccd9267d387e": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 52.2595,
+              "p90": 61.0399,
+              "p95": 62.137449999999994,
+              "mean": 52.2595
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/079351ae-9b2a-441a-b76d-ac8f2d7d0f7d": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 327.895,
+              "p90": 327.895,
+              "p95": 327.895,
+              "mean": 327.895
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/44aec761-7f18-40ee-b4ff-b8bfbfaa07fa": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 43.68,
+              "p90": 43.68,
+              "p95": 43.68,
+              "mean": 43.68
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/2643e604-cde6-4881-938c-40be9f519e84": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 327.014,
+              "p90": 327.014,
+              "p95": 327.014,
+              "mean": 327.014
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/search": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 38.863,
+              "p90": 234.4862,
+              "p95": 383.49860000000024,
+              "mean": 105.01149092480553
+            },
+            "bounce_rate_proxy": 0.001728608470181504
+          },
+          "/portal/order/73415faa-a079-4725-96ec-38b203206fd3": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 4.961,
+              "p90": 4.961,
+              "p95": 4.961,
+              "mean": 4.961
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/3209b8e8-b749-4ea5-a570-b90f311a5c81": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 296.669,
+              "p90": 531.6106000000001,
+              "p95": 560.9783,
+              "mean": 296.669
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 8.81,
+              "p90": 8.81,
+              "p95": 8.81,
+              "mean": 8.81
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/8195b544-d56b-440f-93e4-848a58f95c73": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 33.829,
+              "p90": 33.829,
+              "p95": 33.829,
+              "mean": 33.829
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/0c4ef2fc-481b-446a-9ee9-2fc432e092a8": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 242.938,
+              "p90": 242.938,
+              "p95": 242.938,
+              "mean": 242.938
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/7c2a39e3-88db-415b-ae6e-da0dc9c50694": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 404.634,
+              "p90": 404.634,
+              "p95": 404.634,
+              "mean": 404.634
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/9e6c58fc-cd3b-42c0-bb2a-af842531f530": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 330.654,
+              "p90": 330.654,
+              "p95": 330.654,
+              "mean": 330.654
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/a044655e-dc0b-4fc7-ae76-89db5549709b": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 396.312,
+              "p90": 396.312,
+              "p95": 396.312,
+              "mean": 396.312
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/b57c97ae-7519-48ae-84cc-65036da19960": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 253.866,
+              "p90": 253.866,
+              "p95": 253.866,
+              "mean": 253.866
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/orders": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 5.389,
+              "p90": 92.1252,
+              "p95": 192.74379999999985,
+              "mean": 66.4495294117647
+            },
+            "bounce_rate_proxy": 0.011764705882352941
+          },
+          "/portal/order/3aca8a93-f994-4b24-8a35-151131cc6185": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 75.051,
+              "p90": 111.2278,
+              "p95": 115.74990000000001,
+              "mean": 70.26166666666667
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/8f430513-3933-48f0-853d-75e31d2499cc": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 42.525,
+              "p90": 42.525,
+              "p95": 42.525,
+              "mean": 42.525
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/87309943-296c-4099-b920-4ba6982d4e53": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 181.787,
+              "p90": 181.787,
+              "p95": 181.787,
+              "mean": 181.787
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/60ac5f52-6ad8-4de1-a74d-e423b500cd1e": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 409.971,
+              "p90": 409.971,
+              "p95": 409.971,
+              "mean": 409.971
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/fb5b31a3-8aa6-4d8f-a8c4-0e51745164f9": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 5.753,
+              "p90": 6.1402,
+              "p95": 6.1886,
+              "mean": 5.010000000000001
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/e425e126-6576-42bf-85f8-2ede0fed8585": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 285.862,
+              "p90": 285.862,
+              "p95": 285.862,
+              "mean": 285.862
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/0c9ccfb6-7297-446f-a38d-047522107ee8": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 5.815,
+              "p90": 5.815,
+              "p95": 5.815,
+              "mean": 5.815
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/2533c83c-6f9c-4197-ba86-9cbbcf616282": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 139.567,
+              "p90": 251.22060000000002,
+              "p95": 265.1773,
+              "mean": 139.567
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/28c7e337-0c6f-4f29-ac1d-fbe450ab3027": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 395.339,
+              "p90": 395.339,
+              "p95": 395.339,
+              "mean": 395.339
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/2af8ef9c-8c0a-4eb9-9e46-1a24c7fcd399": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 0.0,
+              "p90": 0.0,
+              "p95": 0.0,
+              "mean": 0.0
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/ba64ed6a-d76b-429a-a485-f159e58e2479": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 43.498,
+              "p90": 73.5804,
+              "p95": 77.34069999999998,
+              "mean": 43.498
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/cedab390-4393-49bf-8a7b-2548dd510b71": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 43.825,
+              "p90": 43.825,
+              "p95": 43.825,
+              "mean": 43.825
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/017476a4-ad02-4796-81fc-f1c7e25e98ae": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 0.0,
+              "p90": 0.0,
+              "p95": 0.0,
+              "mean": 0.0
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/ca456c75-d89d-4e9f-88f6-6ba4702945e4": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 5.904,
+              "p90": 5.904,
+              "p95": 5.904,
+              "mean": 5.904
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/6f9e0b25-cc9a-4381-b856-48b1df93f4d3": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 114.073,
+              "p90": 114.073,
+              "p95": 114.073,
+              "mean": 114.073
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/93aa0f1a-2a90-4b15-b33d-d07942b2e57b": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 657.752,
+              "p90": 715.0855999999999,
+              "p95": 722.2523,
+              "mean": 657.752
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/d08c3751-74f2-4b97-a1f2-d4bdb32e224d": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 93.418,
+              "p90": 93.418,
+              "p95": 93.418,
+              "mean": 93.418
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/4141d923-8a2e-4350-8b0e-18c3bc456524": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 371.282,
+              "p90": 371.282,
+              "p95": 371.282,
+              "mean": 371.282
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/bag": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 10.958,
+              "p90": 81.20320000000008,
+              "p95": 173.9235499999996,
+              "mean": 52.56961904761904
+            },
+            "bounce_rate_proxy": 0.016666666666666666
+          },
+          "/portal": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 16.073,
+              "p90": 377.16110000000003,
+              "p95": 916.4079499999996,
+              "mean": 157.5551644736842
+            },
+            "bounce_rate_proxy": 0.019736842105263157
+          },
+          "/portal/order/7ce7fffc-7e35-4732-b168-217afdf08333": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 86.462,
+              "p90": 86.462,
+              "p95": 86.462,
+              "mean": 86.462
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/acfdd5a9-5376-470a-93a0-80e1a4eb7a6a": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 0.0,
+              "p90": 0.0,
+              "p95": 0.0,
+              "mean": 0.0
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/6bdc9375-3b0c-4ffa-9acb-9dac9d054047": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 227.128,
+              "p90": 227.128,
+              "p95": 227.128,
+              "mean": 227.128
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/51ce32ab-7921-4e91-b01e-8c54f1ae936f": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 0.0,
+              "p90": 0.0,
+              "p95": 0.0,
+              "mean": 0.0
+            },
+            "bounce_rate_proxy": 0.0
+          },
+          "/portal/order/98c9bb39-fc50-4ce8-bead-9d4c166348aa": {
+            "distribution_pct": null,
+            "dwell_seconds": {
+              "p50": 0.0,
+              "p90": 0.0,
+              "p95": 0.0,
+              "mean": 0.0
+            },
+            "bounce_rate_proxy": 0.0
+          }
+        }
+      },
+      "hover": {
+        "status": "not_available",
+        "by_page": {}
+      }
+    },
+    "paths": {
+      "nodes": [
+        {
+          "id": "bag.veliu.com/",
+          "label": "/",
+          "path_group": "bag.veliu.com/",
+          "sessions": 1597
+        },
+        {
+          "id": "bag.veliu.com/search",
+          "label": "/search",
+          "path_group": "bag.veliu.com/search",
+          "sessions": 1059
+        },
+        {
+          "id": "bag.veliu.com/bag",
+          "label": "/bag",
+          "path_group": "bag.veliu.com/bag",
+          "sessions": 376
+        },
+        {
+          "id": "bag.veliu.com/login",
+          "label": "/login",
+          "path_group": "bag.veliu.com/login",
+          "sessions": 125
+        },
+        {
+          "id": "bag.veliu.com/portal",
+          "label": "/portal",
+          "path_group": "bag.veliu.com/portal",
+          "sessions": 93
+        },
+        {
+          "id": "bag.veliu.com/orders",
+          "label": "/orders",
+          "path_group": "bag.veliu.com/orders",
+          "sessions": 79
+        },
+        {
+          "id": "bag.veliu.com/profile",
+          "label": "/profile",
+          "path_group": "bag.veliu.com/profile",
+          "sessions": 42
+        },
+        {
+          "id": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/",
+          "label": "/",
+          "path_group": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/",
+          "sessions": 17
+        },
+        {
+          "id": "bag.veliu.com/portal/auth",
+          "label": "/portal/auth",
+          "path_group": "bag.veliu.com/portal/auth",
+          "sessions": 16
+        },
+        {
+          "id": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/search",
+          "label": "/search",
+          "path_group": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/search",
+          "sessions": 12
+        },
+        {
+          "id": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/bag",
+          "label": "/bag",
+          "path_group": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/bag",
+          "sessions": 10
+        },
+        {
+          "id": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/",
+          "label": "/",
+          "path_group": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/",
+          "sessions": 9
+        },
+        {
+          "id": "preview--all-product-pricing-mvp.lovable.app/",
+          "label": "/",
+          "path_group": "preview--all-product-pricing-mvp.lovable.app/",
+          "sessions": 5
+        },
+        {
+          "id": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/portal",
+          "label": "/portal",
+          "path_group": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/portal",
+          "sessions": 4
+        },
+        {
+          "id": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/bag",
+          "label": "/bag",
+          "path_group": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/bag",
+          "sessions": 4
+        },
+        {
+          "id": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/search",
+          "label": "/search",
+          "path_group": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/search",
+          "sessions": 4
+        },
+        {
+          "id": "preview--all-product-pricing-mvp.lovable.app/search",
+          "label": "/search",
+          "path_group": "preview--all-product-pricing-mvp.lovable.app/search",
+          "sessions": 4
+        },
+        {
+          "id": "preview--all-product-pricing-mvp.lovable.app/portal",
+          "label": "/portal",
+          "path_group": "preview--all-product-pricing-mvp.lovable.app/portal",
+          "sessions": 3
+        },
+        {
+          "id": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/portal",
+          "label": "/portal",
+          "path_group": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/portal",
+          "sessions": 3
+        },
+        {
+          "id": "bag.veliu.com/portal/order/fb5b31a3-8aa6-4d8f-a8c4-0e51745164f9",
+          "label": "/portal/order/fb5b31a3-8aa6-4d8f-a8c4-0e51745164f9",
+          "path_group": "bag.veliu.com/portal/order/fb5b31a3-8aa6-4d8f-a8c4-0e51745164f9",
+          "sessions": 3
+        },
+        {
+          "id": "bag.veliu.com/portal/order/a79737f5-0cb1-48ef-ba81-f5e9726527a8",
+          "label": "/portal/order/a79737f5-0cb1-48ef-ba81-f5e9726527a8",
+          "path_group": "bag.veliu.com/portal/order/a79737f5-0cb1-48ef-ba81-f5e9726527a8",
+          "sessions": 3
+        },
+        {
+          "id": "bag.veliu.com/portal/order/95f95e23-998e-461f-a304-a8e9e146df64",
+          "label": "/portal/order/95f95e23-998e-461f-a304-a8e9e146df64",
+          "path_group": "bag.veliu.com/portal/order/95f95e23-998e-461f-a304-a8e9e146df64",
+          "sessions": 3
+        },
+        {
+          "id": "bag.veliu.com/terms",
+          "label": "/terms",
+          "path_group": "bag.veliu.com/terms",
+          "sessions": 2
+        },
+        {
+          "id": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/orders",
+          "label": "/orders",
+          "path_group": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/orders",
+          "sessions": 2
+        },
+        {
+          "id": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/profile",
+          "label": "/profile",
+          "path_group": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/profile",
+          "sessions": 2
+        },
+        {
+          "id": "bag.veliu.com/portal/order/f40a0d5a-d296-4e4f-a83b-011334caa912",
+          "label": "/portal/order/f40a0d5a-d296-4e4f-a83b-011334caa912",
+          "path_group": "bag.veliu.com/portal/order/f40a0d5a-d296-4e4f-a83b-011334caa912",
+          "sessions": 2
+        },
+        {
+          "id": "bag.veliu.com/portal/order/93aa0f1a-2a90-4b15-b33d-d07942b2e57b",
+          "label": "/portal/order/93aa0f1a-2a90-4b15-b33d-d07942b2e57b",
+          "path_group": "bag.veliu.com/portal/order/93aa0f1a-2a90-4b15-b33d-d07942b2e57b",
+          "sessions": 2
+        },
+        {
+          "id": "bag.veliu.com/portal/order/dd7d47d5-5a0f-4cf5-8970-1bed502c549d",
+          "label": "/portal/order/dd7d47d5-5a0f-4cf5-8970-1bed502c549d",
+          "path_group": "bag.veliu.com/portal/order/dd7d47d5-5a0f-4cf5-8970-1bed502c549d",
+          "sessions": 2
+        },
+        {
+          "id": "bag.veliu.com/portal/order/3aca8a93-f994-4b24-8a35-151131cc6185",
+          "label": "/portal/order/3aca8a93-f994-4b24-8a35-151131cc6185",
+          "path_group": "bag.veliu.com/portal/order/3aca8a93-f994-4b24-8a35-151131cc6185",
+          "sessions": 2
+        },
+        {
+          "id": "bag.veliu.com/portal/order/2533c83c-6f9c-4197-ba86-9cbbcf616282",
+          "label": "/portal/order/2533c83c-6f9c-4197-ba86-9cbbcf616282",
+          "path_group": "bag.veliu.com/portal/order/2533c83c-6f9c-4197-ba86-9cbbcf616282",
+          "sessions": 2
+        },
+        {
+          "id": "bag.veliu.com/portal/order/3209b8e8-b749-4ea5-a570-b90f311a5c81",
+          "label": "/portal/order/3209b8e8-b749-4ea5-a570-b90f311a5c81",
+          "path_group": "bag.veliu.com/portal/order/3209b8e8-b749-4ea5-a570-b90f311a5c81",
+          "sessions": 2
+        },
+        {
+          "id": "bag.veliu.com/porta",
+          "label": "/porta",
+          "path_group": "bag.veliu.com/porta",
+          "sessions": 2
+        },
+        {
+          "id": "bag.veliu.com/portal/order/495a26be-d2f4-439d-9aca-2ee3a19ec64d",
+          "label": "/portal/order/495a26be-d2f4-439d-9aca-2ee3a19ec64d",
+          "path_group": "bag.veliu.com/portal/order/495a26be-d2f4-439d-9aca-2ee3a19ec64d",
+          "sessions": 2
+        },
+        {
+          "id": "bag.veliu.com/portal/order/b44cd587-62c5-44b1-aaf1-604b639f018f",
+          "label": "/portal/order/b44cd587-62c5-44b1-aaf1-604b639f018f",
+          "path_group": "bag.veliu.com/portal/order/b44cd587-62c5-44b1-aaf1-604b639f018f",
+          "sessions": 2
+        },
+        {
+          "id": "bag.veliu.com/portal/order/e66bffaa-f628-49bd-94d3-75c3bb892f7f",
+          "label": "/portal/order/e66bffaa-f628-49bd-94d3-75c3bb892f7f",
+          "path_group": "bag.veliu.com/portal/order/e66bffaa-f628-49bd-94d3-75c3bb892f7f",
+          "sessions": 2
+        },
+        {
+          "id": "bag.veliu.com/portal/order/3f4d1034-2de6-45cb-9e2e-75bfd64fde97",
+          "label": "/portal/order/3f4d1034-2de6-45cb-9e2e-75bfd64fde97",
+          "path_group": "bag.veliu.com/portal/order/3f4d1034-2de6-45cb-9e2e-75bfd64fde97",
+          "sessions": 2
+        },
+        {
+          "id": "bag.veliu.com/portal/order/ba64ed6a-d76b-429a-a485-f159e58e2479",
+          "label": "/portal/order/ba64ed6a-d76b-429a-a485-f159e58e2479",
+          "path_group": "bag.veliu.com/portal/order/ba64ed6a-d76b-429a-a485-f159e58e2479",
+          "sessions": 2
+        },
+        {
+          "id": "bag.veliu.com/portal/order/d4d2dd04-a366-4516-83da-ccd9267d387e",
+          "label": "/portal/order/d4d2dd04-a366-4516-83da-ccd9267d387e",
+          "path_group": "bag.veliu.com/portal/order/d4d2dd04-a366-4516-83da-ccd9267d387e",
+          "sessions": 2
+        },
+        {
+          "id": "bag.veliu.com/portal/order/38724b58-c673-4cc4-b103-ea3289f664a7",
+          "label": "/portal/order/38724b58-c673-4cc4-b103-ea3289f664a7",
+          "path_group": "bag.veliu.com/portal/order/38724b58-c673-4cc4-b103-ea3289f664a7",
+          "sessions": 2
+        },
+        {
+          "id": "bag.veliu.com/portal/order/e8072cac-f004-407b-8b80-2ab935605be5",
+          "label": "/portal/order/e8072cac-f004-407b-8b80-2ab935605be5",
+          "path_group": "bag.veliu.com/portal/order/e8072cac-f004-407b-8b80-2ab935605be5",
+          "sessions": 2
+        },
+        {
+          "id": "bag.veliu.com/portal/order/2af8ef9c-8c0a-4eb9-9e46-1a24c7fcd399",
+          "label": "/portal/order/2af8ef9c-8c0a-4eb9-9e46-1a24c7fcd399",
+          "path_group": "bag.veliu.com/portal/order/2af8ef9c-8c0a-4eb9-9e46-1a24c7fcd399",
+          "sessions": 1
+        },
+        {
+          "id": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/profile",
+          "label": "/profile",
+          "path_group": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/profile",
+          "sessions": 1
+        },
+        {
+          "id": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/portal/auth",
+          "label": "/portal/auth",
+          "path_group": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/portal/auth",
+          "sessions": 1
+        },
+        {
+          "id": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/login",
+          "label": "/login",
+          "path_group": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/login",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/b961a808-509d-4341-86d6-55d1da194026",
+          "label": "/portal/order/b961a808-509d-4341-86d6-55d1da194026",
+          "path_group": "bag.veliu.com/portal/order/b961a808-509d-4341-86d6-55d1da194026",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/4ee0fcdf-c832-49d2-809a-204cea85e1c8",
+          "label": "/portal/order/4ee0fcdf-c832-49d2-809a-204cea85e1c8",
+          "path_group": "bag.veliu.com/portal/order/4ee0fcdf-c832-49d2-809a-204cea85e1c8",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/44aec761-7f18-40ee-b4ff-b8bfbfaa07fa",
+          "label": "/portal/order/44aec761-7f18-40ee-b4ff-b8bfbfaa07fa",
+          "path_group": "bag.veliu.com/portal/order/44aec761-7f18-40ee-b4ff-b8bfbfaa07fa",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/ea3b47b9-3c68-4105-b9e1-079105b044ee",
+          "label": "/portal/order/ea3b47b9-3c68-4105-b9e1-079105b044ee",
+          "path_group": "bag.veliu.com/portal/order/ea3b47b9-3c68-4105-b9e1-079105b044ee",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/28c7e337-0c6f-4f29-ac1d-fbe450ab3027",
+          "label": "/portal/order/28c7e337-0c6f-4f29-ac1d-fbe450ab3027",
+          "path_group": "bag.veliu.com/portal/order/28c7e337-0c6f-4f29-ac1d-fbe450ab3027",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/87309943-296c-4099-b920-4ba6982d4e53",
+          "label": "/portal/order/87309943-296c-4099-b920-4ba6982d4e53",
+          "path_group": "bag.veliu.com/portal/order/87309943-296c-4099-b920-4ba6982d4e53",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/2643e604-cde6-4881-938c-40be9f519e84",
+          "label": "/portal/order/2643e604-cde6-4881-938c-40be9f519e84",
+          "path_group": "bag.veliu.com/portal/order/2643e604-cde6-4881-938c-40be9f519e84",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/6f9e0b25-cc9a-4381-b856-48b1df93f4d3",
+          "label": "/portal/order/6f9e0b25-cc9a-4381-b856-48b1df93f4d3",
+          "path_group": "bag.veliu.com/portal/order/6f9e0b25-cc9a-4381-b856-48b1df93f4d3",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/d3cbe108-43d0-457b-916e-e9ca0519cfc0",
+          "label": "/portal/order/d3cbe108-43d0-457b-916e-e9ca0519cfc0",
+          "path_group": "bag.veliu.com/portal/order/d3cbe108-43d0-457b-916e-e9ca0519cfc0",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/43bc5cae-738a-451c-8779-cb15607b9297",
+          "label": "/portal/order/43bc5cae-738a-451c-8779-cb15607b9297",
+          "path_group": "bag.veliu.com/portal/order/43bc5cae-738a-451c-8779-cb15607b9297",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/73415faa-a079-4725-96ec-38b203206fd3",
+          "label": "/portal/order/73415faa-a079-4725-96ec-38b203206fd3",
+          "path_group": "bag.veliu.com/portal/order/73415faa-a079-4725-96ec-38b203206fd3",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/4141d923-8a2e-4350-8b0e-18c3bc456524",
+          "label": "/portal/order/4141d923-8a2e-4350-8b0e-18c3bc456524",
+          "path_group": "bag.veliu.com/portal/order/4141d923-8a2e-4350-8b0e-18c3bc456524",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/7d4c8be4-5a38-40fe-bcc2-05c700bc3729",
+          "label": "/portal/order/7d4c8be4-5a38-40fe-bcc2-05c700bc3729",
+          "path_group": "bag.veliu.com/portal/order/7d4c8be4-5a38-40fe-bcc2-05c700bc3729",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/079351ae-9b2a-441a-b76d-ac8f2d7d0f7d",
+          "label": "/portal/order/079351ae-9b2a-441a-b76d-ac8f2d7d0f7d",
+          "path_group": "bag.veliu.com/portal/order/079351ae-9b2a-441a-b76d-ac8f2d7d0f7d",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/7c2a39e3-88db-415b-ae6e-da0dc9c50694",
+          "label": "/portal/order/7c2a39e3-88db-415b-ae6e-da0dc9c50694",
+          "path_group": "bag.veliu.com/portal/order/7c2a39e3-88db-415b-ae6e-da0dc9c50694",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/a044655e-dc0b-4fc7-ae76-89db5549709b",
+          "label": "/portal/order/a044655e-dc0b-4fc7-ae76-89db5549709b",
+          "path_group": "bag.veliu.com/portal/order/a044655e-dc0b-4fc7-ae76-89db5549709b",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/e425e126-6576-42bf-85f8-2ede0fed8585",
+          "label": "/portal/order/e425e126-6576-42bf-85f8-2ede0fed8585",
+          "path_group": "bag.veliu.com/portal/order/e425e126-6576-42bf-85f8-2ede0fed8585",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/89cd7695-30ed-4d89-bf00-c047858c1f81",
+          "label": "/portal/order/89cd7695-30ed-4d89-bf00-c047858c1f81",
+          "path_group": "bag.veliu.com/portal/order/89cd7695-30ed-4d89-bf00-c047858c1f81",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/9a74807b-980d-4c28-ac43-7b3556086a42",
+          "label": "/portal/order/9a74807b-980d-4c28-ac43-7b3556086a42",
+          "path_group": "bag.veliu.com/portal/order/9a74807b-980d-4c28-ac43-7b3556086a42",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/6bdc9375-3b0c-4ffa-9acb-9dac9d0540472",
+          "label": "/portal/order/6bdc9375-3b0c-4ffa-9acb-9dac9d0540472",
+          "path_group": "bag.veliu.com/portal/order/6bdc9375-3b0c-4ffa-9acb-9dac9d0540472",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order",
+          "label": "/portal/order",
+          "path_group": "bag.veliu.com/portal/order",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/6bdc9375-3b0c-4ffa-9acb-9dac9d054047",
+          "label": "/portal/order/6bdc9375-3b0c-4ffa-9acb-9dac9d054047",
+          "path_group": "bag.veliu.com/portal/order/6bdc9375-3b0c-4ffa-9acb-9dac9d054047",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/51ce32ab-7921-4e91-b01e-8c54f1ae936f",
+          "label": "/portal/order/51ce32ab-7921-4e91-b01e-8c54f1ae936f",
+          "path_group": "bag.veliu.com/portal/order/51ce32ab-7921-4e91-b01e-8c54f1ae936f",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/60ac5f52-6ad8-4de1-a74d-e423b500cd1e",
+          "label": "/portal/order/60ac5f52-6ad8-4de1-a74d-e423b500cd1e",
+          "path_group": "bag.veliu.com/portal/order/60ac5f52-6ad8-4de1-a74d-e423b500cd1e",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/8589451e-3ca7-4d92-9d34-468b5bdfb967",
+          "label": "/portal/order/8589451e-3ca7-4d92-9d34-468b5bdfb967",
+          "path_group": "bag.veliu.com/portal/order/8589451e-3ca7-4d92-9d34-468b5bdfb967",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/98c9bb39-fc50-4ce8-bead-9d4c166348aa",
+          "label": "/portal/order/98c9bb39-fc50-4ce8-bead-9d4c166348aa",
+          "path_group": "bag.veliu.com/portal/order/98c9bb39-fc50-4ce8-bead-9d4c166348aa",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/0c9ccfb6-7297-446f-a38d-047522107ee8",
+          "label": "/portal/order/0c9ccfb6-7297-446f-a38d-047522107ee8",
+          "path_group": "bag.veliu.com/portal/order/0c9ccfb6-7297-446f-a38d-047522107ee8",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/3f978427-054e-48fb-b55a-70c606df1bf9",
+          "label": "/portal/order/3f978427-054e-48fb-b55a-70c606df1bf9",
+          "path_group": "bag.veliu.com/portal/order/3f978427-054e-48fb-b55a-70c606df1bf9",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/90c7495c-2c56-46e7-8df9-211a1a4fd399",
+          "label": "/portal/order/90c7495c-2c56-46e7-8df9-211a1a4fd399",
+          "path_group": "bag.veliu.com/portal/order/90c7495c-2c56-46e7-8df9-211a1a4fd399",
+          "sessions": 1
+        },
+        {
+          "id": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/portal/auth",
+          "label": "/portal/auth",
+          "path_group": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/portal/auth",
+          "sessions": 1
+        },
+        {
+          "id": "preview--all-product-pricing-mvp.lovable.app/login",
+          "label": "/login",
+          "path_group": "preview--all-product-pricing-mvp.lovable.app/login",
+          "sessions": 1
+        },
+        {
+          "id": "preview--all-product-pricing-mvp.lovable.app/bag",
+          "label": "/bag",
+          "path_group": "preview--all-product-pricing-mvp.lovable.app/bag",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/d943115b-7052-44d1-861e-95bd138aec2e",
+          "label": "/portal/order/d943115b-7052-44d1-861e-95bd138aec2e",
+          "path_group": "bag.veliu.com/portal/order/d943115b-7052-44d1-861e-95bd138aec2e",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/017476a4-ad02-4796-81fc-f1c7e25e98ae",
+          "label": "/portal/order/017476a4-ad02-4796-81fc-f1c7e25e98ae",
+          "path_group": "bag.veliu.com/portal/order/017476a4-ad02-4796-81fc-f1c7e25e98ae",
+          "sessions": 1
+        },
+        {
+          "id": "preview--all-product-pricing-mvp.lovable.app/portal/auth",
+          "label": "/portal/auth",
+          "path_group": "preview--all-product-pricing-mvp.lovable.app/portal/auth",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/9e6c58fc-cd3b-42c0-bb2a-af842531f530",
+          "label": "/portal/order/9e6c58fc-cd3b-42c0-bb2a-af842531f530",
+          "path_group": "bag.veliu.com/portal/order/9e6c58fc-cd3b-42c0-bb2a-af842531f530",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/3cdd9b31-0f2c-460e-bf19-25a4992a6d6b",
+          "label": "/portal/order/3cdd9b31-0f2c-460e-bf19-25a4992a6d6b",
+          "path_group": "bag.veliu.com/portal/order/3cdd9b31-0f2c-460e-bf19-25a4992a6d6b",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/4c1d9edc-968b-49d4-b5df-e2ca60268fa3",
+          "label": "/portal/order/4c1d9edc-968b-49d4-b5df-e2ca60268fa3",
+          "path_group": "bag.veliu.com/portal/order/4c1d9edc-968b-49d4-b5df-e2ca60268fa3",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/7ce7fffc-7e35-4732-b168-217afdf08333",
+          "label": "/portal/order/7ce7fffc-7e35-4732-b168-217afdf08333",
+          "path_group": "bag.veliu.com/portal/order/7ce7fffc-7e35-4732-b168-217afdf08333",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/8f430513-3933-48f0-853d-75e31d2499cc",
+          "label": "/portal/order/8f430513-3933-48f0-853d-75e31d2499cc",
+          "path_group": "bag.veliu.com/portal/order/8f430513-3933-48f0-853d-75e31d2499cc",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/b57c97ae-7519-48ae-84cc-65036da19960",
+          "label": "/portal/order/b57c97ae-7519-48ae-84cc-65036da19960",
+          "path_group": "bag.veliu.com/portal/order/b57c97ae-7519-48ae-84cc-65036da19960",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/2ec08daf-0590-4101-9f85-95175d7c146c",
+          "label": "/portal/order/2ec08daf-0590-4101-9f85-95175d7c146c",
+          "path_group": "bag.veliu.com/portal/order/2ec08daf-0590-4101-9f85-95175d7c146c",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/cedab390-4393-49bf-8a7b-2548dd510b71",
+          "label": "/portal/order/cedab390-4393-49bf-8a7b-2548dd510b71",
+          "path_group": "bag.veliu.com/portal/order/cedab390-4393-49bf-8a7b-2548dd510b71",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/c5477141-e4ed-484c-8376-551db9a19f87",
+          "label": "/portal/order/c5477141-e4ed-484c-8376-551db9a19f87",
+          "path_group": "bag.veliu.com/portal/order/c5477141-e4ed-484c-8376-551db9a19f87",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/8195b544-d56b-440f-93e4-848a58f95c73",
+          "label": "/portal/order/8195b544-d56b-440f-93e4-848a58f95c73",
+          "path_group": "bag.veliu.com/portal/order/8195b544-d56b-440f-93e4-848a58f95c73",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/d08c3751-74f2-4b97-a1f2-d4bdb32e224d",
+          "label": "/portal/order/d08c3751-74f2-4b97-a1f2-d4bdb32e224d",
+          "path_group": "bag.veliu.com/portal/order/d08c3751-74f2-4b97-a1f2-d4bdb32e224d",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/cef01c13-d621-41be-867f-dfdce3ee4c20",
+          "label": "/portal/order/cef01c13-d621-41be-867f-dfdce3ee4c20",
+          "path_group": "bag.veliu.com/portal/order/cef01c13-d621-41be-867f-dfdce3ee4c20",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/5e645b8c-f91b-42b2-b30a-4ee551aad44d",
+          "label": "/portal/order/5e645b8c-f91b-42b2-b30a-4ee551aad44d",
+          "path_group": "bag.veliu.com/portal/order/5e645b8c-f91b-42b2-b30a-4ee551aad44d",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/ca456c75-d89d-4e9f-88f6-6ba4702945e4",
+          "label": "/portal/order/ca456c75-d89d-4e9f-88f6-6ba4702945e4",
+          "path_group": "bag.veliu.com/portal/order/ca456c75-d89d-4e9f-88f6-6ba4702945e4",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/0c4ef2fc-481b-446a-9ee9-2fc432e092a8",
+          "label": "/portal/order/0c4ef2fc-481b-446a-9ee9-2fc432e092a8",
+          "path_group": "bag.veliu.com/portal/order/0c4ef2fc-481b-446a-9ee9-2fc432e092a8",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/231abc34-874d-47ae-a85e-9c1596a691cf",
+          "label": "/portal/order/231abc34-874d-47ae-a85e-9c1596a691cf",
+          "path_group": "bag.veliu.com/portal/order/231abc34-874d-47ae-a85e-9c1596a691cf",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/c91defab-0204-4b0f-8100-9e70e8fb712c",
+          "label": "/portal/order/c91defab-0204-4b0f-8100-9e70e8fb712c",
+          "path_group": "bag.veliu.com/portal/order/c91defab-0204-4b0f-8100-9e70e8fb712c",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/2c0a5ee6-bf55-4cc1-a7c5-1c584c3fbe6c",
+          "label": "/portal/order/2c0a5ee6-bf55-4cc1-a7c5-1c584c3fbe6c",
+          "path_group": "bag.veliu.com/portal/order/2c0a5ee6-bf55-4cc1-a7c5-1c584c3fbe6c",
+          "sessions": 1
+        },
+        {
+          "id": "bag.veliu.com/portal/order/acfdd5a9-5376-470a-93a0-80e1a4eb7a6a",
+          "label": "/portal/order/acfdd5a9-5376-470a-93a0-80e1a4eb7a6a",
+          "path_group": "bag.veliu.com/portal/order/acfdd5a9-5376-470a-93a0-80e1a4eb7a6a",
+          "sessions": 1
+        }
+      ],
+      "edges": [
+        {
+          "from": "bag.veliu.com/",
+          "to": "bag.veliu.com/search",
+          "sessions": 948
+        },
+        {
+          "from": "bag.veliu.com/search",
+          "to": "bag.veliu.com/",
+          "sessions": 539
+        },
+        {
+          "from": "bag.veliu.com/bag",
+          "to": "bag.veliu.com/",
+          "sessions": 158
+        },
+        {
+          "from": "bag.veliu.com/",
+          "to": "bag.veliu.com/bag",
+          "sessions": 154
+        },
+        {
+          "from": "bag.veliu.com/search",
+          "to": "bag.veliu.com/bag",
+          "sessions": 149
+        },
+        {
+          "from": "bag.veliu.com/",
+          "to": "bag.veliu.com/login",
+          "sessions": 120
+        },
+        {
+          "from": "bag.veliu.com/login",
+          "to": "bag.veliu.com/",
+          "sessions": 115
+        },
+        {
+          "from": "bag.veliu.com/bag",
+          "to": "bag.veliu.com/search",
+          "sessions": 75
+        },
+        {
+          "from": "bag.veliu.com/bag",
+          "to": "bag.veliu.com/orders",
+          "sessions": 50
+        },
+        {
+          "from": "bag.veliu.com/orders",
+          "to": "bag.veliu.com/bag",
+          "sessions": 33
+        },
+        {
+          "from": "bag.veliu.com/orders",
+          "to": "bag.veliu.com/",
+          "sessions": 22
+        },
+        {
+          "from": "bag.veliu.com/profile",
+          "to": "bag.veliu.com/",
+          "sessions": 19
+        },
+        {
+          "from": "bag.veliu.com/bag",
+          "to": "bag.veliu.com/profile",
+          "sessions": 16
+        },
+        {
+          "from": "bag.veliu.com/profile",
+          "to": "bag.veliu.com/orders",
+          "sessions": 16
+        },
+        {
+          "from": "bag.veliu.com/portal/auth",
+          "to": "bag.veliu.com/portal",
+          "sessions": 16
+        },
+        {
+          "from": "bag.veliu.com/",
+          "to": "bag.veliu.com/profile",
+          "sessions": 15
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/auth",
+          "sessions": 11
+        },
+        {
+          "from": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/",
+          "to": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/search",
+          "sessions": 10
+        },
+        {
+          "from": "bag.veliu.com/orders",
+          "to": "bag.veliu.com/profile",
+          "sessions": 9
+        },
+        {
+          "from": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/search",
+          "to": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/",
+          "sessions": 7
+        },
+        {
+          "from": "bag.veliu.com/profile",
+          "to": "bag.veliu.com/bag",
+          "sessions": 6
+        },
+        {
+          "from": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/bag",
+          "to": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/",
+          "sessions": 5
+        },
+        {
+          "from": "bag.veliu.com/",
+          "to": "bag.veliu.com/orders",
+          "sessions": 4
+        },
+        {
+          "from": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/search",
+          "to": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/bag",
+          "sessions": 4
+        },
+        {
+          "from": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/",
+          "to": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/bag",
+          "sessions": 4
+        },
+        {
+          "from": "bag.veliu.com/",
+          "to": "bag.veliu.com/portal",
+          "sessions": 4
+        },
+        {
+          "from": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/bag",
+          "to": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/",
+          "sessions": 3
+        },
+        {
+          "from": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/",
+          "to": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/search",
+          "sessions": 3
+        },
+        {
+          "from": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/search",
+          "to": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/",
+          "sessions": 3
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/fb5b31a3-8aa6-4d8f-a8c4-0e51745164f9",
+          "sessions": 3
+        },
+        {
+          "from": "preview--all-product-pricing-mvp.lovable.app/",
+          "to": "preview--all-product-pricing-mvp.lovable.app/search",
+          "sessions": 3
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/95f95e23-998e-461f-a304-a8e9e146df64",
+          "sessions": 3
+        },
+        {
+          "from": "bag.veliu.com/portal/order/95f95e23-998e-461f-a304-a8e9e146df64",
+          "to": "bag.veliu.com/portal",
+          "sessions": 3
+        },
+        {
+          "from": "bag.veliu.com/search",
+          "to": "bag.veliu.com/orders",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/orders",
+          "to": "bag.veliu.com/search",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/search",
+          "to": "bag.veliu.com/login",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/bag",
+          "to": "bag.veliu.com/login",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/f40a0d5a-d296-4e4f-a83b-011334caa912",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal/order/f40a0d5a-d296-4e4f-a83b-011334caa912",
+          "to": "bag.veliu.com/portal",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/93aa0f1a-2a90-4b15-b33d-d07942b2e57b",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal/order/dd7d47d5-5a0f-4cf5-8970-1bed502c549d",
+          "to": "bag.veliu.com/portal",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/3aca8a93-f994-4b24-8a35-151131cc6185",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal/order/3aca8a93-f994-4b24-8a35-151131cc6185",
+          "to": "bag.veliu.com/portal",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal/order/3209b8e8-b749-4ea5-a570-b90f311a5c81",
+          "to": "bag.veliu.com/portal",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal/order/fb5b31a3-8aa6-4d8f-a8c4-0e51745164f9",
+          "to": "bag.veliu.com/portal",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/porta",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/porta",
+          "to": "bag.veliu.com/portal",
+          "sessions": 2
+        },
+        {
+          "from": "preview--all-product-pricing-mvp.lovable.app/search",
+          "to": "preview--all-product-pricing-mvp.lovable.app/",
+          "sessions": 2
+        },
+        {
+          "from": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/bag",
+          "to": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/search",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/a79737f5-0cb1-48ef-ba81-f5e9726527a8",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/495a26be-d2f4-439d-9aca-2ee3a19ec64d",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal/order/495a26be-d2f4-439d-9aca-2ee3a19ec64d",
+          "to": "bag.veliu.com/portal",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/b44cd587-62c5-44b1-aaf1-604b639f018f",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/e66bffaa-f628-49bd-94d3-75c3bb892f7f",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal/order/e66bffaa-f628-49bd-94d3-75c3bb892f7f",
+          "to": "bag.veliu.com/portal",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/3f4d1034-2de6-45cb-9e2e-75bfd64fde97",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal/order/3f4d1034-2de6-45cb-9e2e-75bfd64fde97",
+          "to": "bag.veliu.com/portal",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/ba64ed6a-d76b-429a-a485-f159e58e2479",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal/order/ba64ed6a-d76b-429a-a485-f159e58e2479",
+          "to": "bag.veliu.com/portal",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/d4d2dd04-a366-4516-83da-ccd9267d387e",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal/order/d4d2dd04-a366-4516-83da-ccd9267d387e",
+          "to": "bag.veliu.com/portal",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/38724b58-c673-4cc4-b103-ea3289f664a7",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal/order/38724b58-c673-4cc4-b103-ea3289f664a7",
+          "to": "bag.veliu.com/portal",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/e8072cac-f004-407b-8b80-2ab935605be5",
+          "sessions": 2
+        },
+        {
+          "from": "bag.veliu.com/search",
+          "to": "bag.veliu.com/terms",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/2af8ef9c-8c0a-4eb9-9e46-1a24c7fcd399",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/login",
+          "to": "bag.veliu.com/search",
+          "sessions": 1
+        },
+        {
+          "from": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/",
+          "to": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/profile",
+          "sessions": 1
+        },
+        {
+          "from": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/profile",
+          "to": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/portal",
+          "sessions": 1
+        },
+        {
+          "from": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/portal",
+          "to": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/portal/auth",
+          "sessions": 1
+        },
+        {
+          "from": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/portal/auth",
+          "to": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/portal",
+          "sessions": 1
+        },
+        {
+          "from": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/orders",
+          "to": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/profile",
+          "sessions": 1
+        },
+        {
+          "from": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/profile",
+          "to": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/portal",
+          "sessions": 1
+        },
+        {
+          "from": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/portal",
+          "to": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/login",
+          "sessions": 1
+        },
+        {
+          "from": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/login",
+          "to": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/",
+          "sessions": 1
+        },
+        {
+          "from": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/",
+          "to": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/b961a808-509d-4341-86d6-55d1da194026",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/b961a808-509d-4341-86d6-55d1da194026",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/",
+          "to": "bag.veliu.com/portal/order/4ee0fcdf-c832-49d2-809a-204cea85e1c8",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/4ee0fcdf-c832-49d2-809a-204cea85e1c8",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/44aec761-7f18-40ee-b4ff-b8bfbfaa07fa",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/44aec761-7f18-40ee-b4ff-b8bfbfaa07fa",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/ea3b47b9-3c68-4105-b9e1-079105b044ee",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/ea3b47b9-3c68-4105-b9e1-079105b044ee",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/93aa0f1a-2a90-4b15-b33d-d07942b2e57b",
+          "to": "bag.veliu.com/portal/order/dd7d47d5-5a0f-4cf5-8970-1bed502c549d",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/93aa0f1a-2a90-4b15-b33d-d07942b2e57b",
+          "to": "bag.veliu.com/portal/order/28c7e337-0c6f-4f29-ac1d-fbe450ab3027",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/28c7e337-0c6f-4f29-ac1d-fbe450ab3027",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/87309943-296c-4099-b920-4ba6982d4e53",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/87309943-296c-4099-b920-4ba6982d4e53",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/2643e604-cde6-4881-938c-40be9f519e84",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/2643e604-cde6-4881-938c-40be9f519e84",
+          "to": "bag.veliu.com/portal/order/6f9e0b25-cc9a-4381-b856-48b1df93f4d3",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/6f9e0b25-cc9a-4381-b856-48b1df93f4d3",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/d3cbe108-43d0-457b-916e-e9ca0519cfc0",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/d3cbe108-43d0-457b-916e-e9ca0519cfc0",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/43bc5cae-738a-451c-8779-cb15607b9297",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/43bc5cae-738a-451c-8779-cb15607b9297",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/73415faa-a079-4725-96ec-38b203206fd3",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/73415faa-a079-4725-96ec-38b203206fd3",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/4141d923-8a2e-4350-8b0e-18c3bc456524",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/4141d923-8a2e-4350-8b0e-18c3bc456524",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/7d4c8be4-5a38-40fe-bcc2-05c700bc3729",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/7d4c8be4-5a38-40fe-bcc2-05c700bc3729",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/079351ae-9b2a-441a-b76d-ac8f2d7d0f7d",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/079351ae-9b2a-441a-b76d-ac8f2d7d0f7d",
+          "to": "bag.veliu.com/portal/order/7c2a39e3-88db-415b-ae6e-da0dc9c50694",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/7c2a39e3-88db-415b-ae6e-da0dc9c50694",
+          "to": "bag.veliu.com/portal/order/a044655e-dc0b-4fc7-ae76-89db5549709b",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/a044655e-dc0b-4fc7-ae76-89db5549709b",
+          "to": "bag.veliu.com/portal/order/e425e126-6576-42bf-85f8-2ede0fed8585",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/e425e126-6576-42bf-85f8-2ede0fed8585",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/89cd7695-30ed-4d89-bf00-c047858c1f81",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/89cd7695-30ed-4d89-bf00-c047858c1f81",
+          "to": "bag.veliu.com/portal/order/9a74807b-980d-4c28-ac43-7b3556086a42",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/9a74807b-980d-4c28-ac43-7b3556086a42",
+          "to": "bag.veliu.com/portal/order/2533c83c-6f9c-4197-ba86-9cbbcf616282",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/2533c83c-6f9c-4197-ba86-9cbbcf616282",
+          "to": "bag.veliu.com/portal/order/6bdc9375-3b0c-4ffa-9acb-9dac9d0540472",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/6bdc9375-3b0c-4ffa-9acb-9dac9d0540472",
+          "to": "bag.veliu.com/portal/order",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/6bdc9375-3b0c-4ffa-9acb-9dac9d054047",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/6bdc9375-3b0c-4ffa-9acb-9dac9d054047",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/51ce32ab-7921-4e91-b01e-8c54f1ae936f",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/3209b8e8-b749-4ea5-a570-b90f311a5c81",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/60ac5f52-6ad8-4de1-a74d-e423b500cd1e",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/8589451e-3ca7-4d92-9d34-468b5bdfb967",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/8589451e-3ca7-4d92-9d34-468b5bdfb967",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/98c9bb39-fc50-4ce8-bead-9d4c166348aa",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/0c9ccfb6-7297-446f-a38d-047522107ee8",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/0c9ccfb6-7297-446f-a38d-047522107ee8",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/3f978427-054e-48fb-b55a-70c606df1bf9",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/3f978427-054e-48fb-b55a-70c606df1bf9",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/90c7495c-2c56-46e7-8df9-211a1a4fd399",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/90c7495c-2c56-46e7-8df9-211a1a4fd399",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/2533c83c-6f9c-4197-ba86-9cbbcf616282",
+          "sessions": 1
+        },
+        {
+          "from": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/bag",
+          "to": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/profile",
+          "sessions": 1
+        },
+        {
+          "from": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/profile",
+          "to": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/",
+          "sessions": 1
+        },
+        {
+          "from": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/bag",
+          "to": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/orders",
+          "sessions": 1
+        },
+        {
+          "from": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/orders",
+          "to": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/portal",
+          "sessions": 1
+        },
+        {
+          "from": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/portal",
+          "to": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/portal/auth",
+          "sessions": 1
+        },
+        {
+          "from": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/portal/auth",
+          "to": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/portal",
+          "sessions": 1
+        },
+        {
+          "from": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/portal",
+          "to": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/bag",
+          "sessions": 1
+        },
+        {
+          "from": "preview--all-product-pricing-mvp.lovable.app/",
+          "to": "preview--all-product-pricing-mvp.lovable.app/login",
+          "sessions": 1
+        },
+        {
+          "from": "preview--all-product-pricing-mvp.lovable.app/login",
+          "to": "preview--all-product-pricing-mvp.lovable.app/",
+          "sessions": 1
+        },
+        {
+          "from": "preview--all-product-pricing-mvp.lovable.app/search",
+          "to": "preview--all-product-pricing-mvp.lovable.app/bag",
+          "sessions": 1
+        },
+        {
+          "from": "preview--all-product-pricing-mvp.lovable.app/bag",
+          "to": "preview--all-product-pricing-mvp.lovable.app/search",
+          "sessions": 1
+        },
+        {
+          "from": "preview--all-product-pricing-mvp.lovable.app/portal",
+          "to": "preview--all-product-pricing-mvp.lovable.app/",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/d943115b-7052-44d1-861e-95bd138aec2e",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/017476a4-ad02-4796-81fc-f1c7e25e98ae",
+          "sessions": 1
+        },
+        {
+          "from": "preview--all-product-pricing-mvp.lovable.app/portal",
+          "to": "preview--all-product-pricing-mvp.lovable.app/portal/auth",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/a79737f5-0cb1-48ef-ba81-f5e9726527a8",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/fb5b31a3-8aa6-4d8f-a8c4-0e51745164f9",
+          "to": "bag.veliu.com/portal/order/9e6c58fc-cd3b-42c0-bb2a-af842531f530",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/9e6c58fc-cd3b-42c0-bb2a-af842531f530",
+          "to": "bag.veliu.com/",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/search",
+          "to": "bag.veliu.com/portal/order/a79737f5-0cb1-48ef-ba81-f5e9726527a8",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/a79737f5-0cb1-48ef-ba81-f5e9726527a8",
+          "to": "bag.veliu.com/portal/auth",
+          "sessions": 1
+        },
+        {
+          "from": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/bag",
+          "to": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/portal",
+          "sessions": 1
+        },
+        {
+          "from": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/portal",
+          "to": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/search",
+          "sessions": 1
+        },
+        {
+          "from": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/search",
+          "to": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/bag",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/3cdd9b31-0f2c-460e-bf19-25a4992a6d6b",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/3cdd9b31-0f2c-460e-bf19-25a4992a6d6b",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/b44cd587-62c5-44b1-aaf1-604b639f018f",
+          "to": "bag.veliu.com/",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/b44cd587-62c5-44b1-aaf1-604b639f018f",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/4c1d9edc-968b-49d4-b5df-e2ca60268fa3",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/4c1d9edc-968b-49d4-b5df-e2ca60268fa3",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/7ce7fffc-7e35-4732-b168-217afdf08333",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/7ce7fffc-7e35-4732-b168-217afdf08333",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/8f430513-3933-48f0-853d-75e31d2499cc",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/8f430513-3933-48f0-853d-75e31d2499cc",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/b57c97ae-7519-48ae-84cc-65036da19960",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/b57c97ae-7519-48ae-84cc-65036da19960",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/2ec08daf-0590-4101-9f85-95175d7c146c",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/2ec08daf-0590-4101-9f85-95175d7c146c",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/cedab390-4393-49bf-8a7b-2548dd510b71",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/cedab390-4393-49bf-8a7b-2548dd510b71",
+          "to": "bag.veliu.com/portal/order/c5477141-e4ed-484c-8376-551db9a19f87",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/c5477141-e4ed-484c-8376-551db9a19f87",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/8195b544-d56b-440f-93e4-848a58f95c73",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/8195b544-d56b-440f-93e4-848a58f95c73",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/d08c3751-74f2-4b97-a1f2-d4bdb32e224d",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/d08c3751-74f2-4b97-a1f2-d4bdb32e224d",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/cef01c13-d621-41be-867f-dfdce3ee4c20",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/cef01c13-d621-41be-867f-dfdce3ee4c20",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/dd7d47d5-5a0f-4cf5-8970-1bed502c549d",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/5e645b8c-f91b-42b2-b30a-4ee551aad44d",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/5e645b8c-f91b-42b2-b30a-4ee551aad44d",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/ca456c75-d89d-4e9f-88f6-6ba4702945e4",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/ca456c75-d89d-4e9f-88f6-6ba4702945e4",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/e8072cac-f004-407b-8b80-2ab935605be5",
+          "to": "bag.veliu.com/portal/auth",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/e8072cac-f004-407b-8b80-2ab935605be5",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/0c4ef2fc-481b-446a-9ee9-2fc432e092a8",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/0c4ef2fc-481b-446a-9ee9-2fc432e092a8",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/231abc34-874d-47ae-a85e-9c1596a691cf",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/231abc34-874d-47ae-a85e-9c1596a691cf",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/c91defab-0204-4b0f-8100-9e70e8fb712c",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/c91defab-0204-4b0f-8100-9e70e8fb712c",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/2c0a5ee6-bf55-4cc1-a7c5-1c584c3fbe6c",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal/order/2c0a5ee6-bf55-4cc1-a7c5-1c584c3fbe6c",
+          "to": "bag.veliu.com/portal",
+          "sessions": 1
+        },
+        {
+          "from": "bag.veliu.com/portal",
+          "to": "bag.veliu.com/portal/order/acfdd5a9-5376-470a-93a0-80e1a4eb7a6a",
+          "sessions": 1
+        }
+      ],
+      "entries": [
+        {
+          "node": "bag.veliu.com/",
+          "sessions": 740
+        },
+        {
+          "node": "bag.veliu.com/bag",
+          "sessions": 34
+        },
+        {
+          "node": "bag.veliu.com/search",
+          "sessions": 33
+        },
+        {
+          "node": "bag.veliu.com/orders",
+          "sessions": 7
+        },
+        {
+          "node": "bag.veliu.com/portal",
+          "sessions": 6
+        },
+        {
+          "node": "preview--all-product-pricing-mvp.lovable.app/portal",
+          "sessions": 3
+        },
+        {
+          "node": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/",
+          "sessions": 3
+        },
+        {
+          "node": "bag.veliu.com/portal/auth",
+          "sessions": 3
+        },
+        {
+          "node": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/bag",
+          "sessions": 3
+        },
+        {
+          "node": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/",
+          "sessions": 3
+        },
+        {
+          "node": "bag.veliu.com/profile",
+          "sessions": 2
+        },
+        {
+          "node": "bag.veliu.com/login",
+          "sessions": 1
+        },
+        {
+          "node": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/orders",
+          "sessions": 1
+        },
+        {
+          "node": "bag.veliu.com/portal/order/3209b8e8-b749-4ea5-a570-b90f311a5c81",
+          "sessions": 1
+        },
+        {
+          "node": "bag.veliu.com/portal/order/60ac5f52-6ad8-4de1-a74d-e423b500cd1e",
+          "sessions": 1
+        },
+        {
+          "node": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/bag",
+          "sessions": 1
+        },
+        {
+          "node": "preview--all-product-pricing-mvp.lovable.app/",
+          "sessions": 1
+        },
+        {
+          "node": "bag.veliu.com/portal/order/d943115b-7052-44d1-861e-95bd138aec2e",
+          "sessions": 1
+        },
+        {
+          "node": "bag.veliu.com/terms",
+          "sessions": 1
+        }
+      ],
+      "exits": [
+        {
+          "node": "bag.veliu.com/search",
+          "sessions": 365
+        },
+        {
+          "node": "bag.veliu.com/",
+          "sessions": 351
+        },
+        {
+          "node": "bag.veliu.com/bag",
+          "sessions": 75
+        },
+        {
+          "node": "bag.veliu.com/orders",
+          "sessions": 13
+        },
+        {
+          "node": "bag.veliu.com/login",
+          "sessions": 9
+        },
+        {
+          "node": "bag.veliu.com/portal",
+          "sessions": 7
+        },
+        {
+          "node": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/",
+          "sessions": 5
+        },
+        {
+          "node": "bag.veliu.com/terms",
+          "sessions": 2
+        },
+        {
+          "node": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/",
+          "sessions": 2
+        },
+        {
+          "node": "bag.veliu.com/portal/order/2af8ef9c-8c0a-4eb9-9e46-1a24c7fcd399",
+          "sessions": 1
+        },
+        {
+          "node": "bag.veliu.com/profile",
+          "sessions": 1
+        },
+        {
+          "node": "preview--all-product-pricing-mvp.lovable.app/portal",
+          "sessions": 1
+        },
+        {
+          "node": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/portal",
+          "sessions": 1
+        },
+        {
+          "node": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/portal",
+          "sessions": 1
+        },
+        {
+          "node": "bag.veliu.com/portal/order/51ce32ab-7921-4e91-b01e-8c54f1ae936f",
+          "sessions": 1
+        },
+        {
+          "node": "bag.veliu.com/portal/order/98c9bb39-fc50-4ce8-bead-9d4c166348aa",
+          "sessions": 1
+        },
+        {
+          "node": "bag.veliu.com/portal/order/2533c83c-6f9c-4197-ba86-9cbbcf616282",
+          "sessions": 1
+        },
+        {
+          "node": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/search",
+          "sessions": 1
+        },
+        {
+          "node": "preview--all-product-pricing-mvp.lovable.app/search",
+          "sessions": 1
+        },
+        {
+          "node": "preview--all-product-pricing-mvp.lovable.app/",
+          "sessions": 1
+        },
+        {
+          "node": "bag.veliu.com/portal/order/017476a4-ad02-4796-81fc-f1c7e25e98ae",
+          "sessions": 1
+        },
+        {
+          "node": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/bag",
+          "sessions": 1
+        },
+        {
+          "node": "preview--all-product-pricing-mvp.lovable.app/portal/auth",
+          "sessions": 1
+        },
+        {
+          "node": "bag.veliu.com/portal/order/a79737f5-0cb1-48ef-ba81-f5e9726527a8",
+          "sessions": 1
+        },
+        {
+          "node": "bag.veliu.com/portal/order/acfdd5a9-5376-470a-93a0-80e1a4eb7a6a",
+          "sessions": 1
+        }
+      ],
+      "loops": [
+        {
+          "a": "bag.veliu.com/",
+          "b": "bag.veliu.com/search",
+          "sessions": 671
+        },
+        {
+          "a": "bag.veliu.com/search",
+          "b": "bag.veliu.com/",
+          "sessions": 533
+        },
+        {
+          "a": "bag.veliu.com/bag",
+          "b": "bag.veliu.com/",
+          "sessions": 130
+        },
+        {
+          "a": "bag.veliu.com/",
+          "b": "bag.veliu.com/bag",
+          "sessions": 122
+        },
+        {
+          "a": "bag.veliu.com/login",
+          "b": "bag.veliu.com/",
+          "sessions": 113
+        },
+        {
+          "a": "bag.veliu.com/",
+          "b": "bag.veliu.com/login",
+          "sessions": 112
+        },
+        {
+          "a": "bag.veliu.com/search",
+          "b": "bag.veliu.com/bag",
+          "sessions": 98
+        },
+        {
+          "a": "bag.veliu.com/bag",
+          "b": "bag.veliu.com/search",
+          "sessions": 71
+        },
+        {
+          "a": "bag.veliu.com/bag",
+          "b": "bag.veliu.com/orders",
+          "sessions": 36
+        },
+        {
+          "a": "bag.veliu.com/orders",
+          "b": "bag.veliu.com/bag",
+          "sessions": 33
+        },
+        {
+          "a": "bag.veliu.com/portal/auth",
+          "b": "bag.veliu.com/portal",
+          "sessions": 14
+        },
+        {
+          "a": "bag.veliu.com/profile",
+          "b": "bag.veliu.com/",
+          "sessions": 13
+        },
+        {
+          "a": "bag.veliu.com/",
+          "b": "bag.veliu.com/profile",
+          "sessions": 12
+        },
+        {
+          "a": "bag.veliu.com/portal",
+          "b": "bag.veliu.com/portal/auth",
+          "sessions": 11
+        },
+        {
+          "a": "bag.veliu.com/profile",
+          "b": "bag.veliu.com/orders",
+          "sessions": 10
+        },
+        {
+          "a": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/",
+          "b": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/search",
+          "sessions": 10
+        },
+        {
+          "a": "bag.veliu.com/orders",
+          "b": "bag.veliu.com/profile",
+          "sessions": 9
+        },
+        {
+          "a": "bag.veliu.com/orders",
+          "b": "bag.veliu.com/",
+          "sessions": 8
+        },
+        {
+          "a": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/search",
+          "b": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/",
+          "sessions": 7
+        },
+        {
+          "a": "bag.veliu.com/bag",
+          "b": "bag.veliu.com/profile",
+          "sessions": 6
+        },
+        {
+          "a": "bag.veliu.com/profile",
+          "b": "bag.veliu.com/bag",
+          "sessions": 6
+        },
+        {
+          "a": "bag.veliu.com/",
+          "b": "bag.veliu.com/orders",
+          "sessions": 4
+        },
+        {
+          "a": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/",
+          "b": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/bag",
+          "sessions": 4
+        },
+        {
+          "a": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/",
+          "b": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/search",
+          "sessions": 3
+        },
+        {
+          "a": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/search",
+          "b": "id-preview--4e809402-d347-4f95-aa3c-747e17a64dd5.lovable.app/",
+          "sessions": 3
+        },
+        {
+          "a": "bag.veliu.com/portal",
+          "b": "bag.veliu.com/portal/order/fb5b31a3-8aa6-4d8f-a8c4-0e51745164f9",
+          "sessions": 3
+        },
+        {
+          "a": "preview--all-product-pricing-mvp.lovable.app/",
+          "b": "preview--all-product-pricing-mvp.lovable.app/search",
+          "sessions": 3
+        },
+        {
+          "a": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/bag",
+          "b": "4e809402-d347-4f95-aa3c-747e17a64dd5.sandbox.lovable.dev/",
+          "sessions": 3
+        },
+        {
+          "a": "bag.veliu.com/portal",
+          "b": "bag.veliu.com/portal/order/95f95e23-998e-461f-a304-a8e9e146df64",
+          "sessions": 3
+        },
+        {
+          "a": "bag.veliu.com/portal/order/95f95e23-998e-461f-a304-a8e9e146df64",
+          "b": "bag.veliu.com/portal",
+          "sessions": 3
+        }
+      ]
+    },
+    "funnel_macro": {
+      "phases": [
+        "awareness",
+        "interest",
+        "consideration",
+        "conversion",
+        "retention"
+      ],
+      "phase_counts": {
+        "awareness": 785,
+        "interest": 0,
+        "consideration": 606,
+        "conversion": 58,
+        "retention": 0
+      },
+      "phase_pass_rate": {
+        "awareness->interest": 0.0,
+        "interest->consideration": 0.0,
+        "consideration->conversion": 0.026402640264026403,
+        "conversion->retention": 0.0
+      },
+      "transitions": [
+        {
+          "from": "awareness",
+          "to": "consideration",
+          "sessions": 953
+        },
+        {
+          "from": "consideration",
+          "to": "awareness",
+          "sessions": 578
+        },
+        {
+          "from": "awareness",
+          "to": "conversion",
+          "sessions": 48
+        },
+        {
+          "from": "conversion",
+          "to": "awareness",
+          "sessions": 46
+        },
+        {
+          "from": "consideration",
+          "to": "conversion",
+          "sessions": 16
+        },
+        {
+          "from": "conversion",
+          "to": "consideration",
+          "sessions": 5
+        }
+      ],
+      "phase_ts_hourly": {
+        "awareness": [
+          {
+            "hour": 0,
+            "value": 0
+          },
+          {
+            "hour": 1,
+            "value": 0
+          },
+          {
+            "hour": 2,
+            "value": 0
+          },
+          {
+            "hour": 3,
+            "value": 0
+          },
+          {
+            "hour": 4,
+            "value": 0
+          },
+          {
+            "hour": 5,
+            "value": 0
+          },
+          {
+            "hour": 6,
+            "value": 0
+          },
+          {
+            "hour": 7,
+            "value": 0
+          },
+          {
+            "hour": 8,
+            "value": 18
+          },
+          {
+            "hour": 9,
+            "value": 61
+          },
+          {
+            "hour": 10,
+            "value": 44
+          },
+          {
+            "hour": 11,
+            "value": 60
+          },
+          {
+            "hour": 12,
+            "value": 43
+          },
+          {
+            "hour": 13,
+            "value": 46
+          },
+          {
+            "hour": 14,
+            "value": 65
+          },
+          {
+            "hour": 15,
+            "value": 65
+          },
+          {
+            "hour": 16,
+            "value": 51
+          },
+          {
+            "hour": 17,
+            "value": 44
+          },
+          {
+            "hour": 18,
+            "value": 48
+          },
+          {
+            "hour": 19,
+            "value": 33
+          },
+          {
+            "hour": 20,
+            "value": 48
+          },
+          {
+            "hour": 21,
+            "value": 61
+          },
+          {
+            "hour": 22,
+            "value": 60
+          },
+          {
+            "hour": 23,
+            "value": 38
+          }
+        ],
+        "interest": [
+          {
+            "hour": 0,
+            "value": 0
+          },
+          {
+            "hour": 1,
+            "value": 0
+          },
+          {
+            "hour": 2,
+            "value": 0
+          },
+          {
+            "hour": 3,
+            "value": 0
+          },
+          {
+            "hour": 4,
+            "value": 0
+          },
+          {
+            "hour": 5,
+            "value": 0
+          },
+          {
+            "hour": 6,
+            "value": 0
+          },
+          {
+            "hour": 7,
+            "value": 0
+          },
+          {
+            "hour": 8,
+            "value": 0
+          },
+          {
+            "hour": 9,
+            "value": 0
+          },
+          {
+            "hour": 10,
+            "value": 0
+          },
+          {
+            "hour": 11,
+            "value": 0
+          },
+          {
+            "hour": 12,
+            "value": 0
+          },
+          {
+            "hour": 13,
+            "value": 0
+          },
+          {
+            "hour": 14,
+            "value": 0
+          },
+          {
+            "hour": 15,
+            "value": 0
+          },
+          {
+            "hour": 16,
+            "value": 0
+          },
+          {
+            "hour": 17,
+            "value": 0
+          },
+          {
+            "hour": 18,
+            "value": 0
+          },
+          {
+            "hour": 19,
+            "value": 0
+          },
+          {
+            "hour": 20,
+            "value": 0
+          },
+          {
+            "hour": 21,
+            "value": 0
+          },
+          {
+            "hour": 22,
+            "value": 0
+          },
+          {
+            "hour": 23,
+            "value": 0
+          }
+        ],
+        "consideration": [
+          {
+            "hour": 0,
+            "value": 0
+          },
+          {
+            "hour": 1,
+            "value": 0
+          },
+          {
+            "hour": 2,
+            "value": 0
+          },
+          {
+            "hour": 3,
+            "value": 0
+          },
+          {
+            "hour": 4,
+            "value": 0
+          },
+          {
+            "hour": 5,
+            "value": 0
+          },
+          {
+            "hour": 6,
+            "value": 0
+          },
+          {
+            "hour": 7,
+            "value": 0
+          },
+          {
+            "hour": 8,
+            "value": 13
+          },
+          {
+            "hour": 9,
+            "value": 43
+          },
+          {
+            "hour": 10,
+            "value": 29
+          },
+          {
+            "hour": 11,
+            "value": 41
+          },
+          {
+            "hour": 12,
+            "value": 34
+          },
+          {
+            "hour": 13,
+            "value": 37
+          },
+          {
+            "hour": 14,
+            "value": 50
+          },
+          {
+            "hour": 15,
+            "value": 49
+          },
+          {
+            "hour": 16,
+            "value": 44
+          },
+          {
+            "hour": 17,
+            "value": 33
+          },
+          {
+            "hour": 18,
+            "value": 43
+          },
+          {
+            "hour": 19,
+            "value": 28
+          },
+          {
+            "hour": 20,
+            "value": 43
+          },
+          {
+            "hour": 21,
+            "value": 46
+          },
+          {
+            "hour": 22,
+            "value": 47
+          },
+          {
+            "hour": 23,
+            "value": 26
+          }
+        ],
+        "conversion": [
+          {
+            "hour": 0,
+            "value": 0
+          },
+          {
+            "hour": 1,
+            "value": 0
+          },
+          {
+            "hour": 2,
+            "value": 0
+          },
+          {
+            "hour": 3,
+            "value": 0
+          },
+          {
+            "hour": 4,
+            "value": 0
+          },
+          {
+            "hour": 5,
+            "value": 0
+          },
+          {
+            "hour": 6,
+            "value": 0
+          },
+          {
+            "hour": 7,
+            "value": 0
+          },
+          {
+            "hour": 8,
+            "value": 0
+          },
+          {
+            "hour": 9,
+            "value": 6
+          },
+          {
+            "hour": 10,
+            "value": 3
+          },
+          {
+            "hour": 11,
+            "value": 2
+          },
+          {
+            "hour": 12,
+            "value": 6
+          },
+          {
+            "hour": 13,
+            "value": 4
+          },
+          {
+            "hour": 14,
+            "value": 6
+          },
+          {
+            "hour": 15,
+            "value": 3
+          },
+          {
+            "hour": 16,
+            "value": 2
+          },
+          {
+            "hour": 17,
+            "value": 2
+          },
+          {
+            "hour": 18,
+            "value": 3
+          },
+          {
+            "hour": 19,
+            "value": 6
+          },
+          {
+            "hour": 20,
+            "value": 5
+          },
+          {
+            "hour": 21,
+            "value": 7
+          },
+          {
+            "hour": 22,
+            "value": 1
+          },
+          {
+            "hour": 23,
+            "value": 2
+          }
+        ],
+        "retention": [
+          {
+            "hour": 0,
+            "value": 0
+          },
+          {
+            "hour": 1,
+            "value": 0
+          },
+          {
+            "hour": 2,
+            "value": 0
+          },
+          {
+            "hour": 3,
+            "value": 0
+          },
+          {
+            "hour": 4,
+            "value": 0
+          },
+          {
+            "hour": 5,
+            "value": 0
+          },
+          {
+            "hour": 6,
+            "value": 0
+          },
+          {
+            "hour": 7,
+            "value": 0
+          },
+          {
+            "hour": 8,
+            "value": 0
+          },
+          {
+            "hour": 9,
+            "value": 0
+          },
+          {
+            "hour": 10,
+            "value": 0
+          },
+          {
+            "hour": 11,
+            "value": 0
+          },
+          {
+            "hour": 12,
+            "value": 0
+          },
+          {
+            "hour": 13,
+            "value": 0
+          },
+          {
+            "hour": 14,
+            "value": 0
+          },
+          {
+            "hour": 15,
+            "value": 0
+          },
+          {
+            "hour": 16,
+            "value": 0
+          },
+          {
+            "hour": 17,
+            "value": 0
+          },
+          {
+            "hour": 18,
+            "value": 0
+          },
+          {
+            "hour": 19,
+            "value": 0
+          },
+          {
+            "hour": 20,
+            "value": 0
+          },
+          {
+            "hour": 21,
+            "value": 0
+          },
+          {
+            "hour": 22,
+            "value": 0
+          },
+          {
+            "hour": 23,
+            "value": 0
+          }
+        ]
+      }
+    },
+    "frustration": {
+      "rage_clicks_by_page": {
+        "/search": 32,
+        "/portal": 9,
+        "/portal/auth": 8,
+        "/": 3,
+        "/login": 2,
+        "/portal/order/cedab390-4393-49bf-8a7b-2548dd510b71": 1,
+        "/bag": 1
+      },
+      "dead_clicks_by_page": {},
+      "error_triggered_sessions_share": 0.13157894736842105,
+      "exit_after_error_share": 0.009153318077803204,
+      "examples": {
+        "with_errors": [
+          "019916bb-cf21-7df5-a7ce-a3f838bea6e3",
+          "019916b4-d1d7-7c36-9a79-938ec11ee7cf",
+          "01991694-9929-73c0-bdba-0e66ddad7b98",
+          "01991686-e405-7631-a3a1-24c191027593",
+          "0199167e-deab-7e8f-802f-0ecaa7e1d0f7",
+          "0199167e-87a3-7fef-917f-a531673ff4f5",
+          "0199165c-a081-7f60-869c-63aa0a63eaa6",
+          "01991648-23dc-7488-b447-a80bca95d5f7",
+          "01991641-2fea-742c-8f9f-926f0a54daac",
+          "0199163e-bc3d-767f-ab83-092065fcea34"
+        ],
+        "with_rageclicks": [
+          "0199167e-87a3-7fef-917f-a531673ff4f5",
+          "0199167b-3b99-741a-a0c2-433b18d14cad",
+          "0199166d-b284-7a9c-98c9-08b5eec636c6",
+          "01991646-cebd-79eb-a31c-e6abbdec3d7a",
+          "01991625-c00e-7e62-98e3-264bfd5e6f05",
+          "01991602-bb6b-7d73-a0aa-a23f59751d0b",
+          "019915f6-0bf3-76ec-9140-434d63736e8c",
+          "019915f1-8dd6-7d3c-9f7f-a91605163b73",
+          "019915d3-8a66-77d3-a091-20015edcf069",
+          "01991586-b804-7298-b120-eddeb14452fb"
+        ]
+      }
+    },
+    "correlations": {
+      "conversion_rate": {
+        "all": 0.06864988558352403,
+        "visited_how_it_works": 0.0,
+        "skipped_how_it_works": 0.06864988558352403,
+        "rageclick_yes": 0.025,
+        "rageclick_no": 0.07074340527577938
+      },
+      "notes": "Correlazioni base a livello sessione; estendibile con più feature quando disponibili."
+    }
+  },
+  "tech": {
+    "errors": {
+      "console_by_browser": {
+        "Chrome": 59,
+        "Facebook Mobile": 4,
+        "Chrome iOS": 8,
+        "Mobile Safari": 38,
+        "Samsung Internet": 5,
+        "Microsoft Edge": 1
+      },
+      "console_by_device": {
+        "Mobile": 92,
+        "Tablet": 3,
+        "Desktop": 20
+      },
+      "exceptions_by_fingerprint": [],
+      "error_rate_ts_hourly": [
+        {
+          "hour": 0,
+          "value": 0
+        },
+        {
+          "hour": 1,
+          "value": 0
+        },
+        {
+          "hour": 2,
+          "value": 0
+        },
+        {
+          "hour": 3,
+          "value": 0
+        },
+        {
+          "hour": 4,
+          "value": 0
+        },
+        {
+          "hour": 5,
+          "value": 0
+        },
+        {
+          "hour": 6,
+          "value": 0
+        },
+        {
+          "hour": 7,
+          "value": 0
+        },
+        {
+          "hour": 8,
+          "value": 0
+        },
+        {
+          "hour": 9,
+          "value": 6
+        },
+        {
+          "hour": 10,
+          "value": 3
+        },
+        {
+          "hour": 11,
+          "value": 2
+        },
+        {
+          "hour": 12,
+          "value": 6
+        },
+        {
+          "hour": 13,
+          "value": 4
+        },
+        {
+          "hour": 14,
+          "value": 6
+        },
+        {
+          "hour": 15,
+          "value": 4
+        },
+        {
+          "hour": 16,
+          "value": 2
+        },
+        {
+          "hour": 17,
+          "value": 3
+        },
+        {
+          "hour": 18,
+          "value": 3
+        },
+        {
+          "hour": 19,
+          "value": 6
+        },
+        {
+          "hour": 20,
+          "value": 5
+        },
+        {
+          "hour": 21,
+          "value": 7
+        },
+        {
+          "hour": 22,
+          "value": 1
+        },
+        {
+          "hour": 23,
+          "value": 2
+        }
+      ]
+    }
+  },
+  "geography": {
+    "regions": {
+      "Lombardy": {
+        "device_type": {
+          "Desktop": 54,
+          "Mobile": 168,
+          "Tablet": 3
+        },
+        "os": {
+          "Mac OS X": 38,
+          "iOS": 95,
+          "Android": 76,
+          "Linux": 1,
+          "Windows": 15
+        },
+        "browser": {
+          "Chrome": 122,
+          "Mobile Safari": 76,
+          "Samsung Internet": 4,
+          "Chrome iOS": 11,
+          "Facebook Mobile": 8,
+          "Microsoft Edge": 2,
+          "Opera": 2
+        }
+      },
+      "Lazio": {
+        "device_type": {
+          "Mobile": 81,
+          "Tablet": 1,
+          "Desktop": 7
+        },
+        "os": {
+          "Android": 40,
+          "iOS": 42,
+          "Windows": 5,
+          "Mac OS X": 2
+        },
+        "browser": {
+          "Chrome": 44,
+          "Mobile Safari": 33,
+          "Facebook Mobile": 6,
+          "Samsung Internet": 1,
+          "Chrome iOS": 3,
+          "Safari": 2
+        }
+      },
+      "Unknown": {
+        "device_type": {
+          "Mobile": 87,
+          "Unknown": 7,
+          "Desktop": 4
+        },
+        "os": {
+          "Android": 58,
+          "iOS": 29,
+          "Unknown": 7,
+          "Windows": 3,
+          "Mac OS X": 1
+        },
+        "browser": {
+          "Chrome": 61,
+          "Mobile Safari": 25,
+          "Unknown": 7,
+          "Firefox": 1,
+          "Facebook Mobile": 3,
+          "Chrome iOS": 1
+        }
+      },
+      "Sicily": {
+        "device_type": {
+          "Mobile": 33,
+          "Tablet": 1,
+          "Desktop": 3
+        },
+        "os": {
+          "Android": 18,
+          "iOS": 16,
+          "Windows": 2,
+          "Linux": 1
+        },
+        "browser": {
+          "Chrome": 19,
+          "Chrome iOS": 1,
+          "Mobile Safari": 14,
+          "Facebook Mobile": 1,
+          "Samsung Internet": 1,
+          "Microsoft Edge": 1
+        }
+      },
+      "Apulia": {
+        "device_type": {
+          "Mobile": 50,
+          "Desktop": 5
+        },
+        "os": {
+          "iOS": 18,
+          "Android": 32,
+          "Windows": 4,
+          "Mac OS X": 1
+        },
+        "browser": {
+          "Mobile Safari": 16,
+          "Facebook Mobile": 2,
+          "Chrome": 36,
+          "Opera": 1
+        }
+      },
+      "Trentino-Alto Adige": {
+        "device_type": {
+          "Mobile": 4,
+          "Desktop": 2
+        },
+        "os": {
+          "Android": 2,
+          "Windows": 2,
+          "iOS": 2
+        },
+        "browser": {
+          "Chrome": 3,
+          "Microsoft Edge": 1,
+          "Mobile Safari": 2
+        }
+      },
+      "Calabria": {
+        "device_type": {
+          "Mobile": 12
+        },
+        "os": {
+          "Android": 7,
+          "iOS": 5
+        },
+        "browser": {
+          "Chrome": 7,
+          "Mobile Safari": 5
+        }
+      },
+      "Campania": {
+        "device_type": {
+          "Mobile": 82,
+          "Desktop": 7
+        },
+        "os": {
+          "iOS": 40,
+          "Android": 42,
+          "Windows": 6,
+          "Mac OS X": 1
+        },
+        "browser": {
+          "Facebook Mobile": 5,
+          "Chrome": 45,
+          "Mobile Safari": 31,
+          "Chrome iOS": 4,
+          "Microsoft Edge": 3,
+          "Safari": 1
+        }
+      },
+      "Veneto": {
+        "device_type": {
+          "Mobile": 50,
+          "Desktop": 4
+        },
+        "os": {
+          "Android": 29,
+          "iOS": 21,
+          "Windows": 4
+        },
+        "browser": {
+          "Chrome": 30,
+          "Mobile Safari": 18,
+          "Samsung Internet": 3,
+          "Facebook Mobile": 2,
+          "Chrome iOS": 1
+        }
+      },
+      "Liguria": {
+        "device_type": {
+          "Mobile": 7,
+          "Desktop": 1
+        },
+        "os": {
+          "iOS": 5,
+          "Windows": 1,
+          "Android": 2
+        },
+        "browser": {
+          "Mobile Safari": 3,
+          "Opera": 1,
+          "Facebook Mobile": 2,
+          "Chrome": 2
+        }
+      },
+      "Tuscany": {
+        "device_type": {
+          "Mobile": 46,
+          "Desktop": 3
+        },
+        "os": {
+          "Android": 16,
+          "iOS": 30,
+          "Windows": 1,
+          "Mac OS X": 2
+        },
+        "browser": {
+          "Chrome": 19,
+          "Facebook Mobile": 3,
+          "Mobile Safari": 25,
+          "Chrome iOS": 2
+        }
+      },
+      "Emilia-Romagna": {
+        "device_type": {
+          "Mobile": 42,
+          "Desktop": 2
+        },
+        "os": {
+          "Android": 28,
+          "iOS": 14,
+          "Windows": 2
+        },
+        "browser": {
+          "Chrome": 27,
+          "Mobile Safari": 12,
+          "Samsung Internet": 2,
+          "Microsoft Edge": 1,
+          "Facebook Mobile": 1,
+          "Chrome iOS": 1
+        }
+      },
+      "Piedmont": {
+        "device_type": {
+          "Mobile": 36,
+          "Tablet": 1,
+          "Desktop": 1
+        },
+        "os": {
+          "iOS": 17,
+          "Android": 20,
+          "Windows": 1
+        },
+        "browser": {
+          "Facebook Mobile": 2,
+          "Chrome": 19,
+          "Chrome iOS": 4,
+          "Mobile Safari": 11,
+          "Samsung Internet": 2
+        }
+      },
+      "Sardinia": {
+        "device_type": {
+          "Mobile": 18
+        },
+        "os": {
+          "iOS": 11,
+          "Android": 7
+        },
+        "browser": {
+          "Mobile Safari": 10,
+          "Chrome": 7,
+          "Facebook Mobile": 1
+        }
+      },
+      "Abruzzo": {
+        "device_type": {
+          "Mobile": 15,
+          "Desktop": 1
+        },
+        "os": {
+          "iOS": 6,
+          "Android": 9,
+          "Windows": 1
+        },
+        "browser": {
+          "Mobile Safari": 6,
+          "Chrome": 9,
+          "Samsung Internet": 1
+        }
+      },
+      "Basilicate": {
+        "device_type": {
+          "Mobile": 7
+        },
+        "os": {
+          "Android": 6,
+          "iOS": 1
+        },
+        "browser": {
+          "Chrome": 6,
+          "Mobile Safari": 1
+        }
+      },
+      "Friuli Venezia Giulia": {
+        "device_type": {
+          "Mobile": 7,
+          "Desktop": 3
+        },
+        "os": {
+          "Android": 4,
+          "iOS": 3,
+          "Mac OS X": 2,
+          "Windows": 1
+        },
+        "browser": {
+          "Chrome": 7,
+          "Mobile Safari": 2,
+          "Facebook Mobile": 1
+        }
+      },
+      "Umbria": {
+        "device_type": {
+          "Mobile": 6
+        },
+        "os": {
+          "iOS": 1,
+          "Android": 5
+        },
+        "browser": {
+          "Mobile Safari": 1,
+          "Chrome": 5
+        }
+      },
+      "The Marches": {
+        "device_type": {
+          "Mobile": 7
+        },
+        "os": {
+          "Android": 4,
+          "iOS": 3
+        },
+        "browser": {
+          "Chrome": 4,
+          "Mobile Safari": 3
+        }
+      },
+      "Hesse": {
+        "device_type": {
+          "Mobile": 1
+        },
+        "os": {
+          "iOS": 1
+        },
+        "browser": {
+          "Chrome iOS": 1
+        }
+      },
+      "England": {
+        "device_type": {
+          "Desktop": 2
+        },
+        "os": {
+          "Windows": 1,
+          "Mac OS X": 1
+        },
+        "browser": {
+          "Chrome": 2
+        }
+      },
+      "Brussels Capital": {
+        "device_type": {
+          "Desktop": 1
+        },
+        "os": {
+          "Linux": 1
+        },
+        "browser": {
+          "Chrome": 1
+        }
+      },
+      "Leinster": {
+        "device_type": {
+          "Mobile": 1
+        },
+        "os": {
+          "iOS": 1
+        },
+        "browser": {
+          "Mobile Safari": 1
+        }
+      },
+      "Molise": {
+        "device_type": {
+          "Mobile": 1
+        },
+        "os": {
+          "Android": 1
+        },
+        "browser": {
+          "Chrome": 1
+        }
+      }
+    }
+  },
+  "business": {
+    "values": {
+      "avg_offer_value": null,
+      "avg_conversion_value": null,
+      "qualified_lead_rate": null
+    },
+    "micro_funnel": {
+      "steps": [
+        "ricerche",
+        "valuation",
+        "offer",
+        "orders"
+      ],
+      "counts": [
+        845,
+        611,
+        0,
+        60
+      ],
+      "by_channel": {},
+      "by_device": {}
+    }
+  },
+  "api": {
+    "by_endpoint": {}
+  },
+  "correlations": {}
+}
