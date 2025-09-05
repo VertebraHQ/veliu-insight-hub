@@ -80,7 +80,7 @@ export function TrendSelector({
           disabled={disabled}
           className={cn(
             "text-xs px-4 py-2 border-0",
-            periodType === "daily" && "bg-analytics-blue text-white"
+            periodType === "daily" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-accent-foreground"
           )}
         >
           GIORNALIERO
@@ -92,7 +92,7 @@ export function TrendSelector({
           disabled={disabled}
           className={cn(
             "text-xs px-4 py-2 border-0",
-            periodType === "weekly" && "bg-analytics-blue text-white"
+            periodType === "weekly" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-accent-foreground"
           )}
         >
           SETTIMANALE
@@ -104,7 +104,7 @@ export function TrendSelector({
           disabled={disabled}
           className={cn(
             "text-xs px-4 py-2 border-0",
-            periodType === "monthly" && "bg-analytics-blue text-white"
+            periodType === "monthly" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-accent-foreground"
           )}
         >
           MENSILE
@@ -118,7 +118,7 @@ export function TrendSelector({
               disabled={disabled}
               className={cn(
                 "text-xs px-3 py-2 border-0",
-                periodType === "custom" && "bg-analytics-blue text-white"
+                periodType === "custom" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-accent-foreground"
               )}
             >
               <CalendarIcon className="h-3 w-3" />

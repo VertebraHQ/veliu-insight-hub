@@ -129,68 +129,68 @@ All colors MUST be HSL.
     --dashboard-border: 0 0% 20%;
   }
 
-  /* Light mode - Apple-inspired white with copper accents */
+  /* Light mode - Industrial Metallic Luxury */
   .light {
-    /* Pure white background with pearl grey accents */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 7%; /* Anthracite black for titles */
+    /* Metallic aluminum background with industrial tones */
+    --background: 220 8% 96%; /* Light metallic aluminum */
+    --foreground: 220 15% 12%; /* Dark steel for high contrast */
 
-    /* White cards with soft shadows instead of borders */
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 7%;
+    /* Brushed aluminum cards with metallic sheen */
+    --card: 220 12% 98%; /* Brushed aluminum surface */
+    --card-foreground: 220 15% 12%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 7%;
+    --popover: 220 12% 98%;
+    --popover-foreground: 220 15% 12%;
 
-    /* Copper orange as primary accent */
-    --primary: 20 100% 50%; /* #ff6a00 copper orange */
+    /* Steel blue as primary accent - luxury aviation */
+    --primary: 220 70% 55%; /* Steel blue */
     --primary-foreground: 0 0% 100%;
 
-    /* Pearl grey for subtle surfaces */
-    --secondary: 0 0% 97%; /* #f8f8f8 pearl grey */
-    --secondary-foreground: 0 0% 40%; /* Medium grey for secondary text */
+    /* Metallic grey surfaces */
+    --secondary: 220 10% 94%; /* Light brushed metal */
+    --secondary-foreground: 220 12% 25%; /* Medium steel grey */
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 40%; /* #666666 medium grey */
+    --muted: 220 8% 92%;
+    --muted-foreground: 220 10% 35%; /* Steel grey */
 
-    --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 7%;
+    --accent: 220 10% 94%;
+    --accent-foreground: 220 15% 12%;
 
     /* Critical indicators */
     --destructive: 0 65% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Minimal borders and inputs */
-    --border: 0 0% 90%; /* Very light grey for subtle borders */
-    --input: 0 0% 98%;
-    --ring: 20 100% 50%; /* Copper orange focus ring */
+    /* Industrial metallic borders */
+    --border: 220 20% 75%; /* Steel border */
+    --input: 220 12% 97%;
+    --ring: 220 70% 55%; /* Steel blue focus ring */
 
-    /* Analytics Colors - Copper orange and elegant greys */
-    --analytics-blue: 20 100% 50%; /* Copper orange */
-    --analytics-blue-light: 20 100% 60%;
-    --analytics-green: 140 50% 45%; /* Clean green */
-    --analytics-green-light: 140 50% 55%;
-    --analytics-orange: 20 100% 50%; /* Copper orange */
-    --analytics-orange-light: 20 100% 60%;
+    /* Analytics Colors - Industrial steel and precision */
+    --analytics-blue: 220 70% 55%; /* Steel blue */
+    --analytics-blue-light: 220 70% 65%;
+    --analytics-green: 140 45% 45%; /* Industrial green */
+    --analytics-green-light: 140 45% 55%;
+    --analytics-orange: 35 75% 55%; /* Industrial orange */
+    --analytics-orange-light: 35 75% 65%;
     --analytics-red: 0 60% 50%;
     --analytics-red-light: 0 60% 60%;
     --analytics-purple: 270 45% 50%;
     --analytics-purple-light: 270 45% 60%;
 
-    /* Dashboard Surfaces - White with soft shadows */
-    --dashboard-surface: 0 0% 100%; /* Pure white boxes */
-    --dashboard-surface-hover: 0 0% 98%; /* Slight pearl tint on hover */
-    --dashboard-border: 0 0% 92%; /* Minimal border when needed */
+    /* Dashboard Surfaces - Brushed aluminum metallic */
+    --dashboard-surface: 220 12% 98%; /* Brushed aluminum */
+    --dashboard-surface-hover: 220 15% 96%; /* Slightly darker aluminum on hover */
+    --dashboard-border: 220 20% 70%; /* Steel border with metallic tint */
 
-    /* Sidebar colors for light mode */
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 0 0% 7%;
-    --sidebar-primary: 0 0% 7%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 97%;
-    --sidebar-accent-foreground: 0 0% 7%;
-    --sidebar-border: 0 0% 92%;
-    --sidebar-ring: 20 100% 50%;
+    /* Sidebar colors for light mode - Industrial steel */
+    --sidebar-background: 220 12% 98%;
+    --sidebar-foreground: 220 15% 12%;
+    --sidebar-primary: 220 15% 12%;
+    --sidebar-primary-foreground: 220 12% 98%;
+    --sidebar-accent: 220 10% 94%;
+    --sidebar-accent-foreground: 220 15% 12%;
+    --sidebar-border: 220 20% 70%;
+    --sidebar-ring: 220 70% 55%;
   }
 }
 
@@ -204,6 +204,21 @@ All colors MUST be HSL.
     font-feature-settings: "kern", "liga", "clig", "calt";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Prevent horizontal scroll */
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Prevent horizontal overflow globally */
+  html {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Ensure all containers respect viewport width */
+  * {
+    box-sizing: border-box;
+    max-width: 100%;
   }
 
   /* Apple-style typography system */
@@ -213,7 +228,7 @@ All colors MUST be HSL.
   }
 
   /* Mono font for technical data - SF Mono style */
-  .font-mono, code, pre {
+  code, pre {
     font-family: 'SF Mono', 'Fira Code', Monaco, Inconsolata, 'Roboto Mono', monospace;
   }
 
@@ -234,16 +249,55 @@ All colors MUST be HSL.
 }
 
 @layer components {
-  /* Apple-inspired cards with soft shadows (light mode only) */
+  /* Industrial metallic cards - jet hangar style */
   .light .dashboard-card {
-    @apply bg-white p-6 transition-all duration-200;
-    border-radius: 16px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.02);
+    @apply bg-dashboard-surface border border-dashboard-border p-6 transition-all duration-300;
+    border-radius: 8px;
+    /* Metallic brushed aluminum effect */
+    background: linear-gradient(135deg, 
+      hsl(var(--dashboard-surface)) 0%, 
+      hsl(220 15% 96%) 25%, 
+      hsl(var(--dashboard-surface)) 50%, 
+      hsl(220 15% 96%) 75%, 
+      hsl(var(--dashboard-surface)) 100%);
+    /* Industrial metallic shadows */
+    box-shadow: 
+      0 2px 8px rgba(0, 0, 0, 0.12),
+      0 1px 3px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    /* Subtle metallic sheen */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .light .dashboard-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(255, 255, 255, 0.15) 50%, 
+      transparent 100%);
+    transition: left 0.6s ease;
+  }
+  
+  .light .dashboard-card:hover::before {
+    left: 100%;
   }
   
   .light .dashboard-card:hover {
-    @apply scale-[1.02];
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+    @apply scale-[1.02] -translate-y-1;
+    /* Enhanced metallic glow on hover */
+    box-shadow: 
+      0 8px 24px rgba(0, 0, 0, 0.16),
+      0 4px 12px rgba(0, 0, 0, 0.12),
+      inset 0 2px 0 rgba(255, 255, 255, 0.4),
+      inset 0 -2px 0 rgba(0, 0, 0, 0.15),
+      0 0 20px rgba(34, 197, 94, 0.1);
   }
 
   /* Dark mode cards maintain brutalist style */
@@ -257,18 +311,34 @@ All colors MUST be HSL.
     transform: translateY(-1px);
   }
 
-  /* Apple-style buttons for light mode */
+  /* Industrial metallic buttons for light mode */
   .light .apple-button {
-    @apply bg-white border border-gray-200 text-gray-900 px-4 py-2 transition-all duration-150;
-    border-radius: 12px;
+    @apply bg-dashboard-surface border border-dashboard-border text-foreground px-4 py-2 transition-all duration-300;
+    border-radius: 6px;
+    background: linear-gradient(135deg, 
+      hsl(var(--dashboard-surface)) 0%, 
+      hsl(220 15% 96%) 50%, 
+      hsl(var(--dashboard-surface)) 100%);
+    box-shadow: 
+      0 1px 3px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.05);
   }
   
   .light .apple-button:hover {
-    @apply border-gray-300 shadow-sm;
+    @apply border-primary;
+    box-shadow: 
+      0 2px 6px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
   }
   
   .light .apple-button.active {
-    @apply bg-analytics-blue text-white border-analytics-blue;
+    @apply bg-primary text-primary-foreground border-primary;
+    box-shadow: 
+      0 3px 8px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
   }
 
   /* Minimal spacing and clean layout */
@@ -285,10 +355,15 @@ All colors MUST be HSL.
   .light .rounded-lg { border-radius: 12px; }
   .light .rounded-xl { border-radius: 16px; }
 
-  /* Dark mode keeps square edges */
+  /* Dark mode uses same rounded corners as light mode */
   .dark * { 
-    border-radius: 0; 
+    border-radius: 12px; 
   }
+  
+  .dark .rounded-sm { border-radius: 6px; }
+  .dark .rounded { border-radius: 8px; }
+  .dark .rounded-lg { border-radius: 12px; }
+  .dark .rounded-xl { border-radius: 16px; }
 
   /* Industrial hover states - youthful and dynamic */
   .hover-minimal:hover {
@@ -313,5 +388,26 @@ All colors MUST be HSL.
 
   .copper-glow:hover {
     box-shadow: 0 0 24px hsla(20, 100%, 50%, 0.4);
+  }
+
+  /* Mobile-first responsive utilities */
+  .mobile-scroll {
+    @media (max-width: 768px) {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  /* Prevent text from breaking layout */
+  .text-overflow-safe {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  /* Ensure containers don't overflow */
+  .container-safe {
+    max-width: 100%;
+    overflow-x: auto;
   }
 }
