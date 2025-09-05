@@ -411,45 +411,173 @@ export function useAnalyticsData(): UseAnalyticsDataReturn {
     }
   }, []);
 
+  // Function to get date range for period type
+  const getDateRangeForPeriod = (type: PeriodType, customRange?: DateRange): DateRange => {
+    const today = new Date();
+    const yesterday = new Date(today);
+    yesterday.setDate(today.getDate() - 1);
+    
+    switch (type) {
+      case 'weekly':
+        // From yesterday back 7 days (yesterday to 7 days ago)
+        const weekStart = new Date(yesterday);
+        weekStart.setDate(yesterday.getDate() - 6);
+        return { from: weekStart, to: yesterday };
+      
+      case 'monthly':
+        // Current month from 1st to today
+        const monthStart = new Date(today.getFullYear(), today.getMonth(), 1);
+        return { from: monthStart, to: today };
+      
+      case 'custom':
+        return customRange || { from: today, to: today };
+      
+      default:
+        return { from: today, to: today };
+    }
+  };
+
+  // Function to aggregate multiple daily data files
+  const aggregateMultipleDays = (dailyDataArray: AnalyticsData[], availableDates: string[], allRequestedDates: string[]): AnalyticsData => {
+    if (dailyDataArray.length === 0) {
+      return createEmptyAnalyticsData();
+    }
+
+    if (dailyDataArray.length === 1) {
+      // For single day, keep the original data but update metadata to show actual date
+      const singleData = { ...dailyDataArray[0] };
+      
+      // Update metadata to show just the available date
+      singleData.meta.date_local = availableDates[0];
+      
+      singleData.timeseries.hourly = {
+        total_sessions: [{ hour: 0, value: singleData.total_sessions_yesterday }],
+        sessions_analyzed: [{ hour: 0, value: singleData.sessions_analyzed }],
+        funnel_completions: [{ hour: 0, value: singleData.funnel.converted_sessions }],
+        conversion_rate: [{ hour: 0, value: singleData.funnel.conversion_rate }]
+      };
+      return singleData;
+    }
+
+    // Start with the first day's data as base
+    const aggregated = { ...dailyDataArray[0] };
+    
+    // Aggregate totals
+    aggregated.total_sessions_yesterday = dailyDataArray.reduce((sum, data) => sum + data.total_sessions_yesterday, 0);
+    aggregated.sessions_analyzed = dailyDataArray.reduce((sum, data) => sum + data.sessions_analyzed, 0);
+    
+    // Aggregate funnel data
+    aggregated.funnel.sessions = dailyDataArray.reduce((sum, data) => sum + data.funnel.sessions, 0);
+    aggregated.funnel.converted_sessions = dailyDataArray.reduce((sum, data) => sum + data.funnel.converted_sessions, 0);
+    aggregated.funnel.conversion_rate = aggregated.funnel.sessions > 0 ?
+      aggregated.funnel.converted_sessions / aggregated.funnel.sessions : 0;
+
+    // For timeseries, we'll create daily aggregates instead of hourly
+    const dailyTimeseries = dailyDataArray.map((data, index) => ({
+      day: index,
+      total_sessions: data.total_sessions_yesterday,
+      sessions_analyzed: data.sessions_analyzed,
+      funnel_completions: data.funnel.converted_sessions,
+      conversion_rate: data.funnel.conversion_rate
+    }));
+
+    // Transform to the expected hourly format but with daily data
+    aggregated.timeseries.hourly = {
+      total_sessions: dailyTimeseries.map(day => ({ hour: day.day, value: day.total_sessions })),
+      sessions_analyzed: dailyTimeseries.map(day => ({ hour: day.day, value: day.sessions_analyzed })),
+      funnel_completions: dailyTimeseries.map(day => ({ hour: day.day, value: day.funnel_completions })),
+      conversion_rate: dailyTimeseries.map(day => ({ hour: day.day, value: day.conversion_rate }))
+    };
+
+    // Calculate weighted averages for rates
+    const totalSessions = aggregated.sessions_analyzed;
+    if (totalSessions > 0) {
+      aggregated.rates.rageclick_rate = dailyDataArray.reduce((sum, data) =>
+        sum + (data.rates.rageclick_rate * data.sessions_analyzed), 0) / totalSessions;
+      aggregated.rates.console_error_rate = dailyDataArray.reduce((sum, data) =>
+        sum + (data.rates.console_error_rate * data.sessions_analyzed), 0) / totalSessions;
+      aggregated.rates.fast_bounce_rate = dailyDataArray.reduce((sum, data) =>
+        sum + (data.rates.fast_bounce_rate * data.sessions_analyzed), 0) / totalSessions;
+    }
+
+    // Calculate data quality percentage
+    const totalQualitySessions = dailyDataArray.reduce((sum, data) =>
+      sum + (data.sessions_analyzed - data.data_quality.sessions_clock_skew), 0);
+    aggregated.data_quality.sampling_rate = totalSessions > 0 ? totalQualitySessions / totalSessions : 0;
+
+    return aggregated;
+  };
+
   // Function to aggregate data for weekly/monthly periods
   const loadAggregatedData = useCallback(async (type: PeriodType, range?: DateRange) => {
     setLoading(true);
     setError(null);
 
     try {
-      // For now, we'll use the single available file for all period types
-      // In a real implementation, this would aggregate multiple files based on the period
-      const response = await fetch('/records/aggregates-2025-08-26.json');
+      const dateRange = getDateRangeForPeriod(type, range);
+      const dailyDataArray: AnalyticsData[] = [];
+      const availableDates: string[] = [];
       
-      if (!response.ok) {
-        // If file not found, provide empty data with user-friendly message
+      // Generate list of dates to fetch
+      const dates: string[] = [];
+      const currentDate = new Date(dateRange.from);
+      
+      while (currentDate <= dateRange.to) {
+        dates.push(format(currentDate, 'yyyy-MM-dd'));
+        currentDate.setDate(currentDate.getDate() + 1);
+      }
+
+      // Try to fetch data for each date
+      for (const dateString of dates) {
+        try {
+          const fileName = `aggregates-${dateString}.json`;
+          const response = await fetch(`/records/${fileName}`);
+          
+          if (response.ok) {
+            const contentType = response.headers.get('content-type');
+            if (contentType && contentType.includes('application/json')) {
+              const dayData: AnalyticsData = await response.json();
+              dailyDataArray.push(dayData);
+              availableDates.push(dateString);
+            }
+          }
+        } catch (err) {
+          // Skip this date if file doesn't exist or can't be loaded
+          console.warn(`Could not load data for ${dateString}`);
+        }
+      }
+
+      if (dailyDataArray.length === 0) {
+        // No data found for the period
         const emptyData = createEmptyAnalyticsData();
         const periodLabel = type === 'weekly' ? 'settimanale' :
                            type === 'monthly' ? 'mensile' :
                            type === 'custom' ? 'personalizzato' : 'selezionato';
         setData(emptyData);
-        setError(`Dati non disponibili per il periodo ${periodLabel}. Tutti i campi sono stati impostati a 0.`);
+        setError(`Nessun dato disponibile per il periodo ${periodLabel}. Tutti i campi sono stati impostati a 0.`);
         return;
       }
+
+      // Aggregate the daily data
+      const aggregatedData = aggregateMultipleDays(dailyDataArray, availableDates, dates);
       
-      // Check if response is actually JSON
-      const contentType = response.headers.get('content-type');
-      if (!contentType || !contentType.includes('application/json')) {
-        const emptyData = createEmptyAnalyticsData();
+      // For multiple days, keep the original requested date range in metadata
+      if (dailyDataArray.length > 1) {
+        aggregatedData.meta.date_local = `${format(dateRange.from, 'yyyy-MM-dd')} - ${format(dateRange.to, 'yyyy-MM-dd')}`;
+        aggregatedData.meta.range_utc.from = dateRange.from.toISOString();
+        aggregatedData.meta.range_utc.to = dateRange.to.toISOString();
+      }
+      // For single day, the metadata is already set correctly in aggregateMultipleDays
+      
+      // Add warning if we have partial data for the requested period
+      if (dailyDataArray.length < dates.length) {
         const periodLabel = type === 'weekly' ? 'settimanale' :
                            type === 'monthly' ? 'mensile' :
                            type === 'custom' ? 'personalizzato' : 'selezionato';
-        setData(emptyData);
-        setError(`Dati non disponibili per il periodo ${periodLabel}. Tutti i campi sono stati impostati a 0.`);
-        return;
+        setError(`Dati parziali per il periodo ${periodLabel}: disponibili ${dailyDataArray.length} di ${dates.length} giorni richiesti.`);
       }
       
-      const jsonData: AnalyticsData = await response.json();
-      
-      // For weekly/monthly/custom periods, we still use the same data structure
-      // The TrendChart component will handle the transformation to show daily aggregates
-      // instead of hourly data
-      setData(jsonData);
+      setData(aggregatedData);
     } catch (err) {
       // Handle any other errors and provide empty data
       const emptyData = createEmptyAnalyticsData();

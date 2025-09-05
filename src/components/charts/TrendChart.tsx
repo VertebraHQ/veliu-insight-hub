@@ -27,17 +27,17 @@ function generateDateRange(periodType: PeriodType, selectedDate?: Date, customRa
   
   switch (periodType) {
     case 'weekly':
-      // Last 7 days ending yesterday
+      // From yesterday back 7 days (yesterday to 7 days ago)
       return eachDayOfInterval({
         start: subDays(yesterday, 6),
         end: yesterday
       });
     
     case 'monthly':
-      // All days of current month
+      // Current month from 1st to today
       return eachDayOfInterval({
         start: startOfMonth(today),
-        end: endOfMonth(today)
+        end: today
       });
     
     case 'custom':
@@ -56,15 +56,13 @@ function generateDateRange(periodType: PeriodType, selectedDate?: Date, customRa
   }
 }
 
-// Generate chart data with zeros for missing days
+// Generate chart data with complete date range and zeros for missing days
 function generateChartData(
   periodType: PeriodType,
   data: AnalyticsData | null,
   selectedDate?: Date,
   customRange?: { from: Date; to: Date } | null
 ) {
-  const dateRange = generateDateRange(periodType, selectedDate, customRange);
-  
   if (periodType === 'daily' && data) {
     // For daily view, show hourly data
     return data.timeseries.hourly.total_sessions.map((item, index) => ({
@@ -75,34 +73,57 @@ function generateChartData(
     }));
   }
   
-  // For weekly, monthly, and custom views, show daily data
-  return dateRange.map(date => {
-    const dateStr = format(date, 'dd/MM');
+  // For weekly, monthly, and custom views, always show the complete date range
+  const fullDateRange = generateDateRange(periodType, selectedDate, customRange);
+  
+  // Create a map of available data by date
+  const dataByDate = new Map<string, { sessions: number; funnel: number; conversion: number }>();
+  
+  if (data && data.timeseries.hourly.total_sessions.length > 0) {
+    // Check if we have aggregated data from multiple days
+    const metaDateLocal = data.meta.date_local;
     
-    // For now, we only have data for 2025-08-26, so we'll use that data for that specific date
-    // and zeros for all other dates
-    const isDataAvailable = data && format(date, 'yyyy-MM-dd') === '2025-08-26';
-    
-    if (isDataAvailable) {
-      // Sum up the hourly data to get daily totals
-      const totalSessions = data.timeseries.hourly.total_sessions.reduce((sum, item) => sum + item.value, 0);
-      const totalFunnelCompletions = data.timeseries.hourly.funnel_completions.reduce((sum, item) => sum + item.value, 0);
-      const avgConversionRate = totalSessions > 0 ? (totalFunnelCompletions / totalSessions) * 100 : 0;
+    if (metaDateLocal.includes(' - ')) {
+      // Multiple days - map the aggregated data to actual dates
+      const [fromDateStr, toDateStr] = metaDateLocal.split(' - ');
+      const fromDate = new Date(fromDateStr);
+      const toDate = new Date(toDateStr);
+      const actualDateRange = eachDayOfInterval({ start: fromDate, end: toDate });
       
-      return {
-        date: dateStr,
-        sessioniTotali: totalSessions,
-        funnelCompletati: totalFunnelCompletions,
-        percentualeConversione: Math.round(avgConversionRate * 100) / 100
-      };
+      data.timeseries.hourly.total_sessions.forEach((item, index) => {
+        const dayIndex = item.hour;
+        const date = actualDateRange[dayIndex];
+        if (date) {
+          const dateKey = format(date, 'yyyy-MM-dd');
+          dataByDate.set(dateKey, {
+            sessions: item.value,
+            funnel: data.timeseries.hourly.funnel_completions[index]?.value || 0,
+            conversion: data.timeseries.hourly.conversion_rate[index]?.value || 0
+          });
+        }
+      });
+    } else {
+      // Single day data - use the actual date from metadata
+      const singleDate = new Date(metaDateLocal);
+      const dateKey = format(singleDate, 'yyyy-MM-dd');
+      dataByDate.set(dateKey, {
+        sessions: data.total_sessions_yesterday,
+        funnel: data.funnel.converted_sessions,
+        conversion: data.funnel.conversion_rate
+      });
     }
+  }
+  
+  // Generate chart data for the complete date range
+  return fullDateRange.map(date => {
+    const dateKey = format(date, 'yyyy-MM-dd');
+    const dayData = dataByDate.get(dateKey);
     
-    // Return zeros for dates without data
     return {
-      date: dateStr,
-      sessioniTotali: 0,
-      funnelCompletati: 0,
-      percentualeConversione: 0
+      date: format(date, 'dd/MM'),
+      sessioniTotali: dayData?.sessions || 0,
+      funnelCompletati: dayData?.funnel || 0,
+      percentualeConversione: dayData ? Math.round(dayData.conversion * 100 * 100) / 100 : 0
     };
   });
 }
