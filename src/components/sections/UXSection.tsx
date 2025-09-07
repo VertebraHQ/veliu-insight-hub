@@ -12,6 +12,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { cn } from "@/lib/utils";
 import { useAnalyticsData } from "@/hooks/useAnalyticsData";
+import { isFeatureEnabled } from "@/config/features";
 
 interface UXSectionProps {
   onBack: () => void;
@@ -918,183 +919,185 @@ export function UXSection({ onBack }: UXSectionProps) {
         </div>
       )}
 
-      {/* 3. Analisi Path Utenti - Dynamic Data */}
-      <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
-        <h3 className="text-lg font-semibold mb-6 font-mono">ANALISI PATH UTENTI</h3>
-        
-        {/* Path Metrics above */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <div className="bg-dashboard-surface/30 border border-dashboard-border p-4">
-            <div className="flex items-center justify-between mb-2">
-              <span className="font-mono text-sm text-muted-foreground">Pagine per Sessione</span>
-              <Navigation className="h-4 w-4 text-analytics-blue" />
+      {/* 3. Analisi Path Utenti - Dynamic Data (Feature Flag Controlled) */}
+      {isFeatureEnabled('userPathAnalysis') && (
+        <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
+          <h3 className="text-lg font-semibold mb-6 font-mono">ANALISI PATH UTENTI</h3>
+          
+          {/* Path Metrics above */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div className="bg-dashboard-surface/30 border border-dashboard-border p-4">
+              <div className="flex items-center justify-between mb-2">
+                <span className="font-mono text-sm text-muted-foreground">Pagine per Sessione</span>
+                <Navigation className="h-4 w-4 text-analytics-blue" />
+              </div>
+              <span className="font-bold text-2xl font-mono text-analytics-blue">
+                {data?.averages?.avg_session_duration ? Math.round((data.averages.avg_session_duration / 60) * 10) / 10 : '2.4'}
+              </span>
             </div>
-            <span className="font-bold text-2xl font-mono text-analytics-blue">
-              {data?.averages?.avg_session_duration ? Math.round((data.averages.avg_session_duration / 60) * 10) / 10 : '2.4'}
-            </span>
-          </div>
-          <div className="bg-dashboard-surface/30 border border-dashboard-border p-4">
-            <div className="flex items-center justify-between mb-2">
-              <span className="font-mono text-sm text-muted-foreground">Tempo Medio</span>
-              <Activity className="h-4 w-4 text-analytics-green" />
-            </div>
-            <span className="font-bold text-2xl font-mono text-analytics-green">
-              {data?.averages?.avg_session_duration ?
-                `${Math.floor(data.averages.avg_session_duration / 60)}m ${Math.round(data.averages.avg_session_duration % 60)}s` :
-                '2m 34s'
-              }
-            </span>
-          </div>
-          <div className="bg-dashboard-surface/30 border border-dashboard-border p-4">
-            <div className="flex items-center justify-between mb-2">
-              <span className="font-mono text-sm text-muted-foreground">Completamento Percorso</span>
-              <Eye className="h-4 w-4 text-analytics-orange" />
-            </div>
-            <span className="font-bold text-2xl font-mono text-analytics-orange">
-              {data?.funnel?.conversion_rate ? Math.round(data.funnel.conversion_rate * 100) : '68'}%
-            </span>
-          </div>
-        </div>
-
-        {/* Top 3 Percorsi - Visualizzazione Step-by-Step */}
-        {data?.top_paths && (
-          <div className="space-y-16">
-            {Object.entries(data.top_paths).slice(0, 3).map(([pathString, occurrences], index) => {
-              const pathSteps = pathString.split(' > ').map(step => {
-                switch (step) {
-                  case '/': return 'Home';
-                  case '/search': return 'Search';
-                  case '/bag': return 'Bag';
-                  case '/login': return 'Login';
-                  case '/orders': return 'Orders';
-                  case '/profile': return 'Profile';
-                  case '/portal': return 'Portal';
-                  case '/portal/auth': return 'Portal Auth';
-                  case '/terms': return 'Terms';
-                  default:
-                    if (step.startsWith('/portal/order/')) return 'Order Details';
-                    return step.replace('/', '').charAt(0).toUpperCase() + step.replace('/', '').slice(1) || 'Unknown';
+            <div className="bg-dashboard-surface/30 border border-dashboard-border p-4">
+              <div className="flex items-center justify-between mb-2">
+                <span className="font-mono text-sm text-muted-foreground">Tempo Medio</span>
+                <Activity className="h-4 w-4 text-analytics-green" />
+              </div>
+              <span className="font-bold text-2xl font-mono text-analytics-green">
+                {data?.averages?.avg_session_duration ?
+                  `${Math.floor(data.averages.avg_session_duration / 60)}m ${Math.round(data.averages.avg_session_duration % 60)}s` :
+                  '2m 34s'
                 }
-              });
+              </span>
+            </div>
+            <div className="bg-dashboard-surface/30 border border-dashboard-border p-4">
+              <div className="flex items-center justify-between mb-2">
+                <span className="font-mono text-sm text-muted-foreground">Completamento Percorso</span>
+                <Eye className="h-4 w-4 text-analytics-orange" />
+              </div>
+              <span className="font-bold text-2xl font-mono text-analytics-orange">
+                {data?.funnel?.conversion_rate ? Math.round(data.funnel.conversion_rate * 100) : '68'}%
+              </span>
+            </div>
+          </div>
 
-              const percentage = Math.round((occurrences / (data?.total_sessions_yesterday || 1)) * 100);
-              const completionRate = Math.max(20, 95 - (index * 15));
+          {/* Top 3 Percorsi - Visualizzazione Step-by-Step */}
+          {data?.top_paths && (
+            <div className="space-y-16">
+              {Object.entries(data.top_paths).slice(0, 3).map(([pathString, occurrences], index) => {
+                const pathSteps = pathString.split(' > ').map(step => {
+                  switch (step) {
+                    case '/': return 'Home';
+                    case '/search': return 'Search';
+                    case '/bag': return 'Bag';
+                    case '/login': return 'Login';
+                    case '/orders': return 'Orders';
+                    case '/profile': return 'Profile';
+                    case '/portal': return 'Portal';
+                    case '/portal/auth': return 'Portal Auth';
+                    case '/terms': return 'Terms';
+                    default:
+                      if (step.startsWith('/portal/order/')) return 'Order Details';
+                      return step.replace('/', '').charAt(0).toUpperCase() + step.replace('/', '').slice(1) || 'Unknown';
+                  }
+                });
 
-              // Dimensioni diverse per i primi 3
-              const sizes = [
-                { blockSize: "w-48 h-40 p-8", iconSize: "h-12 w-12", textSize: "text-lg", arrowSize: "h-8 w-8" },
-                { blockSize: "w-36 h-32 p-6", iconSize: "h-9 w-9", textSize: "text-base", arrowSize: "h-6 w-6" },
-                { blockSize: "w-28 h-24 p-4", iconSize: "h-7 w-7", textSize: "text-sm", arrowSize: "h-5 w-5" }
-              ];
+                const percentage = Math.round((occurrences / (data?.total_sessions_yesterday || 1)) * 100);
+                const completionRate = Math.max(20, 95 - (index * 15));
 
-              const size = sizes[index];
+                // Dimensioni diverse per i primi 3
+                const sizes = [
+                  { blockSize: "w-48 h-40 p-8", iconSize: "h-12 w-12", textSize: "text-lg", arrowSize: "h-8 w-8" },
+                  { blockSize: "w-36 h-32 p-6", iconSize: "h-9 w-9", textSize: "text-base", arrowSize: "h-6 w-6" },
+                  { blockSize: "w-28 h-24 p-4", iconSize: "h-7 w-7", textSize: "text-sm", arrowSize: "h-5 w-5" }
+                ];
 
-              return (
-                <div key={index} className="mb-16">
-                  <h4 className="text-lg font-mono text-foreground mb-8 text-center">
-                    {index === 0 ? 'Percorso Principale' :
-                     index === 1 ? 'Secondo Percorso' :
-                     'Terzo Percorso'} ({percentage}% utenti - {occurrences} sessioni)
-                  </h4>
-                  <div className="flex items-center justify-center gap-6 flex-wrap">
-                    {pathSteps.map((stepName, stepIndex) => {
-                      const StepIcon = getStepIcon(stepName);
-                      const iconColor = getStepColor(stepName);
-                      const stepPercentage = Math.round(completionRate * Math.pow(0.7, stepIndex));
+                const size = sizes[index];
 
-                      return (
-                        <div key={stepIndex} className="flex items-center">
-                          <div className={cn(
-                            "border-2 border-white flex flex-col items-center justify-center rounded-2xl",
-                            size.blockSize
-                          )}>
-                            <StepIcon className={cn(size.iconSize, iconColor, "mb-3")} />
-                            <span className={cn(size.textSize, "font-semibold text-blue-400 mb-1")}>{stepName}</span>
-                            <span className={cn("text-blue-400 font-medium",
-                              index === 0 ? "text-base" : index === 1 ? "text-sm" : "text-xs"
+                return (
+                  <div key={index} className="mb-16">
+                    <h4 className="text-lg font-mono text-foreground mb-8 text-center">
+                      {index === 0 ? 'Percorso Principale' :
+                       index === 1 ? 'Secondo Percorso' :
+                       'Terzo Percorso'} ({percentage}% utenti - {occurrences} sessioni)
+                    </h4>
+                    <div className="flex items-center justify-center gap-6 flex-wrap">
+                      {pathSteps.map((stepName, stepIndex) => {
+                        const StepIcon = getStepIcon(stepName);
+                        const iconColor = getStepColor(stepName);
+                        const stepPercentage = Math.round(completionRate * Math.pow(0.7, stepIndex));
+
+                        return (
+                          <div key={stepIndex} className="flex items-center">
+                            <div className={cn(
+                              "border-2 border-white flex flex-col items-center justify-center rounded-2xl",
+                              size.blockSize
                             )}>
-                              {stepPercentage}%
-                            </span>
-                          </div>
-                          {stepIndex < pathSteps.length - 1 && (
-                            <div className="relative group flex flex-col items-center mx-4">
-                              <ArrowRight className={cn(size.arrowSize, "text-gray-600 mb-2")} />
-                              <span className={cn("font-semibold text-gray-700",
-                                index === 0 ? "text-lg" : index === 1 ? "text-base" : "text-sm"
+                              <StepIcon className={cn(size.iconSize, iconColor, "mb-3")} />
+                              <span className={cn(size.textSize, "font-semibold text-blue-400 mb-1")}>{stepName}</span>
+                              <span className={cn("text-blue-400 font-medium",
+                                index === 0 ? "text-base" : index === 1 ? "text-sm" : "text-xs"
                               )}>
-                                {Math.round(stepPercentage * 0.7)}%
+                                {stepPercentage}%
                               </span>
-                              <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                                <div className="font-mono text-analytics-blue">{Math.round(stepPercentage * 0.7)}%</div>
-                                <div className="text-xs text-muted-foreground">
-                                  {Math.round(occurrences * (stepPercentage * 0.7) / 100)} utenti
+                            </div>
+                            {stepIndex < pathSteps.length - 1 && (
+                              <div className="relative group flex flex-col items-center mx-4">
+                                <ArrowRight className={cn(size.arrowSize, "text-gray-600 mb-2")} />
+                                <span className={cn("font-semibold text-gray-700",
+                                  index === 0 ? "text-lg" : index === 1 ? "text-base" : "text-sm"
+                                )}>
+                                  {Math.round(stepPercentage * 0.7)}%
+                                </span>
+                                <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-popover border border-border px-3 py-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                                  <div className="font-mono text-analytics-blue">{Math.round(stepPercentage * 0.7)}%</div>
+                                  <div className="text-xs text-muted-foreground">
+                                    {Math.round(occurrences * (stepPercentage * 0.7) / 100)} utenti
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                          )}
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        )}
-
-        {/* Top 10 Lista Completa */}
-        {data?.top_paths && (
-          <div className="border-t border-dashboard-border pt-8 mt-8">
-            <h4 className="text-lg font-mono text-foreground mb-6">Top 10 Percorsi Completi</h4>
-            <div className="space-y-3">
-              {Object.entries(data.top_paths).slice(0, 5).map(([pathString, occurrences], index) => {
-                const percentage = Math.round((occurrences / (data?.total_sessions_yesterday || 1)) * 100);
-                return (
-                  <div key={index} className="flex items-center gap-3 text-sm bg-dashboard-surface/30 p-4 border border-dashboard-border rounded-lg">
-                    <div className={cn(
-                      "flex items-center justify-center w-8 h-8 rounded-full font-bold text-white",
-                      index < 3 ? "bg-analytics-blue" : "bg-muted-foreground"
-                    )}>
-                      {index + 1}
-                    </div>
-                    <div className="flex items-center gap-2 flex-1">
-                      {pathString.split(' > ').map((step, stepIndex, array) => (
-                        <div key={stepIndex} className="flex items-center">
-                          <span className="bg-analytics-blue/20 text-analytics-blue px-3 py-1 text-xs font-medium rounded">
-                            {step === '/' ? 'Home' :
-                             step === '/search' ? 'Search' :
-                             step === '/bag' ? 'Bag' :
-                             step === '/login' ? 'Login' :
-                             step === '/orders' ? 'Orders' :
-                             step === '/profile' ? 'Profile' :
-                             step === '/portal' ? 'Portal' :
-                             step === '/portal/auth' ? 'Portal Auth' :
-                             step === '/terms' ? 'Terms' :
-                             step.startsWith('/portal/order/') ? 'Order Details' :
-                             step.replace('/', '').charAt(0).toUpperCase() + step.replace('/', '').slice(1) || 'Unknown'}
-                          </span>
-                          {stepIndex < array.length - 1 && <ArrowRight className="h-3 w-3 mx-2 text-muted-foreground" />}
-                        </div>
-                      ))}
-                    </div>
-                    <div className="text-right">
-                      <div className="font-bold text-analytics-blue">{occurrences} sessioni</div>
-                      <div className="text-xs text-muted-foreground">{percentage}% del traffico</div>
+                            )}
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 );
               })}
             </div>
-          </div>
-        )}
+          )}
 
-        {/* Fallback per dati mancanti */}
-        {!data?.top_paths && (
-          <div className="text-center py-8">
-            <p className="text-muted-foreground">Dati sui percorsi utente non disponibili per questa data.</p>
-          </div>
-        )}
-      </div>
+          {/* Top 10 Lista Completa */}
+          {data?.top_paths && (
+            <div className="border-t border-dashboard-border pt-8 mt-8">
+              <h4 className="text-lg font-mono text-foreground mb-6">Top 10 Percorsi Completi</h4>
+              <div className="space-y-3">
+                {Object.entries(data.top_paths).slice(0, 5).map(([pathString, occurrences], index) => {
+                  const percentage = Math.round((occurrences / (data?.total_sessions_yesterday || 1)) * 100);
+                  return (
+                    <div key={index} className="flex items-center gap-3 text-sm bg-dashboard-surface/30 p-4 border border-dashboard-border rounded-lg">
+                      <div className={cn(
+                        "flex items-center justify-center w-8 h-8 rounded-full font-bold text-white",
+                        index < 3 ? "bg-analytics-blue" : "bg-muted-foreground"
+                      )}>
+                        {index + 1}
+                      </div>
+                      <div className="flex items-center gap-2 flex-1">
+                        {pathString.split(' > ').map((step, stepIndex, array) => (
+                          <div key={stepIndex} className="flex items-center">
+                            <span className="bg-analytics-blue/20 text-analytics-blue px-3 py-1 text-xs font-medium rounded">
+                              {step === '/' ? 'Home' :
+                               step === '/search' ? 'Search' :
+                               step === '/bag' ? 'Bag' :
+                               step === '/login' ? 'Login' :
+                               step === '/orders' ? 'Orders' :
+                               step === '/profile' ? 'Profile' :
+                               step === '/portal' ? 'Portal' :
+                               step === '/portal/auth' ? 'Portal Auth' :
+                               step === '/terms' ? 'Terms' :
+                               step.startsWith('/portal/order/') ? 'Order Details' :
+                               step.replace('/', '').charAt(0).toUpperCase() + step.replace('/', '').slice(1) || 'Unknown'}
+                            </span>
+                            {stepIndex < array.length - 1 && <ArrowRight className="h-3 w-3 mx-2 text-muted-foreground" />}
+                          </div>
+                        ))}
+                      </div>
+                      <div className="text-right">
+                        <div className="font-bold text-analytics-blue">{occurrences} sessioni</div>
+                        <div className="text-xs text-muted-foreground">{percentage}% del traffico</div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* Fallback per dati mancanti */}
+          {!data?.top_paths && (
+            <div className="text-center py-8">
+              <p className="text-muted-foreground">Dati sui percorsi utente non disponibili per questa data.</p>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Pattern Comportamentali */}
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
