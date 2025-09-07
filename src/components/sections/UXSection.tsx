@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { KPICard } from "@/components/KPICard";
 import { DateSelector } from "@/components/DateSelector";
 import { CompactDateSelector } from "@/components/sections/CompactDateSelector";
-import { ArrowLeft, MousePointer, Eye, Navigation, Activity, Maximize2, Monitor, Smartphone, Tablet, Bug, AlertTriangle, Home, Package, Phone, Users, FileText, BookOpen, ArrowRight, ChevronDown, Settings, Loader2, RotateCcw, Save, AlertCircle } from "lucide-react";
+import { ArrowLeft, MousePointer, Eye, Navigation, Activity, Maximize2, Monitor, Smartphone, Tablet, Bug, AlertTriangle, Home, Package, Phone, Users, FileText, BookOpen, ArrowRight, ChevronDown, Settings, Loader2, RotateCcw, Save, AlertCircle, Image, Type, ShoppingBag, Shirt, Footprints, Watch } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -807,6 +807,116 @@ export function UXSection({ onBack }: UXSectionProps) {
           </Button>
         )}
       </div>
+
+      {/* Search Analytics Section */}
+      {data && (
+        <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">
+          <h3 className="text-lg font-semibold mb-6 font-mono">ANALISI RICERCHE</h3>
+          
+          {/* Search Type Statistics */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div className="bg-dashboard-surface/30 border border-dashboard-border p-6 rounded-lg">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center space-x-3">
+                  <Image className="h-6 w-6 text-analytics-blue" />
+                  <span className="font-mono text-lg font-semibold">Ricerche con Immagine</span>
+                </div>
+              </div>
+              <div className="space-y-2">
+                <span className="font-bold text-3xl font-mono text-analytics-blue">
+                  {(data.search_tracking?.image_searches_total || 0).toLocaleString()}
+                </span>
+                <div className="text-sm text-muted-foreground">
+                  {(data.search_tracking?.image_searches_total || 0) > 0 && (data.search_tracking?.text_searches_total || 0) > 0 ?
+                    `${Math.round(((data.search_tracking?.image_searches_total || 0) / ((data.search_tracking?.image_searches_total || 0) + (data.search_tracking?.text_searches_total || 0))) * 100)}% del totale`
+                    : (data.search_tracking?.image_searches_total || 0) > 0 ? '100% del totale' : '0% del totale'
+                  }
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-dashboard-surface/30 border border-dashboard-border p-6 rounded-lg">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center space-x-3">
+                  <Type className="h-6 w-6 text-analytics-green" />
+                  <span className="font-mono text-lg font-semibold">Ricerche con Testo</span>
+                </div>
+              </div>
+              <div className="space-y-2">
+                <span className="font-bold text-3xl font-mono text-analytics-green">
+                  {(data.search_tracking?.text_searches_total || 0).toLocaleString()}
+                </span>
+                <div className="text-sm text-muted-foreground">
+                  {(data.search_tracking?.image_searches_total || 0) > 0 && (data.search_tracking?.text_searches_total || 0) > 0 ?
+                    `${Math.round(((data.search_tracking?.text_searches_total || 0) / ((data.search_tracking?.image_searches_total || 0) + (data.search_tracking?.text_searches_total || 0))) * 100)}% del totale`
+                    : (data.search_tracking?.text_searches_total || 0) > 0 ? '100% del totale' : '0% del totale'
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Top 5 Search Categories */}
+          {data.search_tracking?.top_search_categories && (
+            <div>
+              <h4 className="text-lg font-mono font-semibold mb-4">TOP 5 CATEGORIE PIÙ RICERCATE</h4>
+              <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+                {Object.entries(data.search_tracking.top_search_categories)
+                  .sort(([,a], [,b]) => (b as number) - (a as number))
+                  .slice(0, 5)
+                  .map(([category, count], index) => {
+                    // Function to get appropriate icon for each category
+                    const getCategoryIcon = (categoryName: string) => {
+                      switch (categoryName.toLowerCase()) {
+                        case 'borsa': return ShoppingBag;
+                        case 'abbigliamento': return Shirt;
+                        case 'elettronica': return Smartphone;
+                        case 'scarpe': return Footprints;
+                        case 'accessori': return Watch;
+                        case 'casa': return Home;
+                        default: return Package;
+                      }
+                    };
+
+                    // Function to get appropriate color for each position
+                    const getPositionColor = (position: number) => {
+                      switch (position) {
+                        case 0: return 'text-yellow-500'; // Gold
+                        case 1: return 'text-gray-400'; // Silver
+                        case 2: return 'text-amber-600'; // Bronze
+                        default: return 'text-analytics-blue';
+                      }
+                    };
+
+                    const CategoryIcon = getCategoryIcon(category);
+                    const colorClass = getPositionColor(index);
+
+                    return (
+                      <div key={category} className="bg-dashboard-surface/30 border border-dashboard-border p-4 rounded-lg text-center">
+                        <div className="flex flex-col items-center space-y-3">
+                          <div className={`p-3 rounded-full bg-dashboard-surface/50 border border-dashboard-border`}>
+                            <CategoryIcon className={`h-8 w-8 ${colorClass}`} />
+                          </div>
+                          <div>
+                            <div className="font-mono text-sm font-semibold capitalize text-foreground">
+                              {category}
+                            </div>
+                            <div className={`font-bold text-xl font-mono ${colorClass}`}>
+                              {count as number}
+                            </div>
+                            <div className="text-xs text-muted-foreground">
+                              #{index + 1}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* 3. Analisi Path Utenti - Dynamic Data */}
       <div className="bg-dashboard-surface/60 border border-dashboard-border shadow-card p-6 dashboard-card">

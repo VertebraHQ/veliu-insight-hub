@@ -144,6 +144,22 @@ export interface AnalyticsData {
     };
   };
   top_paths: Record<string, number>;
+  search_tracking?: {
+    global_data: Record<string, number>;
+    trends: {
+      sessions_with_searches: number;
+      total_searches_in_analyzed_sessions: number;
+    };
+    top_search_categories: Record<string, number>;
+    image_searches_total: number;
+    text_searches_total: number;
+  };
+  sessions_with_searches?: number;
+  total_searches_in_analyzed_sessions?: number;
+  top_search_categories?: Record<string, number>;
+  image_searches_total?: number;
+  text_searches_total?: number;
+  top_text_queries?: Record<string, number>;
   meta: {
     generated_at_utc: string;
     timezone: string;
@@ -277,6 +293,22 @@ function createEmptyAnalyticsData(): AnalyticsData {
       },
     },
     top_paths: {},
+    search_tracking: {
+      global_data: {},
+      trends: {
+        sessions_with_searches: 0,
+        total_searches_in_analyzed_sessions: 0,
+      },
+      top_search_categories: {},
+      image_searches_total: 0,
+      text_searches_total: 0,
+    },
+    sessions_with_searches: 0,
+    total_searches_in_analyzed_sessions: 0,
+    top_search_categories: {},
+    image_searches_total: 0,
+    text_searches_total: 0,
+    top_text_queries: {},
     meta: {
       generated_at_utc: new Date().toISOString(),
       timezone: "UTC",
@@ -315,7 +347,7 @@ export function useAnalyticsData(): UseAnalyticsDataReturn {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [availableDates, setAvailableDates] = useState<string[]>([]);
-  const [selectedDate, setSelectedDate] = useState<Date>(new Date('2025-09-04'));
+  const [selectedDate, setSelectedDate] = useState<Date>(new Date('2025-09-06'));
   const [periodType, setPeriodType] = useState<PeriodType>('daily');
   const [customDateRange, setCustomDateRange] = useState<DateRange | null>(null);
 
@@ -465,6 +497,63 @@ export function useAnalyticsData(): UseAnalyticsDataReturn {
     // Aggregate totals
     aggregated.total_sessions_yesterday = dailyDataArray.reduce((sum, data) => sum + data.total_sessions_yesterday, 0);
     aggregated.sessions_analyzed = dailyDataArray.reduce((sum, data) => sum + data.sessions_analyzed, 0);
+    
+    // Aggregate search data
+    aggregated.sessions_with_searches = dailyDataArray.reduce((sum, data) => sum + (data.sessions_with_searches || 0), 0);
+    aggregated.total_searches_in_analyzed_sessions = dailyDataArray.reduce((sum, data) => sum + (data.total_searches_in_analyzed_sessions || 0), 0);
+    aggregated.image_searches_total = dailyDataArray.reduce((sum, data) => sum + (data.image_searches_total || 0), 0);
+    aggregated.text_searches_total = dailyDataArray.reduce((sum, data) => sum + (data.text_searches_total || 0), 0);
+    
+    // Aggregate search_tracking data
+    if (!aggregated.search_tracking) {
+      aggregated.search_tracking = {
+        global_data: {},
+        trends: {
+          sessions_with_searches: 0,
+          total_searches_in_analyzed_sessions: 0,
+        },
+        top_search_categories: {},
+        image_searches_total: 0,
+        text_searches_total: 0,
+      };
+    }
+    
+    aggregated.search_tracking.trends.sessions_with_searches = dailyDataArray.reduce((sum, data) =>
+      sum + (data.search_tracking?.trends?.sessions_with_searches || data.sessions_with_searches || 0), 0);
+    aggregated.search_tracking.trends.total_searches_in_analyzed_sessions = dailyDataArray.reduce((sum, data) =>
+      sum + (data.search_tracking?.trends?.total_searches_in_analyzed_sessions || data.total_searches_in_analyzed_sessions || 0), 0);
+    aggregated.search_tracking.image_searches_total = dailyDataArray.reduce((sum, data) =>
+      sum + (data.search_tracking?.image_searches_total || data.image_searches_total || 0), 0);
+    aggregated.search_tracking.text_searches_total = dailyDataArray.reduce((sum, data) =>
+      sum + (data.search_tracking?.text_searches_total || data.text_searches_total || 0), 0);
+    
+    // Aggregate search categories
+    aggregated.top_search_categories = {};
+    aggregated.search_tracking.top_search_categories = {};
+    dailyDataArray.forEach(data => {
+      // Legacy format
+      if (data.top_search_categories) {
+        Object.entries(data.top_search_categories).forEach(([category, count]) => {
+          aggregated.top_search_categories![category] = (aggregated.top_search_categories![category] || 0) + (count as number);
+        });
+      }
+      // New format
+      if (data.search_tracking?.top_search_categories) {
+        Object.entries(data.search_tracking.top_search_categories).forEach(([category, count]) => {
+          aggregated.search_tracking!.top_search_categories[category] = (aggregated.search_tracking!.top_search_categories[category] || 0) + (count as number);
+        });
+      }
+    });
+    
+    // Aggregate text queries
+    aggregated.top_text_queries = {};
+    dailyDataArray.forEach(data => {
+      if (data.top_text_queries) {
+        Object.entries(data.top_text_queries).forEach(([query, count]) => {
+          aggregated.top_text_queries![query] = (aggregated.top_text_queries![query] || 0) + (count as number);
+        });
+      }
+    });
     
     // Aggregate funnel data
     aggregated.funnel.sessions = dailyDataArray.reduce((sum, data) => sum + data.funnel.sessions, 0);
