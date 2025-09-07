@@ -561,21 +561,40 @@ export function useAnalyticsData(): UseAnalyticsDataReturn {
     aggregated.funnel.conversion_rate = aggregated.funnel.sessions > 0 ?
       aggregated.funnel.converted_sessions / aggregated.funnel.sessions : 0;
 
-    // For timeseries, we'll create daily aggregates instead of hourly
-    const dailyTimeseries = dailyDataArray.map((data, index) => ({
-      day: index,
-      total_sessions: data.total_sessions_yesterday,
-      sessions_analyzed: data.sessions_analyzed,
-      funnel_completions: data.funnel.converted_sessions,
-      conversion_rate: data.funnel.conversion_rate
-    }));
+    // For timeseries, we need to map data to the correct date indices
+    // Create a map from available dates to their position in the full date range
+    const dateRange = getDateRangeForPeriod('weekly'); // Get the full weekly range
+    const fullDateStrings = [];
+    const currentDate = new Date(dateRange.from);
+    while (currentDate <= dateRange.to) {
+      fullDateStrings.push(format(currentDate, 'yyyy-MM-dd'));
+      currentDate.setDate(currentDate.getDate() + 1);
+    }
+    
+    // Create timeseries data with correct date mapping
+    const timeseriesData: Array<{ hour: number; total_sessions: number; sessions_analyzed: number; funnel_completions: number; conversion_rate: number }> = [];
+    
+    availableDates.forEach((dateString, dataIndex) => {
+      // Find the correct position of this date in the full range
+      const positionInRange = fullDateStrings.indexOf(dateString);
+      if (positionInRange !== -1 && dataIndex < dailyDataArray.length) {
+        const data = dailyDataArray[dataIndex];
+        timeseriesData.push({
+          hour: positionInRange, // Use the correct position in the full range
+          total_sessions: data.total_sessions_yesterday,
+          sessions_analyzed: data.sessions_analyzed,
+          funnel_completions: data.funnel.converted_sessions,
+          conversion_rate: data.funnel.conversion_rate
+        });
+      }
+    });
 
     // Transform to the expected hourly format but with daily data
     aggregated.timeseries.hourly = {
-      total_sessions: dailyTimeseries.map(day => ({ hour: day.day, value: day.total_sessions })),
-      sessions_analyzed: dailyTimeseries.map(day => ({ hour: day.day, value: day.sessions_analyzed })),
-      funnel_completions: dailyTimeseries.map(day => ({ hour: day.day, value: day.funnel_completions })),
-      conversion_rate: dailyTimeseries.map(day => ({ hour: day.day, value: day.conversion_rate }))
+      total_sessions: timeseriesData.map(day => ({ hour: day.hour, value: day.total_sessions })),
+      sessions_analyzed: timeseriesData.map(day => ({ hour: day.hour, value: day.sessions_analyzed })),
+      funnel_completions: timeseriesData.map(day => ({ hour: day.hour, value: day.funnel_completions })),
+      conversion_rate: timeseriesData.map(day => ({ hour: day.hour, value: day.conversion_rate }))
     };
 
     // Calculate weighted averages for rates

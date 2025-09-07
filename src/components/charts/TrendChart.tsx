@@ -90,10 +90,17 @@ function generateChartData(
       const toDate = new Date(toDateStr);
       const actualDateRange = eachDayOfInterval({ start: fromDate, end: toDate });
       
+      // For aggregated data, the timeseries contains data for each available day
+      // The hour field represents the day index in the available data, not the actual hour
       data.timeseries.hourly.total_sessions.forEach((item, index) => {
+        // Map the data to the correct date based on the available dates
+        // Since we have data only for specific dates (like 04/09 and 06/09),
+        // we need to map each data point to its corresponding actual date
         const dayIndex = item.hour;
-        const date = actualDateRange[dayIndex];
-        if (date) {
+        
+        // Get the actual date for this data point from the range
+        if (dayIndex < actualDateRange.length) {
+          const date = actualDateRange[dayIndex];
           const dateKey = format(date, 'yyyy-MM-dd');
           dataByDate.set(dateKey, {
             sessions: item.value,
